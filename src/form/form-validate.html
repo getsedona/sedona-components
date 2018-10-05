@@ -1,0 +1,61 @@
+<form class="form" action="#" method="post" novalidate>
+	<div class="form__group  form__group--columns">
+		<div class="form__label" style="width: 30%;">
+			<label for="name">Имя и фамилия</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 100%;">
+					<input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group  form__group--columns">
+		<div class="form__label" style="width: 30%;">
+			<label for="email">Эл. почта для ответа</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 100%;">
+					<input type="email" id="email" name="email" placeholder="example@site.com" aria-describedby="email-hint" required>
+				</div>
+
+				<div class="form__hint" id="email-hint">
+					Адрес не будет опубликован
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group  form__group--columns">
+		<div class="form__label" style="width: 30%;">
+			<label for="password">Пароль</label>
+		</div>
+
+		<div class="form__fields">
+			<div class="form__line">
+				<div class="form__control" style="width: 100%;">
+					<input type="password" id="password" name="password" minlength="6" aria-describedby="password-hint" required>
+				</div>
+
+				<div class="form__hint" id="password-hint">
+					Не менее 6 символов
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form__group  form__group--columns">
+		<div class="form__fields" style="margin-left: 30%;">
+			<div class="form__line">
+				<div class="form__control">
+					<button class="btn" type="submit">Отправить</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>

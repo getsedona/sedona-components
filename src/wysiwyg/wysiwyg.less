@@ -1,0 +1,91 @@
+// WYSIWYG
+//------------------------------------------------------------------------------
+
+.wysiwyg {
+	overflow-wrap: break-word;
+
+	h1 {
+		margin-bottom: @indent;
+	}
+
+	h2 {
+		margin-top: @indent-element-smaller;
+		margin-bottom: @indent;
+
+		@media (min-width: @grid-breakpoints-md) {
+			margin-top: @indent-element-larger;
+		}
+	}
+
+	h3 {
+		margin-top: @indent-element-smaller;
+		margin-bottom: @indent;
+	}
+
+	h1 + h3,
+	h2 + h3 {
+		margin-top: @indent;
+	}
+
+	ul,
+	ol {
+		margin-bottom: 1em;
+		padding-left: 1.5em;
+		list-style-type: none;
+
+		ul,
+		ol {
+			margin-top: 0.5em;
+			margin-bottom: 0;
+		}
+
+		& > li {
+			margin-bottom: 0.5em;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&::before {
+				content: "\2014";
+				position: absolute;
+				margin-left: -1.5em;
+				opacity: 0.2;
+			}
+		}
+	}
+
+	ol {
+		counter-reset: code;
+
+		& > li::before {
+			content: counters(code, ".") ". ";
+			position: static;
+			display: inline-block;
+			min-width: 1.5em;
+			opacity: 0.4;
+			counter-increment: code;
+		}
+	}
+
+	p {
+		margin-bottom: 1em;
+	}
+
+	p + ul,
+	p + ol {
+		margin-top: -0.5em;
+	}
+
+	table {
+		word-break: normal;
+	}
+
+	& > *:first-child {
+		margin-top: 0;
+	}
+
+	& > *:last-child {
+		margin-bottom: 0;
+	}
+}

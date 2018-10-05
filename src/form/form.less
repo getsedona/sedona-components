@@ -1,0 +1,1177 @@
+// Form
+//------------------------------------------------------------------------------
+
+// Proportions
+
+@form-control-border-width: 1px;
+@form-control-border-radius: @radius;
+
+@form-control-padding-top: (@indent / 2);
+@form-control-padding-bottom: @form-control-padding-top;
+@form-control-padding-left: @indent;
+@form-control-padding-right: @form-control-padding-left;
+
+@form-control-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
+
+// Breakpoints
+
+@form-breakpoints: @grid-breakpoints-md;
+
+// Control
+
+@form-control-color: @base-primary;
+
+@form-control-border-color: @base-divider;
+
+@form-control-background-color: @light-primary;
+@form-control-background-image: none;
+@form-control-background-repeat: repeat;
+@form-control-background-position: 0 0;
+@form-control-background-size: auto auto;
+
+@form-control-hover-border-color: darken(@form-control-border-color, 15%);
+@form-control-hover-background-color: @form-control-background-color;
+
+@form-control-focus-outline-color: @form-control-border-color;
+@form-control-focus-border-color: @form-control-hover-border-color;
+@form-control-focus-background-color: @form-control-hover-background-color;
+
+@form-control-danger-border-color: lighten(@alert-danger, 25%);
+@form-control-danger-background-color: @form-control-background-color;
+
+@form-control-danger-hover-border-color: darken(@form-control-danger-border-color, 10%);
+@form-control-danger-hover-background-color: @form-control-danger-background-color;
+
+@form-control-danger-focus-outline-color: @form-control-danger-border-color;
+@form-control-danger-focus-border-color: @form-control-danger-hover-border-color;
+@form-control-danger-focus-background-color: @form-control-danger-hover-background-color;
+
+// Accent
+
+@form-accent-color: @light-primary;
+
+@form-accent-border-color: @base-secondary;
+
+@form-accent-background-color: @form-accent-border-color;
+@form-accent-background-image: none;
+@form-accent-background-repeat: repeat;
+@form-accent-background-position: 0 0;
+@form-accent-background-size: auto auto;
+
+@form-accent-hover-border-color: darken(@form-accent-border-color, 10%);
+@form-accent-hover-background-color: darken(@form-accent-background-color, 10%);
+
+// Hint
+
+@form-hint-font-size: @font-size-smaller;
+@form-hint-line-height: @line-height-smaller;
+
+@form-hint-color: @base-hint;
+@form-hint-danger-color: @alert-danger;
+
+// Placeholder
+
+@form-placeholder-color: @form-hint-color;
+
+// Element
+
+@form-element-color: @form-placeholder-color;
+
+// Darken control
+
+@form-darken-control-color: @light-primary;
+
+@form-darken-control-border-color: @light-divider;
+
+@form-darken-control-background-color: @dark-primary;
+@form-darken-control-background-image: none;
+@form-darken-control-background-repeat: repeat;
+@form-darken-control-background-position: 0 0;
+@form-darken-control-background-size: auto auto;
+
+@form-darken-control-hover-border-color: lighten(@form-darken-control-border-color, 15%);
+@form-darken-control-hover-background-color: @form-darken-control-background-color;
+
+@form-darken-control-focus-outline-color: @form-darken-control-border-color;
+@form-darken-control-focus-border-color: @form-darken-control-hover-border-color;
+@form-darken-control-focus-background-color: @form-darken-control-hover-background-color;
+
+@form-darken-control-danger-border-color: lighten(@alert-danger, 5%);
+@form-darken-control-danger-background-color: @form-darken-control-background-color;
+
+@form-darken-control-danger-hover-border-color: darken(@form-darken-control-danger-border-color, 5%);
+@form-darken-control-danger-hover-background-color: @form-darken-control-danger-background-color;
+
+@form-darken-control-danger-focus-outline-color: @form-darken-control-danger-border-color;
+@form-darken-control-danger-focus-border-color: @form-darken-control-danger-hover-border-color;
+@form-darken-control-danger-focus-background-color: @form-darken-control-danger-hover-background-color;
+
+// Darken accent
+
+@form-darken-accent-color: @dark-primary;
+
+@form-darken-accent-border-color: @light-secondary;
+
+@form-darken-accent-background-color: @form-darken-accent-border-color;
+@form-darken-accent-background-image: none;
+@form-darken-accent-background-repeat: repeat;
+@form-darken-accent-background-position: 0 0;
+@form-darken-accent-background-size: auto auto;
+
+@form-darken-accent-hover-border-color: lighten(@form-darken-accent-border-color, 20%);
+@form-darken-accent-hover-background-color: lighten(@form-darken-accent-background-color, 20%);
+
+// Darken hint
+
+@form-darken-hint-color: @light-hint;
+@form-darken-hint-danger-color: @alert-danger;
+
+// Darken placeholder
+
+@form-darken-placeholder-color: @form-darken-hint-color;
+
+// Darken element
+
+@form-darken-element-color: @form-darken-placeholder-color;
+
+// Lighten control
+
+@form-lighten-control-color: @dark-primary;
+
+@form-lighten-control-border-color: @dark-divider;
+
+@form-lighten-control-background-color: @light-primary;
+@form-lighten-control-background-image: none;
+@form-lighten-control-background-repeat: repeat;
+@form-lighten-control-background-position: 0 0;
+@form-lighten-control-background-size: auto auto;
+
+@form-lighten-control-hover-border-color: darken(@form-lighten-control-border-color, 15%);
+@form-lighten-control-hover-background-color: @form-lighten-control-background-color;
+
+@form-lighten-control-focus-outline-color: @form-lighten-control-border-color;
+@form-lighten-control-focus-border-color: @form-lighten-control-hover-border-color;
+@form-lighten-control-focus-background-color: @form-lighten-control-hover-background-color;
+
+@form-lighten-control-danger-border-color: lighten(@alert-danger, 25%);
+@form-lighten-control-danger-background-color: @form-lighten-control-background-color;
+
+@form-lighten-control-danger-hover-border-color: darken(@form-lighten-control-danger-border-color, 10%);
+@form-lighten-control-danger-hover-background-color: @form-lighten-control-danger-background-color;
+
+@form-lighten-control-danger-focus-outline-color: @form-lighten-control-danger-border-color;
+@form-lighten-control-danger-focus-border-color: @form-lighten-control-danger-hover-border-color;
+@form-lighten-control-danger-focus-background-color: @form-lighten-control-danger-hover-background-color;
+
+// Lighten accent
+
+@form-lighten-accent-color: @light-primary;
+
+@form-lighten-accent-border-color: @dark-secondary;
+
+@form-lighten-accent-background-color: @form-lighten-accent-border-color;
+@form-lighten-accent-background-image: none;
+@form-lighten-accent-background-repeat: repeat;
+@form-lighten-accent-background-position: 0 0;
+@form-lighten-accent-background-size: auto auto;
+
+@form-lighten-accent-hover-border-color: darken(@form-lighten-accent-border-color, 10%);
+@form-lighten-accent-hover-background-color: darken(@form-lighten-accent-background-color, 10%);
+
+// Lighten hint
+
+@form-lighten-hint-color: @dark-hint;
+@form-lighten-hint-danger-color: @alert-danger;
+
+// Lighten placeholder
+
+@form-lighten-placeholder-color: @form-lighten-hint-color;
+
+// Lighten element
+
+@form-lighten-element-color: @form-lighten-placeholder-color;
+
+
+// Style
+//------------------------------------------------------------------------------
+
+.form {
+	margin-bottom: -@indent;
+}
+
+.form__group {
+	padding-bottom: @indent;
+
+	&--columns {
+		@media (min-width: @form-breakpoints) {
+			display: flex;
+			flex-wrap: nowrap;
+		}
+	}
+}
+
+.form__label {
+	margin-bottom: (@indent / 2);
+
+	.form__group--columns & {
+		@media (max-width: (@form-breakpoints - 1px)) {
+			width: 100% !important;
+		}
+
+		@media (min-width: @form-breakpoints) {
+			padding-right: (@grid-gutter / 2);
+			margin-top: @form-control-padding-top;
+			margin-bottom: 0;
+		}
+	}
+}
+
+.form__fields {
+	.form__group--columns & {
+		@media (min-width: @form-breakpoints) {
+			flex: 1 0 0%;
+		}
+
+		@media (max-width: (@form-breakpoints - 1px)) {
+			margin-left: 0 !important;
+		}
+	}
+}
+
+.form__line {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: (@indent / -2);
+	margin-right: (@grid-gutter / -4);
+
+	& ~ & {
+		margin-top: @indent;
+	}
+
+	& > * {
+		padding-right: (@grid-gutter / 4);
+		margin-bottom: (@indent / 2);
+	}
+}
+
+.form__control {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+
+	input,
+	select,
+	textarea {
+		display: block;
+		border-width: @form-control-border-width;
+		border-style: solid;
+		border-color: @form-control-border-color;
+		border-radius: @form-control-border-radius;
+		padding-top: (@form-control-padding-top - @form-control-border-width);
+		padding-right: (@form-control-padding-right - @form-control-border-width);
+		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
+		padding-left: (@form-control-padding-left - @form-control-border-width);
+		width: 100%;
+		appearance: none;
+		min-height: @form-control-height;
+		color: @form-control-color;
+		background-color: @form-control-background-color;
+		background-image: @form-control-background-image;
+		background-repeat: @form-control-background-repeat;
+		background-position: @form-control-background-position;
+		background-size: @form-control-background-size;
+		transition-property: box-shadow, border-color, background-color;
+		transition: @duration @timing-function;
+
+		&:focus {
+			.focus(@form-control-focus-outline-color);
+			border-color: @form-control-focus-border-color;
+			background-color: @form-control-focus-background-color;
+		}
+
+		body:not(.mobile) &:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-control-hover-border-color;
+			background-color: @form-control-hover-background-color;
+		}
+
+		&:-webkit-autofill,
+		&:-moz-autofill,
+		&:autofill {
+			background-color: #ffc !important;
+		}
+
+		&:not(:focus):invalid {
+			box-shadow: none;
+			outline: none;
+		}
+	}
+
+	.form--darken & input,
+	.form--darken & select,
+	.form--darken & textarea {
+		border-color: @form-darken-control-border-color;
+		color: @form-darken-control-color;
+		background-color: @form-darken-control-background-color;
+		background-image: @form-darken-control-background-image;
+		background-repeat: @form-darken-control-background-repeat;
+		background-position: @form-darken-control-background-position;
+		background-size: @form-darken-control-background-size;
+
+		&:focus {
+			.focus(@form-darken-control-focus-outline-color);
+			border-color: @form-darken-control-focus-border-color;
+			background-color: @form-darken-control-focus-background-color;
+		}
+
+		body:not(.mobile) &:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-darken-control-hover-border-color;
+			background-color: @form-darken-control-hover-background-color;
+		}
+	}
+
+	.form--lighten & input,
+	.form--lighten & select,
+	.form--lighten & textarea {
+		border-color: @form-lighten-control-border-color;
+		color: @form-lighten-control-color;
+		background-color: @form-lighten-control-background-color;
+		background-image: @form-lighten-control-background-image;
+		background-repeat: @form-lighten-control-background-repeat;
+		background-position: @form-lighten-control-background-position;
+		background-size: @form-lighten-control-background-size;
+
+		&:focus {
+			.focus(@form-lighten-control-focus-outline-color);
+			border-color: @form-lighten-control-focus-border-color;
+			background-color: @form-lighten-control-focus-background-color;
+		}
+
+		body:not(.mobile) &:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-lighten-control-hover-border-color;
+			background-color: @form-lighten-control-hover-background-color;
+		}
+	}
+
+	input {
+		&::-ms-clear,
+		&::-ms-reveal {
+			display: none;
+		}
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+
+	input[type="number"] {
+		appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+		}
+	}
+
+	input,
+	textarea {
+		&::placeholder {
+			color: @form-placeholder-color;
+		}
+	}
+
+	.form--darken & input,
+	.form--darken & textarea {
+		&::placeholder {
+			color: @form-darken-placeholder-color;
+		}
+	}
+
+	.form--lighten & input,
+	.form--lighten & textarea {
+		&::placeholder {
+			color: @form-lighten-placeholder-color;
+		}
+	}
+
+	select {
+		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
+
+		padding-right: (@form-control-height - @form-control-border-width);
+		background-image: url("data:image/svg+xml, @{icon}"), @form-control-background-image;
+		background-repeat: no-repeat, @form-control-background-repeat;
+		background-position: right ((@form-control-height - 24px) / 2) top 55%, @form-control-background-position;
+		background-size: 24px 24px, @form-control-background-size;
+
+		&::-ms-expand {
+			display: none;
+		}
+	}
+
+	.form--darken & select {
+		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-darken-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
+
+		background-image: url("data:image/svg+xml, @{icon}"), @form-darken-control-background-image;
+		background-repeat: no-repeat, @form-darken-control-background-repeat;
+		background-position: right ((@form-control-height - 24px) / 2) top 55%, @form-darken-control-background-position;
+		background-size: 24px 24px, @form-darken-control-background-size;
+	}
+
+	.form--lighten & select {
+		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-lighten-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
+
+		background-image: url("data:image/svg+xml, @{icon}"), @form-lighten-control-background-image;
+		background-repeat: no-repeat, @form-lighten-control-background-repeat;
+		background-position: right ((@form-control-height - 24px) / 2) top 55%, @form-lighten-control-background-position;
+		background-size: 24px 24px, @form-lighten-control-background-size;
+	}
+
+	&--danger input,
+	&--danger select,
+	&--danger textarea {
+		border-color: @form-control-danger-border-color;
+		background-color: @form-control-danger-background-color;
+
+		&:focus {
+			.focus(@form-control-danger-focus-outline-color);
+			border-color: @form-control-danger-focus-border-color;
+			background-color: @form-control-danger-focus-background-color;
+		}
+
+		body:not(.mobile) &:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-control-danger-hover-border-color;
+			background-color: @form-control-danger-hover-background-color;
+		}
+	}
+
+	.form--darken &--danger input,
+	.form--darken &--danger select,
+	.form--darken &--danger textarea {
+		border-color: @form-darken-control-danger-border-color;
+		background-color: @form-darken-control-danger-background-color;
+
+		&:focus {
+			.focus(@form-darken-control-danger-focus-outline-color);
+			border-color: @form-darken-control-danger-focus-border-color;
+			background-color: @form-darken-control-danger-focus-background-color;
+		}
+
+		body:not(.mobile) &:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-darken-control-danger-hover-border-color;
+			background-color: @form-darken-control-danger-hover-background-color;
+		}
+	}
+
+	.form--lighten &--danger input,
+	.form--lighten &--danger select,
+	.form--lighten &--danger textarea {
+		border-color: @form-lighten-control-danger-border-color;
+		background-color: @form-lighten-control-danger-background-color;
+
+		&:focus {
+			.focus(@form-lighten-control-danger-focus-outline-color);
+			border-color: @form-lighten-control-danger-focus-border-color;
+			background-color: @form-lighten-control-danger-focus-background-color;
+		}
+
+		body:not(.mobile) &:not([disabled]):hover,
+		&:not([disabled]):focus {
+			border-color: @form-lighten-control-danger-hover-border-color;
+			background-color: @form-lighten-control-danger-hover-background-color;
+		}
+	}
+}
+
+.form__hint {
+	position: relative;
+	font-size: @form-hint-font-size;
+	line-height: @form-hint-line-height;
+	color: @form-hint-color;
+	fill: @form-hint-color;
+	align-self: flex-start;
+	width: 100%;
+
+	&:not(:last-of-type) {
+		margin-bottom: 0;
+	}
+
+	a {
+		.link(@form-hint-color);
+
+		body:not(.mobile) &:hover {
+			.link-hover(@form-hint-color);
+		}
+	}
+
+	&--danger {
+		color: @form-hint-danger-color;
+		fill: @form-hint-danger-color;
+
+		a {
+			.link(@form-hint-danger-color);
+
+			body:not(.mobile) &:hover {
+				.link-hover(@form-hint-danger-color);
+			}
+		}
+	}
+
+	.form--darken & {
+		color: @form-darken-hint-color;
+		fill: @form-darken-hint-color;
+
+		a {
+			.link(@form-darken-hint-color);
+
+			body:not(.mobile) &:hover {
+				.link-hover(@form-darken-hint-color);
+			}
+		}
+
+		&--danger {
+			color: @form-darken-hint-danger-color;
+			fill: @form-darken-hint-danger-color;
+
+			a {
+				.link(@form-darken-hint-danger-color);
+
+				body:not(.mobile) &:hover {
+					.link-hover(@form-darken-hint-danger-color);
+				}
+			}
+		}
+	}
+
+	.form--lighten & {
+		color: @form-lighten-hint-color;
+		fill: @form-lighten-hint-color;
+
+		a {
+			.link(@form-lighten-hint-color);
+
+			body:not(.mobile) &:hover {
+				.link-hover(@form-lighten-hint-color);
+			}
+		}
+
+		&--danger {
+			color: @form-lighten-hint-danger-color;
+			fill: @form-lighten-hint-danger-color;
+
+			a {
+				.link(@form-lighten-hint-danger-color);
+
+				body:not(.mobile) &:hover {
+					.link-hover(@form-lighten-hint-danger-color);
+				}
+			}
+		}
+	}
+}
+
+.form__content {
+	.form__group--columns .form__line:first-child &:first-child {
+		@media (min-width: @form-breakpoints) {
+			margin-top: @form-control-padding-top;
+			align-self: flex-start;
+		}
+	}
+
+	.form__group--columns .form__line:last-child &:last-child {
+		@media (min-width: @form-breakpoints) {
+			padding-bottom: @form-control-padding-top;
+			align-self: flex-end;
+		}
+	}
+}
+
+.form__checkbox,
+.form__radio {
+	min-height: @line-height;
+
+	.form__group--columns .form__line:first-child .form__control:first-child & {
+		@media (min-width: @form-breakpoints) {
+			margin-top: @form-control-padding-top;
+		}
+	}
+
+	.form__group--columns .form__line:last-child .form__control:last-child & {
+		@media (min-width: @form-breakpoints) {
+			padding-bottom: @form-control-padding-top;
+		}
+	}
+
+	input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	input + span {
+		display: block;
+		position: relative;
+		padding-left: (@font-size * 1.375 + @grid-gutter / 4);
+
+		&::before,
+		&::after {
+			position: absolute;
+			top: ((@line-height - @font-size * 1.375) / 2);
+			left: 0;
+			content: "";
+			width: (@font-size * 1.375);
+			height: (@font-size * 1.375);
+		}
+
+		&::before {
+			border-width: @form-control-border-width;
+			border-style: solid;
+			border-color: @form-control-border-color;
+			background-color: @form-control-background-color;
+			background-image: @form-control-background-image;
+			background-repeat: @form-control-background-repeat;
+			background-position: @form-control-background-position;
+			background-size: @form-control-background-size;
+			transition-property: box-shadow, border-color, background-color;
+			transition: @duration @timing-function;
+		}
+
+		&::after {
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size: 18px 18px;
+			transform: scale3d(0, 0, 0);
+			opacity: 0;
+			transition-property: opacity, transform;
+			transition: 0.1s @timing-function;
+		}
+	}
+
+	.form--darken & input + span::before {
+		border-color: @form-darken-control-border-color;
+		background-color: @form-darken-control-background-color;
+		background-image: @form-darken-control-background-image;
+		background-repeat: @form-darken-control-background-repeat;
+		background-position: @form-darken-control-background-position;
+		background-size: @form-darken-control-background-size;
+	}
+
+	.form--lighten & input + span::before {
+		border-color: @form-lighten-control-border-color;
+		background-color: @form-lighten-control-background-color;
+		background-image: @form-lighten-control-background-image;
+		background-repeat: @form-lighten-control-background-repeat;
+		background-position: @form-lighten-control-background-position;
+		background-size: @form-lighten-control-background-size;
+	}
+
+	input[type="checkbox"] + span {
+		&::before {
+			border-radius: @form-control-border-radius;
+		}
+
+		&::after {
+			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+
+			background-image: url("data:image/svg+xml, @{icon}");
+		}
+	}
+
+	.form--darken & input[type="checkbox"] + span::after {
+		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-darken-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+
+		background-image: url("data:image/svg+xml, @{icon}");
+	}
+
+	.form--lighten & input[type="checkbox"] + span::after {
+		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-lighten-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+
+		background-image: url("data:image/svg+xml, @{icon}");
+	}
+
+	input[type="radio"] + span {
+		&::before {
+			border-radius: 50%;
+		}
+
+		&::after {
+			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
+
+			background-image: url("data:image/svg+xml, @{icon}");
+		}
+	}
+
+	.form--darken & input[type="radio"] + span::after {
+		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-darken-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
+
+		background-image: url("data:image/svg+xml, @{icon}");
+	}
+
+	.form--lighten & input[type="radio"] + span::after {
+		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-lighten-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
+
+		background-image: url("data:image/svg+xml, @{icon}");
+	}
+
+	input:focus + span::before {
+		.focus(@form-control-focus-outline-color);
+	}
+
+	body:not(.mobile) & input:focus + span::before {
+		border-color: @form-control-focus-border-color;
+		background-color: @form-control-focus-background-color;
+	}
+
+	.form--darken & input:focus + span::before {
+		.focus(@form-darken-control-focus-outline-color);
+	}
+
+	body:not(.mobile) .form--darken & input:focus + span::before {
+		border-color: @form-darken-control-focus-border-color;
+		background-color: @form-darken-control-focus-background-color;
+	}
+
+	.form--lighten & input:focus + span::before {
+		.focus(@form-lighten-control-focus-outline-color);
+	}
+
+	body:not(.mobile) .form--lighten & input:focus + span::before {
+		border-color: @form-lighten-control-focus-border-color;
+		background-color: @form-lighten-control-focus-background-color;
+	}
+
+	body:not(.mobile) &:hover input:not([disabled]) + span,
+	body:not(.mobile) & input:not([disabled]):focus + span {
+		cursor: pointer;
+
+		&::before {
+			border-color: @form-control-hover-border-color;
+			background-color: @form-control-hover-background-color;
+		}
+	}
+
+	body:not(.mobile) .form--darken &:hover input:not([disabled]) + span,
+	body:not(.mobile) .form--darken & input:not([disabled]):focus + span {
+		&::before {
+			border-color: @form-darken-control-hover-border-color;
+			background-color: @form-darken-control-hover-background-color;
+		}
+	}
+
+	body:not(.mobile) .form--lighten &:hover input:not([disabled]) + span,
+	body:not(.mobile) .form--lighten & input:not([disabled]):focus + span {
+		&::before {
+			border-color: @form-lighten-control-hover-border-color;
+			background-color: @form-lighten-control-hover-background-color;
+		}
+	}
+
+	input:checked + span {
+		&::before {
+			background-color: @form-accent-background-color !important;
+			background-image: @form-accent-background-image !important;
+			background-repeat: @form-accent-background-repeat !important;
+			background-position: @form-accent-background-position !important;
+			background-size: @form-accent-background-size !important;
+			border-color: @form-accent-border-color !important;
+		}
+
+		&::after {
+			opacity: 1;
+			transform: scale3d(1, 1, 1);
+			transition-delay: (@duration / 2);
+		}
+	}
+
+	.form--darken & input:checked + span::before {
+		background-color: @form-darken-accent-background-color !important;
+		background-image: @form-darken-accent-background-image !important;
+		background-repeat: @form-darken-accent-background-repeat !important;
+		background-position: @form-darken-accent-background-position !important;
+		background-size: @form-darken-accent-background-size !important;
+		border-color: @form-darken-accent-border-color !important;
+	}
+
+	.form--lighten & input:checked + span::before {
+		background-color: @form-lighten-accent-background-color !important;
+		background-image: @form-lighten-accent-background-image !important;
+		background-repeat: @form-lighten-accent-background-repeat !important;
+		background-position: @form-lighten-accent-background-position !important;
+		background-size: @form-lighten-accent-background-size !important;
+		border-color: @form-lighten-accent-border-color !important;
+	}
+
+	body:not(.mobile) & input:checked:focus + span::before,
+	body:not(.mobile) &:hover input:not([disabled]):checked + span::before,
+	body:not(.mobile) & input:not([disabled]):checked:focus + span::before {
+		border-color: @form-accent-hover-border-color !important;
+		background-color: @form-accent-hover-background-color !important;
+	}
+
+	body:not(.mobile) .form--darken & input:checked:focus + span::before,
+	body:not(.mobile) .form--darken &:hover input:not([disabled]):checked + span::before,
+	body:not(.mobile) .form--darken & input:not([disabled]):checked:focus + span::before {
+		border-color: @form-darken-accent-hover-border-color !important;
+		background-color: @form-darken-accent-hover-background-color !important;
+	}
+
+	body:not(.mobile) .form--lighten & input:checked:focus + span::before,
+	body:not(.mobile) .form--lighten &:hover input:not([disabled]):checked + span::before,
+	body:not(.mobile) .form--lighten & input:not([disabled]):checked:focus + span::before {
+		border-color: @form-lighten-accent-hover-border-color !important;
+		background-color: @form-lighten-accent-hover-background-color !important;
+	}
+
+	input[disabled] + span {
+		.disabled();
+	}
+
+	.form__control--danger & {
+		input + span::before {
+			border-color: @form-control-danger-border-color;
+			background-color: @form-control-danger-background-color;
+		}
+
+		input:focus + span::before {
+			.focus(@form-control-danger-focus-outline-color);
+		}
+
+		body:not(.mobile) & input:focus + span::before {
+			border-color: @form-control-danger-focus-border-color;
+			background-color: @form-control-danger-focus-background-color;
+		}
+
+		body:not(.mobile) &:hover input:not([disabled]) + span::before,
+		body:not(.mobile) & input:not([disabled]):focus + span::before {
+			border-color: @form-control-danger-hover-border-color;
+		 	background-color: @form-control-danger-hover-background-color;
+		}
+	}
+
+	.form--darken .form__control--danger & {
+		input + span::before {
+			border-color: @form-darken-control-danger-border-color;
+			background-color: @form-darken-control-danger-background-color;
+		}
+
+		input:focus + span::before {
+			.focus(@form-darken-control-danger-focus-outline-color);
+		}
+
+		body:not(.mobile) & input:focus + span::before {
+			border-color: @form-darken-control-danger-focus-border-color;
+			background-color: @form-darken-control-danger-focus-background-color;
+		}
+
+		body:not(.mobile) &:hover input:not([disabled]) + span::before,
+		body:not(.mobile) & input:not([disabled]):focus + span::before {
+			border-color: @form-darken-control-danger-hover-border-color;
+		 	background-color: @form-darken-control-danger-hover-background-color;
+		}
+	}
+
+	.form--lighten .form__control--danger & {
+		input + span::before {
+			border-color: @form-lighten-control-danger-border-color;
+			background-color: @form-lighten-control-danger-background-color;
+		}
+
+		input:focus + span::before {
+			.focus(@form-lighten-control-danger-focus-outline-color);
+		}
+
+		body:not(.mobile) & input:focus + span::before {
+			border-color: @form-lighten-control-danger-focus-border-color;
+			background-color: @form-lighten-control-danger-focus-background-color;
+		}
+
+		body:not(.mobile) &:hover input:not([disabled]) + span::before,
+		body:not(.mobile) & input:not([disabled]):focus + span::before {
+			border-color: @form-lighten-control-danger-hover-border-color;
+		 	background-color: @form-lighten-control-danger-hover-background-color;
+		}
+	}
+}
+
+.form__toggle {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	padding-bottom: 1px;
+	border-radius: @form-control-border-radius;
+	transition-property: box-shadow;
+	transition: @duration @timing-function;
+
+	@media (min-width: @form-breakpoints) {
+	 	flex-wrap: nowrap;
+	 	padding-bottom: 0;
+	 	padding-left: 1px;
+	}
+
+	&:focus-within {
+		.focus(@form-control-focus-outline-color);
+	}
+
+	.form--darken &:focus-within {
+		.focus(@form-darken-control-focus-outline-color);
+	}
+
+	.form--lighten &:focus-within {
+		.focus(@form-lighten-control-focus-outline-color);
+	}
+
+	label {
+	 	width: 100%;
+	 	margin-bottom: -1px;
+
+		@media (min-width: @form-breakpoints) {
+	 		margin-bottom: 0;
+	 		margin-left: -1px;
+	 		width: auto;
+	 		flex-grow: 1;
+	 	}
+	}
+
+	input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	input + span {
+		display: block;
+		border-width: @form-control-border-width;
+		border-style: solid;
+		border-color: @form-control-border-color;
+		padding-top: (@form-control-padding-top - @form-control-border-width);
+		padding-right: (@form-control-padding-right - @form-control-border-width);
+		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
+		padding-left: (@form-control-padding-left - @form-control-border-width);
+		min-height: @form-control-height;
+		color: @form-control-color;
+		fill: @form-control-color;
+		background-color: @form-control-background-color;
+		background-image: @form-control-background-image;
+		background-repeat: @form-control-background-repeat;
+		background-position: @form-control-background-position;
+		background-size: @form-control-background-size;
+	 	white-space: nowrap;
+	 	text-align: center;
+		z-index: 2;
+		position: relative;
+		transition-property: color, background-color, border-color;
+		transition: @duration @timing-function;
+	}
+
+	.form--darken & input + span {
+		border-color: @form-darken-control-border-color;
+		color: @form-darken-control-color;
+		fill: @form-darken-control-color;
+		background-color: @form-darken-control-background-color;
+		background-image: @form-darken-control-background-image;
+		background-repeat: @form-darken-control-background-repeat;
+		background-position: @form-darken-control-background-position;
+		background-size: @form-darken-control-background-size;
+	}
+
+	.form--lighten & input + span {
+		border-color: @form-lighten-control-border-color;
+		color: @form-lighten-control-color;
+		fill: @form-lighten-control-color;
+		background-color: @form-lighten-control-background-color;
+		background-image: @form-lighten-control-background-image;
+		background-repeat: @form-lighten-control-background-repeat;
+		background-position: @form-lighten-control-background-position;
+		background-size: @form-lighten-control-background-size;
+	}
+
+	body:not(.no-focus) &:focus-within input + span,
+	body:not(.mobile) & label:hover input:not([disabled]) + span,
+	input:not([disabled]):focus + span {
+		border-color: @form-control-hover-border-color;
+		cursor: pointer;
+		z-index: 3;
+	}
+
+	body:not(.no-focus) .form--darken &:focus-within input + span,
+	body:not(.mobile) .form--darken & label:hover input:not([disabled]) + span,
+	.form--darken & input:not([disabled]):focus + span {
+		border-color: @form-darken-control-hover-border-color;
+	}
+
+	body:not(.no-focus) .form--lighten &:focus-within input + span,
+	body:not(.mobile) .form--lighten & label:hover input:not([disabled]) + span,
+	.form--lighten & input:not([disabled]):focus + span {
+		border-color: @form-lighten-control-hover-border-color;
+	}
+
+	input:not(:checked):not([disabled]) + span:active {
+		top: 1px;
+	}
+
+	input:checked + span {
+		background-color: @form-accent-background-color;
+		background-image: @form-accent-background-image;
+		background-repeat: @form-accent-background-repeat;
+		background-position: @form-accent-background-position;
+		background-size: @form-accent-background-size;
+		color: @form-accent-color;
+		fill: @form-accent-color;
+		border-color: @form-accent-border-color !important;
+		cursor: default !important;
+		z-index: 4 !important;
+	}
+
+	.form--darken & input:checked + span {
+		background-color: @form-darken-accent-background-color;
+		background-image: @form-darken-accent-background-image;
+		background-repeat: @form-darken-accent-background-repeat;
+		background-position: @form-darken-accent-background-position;
+		background-size: @form-darken-accent-background-size;
+		color: @form-darken-accent-color;
+		fill: @form-darken-accent-color;
+		border-color: @form-darken-accent-border-color !important;
+	}
+
+	.form--lighten & input:checked + span {
+		background-color: @form-lighten-accent-background-color;
+		background-image: @form-lighten-accent-background-image;
+		background-repeat: @form-lighten-accent-background-repeat;
+		background-position: @form-lighten-accent-background-position;
+		background-size: @form-lighten-accent-background-size;
+		color: @form-lighten-accent-color;
+		fill: @form-lighten-accent-color;
+		border-color: @form-lighten-accent-border-color !important;
+	}
+
+	input[disabled] + span {
+		.disabled();
+		z-index: 1;
+	}
+
+	label:first-of-type span {
+		border-radius: @form-control-border-radius @form-control-border-radius 0 0;
+
+		@media (min-width: @form-breakpoints) {
+			border-radius: @form-control-border-radius 0 0 @form-control-border-radius;
+		}
+	}
+
+	label:last-of-type span {
+		border-radius: 0 0 @form-control-border-radius @form-control-border-radius;
+
+		@media (min-width: @form-breakpoints) {
+			border-radius: 0 @form-control-border-radius @form-control-border-radius 0;
+		}
+	}
+}
+
+.form__before,
+.form__after {
+	color: @form-element-color;
+	fill: @form-element-color;
+	position: absolute;
+	top: 0;
+	height: @form-control-height;
+	min-width: @form-control-height;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: @form-control-border-radius;
+	padding-top: (@form-control-padding-top - @form-control-border-width);
+	padding-right: (@form-control-padding-top - @form-control-border-width);
+	padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
+	padding-left: (@form-control-padding-top - @form-control-border-width);
+	border-width: @form-control-border-width;
+	border-style: solid;
+	border-color: transparent;
+	background-color: transparent;
+	transition: @duration @timing-function;
+	transition-property: box-shadow, border-color, color, fill;
+
+	.form--darken & {
+		color: @form-darken-element-color;
+		fill: @form-darken-element-color;
+	}
+
+	.form--lighten & {
+		color: @form-lighten-element-color;
+		fill: @form-lighten-element-color;
+	}
+
+	button& {
+		&:focus {
+			.focus(@form-control-focus-outline-color);
+
+			body:not(.no-focus) & {
+				border-color: @form-control-focus-border-color;
+			}
+		}
+
+		// body:not(.mobile) &:not([disabled]):hover {
+		// 	color: darken(@form-element-color, 15%);
+		// 	fill: darken(@form-element-color, 15%);
+		// }
+
+		&:active {
+			top: 1px;
+		}
+	}
+
+	.form--darken button& {
+		&:focus {
+			.focus(@form-darken-control-focus-outline-color);
+
+			body:not(.no-focus) & {
+				border-color: @form-darken-control-focus-border-color;
+			}
+		}
+	}
+
+	.form--lighten button& {
+		&:focus {
+			.focus(@form-lighten-control-focus-outline-color);
+
+			body:not(.no-focus) & {
+				border-color: @form-lighten-control-focus-border-color;
+			}
+		}
+	}
+}
+
+.form__before {
+	left: 0;
+
+	& ~ input {
+		padding-left: (@form-control-height - @form-control-border-width);
+	}
+}
+
+.form__after {
+	order: 1;
+	right: (@grid-gutter / 4);
+
+	& ~ input {
+		padding-right: (@form-control-height - @form-control-border-width);
+	}
+}

@@ -1,0 +1,143 @@
+// Range
+//------------------------------------------------------------------------------
+
+@range-height: @form-control-height;
+
+@range-line-height: 2px;
+@range-line-border-radius: (@range-line-height / 2);
+@range-line-background-color: @form-control-border-color;
+@range-line-background-image: none;
+@range-line-background-repeat: repeat;
+@range-line-background-position: 0 0;
+@range-line-background-size: auto auto;
+
+@range-bar-background-color: @form-accent-border-color;
+@range-bar-background-image: none;
+@range-bar-background-repeat: repeat;
+@range-bar-background-position: 0 0;
+@range-bar-background-size: auto auto;
+
+@range-slider-width: @font-size;
+@range-slider-height: @font-size;
+@range-slider-border-width: 0;
+@range-slider-border-color: transparent;
+@range-slider-border-radius: 50%;
+@range-slider-background-color: @range-bar-background-color;
+@range-slider-background-image: none;
+@range-slider-background-repeat: repeat;
+@range-slider-background-position: 0 0;
+@range-slider-background-size: auto auto;
+
+@range-hint-color: @form-hint-color;
+@range-hint-font-size: @form-hint-font-size;
+@range-hint-line-height: @form-hint-line-height;
+
+
+// Style
+//------------------------------------------------------------------------------
+
+.irs,
+.irs .irs {
+	height: @range-height;
+	width: 100%;
+}
+
+.irs-line {
+	top: auto;
+	bottom: -(@range-height / 2 - @range-line-height / 2);
+	height: @range-line-height;
+	border-radius: @range-line-border-radius;
+	background-color: @range-line-background-color;
+	background-image: @range-line-background-image;
+	background-repeat: @range-line-background-repeat;
+	background-position: @range-line-background-position;
+	background-size: @range-line-background-size;
+
+	.range:not([data-hide-from-to="true"]) + .irs & {
+		bottom: -(@range-height / 2 - @range-line-height / 2 + @range-hint-line-height / 2);
+	}
+}
+
+.irs-bar {
+	bottom: (@range-height / 2 - @range-line-height / 2);
+	height: @range-line-height;
+	background-color: @range-bar-background-color;
+	background-image: @range-bar-background-image;
+	background-repeat: @range-bar-background-repeat;
+	background-position: @range-bar-background-position;
+	background-size: @range-bar-background-size;
+
+	.range:not([data-hide-from-to="true"]) + .irs & {
+		bottom: (@range-height / 2 - @range-line-height / 2 - @range-hint-line-height / 2);
+	}
+}
+
+.irs-bar-edge {
+	height: @range-line-height;
+	top: auto;
+	bottom: (@range-height / 2 - @range-line-height / 2);
+	width: (@range-slider-width / 2);
+	background-color: @range-bar-background-color;
+	border-radius: @range-line-border-radius 0 0 @range-line-border-radius;
+
+	.range:not([data-hide-from-to="true"]) + .irs & {
+		bottom: (@range-height / 2 - @range-line-height / 2 - @range-hint-line-height / 2);
+	}
+}
+
+.irs-slider {
+	border-width: @range-slider-border-width;
+	border-style: solid;
+	border-color: @range-slider-border-color;
+	border-radius: @range-slider-border-radius;
+	bottom: (@range-height / 2 - @range-slider-height / 2);
+	width: @range-slider-width;
+	height: @range-slider-height;
+	background-color: @range-slider-background-color;
+	background-image: @range-slider-background-image;
+	background-repeat: @range-slider-background-repeat;
+	background-position: @range-slider-background-position;
+	background-size: @range-slider-background-size;
+	cursor: pointer;
+	transition-property: transform;
+	transition: @duration @timing-function;
+
+	&::before {
+		position: absolute;
+		content: "";
+		top: -(@range-slider-width / 2);
+		right: -(@range-slider-width / 2);
+		bottom: -(@range-slider-width / 2);
+		left: -(@range-slider-width / 2);
+		background-color: fade(@range-slider-background-color, 0);
+		border-radius: @range-slider-border-radius;
+	}
+
+	&:hover,
+	&:active {
+		transform: scale3d(1.25, 1.25, 1);
+	}
+
+	.range:not([data-hide-from-to="true"]) + .irs & {
+		bottom: (@range-height / 2 - @range-slider-height / 2 - @range-hint-line-height / 2);
+	}
+}
+
+.irs-min,
+.irs-max,
+.irs-from,
+.irs-to,
+.irs-single {
+	top: 0;
+	font-size: @range-hint-font-size;
+	line-height: @range-hint-line-height;
+}
+
+.irs-min,
+.irs-max {
+	color: @range-hint-color;
+}
+
+.irs-hidden-input {
+	border: 0 !important;
+}

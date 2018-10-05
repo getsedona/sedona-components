@@ -1,0 +1,71 @@
+// Settings
+//------------------------------------------------------------------------------
+
+// Darken
+
+@scene-darken-color: @light-primary;
+@scene-darken-background: @dark-primary;
+@scene-darken-link-color: @link-primary;
+
+// Lighten
+
+@scene-lighten-color: @dark-primary;
+@scene-lighten-background: @light-primary;
+@scene-lighten-link-color: @link-primary;
+
+
+// Scene
+//------------------------------------------------------------------------------
+
+.scene {
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: @indent-block-smaller;
+
+	@media (min-width: @grid-breakpoints-sm) {
+		padding-right: (@grid-gutter / 2);
+		padding-left: (@grid-gutter / 2);
+	}
+
+	@media (min-width: @grid-breakpoints-md) {
+		padding-bottom: @indent-block-larger;
+	}
+
+	&--darken {
+		color: @scene-darken-color;
+		fill: @scene-darken-color;
+		background: @scene-darken-background;
+
+		a {
+			.link(@scene-darken-link-color);
+
+			&:hover {
+				.link-hover(@scene-darken-link-color);
+			}
+		}
+	}
+
+	&--lighten {
+		color: @scene-lighten-color;
+		fill: @scene-lighten-color;
+		background: @scene-lighten-background;
+
+		a {
+			.link(@scene-lighten-link-color);
+
+			&:hover {
+				.link-hover(@scene-lighten-link-color);
+			}
+		}
+	}
+
+	&--darken + &:not(&--darken):not(&--lighten),
+	&--lighten + &:not(&--lighten):not(&--darken),
+	&--fill {
+		padding-top: @indent-block-smaller;
+
+		@media (min-width: @grid-breakpoints-md) {
+			padding-top: @indent-block-larger;
+		}
+	}
+}

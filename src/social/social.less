@@ -1,0 +1,237 @@
+// Settings
+//------------------------------------------------------------------------------
+
+// Base
+
+@social-width: @line-height;
+@social-height: @social-width;
+
+@social-gutter: (@indent / 2);
+
+@social-border-radius: 50%;
+
+@social-icon-width: 18px;
+@social-icon-height: @social-icon-width;
+
+@social-color: @light-primary;
+@social-background-color: transparent;
+
+@social-hover-color: @social-color;
+@social-hover-background-color: @social-background-color;
+
+// Darken
+
+@social-darken-color: @light-primary;
+@social-darken-background-color: @dark-primary;
+
+@social-darken-hover-color: @social-darken-color;
+@social-darken-hover-background-color: lighten(@social-darken-background-color, 10%);
+
+// Lighten
+
+@social-lighten-color: @dark-primary;
+@social-lighten-background-color: @light-primary;
+
+@social-lighten-hover-color: @social-lighten-color;
+@social-lighten-hover-background-color: darken(@social-lighten-background-color, 20%);
+
+
+// Social
+//------------------------------------------------------------------------------
+
+.social {
+	display: inline-flex;
+	flex-wrap: wrap;
+	margin-right: -@social-gutter;
+	margin-bottom: -@social-gutter;
+	padding-left: 0;
+	list-style-type: none;
+
+	li {
+		margin-right: @social-gutter;
+		margin-bottom: @social-gutter;
+	}
+
+	a {
+		color: @social-color;
+		fill: @social-color;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: @social-width;
+		height: @social-height;
+		overflow: hidden;
+		border-width: 0;
+		border-radius: @social-border-radius;
+		transition: @duration @timing-function;
+		transition-property: color, fill, background-color;
+
+		body:not(.mobile) &:hover {
+			color: @social-hover-color;
+			fill: @social-hover-color;
+		}
+	}
+
+	&--darken {
+		a {
+			color: @social-darken-color;
+			fill: @social-darken-color;
+
+			body:not(.mobile) &:hover {
+				color: @social-darken-hover-color;
+				fill: @social-darken-hover-color;
+			}
+		}
+	}
+
+	&--lighten {
+		a {
+			color: @social-lighten-color;
+			fill: @social-lighten-color;
+
+			body:not(.mobile) &:hover {
+				color: @social-lighten-hover-color;
+				fill: @social-lighten-hover-color;
+			}
+		}
+	}
+
+	svg {
+		display: block;
+		width: @social-icon-width;
+		height: @social-icon-height;
+	}
+}
+
+.social__vk,
+.social__fb,
+.social__ig,
+.social__tg,
+.social__yt,
+.social__tw,
+.social__ok,
+.social__vb,
+.social__wa,
+.social__sk {
+	background-color: @social-background-color;
+
+	body:not(.mobile) &:hover {
+		background-color: @social-hover-background-color;
+	}
+
+	.social--darken & {
+		background-color: @social-darken-background-color;
+
+		body:not(.mobile) &:hover {
+			background-color: @social-darken-hover-background-color;
+		}
+	}
+
+	.social--lighten & {
+		background-color: @social-lighten-background-color;
+
+		body:not(.mobile) &:hover {
+			background-color: @social-lighten-hover-background-color;
+		}
+	}
+}
+
+.social__vk {
+	@color: #597da3;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__fb {
+	@color: #3b5998;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__ig {
+	@color: #ED4A55;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__tg {
+	@color: #2e87ca;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__yt {
+	@color: #e62117;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__tw {
+	@color: #1da1f3;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__ok {
+	@color: #f58220;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__vb {
+	@color: #665cac;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__wa {
+	@color: #00e676;
+
+	background-color: @color;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
+
+.social__sk {
+	@color: #00aff0;
+
+	background-color: #00aff0;
+
+	body:not(.mobile) &:hover {
+		background-color: darken(@color, 15%);
+	}
+}
