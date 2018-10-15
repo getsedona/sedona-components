@@ -1,23 +1,44 @@
 // Settings
 //------------------------------------------------------------------------------
 
+// Base
+
+@scene-background-color: transparent;
+@scene-background-image: none;
+@scene-background-repeat: repeat;
+@scene-background-position: 0 0;
+@scene-background-size: auto auto;
+
 // Darken
 
+@scene-darken-background-color: @dark-primary;
+@scene-darken-background-image: none;
+@scene-darken-background-repeat: repeat;
+@scene-darken-background-position: 0 0;
+@scene-darken-background-size: auto auto;
+
 @scene-darken-color: @light-primary;
-@scene-darken-background: @dark-primary;
-@scene-darken-link-color: @link-primary;
 
 // Lighten
 
+@scene-lighten-background-color: @light-primary;
+@scene-lighten-background-image: none;
+@scene-lighten-background-repeat: repeat;
+@scene-lighten-background-position: 0 0;
+@scene-lighten-background-size: auto auto;
+
 @scene-lighten-color: @dark-primary;
-@scene-lighten-background: @light-primary;
-@scene-lighten-link-color: @link-primary;
 
 
 // Scene
 //------------------------------------------------------------------------------
 
 .scene {
+	background-color: @scene-background-color;
+	background-image: @scene-background-image;
+	background-repeat: @scene-background-repeat;
+	background-position: @scene-background-position;
+	background-size: @scene-background-size;
 	margin-left: auto;
 	margin-right: auto;
 	padding-bottom: @indent-block-smaller;
@@ -34,29 +55,21 @@
 	&--darken {
 		color: @scene-darken-color;
 		fill: @scene-darken-color;
-		background: @scene-darken-background;
-
-		a {
-			.link(@scene-darken-link-color);
-
-			&:hover {
-				.link-hover(@scene-darken-link-color);
-			}
-		}
+		background-color: @scene-darken-background-color;
+		background-image: @scene-darken-background-image;
+		background-repeat: @scene-darken-background-repeat;
+		background-position: @scene-darken-background-position;
+		background-size: @scene-darken-background-size;
 	}
 
 	&--lighten {
 		color: @scene-lighten-color;
 		fill: @scene-lighten-color;
-		background: @scene-lighten-background;
-
-		a {
-			.link(@scene-lighten-link-color);
-
-			&:hover {
-				.link-hover(@scene-lighten-link-color);
-			}
-		}
+		background-color: @scene-lighten-background-color;
+		background-image: @scene-lighten-background-image;
+		background-repeat: @scene-lighten-background-repeat;
+		background-position: @scene-lighten-background-position;
+		background-size: @scene-lighten-background-size;
 	}
 
 	&--darken + &:not(&--darken):not(&--lighten),

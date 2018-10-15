@@ -8,9 +8,6 @@
   },
   "homepage": "https://github.com/constlab/sedona-components#readme",
   "dependencies": {
-    "ion-rangeslider": "^2.2.0",
-    "jquery": "^3.3.1",
-    "normalize.css": "^8.0.0",
-    "swiper": "^4.4.1"
+    "normalize.css": "^8.0.0"
   }
 }

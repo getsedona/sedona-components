@@ -1,30 +1,50 @@
-// Card
+// Settings
 //------------------------------------------------------------------------------
 
 // Base
 
-@card-border-width: 1px;
-@card-border-radius: @radius;
 @card-padding: @indent;
+
+@card-background-color: transparent;
+@card-background-image: none;
+@card-background-repeat: repeat;
+@card-background-position: 0 0;
+@card-background-size: auto auto;
+
+@card-border-width: 1px;
+@card-border-color: @base-divider;
+@card-border-radius: @radius;
+
 @card-frame-opacity: 0.2;
+
 @card-media-ratio: 56.25%;
 
 // Darken
 
-@card-darken-color: @light-primary;
-@card-darken-background: @dark-primary;
+@card-darken-background-color: @dark-primary;
+@card-darken-background-image: none;
+@card-darken-background-repeat: repeat;
+@card-darken-background-position: 0 0;
+@card-darken-background-size: auto auto;
+
 @card-darken-border-color: @light-divider;
+
 @card-darken-frame-opacity: @card-frame-opacity;
 
 // Lighten
 
-@card-lighten-color: @dark-primary;
-@card-lighten-background: @light-primary;
+@card-lighten-background-color: @light-primary;
+@card-lighten-background-image: none;
+@card-lighten-background-repeat: repeat;
+@card-lighten-background-position: 0 0;
+@card-lighten-background-size: auto auto;
+
 @card-lighten-border-color: @dark-divider;
+
 @card-lighten-frame-opacity: @card-frame-opacity;
 
 
-// Style
+// Card
 //------------------------------------------------------------------------------
 
 .card {
@@ -33,6 +53,11 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
+	background-color: @card-background-color;
+	background-image: @card-background-image;
+	background-repeat: @card-background-repeat;
+	background-position: @card-background-position;
+	background-size: @card-background-size;
 
 	&--dark-contour,
 	&--light-contour,
@@ -55,15 +80,23 @@
 	}
 
 	&--darken {
-		color: @card-darken-color;
-		fill: @card-darken-color;
-		background: @card-darken-background;
+		color: @light-primary;
+		fill: @light-primary;
+		background-color: @card-darken-background-color;
+		background-image: @card-darken-background-image;
+		background-repeat: @card-darken-background-repeat;
+		background-position: @card-darken-background-position;
+		background-size: @card-darken-background-size;
 	}
 
 	&--lighten {
-		color: @card-lighten-color;
-		fill: @card-lighten-color;
-		background: @card-lighten-background;
+		color: @dark-primary;
+		fill: @dark-primary;
+		background-color: @card-lighten-background-color;
+		background-image: @card-lighten-background-image;
+		background-repeat: @card-lighten-background-repeat;
+		background-position: @card-lighten-background-position;
+		background-size: @card-lighten-background-size;
 	}
 }
 

@@ -3,37 +3,56 @@
 
 // Base
 
-@social-width: @line-height;
-@social-height: @social-width;
-
 @social-gutter: (@indent / 2);
 
-@social-border-radius: 50%;
+// Item
+
+@social-item-width: @line-height;
+@social-item-height: @social-item-width;
+
+@social-item-color: @light-primary;
+
+@social-item-background-color: transparent;
+@social-item-background-image: none;
+@social-item-background-repeat: repeat;
+@social-item-background-position: 0 0;
+@social-item-background-size: auto auto;
+
+@social-item-border-radius: 50%;
+
+@social-item-hover-color: @social-item-color;
+@social-item-hover-background-color: @social-item-background-color;
+
+// Icon
 
 @social-icon-width: 18px;
 @social-icon-height: @social-icon-width;
 
-@social-color: @light-primary;
-@social-background-color: transparent;
+// Darken item
 
-@social-hover-color: @social-color;
-@social-hover-background-color: @social-background-color;
+@social-darken-item-color: @light-primary;
 
-// Darken
+@social-darken-item-background-color: @dark-primary;
+@social-darken-item-background-image: none;
+@social-darken-item-background-repeat: repeat;
+@social-darken-item-background-position: 0 0;
+@social-darken-item-background-size: auto auto;
 
-@social-darken-color: @light-primary;
-@social-darken-background-color: @dark-primary;
+@social-darken-item-hover-color: @social-darken-item-color;
+@social-darken-item-hover-background-color: lighten(@social-darken-item-background-color, 10%);
 
-@social-darken-hover-color: @social-darken-color;
-@social-darken-hover-background-color: lighten(@social-darken-background-color, 10%);
+// Lighten item
 
-// Lighten
+@social-lighten-item-color: @dark-primary;
 
-@social-lighten-color: @dark-primary;
-@social-lighten-background-color: @light-primary;
+@social-lighten-item-background-color: @light-primary;
+@social-lighten-item-background-image: none;
+@social-lighten-item-background-repeat: repeat;
+@social-lighten-item-background-position: 0 0;
+@social-lighten-item-background-size: auto auto;
 
-@social-lighten-hover-color: @social-lighten-color;
-@social-lighten-hover-background-color: darken(@social-lighten-background-color, 20%);
+@social-lighten-item-hover-color: @social-lighten-item-color;
+@social-lighten-item-hover-background-color: darken(@social-lighten-item-background-color, 20%);
 
 
 // Social
@@ -53,45 +72,45 @@
 	}
 
 	a {
-		color: @social-color;
-		fill: @social-color;
+		color: @social-item-color;
+		fill: @social-item-color;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: @social-width;
-		height: @social-height;
+		width: @social-item-width;
+		height: @social-item-height;
 		overflow: hidden;
 		border-width: 0;
-		border-radius: @social-border-radius;
+		border-radius: @social-item-border-radius;
 		transition: @duration @timing-function;
 		transition-property: color, fill, background-color;
 
 		body:not(.mobile) &:hover {
-			color: @social-hover-color;
-			fill: @social-hover-color;
+			color: @social-item-hover-color;
+			fill: @social-item-hover-color;
 		}
 	}
 
 	&--darken {
 		a {
-			color: @social-darken-color;
-			fill: @social-darken-color;
+			color: @social-darken-item-color;
+			fill: @social-darken-item-color;
 
 			body:not(.mobile) &:hover {
-				color: @social-darken-hover-color;
-				fill: @social-darken-hover-color;
+				color: @social-darken-item-hover-color;
+				fill: @social-darken-item-hover-color;
 			}
 		}
 	}
 
 	&--lighten {
 		a {
-			color: @social-lighten-color;
-			fill: @social-lighten-color;
+			color: @social-lighten-item-color;
+			fill: @social-lighten-item-color;
 
 			body:not(.mobile) &:hover {
-				color: @social-lighten-hover-color;
-				fill: @social-lighten-hover-color;
+				color: @social-lighten-item-hover-color;
+				fill: @social-lighten-item-hover-color;
 			}
 		}
 	}
@@ -113,25 +132,37 @@
 .social__vb,
 .social__wa,
 .social__sk {
-	background-color: @social-background-color;
+	background-color: @social-item-background-color;
+	background-image: @social-item-background-image;
+	background-repeat: @social-item-background-repeat;
+	background-position: @social-item-background-position;
+	background-size: @social-item-background-size;
 
 	body:not(.mobile) &:hover {
-		background-color: @social-hover-background-color;
+		background-color: @social-item-hover-background-color;
 	}
 
 	.social--darken & {
-		background-color: @social-darken-background-color;
+		background-color: @social-darken-item-background-color;
+		background-image: @social-darken-item-background-image;
+		background-repeat: @social-darken-item-background-repeat;
+		background-position: @social-darken-item-background-position;
+		background-size: @social-darken-item-background-size;
 
 		body:not(.mobile) &:hover {
-			background-color: @social-darken-hover-background-color;
+			background-color: @social-darken-item-hover-background-color;
 		}
 	}
 
 	.social--lighten & {
-		background-color: @social-lighten-background-color;
+		background-color: @social-lighten-item-background-color;
+		background-image: @social-darken-item-background-image;
+		background-repeat: @social-darken-item-background-repeat;
+		background-position: @social-darken-item-background-position;
+		background-size: @social-darken-item-background-size;
 
 		body:not(.mobile) &:hover {
-			background-color: @social-lighten-hover-background-color;
+			background-color: @social-lighten-item-hover-background-color;
 		}
 	}
 }

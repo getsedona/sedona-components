@@ -1,0 +1,44 @@
+// Settings
+//------------------------------------------------------------------------------
+
+@icon-width: 24px;
+@icon-height: @icon-width;
+
+@icon-fit: -2px;
+
+
+// Icon
+//------------------------------------------------------------------------------
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	width: (@icon-width + @icon-fit * 2);
+	min-height: @line-height;
+	line-height: 0;
+	vertical-align: top;
+	box-sizing: content-box;
+
+	&--before {
+		padding-right: (@line-height / 4);
+
+		a:not(.btn) & {
+			margin-left: -(@icon-width + @icon-fit * 2 + @line-height / 4);
+		}
+	}
+
+	&--after {
+		padding-left: (@line-height / 4);
+
+		a:not(.btn) & {
+			margin-right: -(@icon-width + @icon-fit * 2 + @line-height / 4);
+		}
+	}
+
+	svg {
+		width: @icon-width;
+		height: @icon-height;
+		margin-left: @icon-fit;
+		margin-right: @icon-fit;
+	}
+}

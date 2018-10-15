@@ -1,7 +1,5 @@
-// Footer
+// Settings
 //------------------------------------------------------------------------------
-
-// Base
 
 @footer-padding-top-smaller: 0;
 @footer-padding-top-larger: 0;
@@ -12,26 +10,19 @@
 @footer-line-height: inherit;
 
 @footer-color: inherit;
-@footer-background: none;
 @footer-link-color: @link-primary;
+
+@footer-background-color: transparent;
+@footer-background-image: none;
+@footer-background-repeat: repeat;
+@footer-background-position: 0 0;
+@footer-background-size: auto auto;
 
 @footer-breakpoints: @grid-breakpoints-md;
 @footer-max-width: @grid-breakpoints-xl;
 
-// Darken
 
-@footer-darken-color: @light-primary;
-@footer-darken-background: @dark-primary;
-@footer-darken-link-color: @footer-link-color;
-
-// Lighten
-
-@footer-lighten-color: @dark-primary;
-@footer-lighten-background: @light-primary;
-@footer-lighten-link-color: @footer-link-color;
-
-
-// Style
+// Footer
 //------------------------------------------------------------------------------
 
 .footer {
@@ -41,7 +32,11 @@
 	line-height: @footer-line-height;
 	color: @footer-color;
 	fill: @footer-color;
-	background: @footer-background;
+	background-color: @footer-background-color;
+	background-image: @footer-background-image;
+	background-repeat: @footer-background-repeat;
+	background-position: @footer-background-position;
+	background-size: @footer-background-size;
 
 	@media (min-width: @grid-breakpoints-sm) {
 		padding-right: (@grid-gutter / 2);
@@ -56,36 +51,8 @@
 	a {
 		.link(@footer-link-color);
 
-		&:hover {
+		body:not(.mobile) &:hover {
 			.link-hover(@footer-link-color);
-		}
-	}
-
-	&--darken {
-		color: @footer-darken-color;
-		fill: @footer-darken-color;
-		background: @footer-darken-background;
-
-		a {
-			.link(@footer-darken-link-color);
-
-			&:hover {
-				.link-hover(@footer-darken-link-color);
-			}
-		}
-	}
-
-	&--lighten {
-		color: @footer-lighten-color;
-		fill: @footer-lighten-color;
-		background: @footer-lighten-background;
-
-		a {
-			.link(@footer-lighten-link-color);
-
-			&:hover {
-				.link-hover(@footer-lighten-link-color);
-			}
 		}
 	}
 }
