@@ -1,1 +1,1 @@
-import "./scene.less";
+import "./styles.less";

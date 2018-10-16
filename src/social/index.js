@@ -1,1 +1,1 @@
-import "./social.less";
+import "./styles.less";

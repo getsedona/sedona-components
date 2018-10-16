@@ -1,1 +1,1 @@
-import "./wysiwyg.less";
+import "./styles.less";

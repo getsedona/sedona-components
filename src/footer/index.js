@@ -1,1 +1,1 @@
-import "./footer.less";
+import "./styles.less";

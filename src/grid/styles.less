@@ -1,40 +1,5 @@
-@import (reference) "./../global/global";
-
-
-// Settings
-//------------------------------------------------------------------------------
-
-@grid-max-width: @grid-breakpoints-xl;
-
-
-// Mixin
-//------------------------------------------------------------------------------
-
-.calc-grid-col(@index, @class, @type) when (@type = width) and (@index > 0) {
-	.grid__col@{class}-@{index} {
-		width: percentage((@index / @grid-columns));
-	}
-}
-
-.calc-grid-col(@index, @class, @type) when (@type = offset) and (@index < @grid-columns) {
-	.grid__col@{class}-offset-@{index} {
-		margin-left: percentage((@index / @grid-columns));
-	}
-}
-
-.loop-grid-col(@index, @class, @type) when (@index >= 0) {
-	.calc-grid-col(@index, @class, @type);
-	.loop-grid-col((@index - 1), @class, @type);
-}
-
-.make-grid-col-modifier(@class: -) {
-	.loop-grid-col(@grid-columns, @class, width);
-	.loop-grid-col(@grid-columns, @class, offset);
-}
-
-
-// Grid
-//------------------------------------------------------------------------------
+@import "./variables";
+@import "./mixins";
 
 .grid {
 	display: flex;
