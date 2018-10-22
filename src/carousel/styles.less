@@ -1,0 +1,128 @@
+@import "./variables";
+@import "~swiper/dist/css/swiper.min.css";
+
+.carousel {
+	&--darken {
+		color: @light-primary;
+		fill: @light-primary;
+	}
+
+	&--lighten  {
+		color: @dark-primary;
+		fill: @dark-primary;
+	}
+
+	&--scene {
+		padding: 0;
+	}
+}
+
+.carousel__list {
+	box-sizing: border-box;
+}
+
+.carousel__item {
+	height: auto;
+	background-color: @carousel-item-background-color;
+	background-image: @carousel-item-background-image;
+	background-repeat: @carousel-item-background-repeat;
+	background-position: @carousel-item-background-position;
+	background-size: @carousel-item-background-size;
+
+	&--darken {
+		color: @light-primary;
+		fill: @light-primary;
+	}
+
+	&--lighten {
+		color: @dark-primary;
+		fill: @dark-primary;
+	}
+
+	.carousel--scene & {
+		padding-top: @indent-block-smaller;
+		padding-bottom: @indent-block-smaller;
+
+		@media (min-width: @grid-breakpoints-sm) {
+			padding-right: (@grid-gutter / 2);
+			padding-left: (@grid-gutter / 2);
+		}
+
+		@media (min-width: @grid-breakpoints-md) {
+			padding-top: @indent-block-larger;
+			padding-bottom: @indent-block-larger;
+		}
+	}
+}
+
+.carousel__pagination {
+	position: relative;
+	height: @carousel-bullet-height;
+	margin-top: @indent;
+	margin-right: auto;
+	margin-left: auto;
+
+	&.swiper-pagination-lock {
+		display: none;
+	}
+
+	&--inside {
+	 	height: (@carousel-bullet-height + @indent);
+	 	margin-top: -(@carousel-bullet-height + @indent);
+	}
+
+	&--bullets {
+		display: flex;
+		overflow: hidden;
+	}
+}
+
+.carousel__bullet {
+	position: relative;
+	display: block;
+	flex-shrink: 0;
+	width: @carousel-bullet-width;
+	height: @carousel-bullet-height;
+	margin-right: @rhythm;
+	margin-left: @rhythm;
+	background-color: @base-primary;
+	border-radius: @carousel-bullet-radius;
+	transform: scale3d(0, 0, 1);
+	opacity: 0;
+	transition: @duration @timing-function;
+	transition-property: background-color, left, transform, opacity;
+
+	.carousel--darken .carousel__pagination--inside & {
+		background-color: @light-primary;
+	}
+
+	.carousel--lighten .carousel__pagination--inside & {
+		background-color: @dark-primary;
+	}
+
+	&--active-main {
+		transform: scale3d(1, 1, 1);
+		opacity: 0.5;
+	}
+
+	&--active-prev,
+	&--active-next {
+		transform: scale3d(0.6666, 0.6666, 1);
+		opacity: 0.4;
+	}
+
+	&--active-prev-prev,
+	&--active-next-next {
+		transform: scale3d(0.3333, 0.3333, 1);
+		opacity: 0.3;
+	}
+
+	body:not(.mobile) &:hover {
+		opacity: 0.75;
+	}
+
+	&--active {
+		cursor: default;
+		opacity: 1 !important;
+	}
+}

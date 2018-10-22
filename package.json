@@ -8,6 +8,7 @@
   },
   "homepage": "https://github.com/constlab/sedona-components#readme",
   "dependencies": {
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "swiper": "^4.4.1"
   }
 }
