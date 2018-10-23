@@ -1,5 +1,5 @@
 import "./styles.less";
-import "~swiper/dist/js/swiper.js";
+import Swiper from "swiper";
 
 export function carousel() {
 	if (document.querySelector('.carousel') === null) {
