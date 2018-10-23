@@ -5,6 +5,7 @@ const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlLayoutPlugin = require("html-layout-plugin");
 const HtmlBeautifyPlugin = require("html-beautify-webpack-plugin");
 const WebpackBar = require("webpackbar");
 const lessToJs = require("less-vars-to-js");
@@ -15,9 +16,11 @@ function getViews() {
 	const views = [];
 	const viewsPath = path.resolve(__dirname, "dev/html/views");
 	const files = fs.readdirSync(viewsPath);
+
 	files.forEach(file => {
 		views.push(
 			new HtmlWebpackPlugin({
+				layout: path.join(__dirname, 'dev/html/layout/index.html'),
 				title: file.replace(".html", ""),
 				filename: file,
 				template: path.resolve(viewsPath, file)
@@ -41,6 +44,7 @@ function getLessVariables() {
 
 const plugins = [
 	...getViews(),
+	new HtmlLayoutPlugin(),
 	new CleanWebpackPlugin(["dist"]),
 	new MiniCssExtractPlugin({
 		filename: "css/[name].[hash].css"
