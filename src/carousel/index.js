@@ -2,7 +2,7 @@ import "./styles.less";
 import Swiper from "swiper";
 
 export function carousel() {
-	if (document.querySelector('.carousel') === null) {
+	if (!document.querySelector('.carousel')) {
 		return;
 	}
 

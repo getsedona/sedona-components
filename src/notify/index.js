@@ -1,7 +1,7 @@
 import "./styles.less";
 
 export function notify() {
-	if (document.querySelector('.notify') === null) {
+	if (!document.querySelector('.notify')) {
 		return;
 	}
 

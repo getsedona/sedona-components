@@ -1,7 +1,7 @@
 import "./styles.less";
 
 export function table() {
-	if (document.querySelector('.table .table__wrap') === null) {
+	if (!document.querySelector('.table .table__wrap')) {
 		return;
 	}
 

@@ -19,10 +19,14 @@
 	color: @notify-color;
 	fill: @notify-color;
 	max-width: @notify-max-width;
-	animation-duration: (@duration * 2);
-	animation-name: notifyShow;
+	transform: translate3d(-(@notify-max-width + @indent), 0, 0);
 	animation-timing-function: @timing-function;
 	animation-fill-mode: forwards;
+
+	&--show {
+		animation-duration: (@duration * 2);
+		animation-name: notifyShow;
+	}
 
 	&--hide {
 		animation-duration: @duration;
@@ -65,8 +69,8 @@
 }
 
 .notify__content {
-	padding-left: (@grid-gutter / 2);
-	padding-right: (@grid-gutter / 2);
+	padding-left: @indent;
+	padding-right: @indent;
 }
 
 @keyframes notifyShow {

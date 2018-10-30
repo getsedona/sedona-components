@@ -1,4 +1,4 @@
-.link(@color) {
+.link(@color) when not (@color = inherit) {
 	color: @color;
 	fill: @color;
 	border-bottom-width: @link-border-width;
@@ -6,7 +6,7 @@
 	border-bottom-color: fade(@color, @link-border-fade);
 }
 
-.link-hover(@color) {
+.link-hover(@color) when not (@color = inherit) {
 	@color-hover: darken(@color, @link-hover-darken);
 
 	color: @color-hover;
