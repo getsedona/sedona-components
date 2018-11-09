@@ -1,4 +1,3 @@
-import "./styles.less";
 import Swiper from "swiper";
 
 export function carousel() {

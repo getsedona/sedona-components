@@ -1,5 +1,3 @@
-import "./styles.less";
-
 export function file() {
 	if (!document.querySelector('.file[type="file"]')) {
 		return;

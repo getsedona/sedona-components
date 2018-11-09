@@ -1,5 +1,3 @@
-import "./styles.less";
-
 export function table() {
 	if (!document.querySelector('.table .table__wrap')) {
 		return;

@@ -1,5 +1,3 @@
-import "./styles.less";
-
 export function formValidate() {
 	if (document.querySelector('form[novalidate]')) {
 		const form = document.querySelectorAll('form[novalidate]');

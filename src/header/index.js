@@ -1,5 +1,3 @@
-import "./styles.less";
-
 export function header() {
 	if (!document.querySelector('.header')) {
 		return;

@@ -1,5 +1,3 @@
-import "./styles.less";
-
 export function global() {
 	const MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
