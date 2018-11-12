@@ -1,29 +1,98 @@
-.link(@color) when not (@color = inherit) {
-	color: @color;
-	fill: @color;
-	border-bottom-width: @link-border-width;
-	border-bottom-style: solid;
-	border-bottom-color: fade(@color, @link-border-fade);
-}
+#element {
+	.link(@color: @link-primary) when not (@color = inherit) {
+		color: @color;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: fade(@color, @link-border-fade);
+		transition: @duration @timing-function;
+		transition-property+: color, fill, border-bottom-color;
 
-.link-hover(@color) when not (@color = inherit) {
-	@color-hover: darken(@color, @link-hover-darken);
+		body:not(.mobile) &:hover {
+			@color-hover: if(lightness(@color) < 20%, lighten(@color, 30%), darken(@color, 30%));
 
-	color: @color-hover;
-	fill: @color-hover;
-	border-bottom-color: fade(@color-hover, @link-hover-border-fade);
-}
+			color: @color-hover;
+			border-bottom-color: fade(@color-hover, @link-hover-border-fade);
+		}
+	}
 
-.focus(@color; @width: 2px) {
-	outline: none;
-	box-shadow: 0px 0px 0px @width @color;
+	.button() {
 
-	.no-focus & {
-		box-shadow: none;
 	}
 }
 
-.disabled(@opacity: 0.5) {
-	cursor: not-allowed;
-	opacity: @opacity;
+#state {
+	.focus(@color: currentColor; @width: 2px) {
+		outline: none;
+		box-shadow: 0px 0px 0px @width @color;
+
+		.no-focus & {
+			box-shadow: none;
+		}
+	}
+
+	.disabled(@opacity: 0.5) {
+		cursor: not-allowed;
+		opacity: @opacity;
+	}
+}
+
+#text-sizes {
+	.base() {
+		font-size: @font-size;
+		line-height: @line-height;
+	}
+
+	.small() {
+		font-size: @font-size-small;
+		line-height: @line-height-small;
+	}
+
+	.big() {
+		font-size: @font-size-big;
+		line-height: @line-height-big;
+	}
+
+	.h1() {
+		font-size: @font-size-h1;
+		line-height: @line-height-h1;
+
+		@media (min-width: @breakpoints-md) {
+			font-size: @font-size-h1-larger;
+			line-height: @line-height-h1-larger;
+		}
+	}
+
+	.h2() {
+		font-size: @font-size-h2;
+		line-height: @line-height-h2;
+
+		@media (min-width: @breakpoints-md) {
+			font-size: @font-size-h2-larger;
+			line-height: @line-height-h2-larger;
+		}
+	}
+
+	.h3() {
+		font-size: @font-size-h3;
+		line-height: @line-height-h3;
+
+		@media (min-width: @breakpoints-md) {
+			font-size: @font-size-h3-larger;
+			line-height: @line-height-h3-larger;
+		}
+	}
+}
+
+#grid {
+	.gap(@w; @property; @direction: '') {
+		@value: if(@w = block, @gap * 1.5, @gap);
+
+		@{property}: ~"@{direction}@{value}";
+
+		@media (min-width: @breakpoints-md) {
+			@value: if(@w = block, @gap-larger * 2, @gap-larger);
+
+			@{property}: ~"@{direction}@{value}";
+		}
+	}
 }

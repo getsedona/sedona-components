@@ -7,7 +7,7 @@
 	width: 100%;
 	max-width: @grid-max-width;
 	margin-right: auto;
-	margin-bottom: (@indent-element-smaller - @indent);
+	margin-bottom: (@indent-element - @indent);
 	margin-left: auto;
 
 	@media (min-width: @grid-breakpoints-md) {
@@ -22,7 +22,7 @@
 		margin-bottom: 0;
 
 		&:last-of-type {
-			margin-bottom: -@indent-element-smaller;
+			margin-bottom: -@indent-element;
 
 			@media (min-width: @grid-breakpoints-md) {
 				margin-bottom: -@indent-element-larger;
@@ -36,7 +36,7 @@
 	margin-bottom: @indent;
 
 	.grid--diff & {
-		margin-bottom: @indent-element-smaller;
+		margin-bottom: @indent-element;
 
 		@media (min-width: @grid-breakpoints-md) {
 			margin-bottom: @indent-element-larger;

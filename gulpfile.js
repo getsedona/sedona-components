@@ -1,17 +1,19 @@
 'use strict';
 
+const _if = require('gulp-if');
 const autoprefixer = require('gulp-autoprefixer');
 const babel = require('gulp-babel');
 const browserSync = require('browser-sync').create();
 const csso = require('gulp-csso');
 const del = require('del');
+const fileInclude = require('gulp-file-include');
 const frontMatter = require('gulp-front-matter');
 const gulp = require('gulp');
-const _if = require('gulp-if');
+const htmlmin = require('gulp-htmlmin');
 // const htmlVersion = require('gulp-html-version');
 const less = require('gulp-less');
 const multipipe = require('multipipe');
-const rename = require('gulp-rename');
+// const rename = require('gulp-rename');
 const sync = require('gulp-sync')(gulp);
 const typograf = require('gulp-typograf');
 const uglify = require('gulp-uglify');
@@ -72,6 +74,7 @@ gulp.task('html', function() {
 			{ src: paths.dev.html.layouts },
 			{ variable: 'data' }
 		),
+		fileInclude(),
 		// htmlVersion({
 		// 	paramType: 'timestamp',
 		// 	suffix: ['css', 'js', 'jpg', 'png', 'svg']
@@ -83,6 +86,10 @@ gulp.task('html', function() {
 			disableRule: ['common/space/replaceTab'],
 			processingSeparateParts: false
 		}),
+		_if(mode === 'production', htmlmin({
+			collapseWhitespace: true,
+			removeComments: true
+		})),
 		gulp.dest(paths.dist.html),
 		browserSync.stream()
 	);
@@ -101,7 +108,7 @@ gulp.task('css', function() {
 		less(),
 		autoprefixer({ browsers: ['last 2 version', 'ie >= 11'] }),
 		_if(mode === 'production', csso()),
-		_if(mode === 'production', rename({ suffix: '.min' })),
+		//_if(mode === 'production', rename({ suffix: '.min' })),
 		gulp.dest(paths.dist.css),
 		browserSync.stream()
 	);
@@ -116,7 +123,7 @@ gulp.task('js', function() {
 		}),
 		babel({ presets: ['@babel/env'] }),
 		_if(mode === 'production', uglify()),
-		_if(mode === 'production', rename({ suffix: '.min' })),
+		//_if(mode === 'production', rename({ suffix: '.min' })),
 		gulp.dest(paths.dist.js),
 		browserSync.stream()
 	);

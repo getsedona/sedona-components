@@ -1,0 +1,79 @@
+.btn {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: (@indent / 2 - 1px) (@indent - 1px);
+	line-height: @line-height;
+	min-height: (@line-height + @indent);
+	vertical-align: middle;
+	justify-content: center;
+	color: @light-primary !important;
+	fill: @light-primary !important;
+	white-space: nowrap;
+	background-color: @button-primary;
+	border: 1px solid fade(@button-primary, 0) !important;
+	border-radius: @radius;
+	cursor: pointer;
+	transition: @duration @timing-function;
+	transition-property: box-shadow, border-color, background-color;
+
+	&:focus {
+		#state.focus(fade(@button-primary, 50%));
+	}
+
+	body:not(.mobile) &:not([disabled]):hover {
+		background-color: darken(@button-primary, 10%);
+	}
+
+	&:active {
+		top: 1px;
+	}
+
+	&--contour {
+		color: @base-primary !important;
+		fill: @base-primary !important;
+		background-color: transparent;
+		border-color: fade(@base-primary, 30%) !important;
+
+		&:focus {
+			#state.focus(fade(@base-primary, 20%));
+		}
+
+		body:not(.mobile) &:not([disabled]):hover {
+			background-color: transparent;
+			border-color: fade(@base-primary, 50%) !important;
+		}
+	}
+
+	&--contour-darken {
+		color: @dark-primary !important;
+		fill: @dark-primary !important;
+		background-color: transparent;
+		border-color: fade(@dark-primary, 30%) !important;
+
+		&:focus {
+			#state.focus(fade(@dark-primary, 20%));
+		}
+
+		body:not(.mobile) &:not([disabled]):hover {
+			background-color: transparent;
+			border-color: fade(@dark-primary, 50%) !important;
+		}
+	}
+
+	&--contour-lighten {
+		color: @light-primary !important;
+		fill: @light-primary !important;
+		background-color: transparent;
+		border-color: fade(@light-primary, 30%) !important;
+
+		&:focus {
+			#state.focus(fade(@light-primary, 20%));
+		}
+
+		body:not(.mobile) &:not([disabled]):hover {
+			background-color: transparent;
+			border-color: fade(@light-primary, 50%) !important;
+		}
+	}
+}

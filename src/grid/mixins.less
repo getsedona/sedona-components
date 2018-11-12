@@ -1,12 +1,12 @@
 .calc-grid-col(@index, @class, @type) when (@type = width) and (@index > 0) {
 	.grid__col@{class}-@{index} {
-		width: percentage((@index / @grid-columns));
+		width: percentage((@index / 12));
 	}
 }
 
-.calc-grid-col(@index, @class, @type) when (@type = offset) and (@index < @grid-columns) {
+.calc-grid-col(@index, @class, @type) when (@type = offset) and (@index < 12) {
 	.grid__col@{class}-offset-@{index} {
-		margin-left: percentage((@index / @grid-columns));
+		margin-left: percentage((@index / 12));
 	}
 }
 
@@ -16,6 +16,6 @@
 }
 
 .make-grid-col-modifier(@class: -) {
-	.loop-grid-col(@grid-columns, @class, width);
-	.loop-grid-col(@grid-columns, @class, offset);
+	.loop-grid-col(12, @class, width);
+	.loop-grid-col(12, @class, offset);
 }

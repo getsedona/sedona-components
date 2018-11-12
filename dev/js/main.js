@@ -1,1 +1,3 @@
-import "./../../src";
+import { global } from "./../../src";
+
+global();

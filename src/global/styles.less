@@ -1,6 +1,6 @@
 @import "./variables";
 @import "./mixins";
-@import "~normalize.css/normalize.css";
+@import (inline) "./../../node_modules/normalize.css/normalize.css";
 
 html {
 	box-sizing: border-box;
@@ -17,14 +17,12 @@ html {
 }
 
 body {
-	min-width: 320px;
-	font-size: @font-size;
-	line-height: @line-height;
+	#text-sizes.base();
 	font-family: @font-family-primary;
 	font-display: swap;
 	color: @base-primary;
-	fill: @base-primary;
-	background-color: #fff;
+	background-color: @tone;
+	min-width: 320px;
 }
 
 h1,
@@ -36,32 +34,34 @@ h3 {
 }
 
 h1 {
-	font-size: @font-size-h1;
-	line-height: @line-height-h1;
-
-	@media (min-width: @grid-breakpoints-md) {
-		font-size: @font-size-h1-larger;
-		line-height: @line-height-h1-larger;
-	}
+	#text-sizes.h1();
 }
 
 h2 {
-	font-size: @font-size-h2;
-	line-height: @line-height-h2;
-
-	@media (min-width: @grid-breakpoints-md) {
-		font-size: @font-size-h2-larger;
-		line-height: @line-height-h2-larger;
-	}
+	#text-sizes.h2();
 }
 
 h3 {
-	font-size: @font-size-h3;
-	line-height: @line-height-h3;
+	#text-sizes.h3();
+}
 
-	@media (min-width: @grid-breakpoints-md) {
-		font-size: @font-size-h3-larger;
-		line-height: @line-height-h3-larger;
+a {
+	#element.link();
+	text-decoration: none;
+
+	&:not([href]),
+	&[href^="tel"] {
+		color: inherit !important;
+		border-bottom-color: transparent !important;
+		cursor: inherit;
+	}
+
+	&[href^="tel"] {
+		white-space: nowrap;
+	}
+
+	&[aria-label] {
+		border-bottom-color: transparent !important;
 	}
 }
 
@@ -74,6 +74,7 @@ ol {
 
 svg {
 	transform: translateZ(0);
+	fill: currentColor;
 }
 
 img {
@@ -91,7 +92,7 @@ textarea {
 	color: inherit;
 
 	&[disabled] {
-		.disabled();
+		#state.disabled();
 	}
 }
 

@@ -50,10 +50,6 @@
 
 		a {
 			.link(@header-scrollable-link-color);
-
-			body:not(.mobile) &:hover {
-				.link-hover(@header-scrollable-link-color);
-			}
 		}
 
 		@media (min-width: @header-breakpoints) {
@@ -68,10 +64,6 @@
 
 	a {
 		.link(@header-link-color);
-
-		body:not(.mobile) &:hover {
-			.link-hover(@header-link-color);
-		}
 	}
 }
 
@@ -167,18 +159,10 @@
 		position: relative;
 		transition: @duration @timing-function;
 		transition-property: color, fill;
-
-		body:not(.mobile) &:hover {
-			.link-hover(@header-link-color);
-		}
 	}
 
 	.header--scrollable & button {
 		.link(@header-scrollable-link-color);
-
-		body:not(.mobile) &:hover {
-			.link-hover(@header-scrollable-link-color);
-		}
 	}
 }
 
