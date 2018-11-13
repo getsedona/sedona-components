@@ -7,11 +7,11 @@
 	width: 100%;
 	max-width: @grid-max-width;
 	margin-right: auto;
-	margin-bottom: (@indent-element - @indent);
 	margin-left: auto;
+	margin-bottom: @gap - @indent;
 
-	@media (min-width: @grid-breakpoints-md) {
-		margin-bottom: (@indent-element-larger - @indent);
+	@media (min-width: @breakpoints-md) {
+		margin-bottom: @gap-larger - @indent;
 	}
 
 	&:last-of-type {
@@ -22,11 +22,7 @@
 		margin-bottom: 0;
 
 		&:last-of-type {
-			margin-bottom: -@indent-element;
-
-			@media (min-width: @grid-breakpoints-md) {
-				margin-bottom: -@indent-element-larger;
-			}
+			#grid.gap(element; margin-bottom; true);
 		}
 	}
 }
@@ -36,33 +32,29 @@
 	margin-bottom: @indent;
 
 	.grid--diff & {
-		margin-bottom: @indent-element;
-
-		@media (min-width: @grid-breakpoints-md) {
-			margin-bottom: @indent-element-larger;
-		}
+		#grid.gap(element; margin-bottom);
 	}
 }
 
 .make-grid-col-modifier();
 
-@media (min-width: @grid-breakpoints-sm) {
+@media (min-width: @breakpoints-sm) {
 	.make-grid-col-modifier(--sm);
 }
 
-@media (min-width: @grid-breakpoints-md) {
+@media (min-width: @breakpoints-md) {
 	.make-grid-col-modifier(--md);
 }
 
-@media (min-width: @grid-breakpoints-lg) {
+@media (min-width: @breakpoints-lg) {
 	.make-grid-col-modifier(--lg);
 }
 
-@media (min-width: @grid-breakpoints-xl) {
+@media (min-width: @breakpoints-xl) {
 	.make-grid-col-modifier(--xl);
 }
 
 .grid__content {
-	padding-right: (@grid-gutter / 2);
-	padding-left: (@grid-gutter / 2);
+	#grid.gap(element; padding-right; @half: true);
+	#grid.gap(element; padding-left; @half: true);
 }

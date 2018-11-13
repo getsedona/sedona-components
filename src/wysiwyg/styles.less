@@ -4,29 +4,50 @@
 	overflow-wrap: break-word;
 
 	h1 {
-		margin-bottom: @indent;
+		#text-sizes.h1();
+		#grid.gap(element; margin-top);
+		margin-bottom: @indent * 1.25;
+		font-family: @font-family-secondary;
 	}
 
 	h2 {
+		#text-sizes.h2();
 		#grid.gap(element; margin-top);
-		margin-bottom: @indent;
+		margin-bottom: @indent * 1.25;
+		font-family: @font-family-secondary;
 	}
 
 	h3 {
+		#text-sizes.h3();
 		margin-top: @indent * 2;
 		margin-bottom: @indent;
+		font-family: @font-family-secondary;
+
+		h1 + &,
+		h2 + & {
+			margin-top: @indent;
+		}
 	}
 
-	h1 + h3,
-	h2 + h3 {
-		margin-top: @indent;
+	a {
+		#element.link();
+	}
+
+	button,
+	[role="button"] {
+		#element.button();
 	}
 
 	ul,
 	ol {
+		margin-top: 0;
 		margin-bottom: 1em;
 		padding-left: 1.5em;
 		list-style-type: none;
+
+		p + & {
+			margin-top: -0.5em;
+		}
 
 		ul,
 		ol {
@@ -64,12 +85,8 @@
 	}
 
 	p {
+		margin-top: 0;
 		margin-bottom: 1em;
-	}
-
-	p + ul,
-	p + ol {
-		margin-top: -0.5em;
 	}
 
 	table {

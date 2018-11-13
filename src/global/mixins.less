@@ -1,22 +1,79 @@
 #element {
-	.link(@color: @link-primary) when not (@color = inherit) {
+	.link(
+		@color: @link-primary;
+		@color-hover: inherit;
+		@border-opacity: {
+			initial: 30%;
+			hover: 30%;
+		}
+	) when not (@color = inherit) {
 		color: @color;
-		border-bottom-width: 1px;
-		border-bottom-style: solid;
-		border-bottom-color: fade(@color, @link-border-fade);
+		cursor: pointer;
+		text-decoration: none;
+		border-bottom: 1px solid fade(@color, @border-opacity[initial]);
 		transition: @duration @timing-function;
 		transition-property+: color, fill, border-bottom-color;
 
-		body:not(.mobile) &:hover {
-			@color-hover: if(lightness(@color) < 20%, lighten(@color, 30%), darken(@color, 30%));
+		&:hover {
+			@color-hover2: if(lightness(@color) < 20%, lighten(@color, 30%), darken(@color, 30%));
+			@color-hover3: if(@color-hover = inherit, @color-hover2, @color-hover);
 
-			color: @color-hover;
-			border-bottom-color: fade(@color-hover, @link-hover-border-fade);
+			color: @color-hover3;
+			border-bottom-color: fade(@color-hover3, @border-opacity[hover]);
+		}
+
+		&:not([href]),
+		&[href^="tel"] {
+			color: inherit !important;
+			border-bottom-color: transparent !important;
+			cursor: inherit;
+		}
+
+		&[href^="tel"] {
+			white-space: nowrap;
+		}
+
+		&[aria-label] {
+			border-bottom-color: transparent !important;
 		}
 	}
 
-	.button() {
+	.button(
+		@tone: @button-primary;
+		@radius: @radius
+	) {
+		@color: contrast(@tone, @dark-primary, @light-primary);
 
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		padding: (@indent / 2 - 1px) (@indent - 1px);
+		line-height: @line-height;
+		min-height: (@line-height + @indent);
+		vertical-align: middle;
+		justify-content: center;
+		color: @color !important;
+		white-space: nowrap;
+		background-color: @tone;
+		border: 1px solid fade(@tone, 0) !important;
+		border-radius: @radius;
+		cursor: pointer;
+		transition: @duration @timing-function;
+		transition-property+: box-shadow, border-color, background-color;
+
+		&:focus {
+			#state.focus(fade(@tone, 50%));
+		}
+
+		body:not(.mobile) &:not([disabled]):hover {
+			@tone-hover: if(lightness(@tone) < 20%, lighten(@tone, 10%), darken(@tone, 10%));
+
+			background-color: @tone-hover;
+		}
+
+		&:active {
+			top: 1px;
+		}
 	}
 }
 
@@ -84,15 +141,18 @@
 }
 
 #grid {
-	.gap(@w; @property; @direction: '') {
-		@value: if(@w = block, @gap * 1.5, @gap);
+	.gap(@type; @property; @negative: false; @half: false) {
+		@value: if(@type = block, @gap * 1.5, @gap);
+		@value2: if(@half = true, @value / 2, @value);
+		@minus: if(@negative = true, '-', '');
 
-		@{property}: ~"@{direction}@{value}";
+		@{property}: ~"@{minus}@{value2}";
 
 		@media (min-width: @breakpoints-md) {
-			@value: if(@w = block, @gap-larger * 2, @gap-larger);
+			@value: if(@type = block, @gap-larger * 2, @gap-larger);
+			@value2: if(@half = true, @value / 2, @value);
 
-			@{property}: ~"@{direction}@{value}";
+			@{property}: ~"@{minus}@{value2}";
 		}
 	}
 }

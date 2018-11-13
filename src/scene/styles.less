@@ -2,26 +2,15 @@
 
 .scene {
 	#grid.gap(block; padding-bottom);
-	color: @scene-color;
-	fill: @scene-color;
-	background-color: @scene-background-color;
 	margin-left: auto;
 	margin-right: auto;
 
-	&--darken {
-		color: @scene-darken-color;
-		fill: @scene-darken-color;
-		background-color: @scene-darken-background-color;
+	&--contrast {
+		color: contrast(@base-primary, @dark-primary, @light-primary);
+		background-color: @base-primary;
 	}
 
-	&--lighten {
-		color: @scene-lighten-color;
-		fill: @scene-lighten-color;
-		background-color: @scene-lighten-background-color;
-	}
-
-	&--darken + &:not(&--darken):not(&--lighten),
-	&--lighten + &:not(&--lighten):not(&--darken),
+	&--contrast + &:not(&--contrast),
 	&--fill {
 		#grid.gap(block; padding-top);
 	}
