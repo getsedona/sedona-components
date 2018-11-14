@@ -11,29 +11,33 @@
 * Левые и правые отступы — внутренние (padding)
 * Верхний и нижний — внешние (margin)
 * Начиная с планшетов некоторые размеры увеличиваются
+* Футер и сайдбар имеют в настройках только тон, все остальное настраивается для каждого сайта отдельно
+* Сцены могут лежать в любой части лейаута (см. [Лейаут](#Лейаут))
 
 ## Лейаут
 
 Рекомендуемая разметка тела документа.
 
 ```html
-<div class="page">
-  <header class="header">
-    Шапка
-  </header>
+<body>
+  <div class="page">
+    <header class="header">
+      Шапка
+    </header>
 
-  <main class="main">
-    Контент
-  </main>
+    <main class="main">
+      Контент
+    </main>
 
-  <aside class="aside">
-    Сайдбар
-  </aside>
+    <aside class="aside">
+      Сайдбар
+    </aside>
 
-  <footer class="footer">
-    Подвал
-  </footer>
-</div>
+    <footer class="footer">
+      Подвал
+    </footer>
+  </div>
+</body>
 ```
 
 ## Компоненты
@@ -48,14 +52,12 @@
 * header
 * scene
 * grid
-* footer
-* notify
 
 ### Components
 
-* carousel
 * card
 * form
+  * file
 * icon
 * social
 * table

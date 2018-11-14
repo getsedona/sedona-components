@@ -208,7 +208,7 @@
 	}
 
 	select {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
+		@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
 
 		padding-right: (@form-control-height - @form-control-border-width);
 		background-image: url("data:image/svg+xml, @{icon}"), @form-control-background-image;
@@ -222,7 +222,7 @@
 	}
 
 	.form--darken & select {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-darken-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
+		@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-darken-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
 
 		background-image: url("data:image/svg+xml, @{icon}"), @form-darken-control-background-image;
 		background-repeat: no-repeat, @form-darken-control-background-repeat;
@@ -231,7 +231,7 @@
 	}
 
 	.form--lighten & select {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-lighten-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
+		@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-lighten-element-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
 
 		background-image: url("data:image/svg+xml, @{icon}"), @form-lighten-control-background-image;
 		background-repeat: no-repeat, @form-lighten-control-background-repeat;
@@ -467,20 +467,20 @@
 		}
 
 		&::after {
-			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+			@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
 
 			background-image: url("data:image/svg+xml, @{icon}");
 		}
 	}
 
 	.form--darken & input[type="checkbox"] + span::after {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-darken-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+		@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-darken-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
 
 		background-image: url("data:image/svg+xml, @{icon}");
 	}
 
 	.form--lighten & input[type="checkbox"] + span::after {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-lighten-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+		@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-lighten-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
 
 		background-image: url("data:image/svg+xml, @{icon}");
 	}
@@ -491,20 +491,20 @@
 		}
 
 		&::after {
-			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
+			@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
 
 			background-image: url("data:image/svg+xml, @{icon}");
 		}
 	}
 
 	.form--darken & input[type="radio"] + span::after {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-darken-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
+		@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-darken-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
 
 		background-image: url("data:image/svg+xml, @{icon}");
 	}
 
 	.form--lighten & input[type="radio"] + span::after {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-lighten-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
+		@icon: escape("<svg viewBox='0 0 24 24' fill='@{form-lighten-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
 
 		background-image: url("data:image/svg+xml, @{icon}");
 	}
