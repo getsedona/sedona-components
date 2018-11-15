@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./../global/mixins";
 
 .social {
 	display: inline-flex;
@@ -14,8 +15,7 @@
 	}
 
 	a {
-		color: @social-item-color;
-		fill: @social-item-color;
+		color: contrast(@base-primary, @dark-primary, @light-primary);
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -27,33 +27,16 @@
 		transition: @duration @timing-function;
 		transition-property: color, fill, background-color;
 
-		body:not(.mobile) &:hover {
-			color: @social-item-hover-color;
-			fill: @social-item-hover-color;
-		}
+		// body:not(.mobile) &:hover {
+		// 	@color-hover2: if(@social-item-tone = default, @social-item-color, .clr(@social-item-color)[@result]);
+
+		// 	color: @color-hover2;
+		// }
 	}
 
-	&--darken {
+	&--contrast {
 		a {
-			color: @social-darken-item-color;
-			fill: @social-darken-item-color;
-
-			body:not(.mobile) &:hover {
-				color: @social-darken-item-hover-color;
-				fill: @social-darken-item-hover-color;
-			}
-		}
-	}
-
-	&--lighten {
-		a {
-			color: @social-lighten-item-color;
-			fill: @social-lighten-item-color;
-
-			body:not(.mobile) &:hover {
-				color: @social-lighten-item-hover-color;
-				fill: @social-lighten-item-hover-color;
-			}
+			color: @base-primary;
 		}
 	}
 
@@ -74,137 +57,117 @@
 .social__vb,
 .social__wa,
 .social__sk {
-	background-color: @social-item-background-color;
-	background-image: @social-item-background-image;
-	background-repeat: @social-item-background-repeat;
-	background-position: @social-item-background-position;
-	background-size: @social-item-background-size;
+	background-color: @base-primary;
 
 	body:not(.mobile) &:hover {
-		background-color: @social-item-hover-background-color;
+		background-color: #state.hover(@base-primary)[@result];
 	}
 
-	.social--darken & {
-		background-color: @social-darken-item-background-color;
-		background-image: @social-darken-item-background-image;
-		background-repeat: @social-darken-item-background-repeat;
-		background-position: @social-darken-item-background-position;
-		background-size: @social-darken-item-background-size;
+	.social--contrast & {
+		background-color: contrast(@base-primary, @dark-primary, @light-primary);
 
 		body:not(.mobile) &:hover {
-			background-color: @social-darken-item-hover-background-color;
-		}
-	}
-
-	.social--lighten & {
-		background-color: @social-lighten-item-background-color;
-		background-image: @social-darken-item-background-image;
-		background-repeat: @social-darken-item-background-repeat;
-		background-position: @social-darken-item-background-position;
-		background-size: @social-darken-item-background-size;
-
-		body:not(.mobile) &:hover {
-			background-color: @social-lighten-item-hover-background-color;
+			background-color: #state.hover(contrast(@base-primary, @dark-primary, @light-primary))[@result];
 		}
 	}
 }
 
-.social__vk {
+.social--branded .social__vk {
 	@color: #597da3;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__fb {
+.social--branded .social__fb {
 	@color: #3b5998;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__ig {
+.social--branded .social__ig {
 	@color: #ED4A55;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__tg {
+.social--branded .social__tg {
 	@color: #2e87ca;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__yt {
+.social--branded .social__yt {
 	@color: #e62117;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__tw {
+.social--branded .social__tw {
 	@color: #1da1f3;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__ok {
+.social--branded .social__ok {
 	@color: #f58220;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__vb {
+.social--branded .social__vb {
 	@color: #665cac;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__wa {
+.social--branded .social__wa {
 	@color: #00e676;
 
 	background-color: @color;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }
 
-.social__sk {
+.social--branded .social__sk {
 	@color: #00aff0;
 
 	background-color: #00aff0;
 
 	body:not(.mobile) &:hover {
-		background-color: darken(@color, 15%);
+		background-color: #state.hover(@color)[@result];
 	}
 }

@@ -1,10 +1,17 @@
 export function global() {
+	checkMobile();
+	checkFocus();
+}
+
+function checkMobile() {
 	const MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
 	if (MOBILE) {
 		document.querySelector('body').classList.add('mobile');
 	}
+}
 
+function checkFocus() {
 	document.querySelector('body').classList.add('no-focus');
 
 	window.addEventListener('keydown', function(evt) {

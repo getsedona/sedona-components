@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./../global/mixins";
 
 .scene {
 	#grid.gap(block; padding-bottom);
@@ -11,6 +12,7 @@
 		background-color: @base-primary;
 	}
 
+	& + &--contrast,
 	&--contrast + &:not(&--contrast),
 	&--fill {
 		#grid.gap(block; padding-top);
