@@ -15,7 +15,9 @@
 	}
 
 	a {
-		color: contrast(@base-primary, @dark-primary, @light-primary);
+		@color: contrast(@base-primary, @dark-primary, @light-primary);
+
+		color: @color;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -27,16 +29,24 @@
 		transition: @duration @timing-function;
 		transition-property: color, fill, background-color;
 
-		// body:not(.mobile) &:hover {
-		// 	@color-hover2: if(@social-item-tone = default, @social-item-color, .clr(@social-item-color)[@result]);
-
-		// 	color: @color-hover2;
-		// }
+		body:not(.mobile) &:hover {
+			color: #state.hover(@color)[@result];
+		}
 	}
 
 	&--contrast {
 		a {
 			color: @base-primary;
+
+			body:not(.mobile) &:hover {
+				color: #state.hover(@base-primary)[@result];
+			}
+		}
+	}
+
+	&--branded {
+		a {
+			color: @light-primary;
 		}
 	}
 
@@ -64,10 +74,12 @@
 	}
 
 	.social--contrast & {
-		background-color: contrast(@base-primary, @dark-primary, @light-primary);
+		@color: contrast(@base-primary, @dark-primary, @light-primary);
+
+		background-color: @color;
 
 		body:not(.mobile) &:hover {
-			background-color: #state.hover(contrast(@base-primary, @dark-primary, @light-primary))[@result];
+			background-color: #state.hover(@color)[@result];
 		}
 	}
 }

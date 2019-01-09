@@ -20,25 +20,23 @@
 Рекомендуемая разметка тела документа.
 
 ```html
-<body>
-  <div class="page">
-    <header class="header">
-      Шапка
-    </header>
+<div class="page">
+  <header class="header">
+    Шапка
+  </header>
 
-    <main class="main">
-      Контент
-    </main>
+  <main class="main">
+    Контент
+  </main>
 
-    <aside class="aside">
-      Сайдбар
-    </aside>
+  <aside class="aside">
+    Сайдбар
+  </aside>
 
-    <footer class="footer">
-      Подвал
-    </footer>
-  </div>
-</body>
+  <footer class="footer">
+    Подвал
+  </footer>
+</div>
 ```
 
 ## Компоненты
