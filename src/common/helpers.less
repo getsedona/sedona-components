@@ -1,0 +1,81 @@
+@import "./mixins";
+
+.font-family-primary {
+	font-family: @font-family-primary;
+}
+
+.font-family-secondary {
+	font-family: @font-family-secondary;
+}
+
+.text-base {
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+}
+
+.text-small {
+	font-size: @font-size-small;
+	line-height: @line-height-small;
+}
+
+.text-large {
+	font-size: @font-size-large;
+	line-height: @line-height-large;
+}
+
+.text-h1 {
+	font-size: var(--font-size-h1);
+	line-height: var(--line-height-h1);
+}
+
+.text-h2 {
+	font-size: var(--font-size-h2);
+	line-height: var(--line-height-h2);
+}
+
+.text-h3 {
+	font-size: var(--font-size-h3);
+	line-height: var(--line-height-h3);
+}
+
+.block-base {
+	color: @color-base-primary;
+	background-color: @color-tone-base;
+}
+
+.block-contrast {
+	.block-contrast();
+}
+
+.block-dark {
+	color: @color-light-primary;
+	background-color: @color-tone-dark;
+}
+
+.block-light {
+	color: @color-dark-primary;
+	background-color: @color-tone-light;
+}
+
+.h1 {
+	.font-family-secondary;
+	.text-h1;
+}
+
+.h2 {
+	.font-family-secondary;
+	.text-h2;
+}
+
+.h3 {
+	.font-family-secondary;
+	.text-h3;
+}
+
+.link {
+	.linkq();
+
+	&--dashed {
+		border-bottom-style: dashed;
+	}
+}

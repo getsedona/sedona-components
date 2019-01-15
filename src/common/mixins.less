@@ -1,0 +1,44 @@
+.block-contrast(@color: @color-base-primary) {
+	@set-color: contrast(@color, @color-dark-primary, @color-light-primary);
+
+	color: @set-color;
+	background-color: contrast(@set-color, @color-tone-light, @color-tone-dark);
+}
+
+.linkq(
+	@color: @color-accent-primary;
+	@color-hover: inherit;
+	@border-opacity: {
+		@default: 30%;
+		@hover: 30%;
+	}
+) when not (@color = inherit) {
+	color: @color;
+	cursor: pointer;
+	text-decoration: none;
+	border-bottom: 1px solid fade(@color, @border-opacity[@default]);
+	// transition: @duration @timing-function;
+	// transition-property+: color, fill, border-bottom-color;
+
+	// &:hover {
+	// 	@color-hover3: if(@color-hover = inherit, #state.hover(@color)[@result], @color-hover);
+
+	// 	color: @color-hover3;
+	// 	border-bottom-color: fade(@color-hover3, @border-opacity[@hover]);
+	// }
+
+	// &:not([href]),
+	// &[href^="tel"] {
+	// 	color: inherit !important;
+	// 	border-bottom-color: transparent !important;
+	// 	cursor: inherit;
+	// }
+
+	// &[href^="tel"] {
+	// 	white-space: nowrap;
+	// }
+
+	// &[aria-label] {
+	// 	border-bottom-color: transparent !important;
+	// }
+}

@@ -1,0 +1,32 @@
+@import "./variables";
+@import "./../common/helpers";
+
+.scene {
+	padding-bottom: var(--gap-block-base);
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+	&--fill {
+		padding-top: var(--gap-block-base);
+	}
+
+	&--limit {
+		@media(min-width: @breakpoint-xl) {
+			max-width: @breakpoint-xl;
+			border-radius: @radius-base;
+		}
+	}
+
+	&--contrast {
+		.block-contrast;
+	}
+
+	&--dark {
+		.block-dark;
+	}
+
+	&--light {
+		.block-light;
+	}
+}
