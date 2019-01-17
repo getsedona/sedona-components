@@ -1,4 +1,4 @@
-@import "./variables";
+@import (reference) "./variables";
 @import "./root";
 @import "./helpers";
 @import (inline) "~normalize.css/normalize.css";
@@ -18,8 +18,8 @@ html {
 
 body {
 	.text-base;
-	.font-family-primary;
-	.block-base;
+	.box-base;
+	font-family: @font-family-primary;
 	overflow-y: scroll;
 	min-width: 320px;
 	font-display: swap;
@@ -36,15 +36,15 @@ img {
 }
 
 h1 {
-	.h1;
+	.text-h1;
 }
 
 h2 {
-	.h2;
+	.text-h2;
 }
 
 h3 {
-	.h3;
+	.text-h3;
 }
 
 a {

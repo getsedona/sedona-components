@@ -1,32 +1,26 @@
 @import "./variables";
-@import "./../common/helpers";
+@import (reference) "./../common/helpers";
 
 .scene {
-	padding-bottom: var(--gap-block-base);
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	.block-base;
 
-	&--fill {
-		padding-top: var(--gap-block-base);
+	&:not(&--contrast):not(&--dark):not(&--light) + &:not(&--contrast):not(&--dark):not(&--light) {
+		padding-top: initial;
 	}
 
-	&--limit {
-		@media(min-width: @breakpoint-xl) {
-			max-width: @breakpoint-xl;
-			border-radius: @radius-base;
-		}
+	&--fill {
+		.block-base;
 	}
 
 	&--contrast {
-		.block-contrast;
+		.box-contrast;
 	}
 
 	&--dark {
-		.block-dark;
+		.box-dark;
 	}
 
 	&--light {
-		.block-light;
+		.box-light;
 	}
 }

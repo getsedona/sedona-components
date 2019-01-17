@@ -1,12 +1,4 @@
-@import "./mixins";
-
-.font-family-primary {
-	font-family: @font-family-primary;
-}
-
-.font-family-secondary {
-	font-family: @font-family-secondary;
-}
+@import (reference) "./mixins";
 
 .text-base {
 	font-size: @font-size-base;
@@ -26,56 +18,79 @@
 .text-h1 {
 	font-size: var(--font-size-h1);
 	line-height: var(--line-height-h1);
+	font-family: @font-family-secondary;
 }
 
 .text-h2 {
 	font-size: var(--font-size-h2);
 	line-height: var(--line-height-h2);
+	font-family: @font-family-secondary;
 }
 
 .text-h3 {
 	font-size: var(--font-size-h3);
 	line-height: var(--line-height-h3);
+	font-family: @font-family-secondary;
 }
 
-.block-base {
+.box-base {
 	color: @color-base-primary;
 	background-color: @color-tone-base;
 }
 
-.block-contrast {
-	.block-contrast();
+.box-contrast {
+	.box-contrast();
 }
 
-.block-dark {
+.box-dark {
 	color: @color-light-primary;
 	background-color: @color-tone-dark;
 }
 
-.block-light {
+.box-light {
 	color: @color-dark-primary;
 	background-color: @color-tone-light;
 }
 
-.h1 {
-	.font-family-secondary;
-	.text-h1;
+.element-base {
+	width: 100%;
 }
 
-.h2 {
-	.font-family-secondary;
-	.text-h2;
+.element-wrapper {
+	max-width: @breakpoint-xl;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.h3 {
-	.font-family-secondary;
-	.text-h3;
+.element-list {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: ~"calc(var(--gap-element-half) * -1)";
+	margin-left: ~"calc(var(--gap-element-half) * -1)";
+	margin-bottom: ~"calc(var(--gap-element-base) * -1)";
+}
+
+.element-item {
+	padding-right: var(--gap-element-half);
+	padding-left: var(--gap-element-half);
+	margin-bottom: var(--gap-element-base);
+}
+
+.block-base {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: var(--gap-block-base);
+	padding-bottom: var(--gap-block-base);
+	padding-right: var(--gap-block-half);
+	padding-left: var(--gap-block-half);
+
+	@media(min-width: @breakpoint-sm) {
+		padding-right: var(--gap-block-base);
+		padding-left: var(--gap-block-base);
+	}
 }
 
 .link {
-	.linkq();
-
-	&--dashed {
-		border-bottom-style: dashed;
-	}
+	.link();
 }

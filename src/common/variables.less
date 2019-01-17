@@ -30,16 +30,16 @@
 @color-base-divider: contrast(@color-tone-base, @color-dark-divider, @color-light-divider); // для разделителей
 
 // Цвета для светлых компонентов
-@color-dark-primary: #333; // (#1f1f1f) основной
-@color-dark-secondary: fade(@color-dark-primary, 80%); // вторичный
-@color-dark-hint: fade(@color-dark-primary, 50%); // для подсказок
-@color-dark-divider: fade(@color-dark-primary, 30%); // для разделителей
+@color-dark-primary: #222; // основной
+@color-dark-secondary: fade(@color-dark-primary, 55%); // вторичный
+@color-dark-hint: fade(@color-dark-primary, 35%); // для подсказок
+@color-dark-divider: fade(@color-dark-primary, 15%); // для разделителей
 
 // Цвета для темных компонентов
-@color-light-primary: #fff; // основной
-@color-light-secondary: fade(@color-light-primary, 80%); // вторичный
-@color-light-hint: fade(@color-light-primary, 50%); // для подсказок
-@color-light-divider: fade(@color-light-primary, 30%); // для разделителей
+@color-light-primary: #eee; // основной
+@color-light-secondary: fade(@color-light-primary, 55%); // вторичный
+@color-light-hint: fade(@color-light-primary, 35%); // для подсказок
+@color-light-divider: fade(@color-light-primary, 15%); // для разделителей
 
 // Акцентный (брендовый) цвет (может дополняться при необходимости)
 @color-accent-primary: #007aff; // для ссылок, кнопок и т. п.
@@ -60,17 +60,17 @@
 
 // Отступы между блоками
 @gap-block-base: @gap-element-base * 1.5; // (48px) базовый
-@gap-block-half: @gap-block-base / 2; // (24px) половинный (под вопросом!)
+@gap-block-half: @gap-block-base / 2; // (24px) половинный
+
+// Тень
+@box-shadow-base: 0 -1px 1px fade(@color-dark-primary, 2%), 0 1px 1px fade(@color-dark-primary, 2%), 0 2px 2px fade(@color-dark-primary, 2%), 0 4px 4px fade(@color-dark-primary, 2%), 0 8px 8px fade(@color-dark-primary, 2%), 0 16px 16px fade(@color-dark-primary, 2%), 0 32px 32px fade(@color-dark-primary, 2%); // базовая
+
+// Радиус
+@box-radius-base: @font-size-base / 2; // (8px) базовый
 
 // Анимация
 @animation-duration: 0.2s; // продолжительность
 @animation-timing-function: ease-out; // формула кривой
-
-// Тень
-@shadow-base: 0 -1px 1px fade(@color-dark-primary, 2%), 0 1px 1px fade(@color-dark-primary, 2%), 0 2px 2px fade(@color-dark-primary, 2%), 0 4px 4px fade(@color-dark-primary, 2%), 0 8px 8px fade(@color-dark-primary, 2%), 0 16px 16px fade(@color-dark-primary, 2%), 0 32px 32px fade(@color-dark-primary, 2%); // базовая
-
-// Радиус
-@radius-base: @font-size-base / 2; // (8px) базовый
 
 // Контрольные точки
 @breakpoint-sm: 576px; // для горизонтальной мобилки
