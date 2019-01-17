@@ -2,8 +2,8 @@ const path = require('path');
 const mode = process.env.NODE_ENV;
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const LessThemePlugin = require('webpack-less-theme-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -34,11 +34,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(['build']),
+    new LessThemePlugin({ theme: './dev/assets/less/variables.less' }),
     new HtmlWebpackPlugin({
-	  filename: 'index.html',
-	  template: './dev/page/index.html',
+      filename: 'index.html',
+      template: './dev/page/index.html',
       hash: true
-	}),
-	new LessThemePlugin({ theme: './dev/assets/less/variables.less' })
+    })
   ]
 }

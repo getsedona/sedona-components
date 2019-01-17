@@ -1,3 +1,5 @@
+@import "./functions";
+
 .box-contrast(@color: @color-base-primary) {
 	@new-color: contrast(@color, @color-dark-primary, @color-light-primary);
 
@@ -9,16 +11,16 @@
 	color: @color-base;
 	cursor: pointer;
 	text-decoration: none;
-	border-bottom: 1px solid fade(@color-base, 30%);
+	border-bottom: 1px solid fadeout(@color-base, 70%, relative);
 	transition: @animation-duration @animation-timing-function;
 	transition-property+: color, fill, border-bottom-color;
 
-	// &:hover {
-	// 	@color-hover3: if(@color-hover = inherit, #state.hover(@color)[@result], @color-hover);
+	&:hover {
+		@color-hover3: if(@color-hover = inherit, @color-base, @color-hover);
 
-	// 	color: @color-hover3;
-	// 	border-bottom-color: fade(@color-hover3, @border-opacity[@hover]);
-	// }
+		color: @color-hover3;
+		border-bottom-color: fadeout(@color-hover3, 70%, relative);
+	}
 
 	&:not([href]),
 	&[href^="tel"] {
