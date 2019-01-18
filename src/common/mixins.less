@@ -16,7 +16,7 @@
 	transition-property+: color, fill, border-bottom-color;
 
 	&:hover {
-		@color-hover3: if(@color-hover = inherit, @color-base, @color-hover);
+		@color-hover3: if(@color-hover = inherit, .set-lida(@color-base)[@result], @color-hover);
 
 		color: @color-hover3;
 		border-bottom-color: fadeout(@color-hover3, 70%, relative);
