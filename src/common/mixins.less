@@ -1,25 +1,24 @@
 @import "./functions";
 
 .box-contrast(@color: @color-base-primary) {
-	@new-color: contrast(@color, @color-dark-primary, @color-light-primary);
-
-	color: @new-color;
-	background-color: contrast(@new-color, @color-tone-light, @color-tone-dark);
+	color: contrast(@color, @color-dark-primary, @color-light-primary);
+	background-color: contrast($color, @color-tone-light, @color-tone-dark);
 }
 
 .link(@color-base: @color-accent-primary; @color-hover: inherit) when not (@color-base = inherit) {
 	color: @color-base;
 	cursor: pointer;
 	text-decoration: none;
-	border-bottom: 1px solid fadeout(@color-base, 70%, relative);
-	transition: @animation-duration @animation-timing-function;
+	border-bottom-width: 0;
+	border-bottom-style: solid;
+	border-bottom-color: fadeout(@color-base, 70%, relative);
+	transition-duration: @animation-duration;
+	transition-timing-function: @animation-timing-function;
 	transition-property+: color, fill, border-bottom-color;
 
 	&:hover {
-		@color-hover3: if(@color-hover = inherit, .set-lida(@color-base)[@result], @color-hover);
-
-		color: @color-hover3;
-		border-bottom-color: fadeout(@color-hover3, 70%, relative);
+		color: if(@color-hover = inherit, .set-lida(@color-base)[@result], @color-hover);
+		border-bottom-color: fadeout($color, 70%, relative);
 	}
 
 	&:not([href]),
@@ -35,5 +34,37 @@
 
 	&[aria-label] {
 		border-bottom-color: transparent !important;
+	}
+}
+
+.button(@tone-base: @color-accent-primary) {
+	cursor: pointer;
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+	color: contrast(@tone-base, @color-dark-primary, @color-light-primary);
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: (@indent-base / 2 - 1px) (@indent-base * 1.25 - 1px);
+	min-height: @line-height-base + @indent-base;
+	border-radius: $min-height / 2;
+	vertical-align: middle;
+	justify-content: center;
+	white-space: nowrap;
+	background-color: @tone-base;
+	border-width: 0;
+	border-style: solid;
+	border-color: fadeout($color, 70%, relative); // !important
+	transition-duration: @animation-duration;
+	transition-timing-function: @animation-timing-function;
+	transition-property+: box-shadow, border-color, background-color;
+
+	&:hover {
+		background-color: .set-lida(@tone-base)[];
+		border-color: fadeout($color, 70%, relative);
+	}
+
+	&:active {
+		top: 1px;
 	}
 }

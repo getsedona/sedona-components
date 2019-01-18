@@ -65,9 +65,9 @@
 .element-list {
 	display: flex;
 	flex-wrap: wrap;
-	margin-right: .set-negative(var(--gap-element-half))[];
-	margin-left: .set-negative(var(--gap-element-half))[];
-	margin-bottom: .set-negative(var(--gap-element-half))[];
+	margin-right: ~"calc(var(--gap-element-half) * -1)";
+	margin-left: ~"calc(var(--gap-element-half) * -1)";
+	margin-bottom: ~"calc(var(--gap-element-half) * -1)";
 }
 
 .element-item {
@@ -93,4 +93,8 @@
 
 .link {
 	.link();
+}
+
+.btn {
+	.button();
 }
