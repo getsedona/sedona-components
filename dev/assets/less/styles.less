@@ -1,2 +1,12 @@
 @import (reference) "./../../../src/common/styles";
 @import "./root";
+
+.btn {
+	&--light {
+		.button(@tone-base:#eee; @border-base: #000);
+	}
+
+	&--contour {
+		.button(transparent);
+	}
+}

@@ -17,7 +17,7 @@
 	transition-property+: color, fill, border-bottom-color;
 
 	&:hover {
-		color: if(@color-hover = inherit, .set-lida(@color-base)[@result], @color-hover);
+		color: if(@color-hover = inherit, .set-color-hover(@color-base)[], @color-hover);
 		border-bottom-color: fadeout($color, 70%, relative);
 	}
 
@@ -37,11 +37,11 @@
 	}
 }
 
-.button(@tone-base: @color-accent-primary) {
+.button(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
 	cursor: pointer;
 	font-size: @font-size-base;
 	line-height: @line-height-base;
-	color: contrast(@tone-base, @color-dark-primary, @color-light-primary);
+	color: if(@color-base = contrast, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-base);
 	position: relative;
 	display: inline-flex;
 	align-items: center;
@@ -52,17 +52,18 @@
 	justify-content: center;
 	white-space: nowrap;
 	background-color: @tone-base;
-	border-width: 0;
+	border-width: 1px;
 	border-style: solid;
-	border-color: fadeout($color, 70%, relative); // !important
+	border-color: if(@border-base = transparent, transparent, @border-base);
 	transition-duration: @animation-duration;
 	transition-timing-function: @animation-timing-function;
 	transition-property+: box-shadow, border-color, background-color;
 
-	&:hover {
-		background-color: .set-lida(@tone-base)[];
-		border-color: fadeout($color, 70%, relative);
-	}
+	// &:hover {
+	// 	color: if(@color-hover = inherit, inherit, @color-hover);
+	// 	background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
+	// 	border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
+	// }
 
 	&:active {
 		top: 1px;
