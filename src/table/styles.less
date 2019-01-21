@@ -1,225 +1,193 @@
-@import "./variables";
+@import "./../common/variables";
+@import "./../common/mixins";
+@import "./../common/functions";
 
-// .table {
-// 	position: relative;
-// 	margin-right: -(@grid-gutter / 2);
-// 	margin-left: -(@grid-gutter / 2);
-// 	margin-bottom: @indent;
+.table {
+	position: relative;
+	margin-right: ~"calc(var(--gap-block-half) * -1)";
+	margin-left: ~"calc(var(--gap-block-half) * -1)";
+	margin-bottom: @indent-base;
 
-// 	@media (min-width: @grid-breakpoints-sm) {
-// 		margin-right: auto;
-// 		margin-left: auto;
-// 	}
+	@media (min-width: @breakpoint-sm) {
+		margin-right: auto;
+		margin-left: auto;
+	}
 
-// 	&:last-child {
-// 		margin-bottom: 0;
-// 	}
+	&:last-child {
+		margin-bottom: 0;
+	}
 
-// 	& + & {
-// 		margin-top: @indent-element-smaller;
+	& + & {
+		margin-top: var(--gap-element-base);
+	}
 
-// 		@media (min-width: @grid-breakpoints-md) {
-// 			margin-top: @indent-element-larger;
-// 		}
-// 	}
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		z-index: 1;
+		width: 10px;
+		background-repeat: no-repeat;
+		background-size: 1px 100%, 100% 100%;
+		opacity: 0;
+		transition-duration: @animation-duration / 2;
+		transition-timing-function: @animation-timing-function;
+		transition-property: opacity;
+		pointer-events: none;
+	}
 
-// 	&::before,
-// 	&::after {
-// 		content: '';
-// 		position: absolute;
-// 		top: 0;
-// 		bottom: 0;
-// 		z-index: 1;
-// 		width: 10px;
-// 		background-repeat: no-repeat;
-// 		background-size: 1px 100%, 100% 100%;
-// 		opacity: 0;
-// 		transition: (@duration / 2) @timing-function;
-// 		transition-property: opacity;
-// 		pointer-events: none;
-// 	}
+	&::before {
+		left: 0;
+		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.15), transparent);
+		background-position: 0 0, 0 0;
+	}
 
-// 	&::before {
-// 		left: 0;
-// 		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.15), transparent);
-// 		background-position: 0 0, 0 0;
-// 	}
+	&::after {
+		right: 0;
+		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.15), transparent);
+		background-position: 100% 0, 100% 0;
+	}
 
-// 	&::after {
-// 		right: 0;
-// 		background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.15), transparent);
-// 		background-position: 100% 0, 100% 0;
-// 	}
+	&--left-shadow::before {
+		opacity: 1;
+	}
 
-// 	&--left-shadow::before {
-// 		opacity: 1;
-// 	}
+	&--right-shadow::after {
+		opacity: 1;
+	}
 
-// 	&--right-shadow::after {
-// 		opacity: 1;
-// 	}
+	&--responsive {
+		@media (max-width: (@breakpoint-sm - 1px)) {
+			white-space: normal !important;
 
-// 	&--responsive {
-// 		@media (max-width: (@grid-breakpoints-sm - 1px)) {
-// 			white-space: normal !important;
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
+	}
+}
 
-// 			&::before,
-// 			&::after {
-// 				display: none;
-// 			}
-// 		}
-// 	}
-// }
+.table__wrap {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
 
-// .table__wrap {
-// 	overflow-x: auto;
-// 	-webkit-overflow-scrolling: touch;
+	.table--responsive & {
+		@media (max-width: (@breakpoint-sm - 1px)) {
+			overflow-x: visible;
+		}
+	}
 
-// 	.table--responsive & {
-// 		@media (max-width: (@grid-breakpoints-sm - 1px)) {
-// 			overflow-x: visible;
-// 		}
-// 	}
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		border-spacing: 0;
 
-// 	table {
-// 		width: 100%;
-// 		border-collapse: collapse;
-// 		border-spacing: 0;
+		.table--responsive & {
+			@media (max-width: (@breakpoint-sm - 1px)) {
+				display: block;
+			}
+		}
+	}
 
-// 		.table--responsive & {
-// 			@media (max-width: (@grid-breakpoints-sm - 1px)) {
-// 				display: block;
-// 			}
-// 		}
-// 	}
+	th,
+	td {
+		padding: @indent-base;
+		overflow: hidden;
+		vertical-align: top;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-bottom-color: @color-base-divider;
+		text-align: left;
 
-// 	th,
-// 	td {
-// 		padding: @indent;
-// 		overflow: hidden;
-// 		vertical-align: top;
-// 		border-bottom: 1px solid @table-divider;
-// 		text-align: left;
+		@media (min-width: @breakpoint-sm) {
+			.mobile & {
+				&:first-child {
+					padding-left: 0;
+				}
 
-// 		@media (min-width: @grid-breakpoints-sm) {
-// 			body.mobile & {
-// 				&:first-child {
-// 					padding-left: 0;
-// 				}
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
 
-// 				&:last-child {
-// 					padding-right: 0;
-// 				}
-// 			}
-// 		}
+		.table--responsive & {
+			@media (max-width: (@breakpoint-sm - 1px)) {
+				text-align: left !important;
+				white-space: normal !important;
+				display: block;
+				border-bottom-width: 0;
+				padding-top: @indent-base / 2;
+				padding-bottom: @indent-base / 2;
 
-// 		.table--responsive & {
-// 			@media (max-width: (@grid-breakpoints-sm - 1px)) {
-// 				text-align: left !important;
-// 				white-space: normal !important;
-// 				display: block;
-// 				border-bottom-width: 0;
-// 				padding-top: (@indent / 2);
-// 				padding-bottom: (@indent / 2);
+				&:empty {
+					display: none;
+				}
 
-// 				&:empty {
-// 					display: none;
-// 				}
+				&:before {
+					.text-small();
+					display: block;
+					content: attr(data-title);
+					font-weight: normal;
+					color: @color-base-secondary;
+				}
+			}
+		}
+	}
 
-// 				&:before {
-// 					display: block;
-// 					content: attr(data-title);
-// 					font-size: @table-head-font-size;
-// 					font-weight: normal;
-// 					line-height: @table-head-line-height;
-// 					color: @table-head-color;
-// 					fill: @table-head-color;
-// 				}
-// 			}
-// 		}
+	th {
+		.text-small();
+		padding-top: 0;
+		font-weight: normal;
+		vertical-align: bottom;
+		color: @color-base-secondary;
+		padding-bottom: @indent-base / 2;
+	}
 
-// 		.table--darken & {
-// 			border-color: @table-darken-divider;
-// 		}
+	thead {
+		.table--responsive & {
+			@media (max-width: (@breakpoint-sm - 1px)) {
+				display: none;
+			}
+		}
+	}
 
-// 		.table--lighten & {
-// 			border-color: @table-lighten-divider;
-// 		}
-// 	}
+	tbody {
+		.table--responsive & {
+			@media (max-width: (@breakpoint-sm - 1px)) {
+				display: block;
+			}
+		}
 
-// 	th {
-// 		padding-top: 0;
-// 		font-size: @table-head-font-size;
-// 		font-weight: normal;
-// 		line-height: @table-head-line-height;
-// 		vertical-align: bottom;
-// 		color: @table-head-color;
-// 		fill: @table-head-color;
-// 		padding-bottom: (@indent / 2);
+		tr {
+			background-color: fade(@color-base-divider, 0);
+			transition-property: background-color;
+			transition-duration: @animation-duration;
+			transition-timing-function: @animation-timing-function;
 
-// 		.table--darken & {
-// 			color: @table-darken-head-color;
-// 			fill: @table-darken-head-color;
-// 		}
+			.table--responsive & {
+				@media (max-width: (@breakpoint-sm - 1px)) {
+					display: block;
+					border-bottom-width: 1px;
+					border-bottom-style: solid;
+					border-bottom-color: @color-base-divider;
+					padding-top: @indent-base / 2;
+					padding-bottom: @indent-base / 2;
 
-// 		.table--lighten & {
-// 			color: @table-lighten-head-color;
-// 			fill: @table-lighten-head-color;
-// 		}
-// 	}
+					&:first-child {
+						border-top-width: 1px;
+						border-top-style: solid;
+						border-top-color: @color-base-divider;
+					}
+				}
+			}
 
-// 	thead {
-// 		.table--responsive & {
-// 			@media (max-width: (@grid-breakpoints-sm - 1px)) {
-// 				display: none;
-// 			}
-// 		}
-// 	}
-
-// 	tbody {
-// 		.table--responsive & {
-// 			@media (max-width: (@grid-breakpoints-sm - 1px)) {
-// 				display: block;
-// 			}
-// 		}
-
-// 		tr {
-// 			background-color: fade(@table-tr-hover-background-color, 0);
-// 			transition-property: background-color;
-// 			transition: @duration @timing-function;
-
-// 			.table--responsive & {
-// 				@media (max-width: (@grid-breakpoints-sm - 1px)) {
-// 					display: block;
-// 					border-bottom: 1px solid @table-divider;
-// 					padding-top: (@indent / 2);
-// 					padding-bottom: (@indent / 2);
-
-// 					&:first-child {
-// 						border-top: 1px solid @table-divider;
-// 					}
-// 				}
-// 			}
-
-// 			body:not(.mobile) &:hover {
-// 				background-color: fade(@table-tr-hover-background-color, 100%);
-// 			}
-
-// 			.table--darken & {
-// 				border-color: fade(@table-darken-tr-hover-background-color, 0);
-
-// 				body:not(.mobile) &:hover {
-// 					background-color: fade(@table-darken-tr-hover-background-color, 100%);
-// 				}
-// 			}
-
-// 			.table--lighten & {
-// 				border-color: fade(@table-lighten-tr-hover-background-color, 0);
-
-// 				body:not(.mobile) &:hover {
-// 					background-color: fade(@table-lighten-tr-hover-background-color, 100%);
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+			body:not(.mobile) &:hover {
+				background-color: fade(@color-base-divider, 100%);
+			}
+		}
+	}
+}

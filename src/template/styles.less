@@ -1,0 +1,55 @@
+@import "./../common/variables";
+@import "./../common/mixins";
+@import "./../common/functions";
+
+.template {
+	.element-base();
+}
+
+.template__wrap {
+	.element-wrap();
+}
+
+.template__list {
+	.element-list();
+}
+
+.template__item {
+	.element-item();
+
+	.template__list--grid-1 & {
+		@media (min-width: @breakpoint-md) {
+			width: 50%;
+		}
+
+		@media (min-width: @breakpoint-xl) {
+			width: 33.3333%;
+		}
+	}
+
+	.template__list--grid-2 & {
+		@media (min-width: @breakpoint-lg) {
+			width: 75%;
+		}
+	}
+
+	.template__list--grid-3 & {
+		@media (min-width: @breakpoint-md) {
+			width: 50%;
+		}
+
+		@media (min-width: @breakpoint-lg) {
+			width: 33.3333%;
+		}
+
+		@media (min-width: @breakpoint-xl) {
+			width: 25%;
+		}
+	}
+
+	.template__list--grid-4 & {
+		@media (min-width: @breakpoint-lg) {
+			width: 50%;
+		}
+	}
+}

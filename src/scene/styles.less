@@ -1,26 +1,23 @@
-@import "./variables";
-@import (reference) "./../common/helpers";
+@import "./../common/variables";
+@import "./../common/mixins";
+@import "./../common/functions";
 
 .scene {
-	.block-base;
+	.block-base();
 
 	&:not(&--contrast):not(&--dark):not(&--light) + &:not(&--contrast):not(&--dark):not(&--light) {
 		padding-top: initial;
 	}
 
 	&--fill {
-		.block-base;
-	}
-
-	&--contrast {
-		.box-contrast;
+		.block-base();
 	}
 
 	&--dark {
-		.box-dark;
+		.box-dark();
 	}
 
 	&--light {
-		.box-light;
+		.box-light();
 	}
 }

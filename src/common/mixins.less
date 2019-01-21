@@ -1,8 +1,97 @@
-@import "./functions";
+.text-base() {
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+}
 
-.box-contrast(@color: @color-base-primary) {
-	color: contrast(@color, @color-dark-primary, @color-light-primary);
-	background-color: contrast($color, @color-tone-light, @color-tone-dark);
+.text-small() {
+	font-size: @font-size-small;
+	line-height: @line-height-small;
+}
+
+.text-large() {
+	font-size: @font-size-large;
+	line-height: @line-height-large;
+}
+
+.text-h1() {
+	font-size: var(--font-size-h1);
+	line-height: var(--line-height-h1);
+	font-family: @font-family-secondary;
+}
+
+.text-h2() {
+	font-size: var(--font-size-h2);
+	line-height: var(--line-height-h2);
+	font-family: @font-family-secondary;
+}
+
+.text-h3() {
+	font-size: var(--font-size-h3);
+	line-height: var(--line-height-h3);
+	font-family: @font-family-secondary;
+}
+
+.box-base() {
+	color: @color-base-primary;
+	background-color: @color-tone-base;
+}
+
+.box-dark() {
+	color: @color-light-primary;
+	background-color: @color-tone-dark;
+}
+
+.box-light() {
+	color: @color-dark-primary;
+	background-color: @color-tone-light;
+}
+
+.element-base() {
+	width: 100%;
+}
+
+.element-wrap(@max-width: @breakpoint-xl) {
+	max-width: @max-width;
+	margin-left: auto;
+	margin-right: auto;
+
+	& + & {
+		margin-top: var(--gap-element-base);
+	}
+}
+
+.element-list() {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: ~"calc(var(--gap-element-half) * -1)";
+	margin-left: ~"calc(var(--gap-element-half) * -1)";
+	margin-bottom: ~"calc(var(--gap-element-base) * -1)";
+
+	& + & {
+		margin-top: var(--gap-element-base);
+	}
+}
+
+.element-item() {
+	width: 100%;
+	padding-right: var(--gap-element-half);
+	padding-left: var(--gap-element-half);
+	margin-bottom: var(--gap-element-base);
+}
+
+.block-base() {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: var(--gap-block-base);
+	padding-bottom: var(--gap-block-base);
+	padding-right: var(--gap-block-half);
+	padding-left: var(--gap-block-half);
+
+	@media(min-width: @breakpoint-sm) {
+		padding-right: var(--gap-block-base);
+		padding-left: var(--gap-block-base);
+	}
 }
 
 .link(@color-base: @color-accent-primary; @color-hover: inherit) when not (@color-base = inherit) {

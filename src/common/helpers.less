@@ -1,94 +1,57 @@
-@import "./mixins";
-
 .text-base {
-	font-size: @font-size-base;
-	line-height: @line-height-base;
+	.text-base();
 }
 
 .text-small {
-	font-size: @font-size-small;
-	line-height: @line-height-small;
+	.text-small();
 }
 
 .text-large {
-	font-size: @font-size-large;
-	line-height: @line-height-large;
+	.text-large();
 }
 
 .text-h1 {
-	font-size: var(--font-size-h1);
-	line-height: var(--line-height-h1);
-	font-family: @font-family-secondary;
+	.text-h1();
 }
 
 .text-h2 {
-	font-size: var(--font-size-h2);
-	line-height: var(--line-height-h2);
-	font-family: @font-family-secondary;
+	.text-h2();
 }
 
 .text-h3 {
-	font-size: var(--font-size-h3);
-	line-height: var(--line-height-h3);
-	font-family: @font-family-secondary;
+	.text-h3();
 }
 
 .box-base {
-	color: @color-base-primary;
-	background-color: @color-tone-base;
-}
-
-.box-contrast {
-	.box-contrast();
+	.box-base();
 }
 
 .box-dark {
-	color: @color-light-primary;
-	background-color: @color-tone-dark;
+	.box-dark();
 }
 
 .box-light {
-	color: @color-dark-primary;
-	background-color: @color-tone-light;
+	.box-light();
 }
 
 .element-base {
-	width: 100%;
+	.element-base();
 }
 
-.element-wrapper {
-	max-width: @breakpoint-xl;
-	margin-left: auto;
-	margin-right: auto;
+.element-wrap {
+	.element-wrap();
 }
 
 .element-list {
-	display: flex;
-	flex-wrap: wrap;
-	margin-right: ~"calc(var(--gap-element-half) * -1)";
-	margin-left: ~"calc(var(--gap-element-half) * -1)";
-	margin-bottom: ~"calc(var(--gap-element-base) * -1)";
+	.element-list();
 }
 
 .element-item {
-	padding-right: var(--gap-element-half);
-	padding-left: var(--gap-element-half);
-	margin-bottom: var(--gap-element-base);
+	.element-item();
 }
 
 .block-base {
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: var(--gap-block-base);
-	padding-bottom: var(--gap-block-base);
-	padding-right: var(--gap-block-half);
-	padding-left: var(--gap-block-half);
-
-	@media(min-width: @breakpoint-sm) {
-		padding-right: var(--gap-block-base);
-		padding-left: var(--gap-block-base);
-	}
+	.block-base();
 }
 
 .link {

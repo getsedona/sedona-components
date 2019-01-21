@@ -2,6 +2,7 @@ const path = require('path');
 const mode = process.env.NODE_ENV;
 
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const LessThemePlugin = require('webpack-less-theme-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -35,6 +36,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['build']),
     new LessThemePlugin({ theme: './dev/assets/less/variables.less' }),
+    new LessThemePlugin({ theme: './dev/assets/less/mixins.less' }),
+    new CssoWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './dev/page/index.html',

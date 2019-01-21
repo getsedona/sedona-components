@@ -1,5 +1,6 @@
-@import "./variables";
-@import (reference) "./../common/helpers";
+@import "./../common/variables";
+@import "./../common/mixins";
+@import "./../common/functions";
 
 .wysiwyg {
 	overflow-wrap: break-word;
@@ -82,7 +83,7 @@
 	}
 
 	figcaption {
-		.text-small;
+		.text-small();
 		margin-top: 0.5em;
 	}
 

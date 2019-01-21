@@ -1,7 +1,24 @@
 @import "./variables";
-@import "./root";
+@import "./mixins";
+@import "./functions";
 @import "./helpers";
 @import "~normalize.css/normalize.css";
+
+:root {
+	--font-size-h1: @font-size-h1;
+	--font-size-h2: @font-size-h2;
+	--font-size-h3: @font-size-h3;
+
+	--line-height-h1: @line-height-h1;
+	--line-height-h2: @line-height-h2;
+	--line-height-h3: @line-height-h3;
+
+	--gap-element-base: @gap-element-base;
+	--gap-element-half: @gap-element-half;
+
+	--gap-block-base: @gap-block-base;
+	--gap-block-half: @gap-block-half;
+}
 
 html {
 	box-sizing: border-box;
@@ -17,8 +34,8 @@ html {
 }
 
 body {
-	.text-base;
-	.box-base;
+	.text-base();
+	.box-base();
 	font-family: @font-family-primary;
 	overflow-y: scroll;
 	min-width: 320px;
@@ -36,19 +53,19 @@ img {
 }
 
 h1 {
-	.text-h1;
+	.text-h1();
 }
 
 h2 {
-	.text-h2;
+	.text-h2();
 }
 
 h3 {
-	.text-h3;
+	.text-h3();
 }
 
 a {
-	.link;
+	.link();
 }
 
 button,
