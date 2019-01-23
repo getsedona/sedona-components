@@ -1,12 +1,11 @@
-const path = require('path');
-const isDevMode = process.env.NODE_ENV === 'development' ? true : false;
-
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const LessThemePlugin = require('webpack-less-theme-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssoWebpackPlugin = require('csso-webpack-plugin').default;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const path = require('path');
+const isProduction = process.env.NODE_ENV === 'production' ? true : false;
 require('dotenv').config();
 
 module.exports = {
@@ -24,7 +23,7 @@ module.exports = {
       }, {
         test: /\.(le|c)ss$/,
         use: [
-          isDevMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+          isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
           'less-loader'
         ]
@@ -40,7 +39,7 @@ module.exports = {
     new CleanWebpackPlugin(['build']),
     new LessThemePlugin({ theme: './dev/assets/less/variables.less' }),
     new LessThemePlugin({ theme: './dev/assets/less/mixins.less' }),
-    new MiniCssExtractPlugin({ filename: isDevMode ? '[name].css' : 'css/[name].[hash].css' }),
+    new MiniCssExtractPlugin({ filename: isProduction ? 'css/[name].[hash].css': '[name].css' }),
     new CssoWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
