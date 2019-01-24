@@ -150,14 +150,14 @@
 
 	&:focus {
 		outline: none;
-		//box-shadow: 0px 0px 0px 2px @tone-base;
+		box-shadow: 0px 0px 0px 2px fadeout(@tone-base, 50%, relative);
 	}
 
-	// body:not(.mobile) &:not([disabled]):hover {
-	// 	color: if(@color-hover = inherit, inherit, @color-hover);
-	// 	background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
-	// 	border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
-	// }
+	body:not(.mobile) &:not([disabled]):hover {
+		color: if(@color-hover = inherit, inherit, @color-hover);
+		background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
+		border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
+	}
 
 	&:active {
 		top: 1px;
