@@ -1,0 +1,75 @@
+@import "./../common/variables";
+@import "./../common/functions";
+@import "./../common/mixins";
+
+.grid() {
+	.element-base();
+}
+
+.grid__wrap() {
+	.element-wrap();
+}
+
+.grid__list() {
+	.element-list();
+}
+
+.grid__item(@selector: grid) {
+	.element-item();
+
+	.@{selector}__list--sidar & {
+		@media (min-width: @breakpoint-lg) {
+			width: 5 / 6 * 100%;
+		}
+
+		@media (min-width: @breakpoint-xl) {
+			width: 8 / 12 * 100%;
+		}
+	}
+
+	.@{selector}__list--navahopi & {
+		@media (min-width: @breakpoint-xl) {
+			width: 10 / 12 * 100%;
+		}
+	}
+
+	.@{selector}__list--jordan & {
+		@media (min-width: @breakpoint-lg) {
+			width: 5 / 6 * 100%;
+		}
+
+		@media (min-width: @breakpoint-xl) {
+			width: 41.6666%;
+		}
+	}
+
+	.@{selector}__list--amara & {
+		@media (min-width: @breakpoint-lg) {
+			width: 50%;
+		}
+	}
+
+	.@{selector}__list--meskit & {
+		@media (min-width: @breakpoint-md) {
+			width: 50%;
+		}
+
+		@media (min-width: @breakpoint-xl) {
+			width: 33.3333%;
+		}
+	}
+
+	.@{selector}__list--serkl & {
+		@media (min-width: @breakpoint-md) {
+			width: 50%;
+		}
+
+		@media (min-width: @breakpoint-lg) {
+			width: 33.3333%;
+		}
+
+		@media (min-width: @breakpoint-xl) {
+			width: 25%;
+		}
+	}
+}

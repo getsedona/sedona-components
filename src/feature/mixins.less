@@ -1,0 +1,22 @@
+@import "./../common/variables";
+@import "./../common/functions";
+@import "./../common/mixins";
+
+.feature() {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: -@indent-base;
+	margin-right: -@indent-base;
+}
+
+.feature__accent() {
+	flex-shrink: 0;
+	line-height: 0;
+	margin-bottom: @indent-base;
+	padding-right: @indent-base;
+}
+
+.feature__content() {
+	margin-bottom: @indent-base;
+	padding-right: @indent-base;
+}

@@ -1,5 +1,3 @@
-import "./styles.less";
-
 let toggleShadow = el => {
 	if (el.scrollWidth - el.scrollLeft <= el.clientWidth) {
 		el.parentElement.classList.remove("table--shadow-right");
