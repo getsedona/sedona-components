@@ -5,6 +5,10 @@
 				<div class="grid__item  wysiwyg">
 					<h1>Сетка</h1>
 
+					<p>По-умолчанию на всю ширину.</p>
+
+					<p>Имеет брейкпоинты и динамическую сетку, которую рекомендуется соблюдать:</p>
+
 					<div class="table" style="white-space: nowrap;">
 						<div class="table__wrap">
 							<table>
@@ -12,9 +16,9 @@
 									<tr>
 										<th></th>
 										<th style="width: 16.5%;">Phone</th>
-										<th style="width: 16.5%;">Phone landscape</th>
+										<th style="width: 16.5%;">Phone lndscp</th>
 										<th style="width: 16.5%;">Pad</th>
-										<th style="width: 16.5%;">Pad landscape</th>
+										<th style="width: 16.5%;">Pad lndscp</th>
 										<th style="width: 16.5%;">Desktop</th>
 									</tr>
 								</thead>
@@ -22,14 +26,14 @@
 								<tbody>
 									<tr>
 										<td>Метка</td>
-										<td></td>
+										<td>—</td>
 										<td>sm</td>
 										<td>md</td>
 										<td>lg</td>
 										<td>xl</td>
 									</tr>
 									<tr>
-										<td>Размер</td>
+										<td>Ширина</td>
 										<td>320</td>
 										<td>576</td>
 										<td>768</td>
@@ -59,11 +63,23 @@
 		<div class="grid__wrap">
 			<div class="grid__list  grid__list--sidar">
 				<div class="grid__item  wysiwyg">
+					<h2>Модификаторы</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="scene">
+	<div class="grid">
+		<div class="grid__wrap">
+			<div class="grid__list  grid__list--sidar">
+				<div class="grid__item  wysiwyg">
 					<h3>Sidar</h3>
 
-					<p>Подходит для текстового содержимого.</p>
+					<p>Чуть больше половины.</p>
 
-					<p>2/2 - 4/4 - 5/6 - 8/12</p>
+					<p>2/2 - 4/4 - 6/6 - 6/8 - 8/12</p>
 				</div>
 			</div>
 
@@ -83,9 +99,9 @@
 				<div class="grid__item  wysiwyg">
 					<h3>Navahopi</h3>
 
-					<p>Подходит для картинок, видео, таблиц и т. п. Для разбавления текстового содержимого.</p>
+					<p>Чуть меньше всей ширины.</p>
 
-					<p>2/2 - 4/4 - 6/6 - 10/12</p>
+					<p>2/2 - 4/4 - 6/6 - 8/8 - 10/12</p>
 				</div>
 			</div>
 
@@ -105,7 +121,9 @@
 				<div class="grid__item  wysiwyg">
 					<h3>Jordan</h3>
 
-					<p>100% - 100% - 50% - 42%</p>
+					<p>Две колонки.</p>
+
+					<p>2/2 - 4/4 - 6/6 - 4/8 - 6/12</p>
 				</div>
 			</div>
 
@@ -127,33 +145,11 @@
 		<div class="grid__wrap">
 			<div class="grid__list  grid__list--sidar">
 				<div class="grid__item  wysiwyg">
-					<h3>Amara</h3>
-
-					<p>lg: 50%</p>
-				</div>
-			</div>
-
-			<div class="grid__list  grid__list--amara">
-				<div class="grid__item">
-					<div class="box-light" style="height: 100px;"></div>
-				</div>
-
-				<div class="grid__item">
-					<div class="box-light" style="height: 100px;"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
-
-<section class="scene">
-	<div class="grid">
-		<div class="grid__wrap">
-			<div class="grid__list  grid__list--sidar">
-				<div class="grid__item  wysiwyg">
 					<h3>Meskit</h3>
 
-					<p>md: 50%; xl: 33%</p>
+					<p>Три колонки.</p>
+
+					<p>2/2 - 4/4 - 3/6 - 4/8 - 4/12</p>
 				</div>
 			</div>
 
@@ -179,13 +175,15 @@
 		<div class="grid__wrap">
 			<div class="grid__list  grid__list--sidar">
 				<div class="grid__item  wysiwyg">
-					<h3>Serkl</h3>
+					<h3>Amara</h3>
 
-					<p>md: 50%; lg: 33%; xl: 25%</p>
+					<p>Четыре колонки.</p>
+
+					<p>2/2 - 4/4 - 3/6 - 33% - 3/12</p>
 				</div>
 			</div>
 
-			<div class="grid__list  grid__list--serkl">
+			<div class="grid__list  grid__list--amara">
 				<div class="grid__item">
 					<div class="box-light" style="height: 100px;"></div>
 				</div>
