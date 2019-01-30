@@ -3,6 +3,10 @@
 	flex-direction: column;
 	margin-bottom: -@indent-base;
 	margin-right: -@indent-base;
+
+	&--column {
+		flex-direction: row;
+	}
 }
 
 .feature__accent() {
@@ -15,4 +19,5 @@
 .feature__content() {
 	margin-bottom: @indent-base;
 	padding-right: @indent-base;
+	align-self: center;
 }

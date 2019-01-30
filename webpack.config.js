@@ -12,8 +12,8 @@ module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
     main: [
-      './dev/assets/js/app.js',
-      './dev/assets/less/styles.less',
+      './dev/assets/js/main.js',
+      './dev/assets/less/main.less',
     ]
   },
   output: {
@@ -53,6 +53,11 @@ module.exports = {
       layout: path.join(__dirname, 'dev/layouts/default.html'),
       template: './dev/pages/404.html',
       filename: '404.html'
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, 'dev/layouts/default.html'),
+      template: './src/common/examples.html',
+      filename: 'common.html'
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, 'dev/layouts/default.html'),
