@@ -18,7 +18,7 @@ module.exports = {
   },
   output: {
     filename: "assets/[name].[hash].js",
-    path: path.resolve(__dirname, "build")
+    path: path.resolve(__dirname, "docs")
   },
   module: {
     rules: [
@@ -41,7 +41,7 @@ module.exports = {
     port: process.env.PORT
   },
   plugins: [
-    new CleanWebpackPlugin(["build"]),
+    new CleanWebpackPlugin(["docs"]),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[hash].css": "[name].css" }),
     new CssoWebpackPlugin(),
     new HtmlWebpackPlugin({
