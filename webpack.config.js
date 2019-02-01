@@ -1,4 +1,5 @@
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssoWebpackPlugin = require("csso-webpack-plugin").default;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
@@ -51,6 +52,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(["docs"]),
+    new CopyWebpackPlugin([{ from: "./dev/static/" }]),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[hash].css": "[name].css" }),
     new CssoWebpackPlugin(),
     new HtmlWebpackPlugin({
