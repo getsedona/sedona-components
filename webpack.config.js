@@ -10,12 +10,10 @@ const isProduction = process.env.NODE_ENV === "production" ? true : false;
 require("dotenv").config();
 
 const htmlMinifyOpt = {
-  collapseWhitespace: true,
   removeComments: true,
   removeRedundantAttributes: true,
   removeScriptTypeAttributes: true,
-  removeStyleLinkTypeAttributes: true,
-  useShortDoctype: true
+  removeStyleLinkTypeAttributes: true
 }
 
 module.exports = {
@@ -69,12 +67,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/wysiwyg/examples.html",
-      filename: "wysiwyg.html",
-      minify: htmlMinifyOpt
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/scene/examples.html",
       filename: "scene.html",
       minify: htmlMinifyOpt
@@ -87,8 +79,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/feature/examples.html",
-      filename: "feature.html",
+      template: "./src/group/examples.html",
+      filename: "group.html",
       minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
@@ -101,6 +93,12 @@ module.exports = {
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/table/examples.html",
       filename: "table.html",
+      minify: htmlMinifyOpt
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./src/wysiwyg/examples.html",
+      filename: "wysiwyg.html",
       minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
