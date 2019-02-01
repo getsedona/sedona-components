@@ -1,37 +1,15 @@
-@icon-width: 24px;
-@icon-height: @icon-width;
-
-@icon-fit: -2px;
-
 .icon() {
 	display: inline-flex;
+	justify-content: center;
 	align-items: center;
-	width: (@icon-width + @icon-fit * 2);
+	width: 24px;
 	min-height: @line-height-base;
 	line-height: 0;
 	vertical-align: top;
-	box-sizing: content-box;
-
-	&--before {
-		padding-right: (@line-height-base / 4);
-
-		a:not(.btn) & {
-			margin-left: -(@icon-width + @icon-fit * 2 + @line-height-base / 4);
-		}
-	}
-
-	&--after {
-		padding-left: (@line-height-base / 4);
-
-		a:not(.btn) & {
-			margin-right: -(@icon-width + @icon-fit * 2 + @line-height-base / 4);
-		}
-	}
 
 	svg {
-		width: @icon-width;
-		height: @icon-height;
-		margin-left: @icon-fit;
-		margin-right: @icon-fit;
+		display: block;
+		width: 24px;
+		height: 24px;
 	}
 }
