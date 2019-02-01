@@ -1,6 +1,4 @@
-# Sedona components
-
-Общие компоненты для проектов компании «Конст Лаб».
+# Набор компонентов для [«Седоны»](http://sedona.constlab.ru)
 
 ## Быстрый старт
 
@@ -12,13 +10,45 @@ npm i sedona-components
 
 ### Подключение
 
-```
+```js
 // main.js
 import "sedona-components/src";
+```
 
+```less
 // main.less
 @import "~sedona-components/src/index";
 ```
+## Компоненты
+
+### Общие
+
+* [common](https://github.com/getsedona/sedona-components/tree/master/src/common) ([пример](https://getsedona.github.io/sedona-components/common.html))
+* [wysiwyg](https://github.com/getsedona/sedona-components/tree/master/src/wysiwyg) ([пример](https://getsedona.github.io/sedona-components/wysiwyg.html))
+
+### Лейаут
+
+* [scene](https://github.com/getsedona/sedona-components/tree/master/src/scene) ([пример](https://getsedona.github.io/sedona-components/scene.html))
+
+### Модульная сетка
+
+Вкладывается в лейаут.
+
+* [grid](https://github.com/getsedona/sedona-components/tree/master/src/grid) ([пример](https://getsedona.github.io/sedona-components/grid.html))
+
+### Модули
+
+Вкладываются в модульную сетку или в другие модули.
+
+* card
+* [feature](https://github.com/getsedona/sedona-components/tree/master/src/feature) ([пример](https://getsedona.github.io/sedona-components/feature.html))
+* form
+* icon
+* [table](https://github.com/getsedona/sedona-components/tree/master/src/table) ([пример](https://getsedona.github.io/sedona-components/table.html))
+
+### Шаблоны
+
+* 404 страница ([пример](https://getsedona.github.io/sedona-components/404.html))
 
 ## Принципы
 
@@ -43,28 +73,3 @@ import "sedona-components/src";
   </footer>
 </div>
 ```
-
-## Компоненты
-
-### Общие
-
-* [common](https://github.com/constlab/sedona-components/tree/master/src/common) ([пример](http://components.constlab.ru/common.html))
-* [wysiwyg](https://github.com/constlab/sedona-components/tree/master/src/wysiwyg) ([пример](http://components.constlab.ru/wysiwyg.html))
-
-### Лейаут и сетка
-
-* [grid](https://github.com/constlab/sedona-components/tree/master/src/grid) ([пример](http://components.constlab.ru/grid.html))
-* [scene](https://github.com/constlab/sedona-components/tree/master/src/scene) ([пример](http://components.constlab.ru/scene.html))
-
-### Модули
-
-* card
-* [feature](https://github.com/constlab/sedona-components/tree/master/src/feature) ([пример](http://components.constlab.ru/feature.html))
-* form
-  * file
-* icon
-* [table](https://github.com/constlab/sedona-components/tree/master/src/table) ([пример](http://components.constlab.ru/table.html))
-
-### Шаблоны
-
-* 404 страница ([пример](http://components.constlab.ru/404.html))
