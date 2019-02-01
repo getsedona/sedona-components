@@ -63,14 +63,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./dev/pages/404.html",
-      filename: "404.html",
+      template: "./src/common/examples.html",
+      filename: "common.html",
       minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/common/examples.html",
-      filename: "common.html",
+      template: "./src/wysiwyg/examples.html",
+      filename: "wysiwyg.html",
       minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
@@ -87,8 +87,14 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/wysiwyg/examples.html",
-      filename: "wysiwyg.html",
+      template: "./src/feature/examples.html",
+      filename: "feature.html",
+      minify: htmlMinifyOpt
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./src/icon/examples.html",
+      filename: "icon.html",
       minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
@@ -99,8 +105,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/feature/examples.html",
-      filename: "feature.html",
+      template: "./dev/pages/404.html",
+      filename: "404.html",
       minify: htmlMinifyOpt
     }),
     new HtmlLayoutPlugin()
