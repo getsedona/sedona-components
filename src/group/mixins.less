@@ -3,6 +3,10 @@
 	flex-wrap: wrap;
 	margin-bottom: -@indent-base;
 	margin-right: -@indent-base;
+
+	& + & {
+		margin-top: @indent-base;
+	}
 }
 
 .group__item() {
