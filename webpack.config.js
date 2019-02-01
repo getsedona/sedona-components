@@ -8,6 +8,15 @@ const path = require("path");
 const isProduction = process.env.NODE_ENV === "production" ? true : false;
 require("dotenv").config();
 
+const htmlMinifyOpt = {
+  collapseWhitespace: true,
+  removeComments: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  useShortDoctype: true
+}
+
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
@@ -47,42 +56,50 @@ module.exports = {
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/index.html",
-      filename: "index.html"
+      filename: "index.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/404.html",
-      filename: "404.html"
+      filename: "404.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/common/examples.html",
-      filename: "common.html"
+      filename: "common.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/scene/examples.html",
-      filename: "scene.html"
+      filename: "scene.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/grid/examples.html",
-      filename: "grid.html"
+      filename: "grid.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/wysiwyg/examples.html",
-      filename: "wysiwyg.html"
+      filename: "wysiwyg.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/table/examples.html",
-      filename: "table.html"
+      filename: "table.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/feature/examples.html",
-      filename: "feature.html"
+      filename: "feature.html",
+      minify: htmlMinifyOpt
     }),
     new HtmlLayoutPlugin()
   ]
