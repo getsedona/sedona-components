@@ -2,10 +2,22 @@
 
 Общие компоненты для проектов компании «Конст Лаб».
 
-## Установка
+## Быстрый старт
+
+### Установка
 
 ```
 npm i sedona-components
+```
+
+### Подключение
+
+```
+// main.js
+import "sedona-components/src";
+
+// main.less
+@import "~sedona-components/src/index";
 ```
 
 ## Принципы
