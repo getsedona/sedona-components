@@ -113,6 +113,12 @@ module.exports = {
       filename: "404.html",
       minify: htmlMinifyOpt
     }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./dev/pages/tests.html",
+      filename: "tests.html",
+      minify: htmlMinifyOpt
+    }),
     new HtmlLayoutPlugin()
   ]
 }
