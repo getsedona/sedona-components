@@ -85,6 +85,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./src/feature/examples.html",
+      filename: "feature.html",
+      minify: htmlMinifyOpt
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/icon/examples.html",
       filename: "icon.html",
       minify: htmlMinifyOpt
