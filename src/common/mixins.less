@@ -204,7 +204,7 @@
 	}
 
 	body:not(.mobile) &:not([disabled]):hover {
-		color: if(@color-hover = inherit, inherit, @color-hover);
+		color: if(@color-hover = inherit, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-hover);
 		background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
 		border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
 	}
