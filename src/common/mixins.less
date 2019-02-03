@@ -1,3 +1,53 @@
+.root() {
+	--font-size-h1: @font-size-h1;
+	--font-size-h2: @font-size-h2;
+	--font-size-h3: @font-size-h3;
+
+	--line-height-h1: @line-height-h1;
+	--line-height-h2: @line-height-h2;
+	--line-height-h3: @line-height-h3;
+
+	--gap-element-base: @gap-element-base;
+	--gap-element-half: @gap-element-half;
+
+	--gap-block-base: @gap-block-base;
+	--gap-block-half: @gap-block-half;
+}
+
+.html() {
+	box-sizing: border-box;
+	cursor: default;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.body() {
+	.text-base();
+	.box-base();
+	font-family: @font-family-primary;
+	overflow-y: scroll;
+	min-width: 320px;
+	font-display: swap;
+}
+
+.img() {
+	max-width: 100%;
+	height: auto;
+}
+
+.svg() {
+	transform: translateZ(0);
+	fill: currentColor;
+}
+
+.hr() {
+	border: 0;
+	height: 1px;
+	background-color: @color-base-divider;
+	margin-top: initial;
+	margin-bottom: initial;
+}
+
 .text-base() {
 	font-size: @font-size-base;
 	line-height: @line-height-base;
@@ -162,12 +212,4 @@
 	&:active {
 		top: 1px;
 	}
-}
-
-.hr() {
-	border: 0;
-	height: 1px;
-	background-color: @color-base-divider;
-	margin-top: initial;
-	margin-bottom: initial;
 }

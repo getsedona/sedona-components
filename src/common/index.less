@@ -3,26 +3,11 @@
 @import "./mixins";
 
 :root {
-	--font-size-h1: @font-size-h1;
-	--font-size-h2: @font-size-h2;
-	--font-size-h3: @font-size-h3;
-
-	--line-height-h1: @line-height-h1;
-	--line-height-h2: @line-height-h2;
-	--line-height-h3: @line-height-h3;
-
-	--gap-element-base: @gap-element-base;
-	--gap-element-half: @gap-element-half;
-
-	--gap-block-base: @gap-block-base;
-	--gap-block-half: @gap-block-half;
+	.root();
 }
 
 html {
-	box-sizing: border-box;
-	cursor: default;
-	-webkit-font-smoothing: antialiased;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	.html();
 }
 
 *,
@@ -32,22 +17,19 @@ html {
 }
 
 body {
-	.text-base();
-	.box-base();
-	font-family: @font-family-primary;
-	overflow-y: scroll;
-	min-width: 320px;
-	font-display: swap;
-}
-
-svg {
-	transform: translateZ(0);
-	fill: currentColor;
+	.body();
 }
 
 img {
-	max-width: 100%;
-	height: auto;
+	.img();
+}
+
+svg {
+	.svg();
+}
+
+hr {
+	.hr();
 }
 
 h1 {
@@ -78,8 +60,12 @@ button,
 	vertical-align: middle;
 }
 
-hr {
-	.hr();
+.font-family-primary {
+	font-family: @font-family-primary;
+}
+
+.font-family-secondary {
+	font-family: @font-family-secondary;
 }
 
 .text-base {
