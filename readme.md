@@ -19,6 +19,7 @@ import "sedona-components/src";
 // main.less
 @import "~sedona-components/src/index";
 ```
+
 ## Компоненты
 
 ### Основы
@@ -59,28 +60,45 @@ import "sedona-components/src";
 ### Разметка тела документа
 
 ```html
-<div class="page">
-  <header class="header">
-    Шапка
-  </header>
+<!doctype html>
 
-  <main class="main">
-    Контент
-  </main>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Заголовок страницы</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+  </head>
 
-  <aside class="aside">
-    Сайдбар
-  </aside>
+  <body>
+    <div class="page">
+      <header class="header">
+        <!-- Шапка -->
+      </header>
 
-  <footer class="footer">
-    Подвал
-  </footer>
-</div>
+      <main class="main">
+        <!-- Контент -->
+      </main>
+
+      <aside class="aside">
+        <!-- Боковая панель -->
+      </aside>
+
+      <footer class="footer">
+        <!-- Подвал -->
+      </footer>
+    </div>
+  </body>
+</html>
 ```
 
+### Пример преобразования дефолтных настроек
+
 ```less
-@media (min-width: @breakpoint-md) {
-  :root {
+// mixins.less
+.root() {
+  @media (min-width: @breakpoint-md) {
     --font-size-h1: ~"calc(@{font-size-base} * 2.25)"; // 36px
     --font-size-h2: var(--font-size-h1); // 36px
 
@@ -100,3 +118,5 @@ import "sedona-components/src";
 
 * Все компоненты должны ссылаться на общий компонент common и быть независимы друг от друга.
 * Все модули могут вкладываться друг в друга и каждый должен лежать в ячейке модульной сетки. В свою очередь модульная сетка должна вкладываться в лейаут.
+* Логика работы описывается в миксинах. Миксины подключаются к аналогичным классам.
+* По бокам отступы преимущественно в паддингах
