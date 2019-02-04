@@ -1,3 +1,5 @@
+"use strict";
+
 import MobileDetect from "mobile-detect";
 import "normalize.css/normalize.css";
 
