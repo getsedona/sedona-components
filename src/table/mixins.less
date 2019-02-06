@@ -122,8 +122,8 @@
 				white-space: normal !important;
 				display: block;
 				border-bottom-width: 0;
-				padding-top: @indent-base / 2;
-				padding-bottom: @indent-base / 2;
+				padding-top: @indent-half;
+				padding-bottom: @indent-half;
 				padding-left: var(--gap-block-half);
 				padding-right: var(--gap-block-half);
 
@@ -148,7 +148,7 @@
 		font-weight: normal;
 		vertical-align: bottom;
 		color: @color-base-secondary;
-		padding-bottom: @indent-base / 2;
+		padding-bottom: @indent-half;
 	}
 
 	thead {
@@ -168,9 +168,9 @@
 
 		tr {
 			background-color: fadeout(@color-base-divider, 100%, relative);
-			transition-property: background-color;
 			transition-duration: @animation-duration;
 			transition-timing-function: @animation-timing-function;
+			transition-property: background-color;
 
 			.@{selector}--responsive & {
 				@media (max-width: (@breakpoint-sm - 1px)) {
@@ -178,8 +178,8 @@
 					border-bottom-width: 1px;
 					border-bottom-style: solid;
 					border-bottom-color: @color-base-divider;
-					padding-top: @indent-base / 2;
-					padding-bottom: @indent-base / 2;
+					padding-top: @indent-half;
+					padding-bottom: @indent-half;
 
 					&:first-child {
 						border-top-width: 1px;
