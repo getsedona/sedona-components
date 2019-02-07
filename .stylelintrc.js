@@ -1,10 +1,10 @@
 "use strict";
 
 module.exports = {
-  "extends": "stylelint-config-htmlacademy",
-  "rules": {
+  extends: "stylelint-config-htmlacademy",
+  rules: {
     "function-whitespace-after": null,
-    "indentation": "tab",
+    indentation: null,
     "declaration-block-semicolon-newline-after": "always-multi-line"
   }
 }

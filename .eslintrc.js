@@ -1,18 +1,24 @@
 "use strict";
 
 module.exports = {
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module"
+  root: true,
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: "module",
+    parser: "babel-eslint"
   },
   env: {
-    "es6": true,
-    "node": true,
-    "browser": true
+    es6: true,
+    node: true,
+    browser: true
   },
-  "extends": "eslint:recommended",
+  extends: [
+    "eslint:recommended"
+  ],
   rules: {
-    // "indent": ["error", "tab"],
-    "quotes": ["error", "double"]
+    "arrow-parens": ["error", "always"],
+    "comma-dangle": ["error", "always-multiline"],
+    quotes: ["error", "double"],
+    semi: ["error", "always"]
   }
 }

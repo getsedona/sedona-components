@@ -15,8 +15,8 @@ const htmlMinifyOpt = {
   removeComments: true,
   removeRedundantAttributes: true,
   removeScriptTypeAttributes: true,
-  removeStyleLinkTypeAttributes: true
-}
+  removeStyleLinkTypeAttributes: true,
+};
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -24,31 +24,31 @@ module.exports = {
     main: [
       "./dev/assets/js/main.js",
       "./dev/assets/less/main.less",
-    ]
+    ],
   },
   output: {
     filename: "assets/[name].[hash].js",
-    path: path.resolve(__dirname, "docs")
+    path: path.resolve(__dirname, "docs"),
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        loader: "babel-loader"
+        loader: "babel-loader",
       }, {
         test: /\.(le|c)ss$/,
         use: [
           isProduction ? MiniCssExtractPlugin.loader : "style-loader",
           "css-loader",
-          "less-loader"
-        ]
-      }
-    ]
+          "less-loader",
+        ],
+      },
+    ],
   },
   devServer: {
     stats: "errors-only",
     host: process.env.HOST,
-    port: process.env.PORT
+    port: process.env.PORT,
   },
   plugins: [
     new CleanWebpackPlugin(["docs"]),
@@ -59,74 +59,74 @@ module.exports = {
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/index.html",
       filename: "index.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/common/examples.html",
       filename: "common.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/scene/examples.html",
       filename: "scene.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/grid/examples.html",
       filename: "grid.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/group/examples.html",
       filename: "group.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/card/examples.html",
       filename: "card.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/feature/examples.html",
       filename: "feature.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/icon/examples.html",
       filename: "icon.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/table/examples.html",
       filename: "table.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/wysiwyg/examples.html",
       filename: "wysiwyg.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/404.html",
       filename: "404.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/tests.html",
       filename: "tests.html",
-      minify: htmlMinifyOpt
+      minify: htmlMinifyOpt,
     }),
-    new HtmlLayoutPlugin()
-  ]
-}
+    new HtmlLayoutPlugin(),
+  ],
+};
