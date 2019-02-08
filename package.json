@@ -3,9 +3,9 @@
   "version": "4.2.0",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/constlab/sedona-components.git"
+    "url": "git+https://github.com/getsedona/sedona-components.git"
   },
-  "homepage": "https://github.com/constlab/sedona-components#readme",
+  "homepage": "https://github.com/getsedona/sedona-components#readme",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
@@ -32,7 +32,6 @@
     "less-loader": "4.1.0",
     "mini-css-extract-plugin": "0.5.0",
     "style-loader": "0.23.1",
-    "stylelint-config-htmlacademy": "0.1.1",
     "webpack": "4.29.0",
     "webpack-cli": "3.2.1",
     "webpack-dev-server": "3.1.14"
