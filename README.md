@@ -1,5 +1,7 @@
 # Набор компонентов для [«Седоны»](http://sedona.constlab.ru)
 
+![](https://img.shields.io/npm/v/sedona-components.svg?style=flat)
+
 ## Быстрый старт
 
 ### Установка
@@ -44,7 +46,7 @@ import "sedona-components/src";
 * carousel
 * collapse
 * [feature](https://github.com/getsedona/sedona-components/tree/master/src/feature) ([пример](https://getsedona.github.io/sedona-components/feature.html))
-* form
+* [form](https://github.com/getsedona/sedona-components/tree/master/src/form) ([пример](https://getsedona.github.io/sedona-components/form.html))
 * [icon](https://github.com/getsedona/sedona-components/tree/master/src/icon) ([пример](https://getsedona.github.io/sedona-components/icon.html))
 * modal
 * notify
