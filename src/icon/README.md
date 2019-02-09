@@ -2,7 +2,7 @@
 
 Позволяет вставлять иконку практически где угодно: в тексте, ссылках, кнопках, таблицах и т. д.
 
-[Пример](https://getsedona.github.io/sedona-components/icon.html) • [Разметка](https://github.com/getsedona/sedona-components/tree/master/src/icon/examples.html)
+[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/icon/examples.html) · [Пример](https://getsedona.github.io/sedona-components/icon.html)
 
 ## Подключение
 

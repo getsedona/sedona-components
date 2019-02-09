@@ -2,7 +2,7 @@
 
 Служит для создания основной сеточной структуры.
 
-Имеет динамическое количество колонок на каждой контрольной точке:
+Содержит динамическое количество колонок на каждой контрольной точке:
 
 |         | Phone | Phone ↔ | Pad | Pad ↔ | Desktop |
 | ------- | ----- | ------- | --- | ----- | ------- |
@@ -10,7 +10,7 @@
 | Точка   | 320   | 576     | 768 | 992   | 1200    |
 | Метка   | —     | sm      | md  | lg    | xl      |
 
-[Пример](https://getsedona.github.io/sedona-components/grid.html) • [Разметка](https://github.com/getsedona/sedona-components/tree/master/src/grid/examples.html)
+[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/grid/examples.html) · [Пример](https://getsedona.github.io/sedona-components/grid.html)
 
 ## Подключение
 

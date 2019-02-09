@@ -1,8 +1,8 @@
 # card
 
-Обертка для обычного контента или других модулей.
+Обертка для обычного контента и других модулей.
 
-[Пример](https://getsedona.github.io/sedona-components/card.html) • [Разметка](https://github.com/getsedona/sedona-components/tree/master/src/card/examples.html)
+[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/card/examples.html) · [Пример](https://getsedona.github.io/sedona-components/card.html)
 
 ## Подключение
 

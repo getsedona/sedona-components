@@ -6,7 +6,7 @@
 
 На мобильных устройствах устанавливает тегу `body` класс `.mobile`.
 
-[Настройка](https://github.com/getsedona/sedona-components/tree/master/src/common/veriables.less) • [Пример](https://getsedona.github.io/sedona-components/common.html) • [Разметка](https://github.com/getsedona/sedona-components/tree/master/src/common/examples.html)
+[Настройка](https://github.com/getsedona/sedona-components/blob/master/src/common/variables.less) · [Разметка](https://github.com/getsedona/sedona-components/blob/master/src/common/examples.html) · [Пример](https://getsedona.github.io/sedona-components/common.html)
 
 ## Подключение
 

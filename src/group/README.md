@@ -2,7 +2,7 @@
 
 Выстраивает кирпичиками друг за другом элементы.
 
-[Пример](https://getsedona.github.io/sedona-components/group.html) • [Разметка](https://github.com/getsedona/sedona-components/tree/master/src/group/examples.html)
+[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/group/examples.html) · [Пример](https://getsedona.github.io/sedona-components/group.html)
 
 ## Подключение
 

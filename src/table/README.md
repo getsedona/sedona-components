@@ -2,7 +2,7 @@
 
 Грамотно и деликатно оформляет табличные данные.
 
-[Пример](https://getsedona.github.io/sedona-components/table.html) • [Разметка](https://github.com/getsedona/sedona-components/tree/master/src/table/examples.html)
+[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/table/examples.html) · [Пример](https://getsedona.github.io/sedona-components/table.html)
 
 ## Подключение
 

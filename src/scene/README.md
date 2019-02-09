@@ -1,8 +1,8 @@
 # scene
 
-Служит для разбиения контента страницы на смысловые контейнеры.
+Служит для разбиения контента страницы по смыслу.
 
-[Пример](https://getsedona.github.io/sedona-components/scene.html) • [Разметка](https://github.com/getsedona/sedona-components/tree/master/src/scene/examples.html)
+[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/scene/examples.html) · [Пример](https://getsedona.github.io/sedona-components/scene.html)
 
 ## Подключение
 
