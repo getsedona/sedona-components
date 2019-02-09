@@ -4,8 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Примеры работы и внешнего вида компонентов «Седоны»</title>
-		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,shrink-to-fit=no">
-	<link href="assets/main.263b78863d098a03bac1.css" rel="stylesheet"></head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0,shrink-to-fit=no,viewport-fit=cover">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="address=no">
+	<link href="assets/main.f8da3f6a225ac9a86559.css" rel="stylesheet"></head>
 
 	<body>
 		<div class="page">
@@ -77,10 +79,18 @@
 										</tr>
 										<tr>
 											<td>Face ID</td>
-											<td>Нет</td>
-											<td>Нет</td>
-											<td>Нет</td>
-											<td>Есть</td>
+											<td class="color-base-hint">
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></svg></span>
+											</td>
+											<td class="color-base-hint">
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></svg></span>
+											</td>
+											<td class="color-base-hint">
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></svg></span>
+											</td>
+											<td>
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></span>
+											</td>
 										</tr>
 										<tr>
 											<td>Вес, г</td>
@@ -114,27 +124,9 @@
 			<div class="grid__wrap">
 				<div class="grid__list grid__list--sidar">
 					<div class="grid__item wysiwyg">
-						<h2>Модификаторы</h2>
+						<h3>Responsive</h3>
 					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<section class="scene">
-		<div class="grid">
-			<div class="grid__wrap">
-				<div class="grid__list grid__list--sidar">
-					<div class="grid__item wysiwyg">
-						<h3>table--responsive</h3>
-
-						<p>Перестраивает таблицу на небольших экранах.</p>
-
-						<p>У <mark>tbody>td</mark> должен присутствовать параметр <mark>data-title</mark> с названием колонки.</p>
-					</div>
-				</div>
-
-				<div class="grid__list grid__list--sidar">
 					<div class="grid__item wysiwyg">
 						<div class="table table--responsive" style="white-space: nowrap;">
 							<div class="table__wrap">
@@ -157,7 +149,9 @@
 											<td data-title="Процессор">A10 Fusion</td>
 											<td data-title="Емкость, ГБ">32 и 128</td>
 											<td data-title="Дисплей">Retina HD</td>
-											<td data-title="Face ID">Нет</td>
+											<td data-title="Face ID" class="color-base-hint">
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></svg></span>
+											</td>
 											<td data-title="Вес, г">138</td>
 											<td data-title="Цена, ₽" style="text-align: right;">43 990</td>
 										</tr>
@@ -166,7 +160,9 @@
 											<td data-title="Процессор">A11 Bionic</td>
 											<td data-title="Емкость, ГБ">64 и 256</td>
 											<td data-title="Дисплей">Retina HD</td>
-											<td data-title="Face ID">Нет</td>
+											<td data-title="Face ID" class="color-base-hint">
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></svg></span>
+											</td>
 											<td data-title="Вес, г">148</td>
 											<td data-title="Цена, ₽" style="text-align: right;">56 990</td>
 										</tr>
@@ -175,7 +171,9 @@
 											<td data-title="Процессор">A11 Bionic</td>
 											<td data-title="Емкость, ГБ">64 и 256</td>
 											<td data-title="Дисплей">Retina HD</td>
-											<td data-title="Face ID">Нет</td>
+											<td data-title="Face ID" class="color-base-hint">
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zM4 12c0-4.42 3.58-8 8-8 1.85 0 3.55.63 4.9 1.69L5.69 16.9C4.63 15.55 4 13.85 4 12zm8 8c-1.85 0-3.55-.63-4.9-1.69L18.31 7.1C19.37 8.45 20 10.15 20 12c0 4.42-3.58 8-8 8z"/></svg></span>
+											</td>
 											<td data-title="Вес, г">202</td>
 											<td data-title="Цена, ₽" style="text-align: right;">64 990</td>
 										</tr>
@@ -184,7 +182,9 @@
 											<td data-title="Процессор">A11 Bionic</td>
 											<td data-title="Емкость, ГБ">64 и 256</td>
 											<td data-title="Дисплей">Super Retina HD</td>
-											<td data-title="Face ID">Есть</td>
+											<td data-title="Face ID">
+												<span class="icon"><svg width="24" height="24" viewBox="0 0 24 24"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg></span>
+											</td>
 											<td data-title="Вес, г">174</td>
 											<td data-title="Цена, ₽" style="text-align: right;">79 990</td>
 										</tr>
@@ -200,5 +200,5 @@
 </main>
 
 		</div>
-	<script src="assets/main.263b78863d098a03bac1.js"></script></body>
+	<script src="assets/main.f8da3f6a225ac9a86559.js"></script></body>
 </html>
