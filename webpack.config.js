@@ -7,15 +7,21 @@ const CssoWebpackPlugin = require("csso-webpack-plugin").default;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlLayoutPlugin = require("html-layout-plugin");
 
+const pkg = require("./package.json");
 const path = require("path");
 const isProduction = process.env.NODE_ENV === "production" ? true : false;
 require("dotenv").config();
 
 const htmlMinifyOpt = {
+  collapseInlineTagWhitespace: true,
+  collapseWhitespace: true,
+  conservativeCollapse: true,
+  decodeEntities: true,
   removeComments: true,
   removeRedundantAttributes: true,
   removeScriptTypeAttributes: true,
   removeStyleLinkTypeAttributes: true,
+  useShortDoctype: true,
 };
 
 module.exports = {
@@ -60,6 +66,7 @@ module.exports = {
       template: "./dev/pages/index.html",
       filename: "index.html",
       minify: htmlMinifyOpt,
+      version: pkg.version,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
