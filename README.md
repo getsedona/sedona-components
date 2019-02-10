@@ -1,6 +1,6 @@
 # Набор компонентов для [«Седоны»](http://sedona.constlab.ru)
 
-![](https://img.shields.io/npm/v/sedona-components.svg?style=flat)
+![](https://img.shields.io/npm/v/sedona-components.svg?style=flat) ![](https://img.shields.io/github/license/getsedona/sedona-components.svg?style=flat) ![](https://img.shields.io/npm/dt/sedona-components.svg?style=flat)
 
 ## Быстрый старт
 
