@@ -33,7 +33,7 @@ module.exports = {
     ],
   },
   output: {
-    filename: "assets/[name].[hash].js",
+    filename: "assets/[name].[contenthash].js",
     path: path.resolve(__dirname, "docs"),
   },
   module: {
@@ -60,7 +60,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(["docs"]),
     new CopyWebpackPlugin([{ from: "./dev/static/" }]),
-    new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[hash].css": "[name].css" }),
+    new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
     new CssoWebpackPlugin(),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
