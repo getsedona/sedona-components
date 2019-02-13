@@ -1,6 +1,6 @@
-# Набор компонентов для [«Седоны»](http://sedona.constlab.ru)
+[![NPM](https://img.shields.io/npm/v/sedona-components.svg?style=flat)](https://www.npmjs.com/package/sedona-components) [![Downloads](https://img.shields.io/npm/dt/sedona-components.svg?style=flat)](https://www.npmjs.com/package/sedona-components) [![License](https://img.shields.io/github/license/getsedona/sedona-components.svg?style=flat)](https://github.com/getsedona/sedona-components/blob/master/LICENSE.md)
 
-![](https://img.shields.io/npm/v/sedona-components.svg?style=flat) ![](https://img.shields.io/github/license/getsedona/sedona-components.svg?style=flat) ![](https://img.shields.io/npm/dt/sedona-components.svg?style=flat)
+# Набор компонентов для [«Седоны»](http://sedona.constlab.ru)
 
 ## Быстрый старт
 
@@ -71,7 +71,7 @@ import "sedona-components/src";
   <head>
     <meta charset="utf-8">
     <title>Заголовок страницы</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, shrink-to-fit=no, viewport-fit=cover">
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
   </head>
