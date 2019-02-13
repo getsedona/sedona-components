@@ -30,6 +30,94 @@
 	font-display: swap;
 }
 
+.h1() {
+	font-size: var(--font-size-h1);
+	line-height: var(--line-height-h1);
+	font-family: @font-family-secondary;
+}
+
+.h2() {
+	font-size: var(--font-size-h2);
+	line-height: var(--line-height-h2);
+	font-family: @font-family-secondary;
+}
+
+.h3() {
+	font-size: var(--font-size-h3);
+	line-height: var(--line-height-h3);
+	font-family: @font-family-secondary;
+}
+
+.a(@color-base: @color-accent-primary; @color-hover: inherit) when not (@color-base = inherit) {
+	color: @color-base;
+	cursor: pointer;
+	text-decoration: none;
+	border-bottom-width: 0;
+	border-bottom-style: solid;
+	border-bottom-color: fadeout(@color-base, 70%, relative);
+	transition-duration: @animation-duration;
+	transition-timing-function: @animation-timing-function;
+	transition-property+: color, fill, border-bottom-color;
+
+	body:not(.mobile) &:hover {
+		color: if(@color-hover = inherit, .set-color-hover(@color-base)[], @color-hover);
+		border-bottom-color: fadeout($color, 70%, relative);
+	}
+
+	&:not([href]),
+	&[href^="tel"] {
+		color: inherit !important;
+		border-bottom-color: transparent !important;
+		cursor: inherit;
+	}
+
+	&[href^="tel"] {
+		white-space: nowrap;
+	}
+
+	&[aria-label] {
+		border-bottom-color: transparent !important;
+	}
+}
+
+.button(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
+	cursor: pointer;
+	font-size: @font-size-base;
+	line-height: @line-height-base;
+	color: if(@color-base = contrast, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-base);
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: @indent-base / 2 - 1px ~"calc(1.5em - 1px)";
+	min-height: @line-height-base + @indent-base;
+	border-radius: $min-height / 2;
+	vertical-align: middle;
+	justify-content: center;
+	white-space: nowrap;
+	background-color: @tone-base;
+	border-width: 1px;
+	border-style: solid;
+	border-color: if(@border-base = transparent, transparent, @border-base);
+	transition-duration: @animation-duration;
+	transition-timing-function: @animation-timing-function;
+	transition-property+: box-shadow, border-color, background-color;
+
+	&:not([disabled]):focus {
+		outline: none;
+		box-shadow: 0 0 0 2px fadeout(@tone-base, 50%, relative);
+	}
+
+	body:not(.mobile) &:not([disabled]):hover {
+		color: if(@color-hover = inherit, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-hover);
+		background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
+		border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
+	}
+
+	&:active {
+		top: 1px;
+	}
+}
+
 .img() {
 	max-width: 100%;
 	height: auto;
@@ -66,24 +154,6 @@
 .text-uppercase() {
 	text-transform: uppercase;
 	letter-spacing: 0.07em;
-}
-
-.text-h1() {
-	font-size: var(--font-size-h1);
-	line-height: var(--line-height-h1);
-	font-family: @font-family-secondary;
-}
-
-.text-h2() {
-	font-size: var(--font-size-h2);
-	line-height: var(--line-height-h2);
-	font-family: @font-family-secondary;
-}
-
-.text-h3() {
-	font-size: var(--font-size-h3);
-	line-height: var(--line-height-h3);
-	font-family: @font-family-secondary;
 }
 
 .box-base() {
@@ -149,72 +219,10 @@
 	}
 }
 
-.link(@color-base: @color-accent-primary; @color-hover: inherit) when not (@color-base = inherit) {
-	color: @color-base;
-	cursor: pointer;
-	text-decoration: none;
-	border-bottom-width: 0;
-	border-bottom-style: solid;
-	border-bottom-color: fadeout(@color-base, 70%, relative);
-	transition-duration: @animation-duration;
-	transition-timing-function: @animation-timing-function;
-	transition-property+: color, fill, border-bottom-color;
-
-	body:not(.mobile) &:hover {
-		color: if(@color-hover = inherit, .set-color-hover(@color-base)[], @color-hover);
-		border-bottom-color: fadeout($color, 70%, relative);
-	}
-
-	&:not([href]),
-	&[href^="tel"] {
-		color: inherit !important;
-		border-bottom-color: transparent !important;
-		cursor: inherit;
-	}
-
-	&[href^="tel"] {
-		white-space: nowrap;
-	}
-
-	&[aria-label] {
-		border-bottom-color: transparent !important;
-	}
-}
-
-.button(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
-	cursor: pointer;
-	font-size: @font-size-base;
-	line-height: @line-height-base;
-	color: if(@color-base = contrast, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-base);
-	position: relative;
-	display: inline-flex;
-	align-items: center;
-	padding: (@indent-base / 2 - 1px) ~"calc(1.5em - 1px)";
-	min-height: @line-height-base + @indent-base;
-	border-radius: $min-height / 2;
-	vertical-align: middle;
-	justify-content: center;
-	white-space: nowrap;
-	background-color: @tone-base;
-	border-width: 1px;
-	border-style: solid;
-	border-color: if(@border-base = transparent, transparent, @border-base);
-	transition-duration: @animation-duration;
-	transition-timing-function: @animation-timing-function;
-	transition-property+: box-shadow, border-color, background-color;
-
-	&:focus {
-		outline: none;
-		box-shadow: 0 0 0 2px fadeout(@tone-base, 50%, relative);
-	}
-
-	body:not(.mobile) &:not([disabled]):hover {
-		color: if(@color-hover = inherit, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-hover);
-		background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
-		border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
-	}
-
-	&:active {
-		top: 1px;
-	}
+.visually-hidden() {
+	position: absolute;
+	clip: rect(0 0 0 0);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
 }

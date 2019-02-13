@@ -37,17 +37,17 @@
 @color-light-divider: fade(@color-light-primary, 7%); // для разделителей
 
 // Акцентный (брендовый) цвет (может дополняться при необходимости)
-@color-accent-primary: #007aff; // для ссылок, кнопок и т. п.
+@color-accent-primary: contrast(@color-tone-base, #148eff, #0070f4); // для ссылок, кнопок и т. п.
 
 // Цвета оповещений
-@color-alert-success: #4cd964; // для успеха
-@color-alert-warning: #fc0; // для предупреждения
-@color-alert-danger: #ff3b30; // для ошибки
+@color-alert-success: contrast(@color-tone-base, #3de055, #1dc337); // для успеха
+@color-alert-warning: contrast(@color-tone-base, #ffa816, #f58b00); // для предупреждения
+@color-alert-danger: contrast(@color-tone-base, #ff4f45, #f53126); // для ошибки
 
 // Фоновые цвета компонентов
 @color-tone-base: #fff; // базовый для всего сайта
-@color-tone-dark: #333; // для темного компонента
-@color-tone-light: #eee; // для светлого компонента
+@color-tone-dark: contrast(@color-tone-base, #1f2022, lighten(@color-tone-base, 7%)); // для темного компонента
+@color-tone-light: contrast(@color-tone-base, #fff, darken(@color-tone-base, 10%)); // для светлого компонента
 
 // Тень (может дополняться при необходимости)
 @box-shadow-primary: .set-shadow(@color-dark-primary)[]; // базовая
