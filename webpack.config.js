@@ -107,6 +107,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./src/form/examples.html",
+      filename: "form.html",
+      minify: htmlMinifyOpt,
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/icon/examples.html",
       filename: "icon.html",
       minify: htmlMinifyOpt,

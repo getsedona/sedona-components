@@ -1,5 +1,6 @@
 "use strict";
 
-import { table } from "../../../src";
+import { form, table } from "../../../src";
 
+form();
 table();
