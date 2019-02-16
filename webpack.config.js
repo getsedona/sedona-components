@@ -69,8 +69,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/common/examples.html",
-      filename: "common.html",
+      template: "./src/base/examples.html",
+      filename: "base.html",
       minify: htmlMinifyOpt,
     }),
     new HtmlWebpackPlugin({

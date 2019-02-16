@@ -28,7 +28,8 @@ import "sedona-components/src";
 
 ### Основы
 
-* [common](https://github.com/getsedona/sedona-components/tree/master/src/common) ([пример](https://getsedona.github.io/sedona-components/common.html))
+* [common](https://github.com/getsedona/sedona-components/tree/master/src/common)
+* [base](https://github.com/getsedona/sedona-components/tree/master/src/base) ([пример](https://getsedona.github.io/sedona-components/base.html))
 
 ### Лейауты
 
