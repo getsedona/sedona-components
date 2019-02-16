@@ -12,8 +12,7 @@
     "start": "cd build && static-server"
   },
   "dependencies": {
-    "mobile-detect": "1.4.3",
-    "normalize.css": "8.0.1"
+    "mobile-detect": "1.4.3"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
