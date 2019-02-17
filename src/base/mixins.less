@@ -34,40 +34,46 @@
 	font-family: @font-family-secondary;
 }
 
-.a(@color-base: @color-accent-primary; @color-hover: inherit) when not (@color-base = inherit) {
-	color: @color-base;
-	cursor: pointer;
+.a() {
+	.link();
 	text-decoration: none;
-	border-bottom-width: 0;
-	border-bottom-style: solid;
-	border-bottom-color: fadeout(@color-base, 70%, relative);
-	transition-duration: @animation-duration;
-	transition-timing-function: @animation-timing-function;
-	transition-property+: color, fill, border-bottom-color;
-
-	body:not(.mobile) &:hover {
-		color: if(@color-hover = inherit, .set-color-hover(@color-base)[], @color-hover);
-		border-bottom-color: fadeout($color, 70%, relative);
-	}
 
 	&:not([href]),
 	&[href^="tel"] {
 		color: inherit !important;
-		border-bottom-color: transparent !important;
 		cursor: inherit;
 	}
 
 	&[href^="tel"] {
 		white-space: nowrap;
 	}
+}
 
-	&[aria-label] {
-		border-bottom-color: transparent !important;
+.link(@color-base: @color-accent-primary; @color-hover: inherit) {
+	color: @color-base;
+	cursor: pointer;
+	transition-duration: @animation-duration;
+	transition-timing-function: @animation-timing-function;
+	transition-property+: color, fill;
+
+	body:not(.mobile) &:hover {
+		color: if(@color-hover = inherit, .set-color-hover(@color-base)[], @color-hover);
 	}
 }
 
-.button(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
+.button() {
 	cursor: pointer;
+	font-size: inherit;
+	line-height: inherit;
+	color: inherit;
+	padding: initial;
+	border: initial;
+	background-color: initial;
+	vertical-align: middle;
+}
+
+.btn(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
+	.button();
 	font-size: @font-size-base;
 	line-height: @line-height-base;
 	color: if(@color-base = contrast, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-base);
@@ -77,7 +83,6 @@
 	padding: @indent-base / 2 - 1px ~"calc(1.5em - 1px)";
 	min-height: @line-height-base + @indent-base;
 	border-radius: $min-height / 2;
-	vertical-align: middle;
 	justify-content: center;
 	white-space: nowrap;
 	background-color: @tone-base;
