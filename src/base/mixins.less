@@ -1,9 +1,9 @@
 .html() {
 	box-sizing: border-box;
 	cursor: default;
+	text-size-adjust: 100%;
 	-webkit-font-smoothing: antialiased;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	-webkit-text-size-adjust: 100%;
 }
 
 .body() {
@@ -34,8 +34,22 @@
 	font-family: @font-family-secondary;
 }
 
+.link() {
+	cursor: pointer;
+	transition-duration: @animation-duration;
+	transition-timing-function: @animation-timing-function;
+	transition-property+: color, fill;
+}
+
+.link(@color-base: @color-accent-primary; @color-hover: inherit) {
+	color: @color-base;
+
+	body:not(.mobile) &:hover {
+		color: if(@color-hover = inherit, .set-color-hover(@color-base)[], @color-hover);
+	}
+}
+
 .a() {
-	.link();
 	text-decoration: none;
 
 	&:not([href]),
@@ -49,20 +63,9 @@
 	}
 }
 
-.link(@color-base: @color-accent-primary; @color-hover: inherit) {
-	color: @color-base;
-	cursor: pointer;
-	transition-duration: @animation-duration;
-	transition-timing-function: @animation-timing-function;
-	transition-property+: color, fill;
-
-	body:not(.mobile) &:hover {
-		color: if(@color-hover = inherit, .set-color-hover(@color-base)[], @color-hover);
-	}
-}
-
 .button() {
 	cursor: pointer;
+	font-family: inherit;
 	font-size: inherit;
 	line-height: inherit;
 	color: inherit;
@@ -70,13 +73,12 @@
 	border: initial;
 	background-color: initial;
 	vertical-align: middle;
+	margin: 0;
 }
 
-.btn(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
-	.button();
+.btn() {
 	font-size: @font-size-base;
 	line-height: @line-height-base;
-	color: if(@color-base = contrast, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-base);
 	position: relative;
 	display: inline-flex;
 	align-items: center;
@@ -85,27 +87,34 @@
 	border-radius: $min-height / 2;
 	justify-content: center;
 	white-space: nowrap;
-	background-color: @tone-base;
 	border-width: 1px;
 	border-style: solid;
-	border-color: if(@border-base = transparent, transparent, @border-base);
 	transition-duration: @animation-duration;
 	transition-timing-function: @animation-timing-function;
 	transition-property+: box-shadow, border-color, background-color;
 
 	&:not([disabled]):focus {
 		outline: none;
-		box-shadow: 0 0 0 2px fadeout(@tone-base, 50%, relative);
-	}
-
-	body:not(.mobile) &:not([disabled]):hover {
-		color: if(@color-hover = inherit, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-hover);
-		background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
-		border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
 	}
 
 	&:active {
 		top: 1px;
+	}
+}
+
+.btn(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
+	background-color: @tone-base;
+	color: if(@color-base = contrast, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-base);
+	border-color: if(@border-base = transparent, transparent, @border-base);
+
+	&:not([disabled]):focus {
+		box-shadow: 0 0 0 2px fadeout(@tone-base, 50%, relative);
+	}
+
+	body:not(.mobile) &:not([disabled]):hover {
+		background-color: if(@tone-hover = inherit, .set-color-hover(@tone-base)[], @tone-hover);
+		color: if(@color-hover = inherit, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-hover);
+		border-color: if(@border-hover = inherit, .set-color-hover(@border-base)[], @border-hover);
 	}
 }
 
