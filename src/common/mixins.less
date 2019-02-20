@@ -78,7 +78,7 @@
 }
 
 .element-item(@width: 100%; @gap: var(--gap-element-base)) {
-	width: ~"calc(@{width} - @{gap})";
+	width: if(@width = auto, auto, ~"calc(@{width} - @{gap})");
 	margin-right: @gap;
 	margin-bottom: @gap;
 }
@@ -104,4 +104,7 @@
 	width: 1px;
 	height: 1px;
 	margin: -1px;
+	border: 0;
+	padding: 0;
+	overflow: hidden;
 }
