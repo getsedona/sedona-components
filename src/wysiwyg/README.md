@@ -10,3 +10,7 @@
 // main.less
 @import "~sedona-components/src/wysiwyg/index";
 ```
+
+## Дополнительно
+
+* Типограф: [typograf](https://github.com/typograf/typograf)
