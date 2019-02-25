@@ -1,0 +1,15 @@
+.header() {
+	.element-base();
+	position: relative;
+	z-index: 100;
+}
+
+.header__wrap() {
+	.element-wrap();
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: @breakpoint-md) {
+		flex-direction: row;
+	}
+}

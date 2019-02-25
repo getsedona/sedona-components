@@ -1,4 +1,5 @@
-import { form, table } from "../../../src";
+import { header, form, table } from "../../../src";
 
+header();
 form();
 table();
