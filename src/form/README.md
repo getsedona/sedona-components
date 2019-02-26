@@ -21,3 +21,5 @@ form();
 ## Дополнительно
 
 * Слайдер: [noUiSlider](https://github.com/leongersen/noUiSlider)
+* Маски: [Inputmask](https://github.com/RobinHerbots/Inputmask)
+* Автовысота текстареи: [autosize](https://github.com/jackmoore/autosize)
