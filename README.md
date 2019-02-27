@@ -103,19 +103,21 @@ import "sedona-components/src";
 
 ```less
 // mixins.less
-.root() {
-  @media (min-width: @breakpoint-md) {
-    --font-size-h1: ~"calc(@{font-size-base} * 2.25)"; // 36px
-    --font-size-h2: var(--font-size-h1); // 36px
+#common() {
+  .root() {
+    @media (min-width: @breakpoint-md) {
+      --font-size-h1: ~"calc(@{font-size-base} * 2.25)"; // 36px
+      --font-size-h2: var(--font-size-h1); // 36px
 
-    --line-height-h1: ~"calc(@{font-size-base} * 2.75)"; // 44px
-    --line-height-h2: var(--line-height-h1); // 44px
+      --line-height-h1: ~"calc(@{font-size-base} * 2.75)"; // 44px
+      --line-height-h2: var(--line-height-h1); // 44px
 
-    --gap-element-base: ~"calc(@{indent-base} * 3)"; // 48px
-    --gap-element-half: ~"calc(var(--gap-element-base) / 2)"; // 24px
+      --gap-element-base: ~"calc(@{indent-base} * 3)"; // 48px
+      --gap-element-half: ~"calc(var(--gap-element-base) / 2)"; // 24px
 
-    --gap-block-base: ~"calc(@{indent-base} * 5)"; // 80px
-    --gap-block-half: ~"calc(var(--gap-block-base) / 2)"; // 40px
+      --gap-block-base: ~"calc(@{indent-base} * 5)"; // 80px
+      --gap-block-half: ~"calc(var(--gap-block-base) / 2)"; // 40px
+    }
   }
 }
 ```
