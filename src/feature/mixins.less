@@ -1,24 +1,26 @@
-.feature() {
-	position: relative;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	margin-bottom: -@indent-base;
-	margin-right: -@indent-base;
+#feature() {
+	.this() {
+		position: relative;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: -@indent-base;
+		margin-right: -@indent-base;
 
-	&--column {
-		flex-direction: row;
+		&--column {
+			flex-direction: row;
+		}
 	}
-}
 
-.feature__accent() {
-	flex-shrink: 0;
-	margin-bottom: @indent-base;
-	margin-right: @indent-base;
-}
+	.accent() {
+		flex-shrink: 0;
+		margin-bottom: @indent-base;
+		margin-right: @indent-base;
+	}
 
-.feature__content() {
-	margin-bottom: @indent-base;
-	margin-right: @indent-base;
-	align-self: center;
+	.content() {
+		margin-bottom: @indent-base;
+		margin-right: @indent-base;
+		align-self: center;
+	}
 }

@@ -1,113 +1,115 @@
-.root() {
-	--font-size-h1: @font-size-h1;
-	--font-size-h2: @font-size-h2;
-	--font-size-h3: @font-size-h3;
+#common() {
+	.root() {
+		--font-size-h1: @font-size-h1;
+		--font-size-h2: @font-size-h2;
+		--font-size-h3: @font-size-h3;
 
-	--line-height-h1: @line-height-h1;
-	--line-height-h2: @line-height-h2;
-	--line-height-h3: @line-height-h3;
+		--line-height-h1: @line-height-h1;
+		--line-height-h2: @line-height-h2;
+		--line-height-h3: @line-height-h3;
 
-	--gap-element-base: @gap-element-base;
-	--gap-element-half: @gap-element-half;
+		--gap-element-base: @gap-element-base;
+		--gap-element-half: @gap-element-half;
 
-	--gap-block-base: @gap-block-base;
-	--gap-block-half: @gap-block-half;
-}
-
-.text-base() {
-	font-size: @font-size-base;
-	line-height: @line-height-base;
-}
-
-.text-small() {
-	font-size: @font-size-small;
-	line-height: @line-height-small;
-}
-
-.text-large() {
-	font-size: @font-size-large;
-	line-height: @line-height-large;
-}
-
-.text-uppercase() {
-	text-transform: uppercase;
-	letter-spacing: 0.07em;
-}
-
-.box-base() {
-	color: @color-base-primary;
-	background-color: @color-tone-base;
-}
-
-.box-dark() {
-	color: @color-light-primary;
-	background-color: @color-tone-dark;
-}
-
-.box-light() {
-	color: @color-dark-primary;
-	background-color: @color-tone-light;
-}
-
-.element-base() {
-	width: 100%;
-}
-
-.element-wrap() {
-	max-width: @breakpoint-xl;
-	margin-left: auto;
-	margin-right: auto;
-
-	& + & {
-		margin-top: var(--gap-element-base);
+		--gap-block-base: @gap-block-base;
+		--gap-block-half: @gap-block-half;
 	}
-}
 
-.element-list() {
-	display: flex;
-	flex-wrap: wrap;
-	list-style-type: none;
-	padding-left: 0;
-	margin-top: 0;
-
-	& + & {
-		margin-top: var(--gap-element-base);
+	.text-base() {
+		font-size: @font-size-base;
+		line-height: @line-height-base;
 	}
-}
 
-.element-list(@gap: var(--gap-element-base)) {
-	margin-right: ~"calc(@{gap} * -1)";
-	margin-bottom: ~"calc(@{gap} * -1)";
-}
-
-.element-item(@width: 100%; @gap: var(--gap-element-base)) {
-	width: if(@width = auto, auto, ~"calc(@{width} - @{gap})");
-	margin-right: @gap;
-	margin-bottom: @gap;
-}
-
-.block-base() {
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	padding-top: var(--gap-block-base);
-	padding-bottom: var(--gap-block-base);
-	padding-right: var(--gap-block-half);
-	padding-left: var(--gap-block-half);
-
-	@media (min-width: @breakpoint-sm) {
-		padding-right: var(--gap-block-base);
-		padding-left: var(--gap-block-base);
+	.text-small() {
+		font-size: @font-size-small;
+		line-height: @line-height-small;
 	}
-}
 
-.visually-hidden() {
-	position: absolute;
-	clip: rect(0 0 0 0);
-	width: 1px;
-	height: 1px;
-	margin: -1px;
-	border: 0;
-	padding: 0;
-	overflow: hidden;
+	.text-large() {
+		font-size: @font-size-large;
+		line-height: @line-height-large;
+	}
+
+	.text-uppercase() {
+		text-transform: uppercase;
+		letter-spacing: 0.07em;
+	}
+
+	.box-base() {
+		color: @color-base-primary;
+		background-color: @color-tone-base;
+	}
+
+	.box-dark() {
+		color: @color-light-primary;
+		background-color: @color-tone-dark;
+	}
+
+	.box-light() {
+		color: @color-dark-primary;
+		background-color: @color-tone-light;
+	}
+
+	.element-base() {
+		width: 100%;
+	}
+
+	.element-wrap() {
+		max-width: @breakpoint-xl;
+		margin-left: auto;
+		margin-right: auto;
+
+		& + & {
+			margin-top: var(--gap-element-base);
+		}
+	}
+
+	.element-list() {
+		display: flex;
+		flex-wrap: wrap;
+		list-style-type: none;
+		padding-left: 0;
+		margin-top: 0;
+
+		& + & {
+			margin-top: var(--gap-element-base);
+		}
+	}
+
+	.element-list(@gap: var(--gap-element-base)) {
+		margin-right: ~"calc(@{gap} * -1)";
+		margin-bottom: ~"calc(@{gap} * -1)";
+	}
+
+	.element-item(@width: 100%; @gap: var(--gap-element-base)) {
+		width: if(@width = auto, auto, ~"calc(@{width} - @{gap})");
+		margin-right: @gap;
+		margin-bottom: @gap;
+	}
+
+	.block-base() {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: var(--gap-block-base);
+		padding-bottom: var(--gap-block-base);
+		padding-right: var(--gap-block-half);
+		padding-left: var(--gap-block-half);
+
+		@media (min-width: @breakpoint-sm) {
+			padding-right: var(--gap-block-base);
+			padding-left: var(--gap-block-base);
+		}
+	}
+
+	.visually-hidden() {
+		position: absolute;
+		clip: rect(0 0 0 0);
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		border: 0;
+		padding: 0;
+		overflow: hidden;
+	}
 }

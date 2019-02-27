@@ -1,19 +1,21 @@
-.scene() {
-	.block-base();
+#scene() {
+	.this() {
+		#common.block-base();
 
-	&:not(&--dark):not(&--light) + &:not(&--dark):not(&--light) {
-		padding-top: initial;
-	}
+		&:not(&--dark):not(&--light) + &:not(&--dark):not(&--light) {
+			padding-top: initial;
+		}
 
-	&--fill {
-		.block-base();
-	}
+		&--fill {
+			#common.block-base();
+		}
 
-	&--dark {
-		.box-dark();
-	}
+		&--dark {
+			#common.box-dark();
+		}
 
-	&--light {
-		.box-light();
+		&--light {
+			#common.box-light();
+		}
 	}
 }

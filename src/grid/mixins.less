@@ -1,69 +1,71 @@
-.grid() {
-	.element-base();
-}
-
-.grid__wrap() {
-	.element-wrap();
-}
-
-.grid__list() {
-	.element-list();
-}
-
-.grid__item(@selector: grid) {
-	.element-item();
-
-	.@{selector}__list--sidar & {
-		@media (min-width: @breakpoint-lg) {
-			.element-item(6 / 8 * 100%);
-		}
-
-		@media (min-width: @breakpoint-xl) {
-			.element-item(8 / 12 * 100%);
-		}
+#grid() {
+	.this() {
+		#common.element-base();
 	}
 
-	.@{selector}__list--navahopi & {
-		@media (min-width: @breakpoint-lg) {
-			.element-item(6 / 8 * 100%);
-		}
-
-		@media (min-width: @breakpoint-xl) {
-			.element-item(10 / 12 * 100%);
-		}
+	.wrap() {
+		#common.element-wrap();
 	}
 
-	.@{selector}__list--jordan & {
-		@media (min-width: @breakpoint-lg) {
-			.element-item(4 / 8 * 100%);
-		}
-
-		@media (min-width: @breakpoint-xl) {
-			.element-item(6 / 12 * 100%);
-		}
+	.list() {
+		#common.element-list();
 	}
 
-	.@{selector}__list--meskit & {
-		@media (min-width: @breakpoint-md) {
-			.element-item(4 / 8 * 100%);
+	.item(@selector: grid__list) {
+		#common.element-item();
+
+		.@{selector}--sidar & {
+			@media (min-width: @breakpoint-lg) {
+				#common.element-item(6 / 8 * 100%);
+			}
+
+			@media (min-width: @breakpoint-xl) {
+				#common.element-item(8 / 12 * 100%);
+			}
 		}
 
-		@media (min-width: @breakpoint-xl) {
-			.element-item(4 / 12 * 100%);
-		}
-	}
+		.@{selector}--navahopi & {
+			@media (min-width: @breakpoint-lg) {
+				#common.element-item(6 / 8 * 100%);
+			}
 
-	.@{selector}__list--amara & {
-		@media (min-width: @breakpoint-md) {
-			.element-item(3 / 6 * 100%);
-		}
-
-		@media (min-width: @breakpoint-lg) {
-			.element-item(33.3333%);
+			@media (min-width: @breakpoint-xl) {
+				#common.element-item(10 / 12 * 100%);
+			}
 		}
 
-		@media (min-width: @breakpoint-xl) {
-			.element-item(3 / 12 * 100%);
+		.@{selector}--jordan & {
+			@media (min-width: @breakpoint-lg) {
+				#common.element-item(4 / 8 * 100%);
+			}
+
+			@media (min-width: @breakpoint-xl) {
+				#common.element-item(6 / 12 * 100%);
+			}
+		}
+
+		.@{selector}--meskit & {
+			@media (min-width: @breakpoint-md) {
+				#common.element-item(4 / 8 * 100%);
+			}
+
+			@media (min-width: @breakpoint-xl) {
+				#common.element-item(4 / 12 * 100%);
+			}
+		}
+
+		.@{selector}--amara & {
+			@media (min-width: @breakpoint-md) {
+				#common.element-item(3 / 6 * 100%);
+			}
+
+			@media (min-width: @breakpoint-lg) {
+				#common.element-item(33.3333%);
+			}
+
+			@media (min-width: @breakpoint-xl) {
+				#common.element-item(3 / 12 * 100%);
+			}
 		}
 	}
 }
