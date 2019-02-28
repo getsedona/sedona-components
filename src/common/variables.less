@@ -3,20 +3,20 @@
 @font-family-secondary: @font-family-primary; // для заголовков
 
 // Размеры шрифтов
-@font-size-base: 16px; // базовый
-@font-size-small: @font-size-base * 0.75; // (12px) уменьшенный для подписей и сносок
-@font-size-large: @font-size-base * 1.25; // (20px) увеличенный для лидов и крупнных текстов
-@font-size-h1: @font-size-base * 2; // (32px) для заголовков первого уровня
-@font-size-h2: @font-size-h1; // (32px) для заголовков второго уровня
-@font-size-h3: @font-size-base * 1.5; // (24px) для заголовков третьего уровня
+@font-size-base: 1rem; // (16px) базовый
+@font-size-small: 0.75rem; // (12px) уменьшенный для подписей и сносок
+@font-size-large: 1.25rem; // (20px) увеличенный для лидов и крупнных текстов
+@font-size-h1: 2rem; // (32px) для заголовков первого уровня
+@font-size-h2: 2rem; // (32px) для заголовков второго уровня
+@font-size-h3: 1.5rem; // (24px) для заголовков третьего уровня
 
 // Высоты строк
-@line-height-base: @font-size-base * 1.75; // (28px) базовая
-@line-height-small: @font-size-base * 1.25; // (20px) уменьшенная для подписей и сносок
-@line-height-large: @font-size-base * 2; // (32px) увеличенная для лидов и крупных текстов
-@line-height-h1: @font-size-base * 2.5; // (40px) для заголовков первого уровня
-@line-height-h2: @line-height-h1; // (40px) для заголовков второго уровня
-@line-height-h3: @font-size-base * 2; // (32px) для заголовков третьего уровня
+@line-height-base: 1.75rem; // (28px) базовая
+@line-height-small: 1.25rem; // (20px) уменьшенная для подписей и сносок
+@line-height-large: 2rem; // (32px) увеличенная для лидов и крупных текстов
+@line-height-h1: 2.5rem; // (40px) для заголовков первого уровня
+@line-height-h2: 2.5rem; // (40px) для заголовков второго уровня
+@line-height-h3: 2rem; // (32px) для заголовков третьего уровня
 
 // Базовые цвета для всего сайта
 @color-base-primary: contrast(@color-tone-base, @color-dark-primary, @color-light-primary); // основной
@@ -53,20 +53,20 @@
 @box-shadow-primary: #common.set-shadow(#000)[]; // базовая
 
 // Радиус (может дополняться при необходимости)
-@box-radius-primary: @font-size-base / 2; // (8px) базовый
+@box-radius-primary: 0.5rem; // (8px) базовый
 
 // Отступы внутри элемента
-@indent-base: @font-size-base; // (16px) базовый (между параграфами)
-@indent-half: @indent-base / 2; // (8px) половинный
-@indent-double: @indent-base * 2; // (32px) двойной
+@indent-base: 1rem; // (16px) базовый (между параграфами)
+@indent-half: 0.5rem; // (8px) половинный
+@indent-double: 2rem; // (32px) двойной
 
 // Отступы между элементами
-@gap-element-base: @indent-base * 2.5; // (40px) базовый
-@gap-element-half: @gap-element-base / 2; // (20px) половинный
+@gap-element-base: 2.5rem; // (40px) базовый
+@gap-element-half: 1.25rem; // (20px) половинный
 
 // Отступы между блоками
-@gap-block-base: @indent-base * 3; // (48px) базовый
-@gap-block-half: @gap-block-base / 2; // (24px) половинный
+@gap-block-base: 3rem; // (48px) базовый
+@gap-block-half: 1.5rem; // (24px) половинный
 
 // Анимация
 @animation-duration: 0.2s; // продолжительность
