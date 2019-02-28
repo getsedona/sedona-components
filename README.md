@@ -106,17 +106,17 @@ import "sedona-components/src";
 #common() {
   .root() {
     @media (min-width: @breakpoint-md) {
-      --font-size-h1: ~"calc(@{font-size-base} * 2.25)"; // 36px
-      --font-size-h2: var(--font-size-h1); // 36px
+      --font-size-h1: 2.25rem; // 36px
+      --font-size-h2: 2.25rem; // 36px
 
-      --line-height-h1: ~"calc(@{font-size-base} * 2.75)"; // 44px
-      --line-height-h2: var(--line-height-h1); // 44px
+      --line-height-h1: 2.75rem; // 44px
+      --line-height-h2: 2.75rem; // 44px
 
-      --gap-element-base: ~"calc(@{indent-base} * 3)"; // 48px
-      --gap-element-half: ~"calc(var(--gap-element-base) / 2)"; // 24px
+      --gap-element-base: 3rem; // 48px
+      --gap-element-half: 1.5rem; // 24px
 
-      --gap-block-base: ~"calc(@{indent-base} * 5)"; // 80px
-      --gap-block-half: ~"calc(var(--gap-block-base) / 2)"; // 40px
+      --gap-block-base: 5rem; // 80px
+      --gap-block-half: 2.5rem; // 40px
     }
   }
 }
