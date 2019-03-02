@@ -55,6 +55,10 @@
 		}
 
 		.@{selector}--amara & {
+			@media (min-width: @breakpoint-sm) {
+				#common.element-item(2 / 4 * 100%);
+			}
+
 			@media (min-width: @breakpoint-md) {
 				#common.element-item(3 / 6 * 100%);
 			}
