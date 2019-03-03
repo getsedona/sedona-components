@@ -123,6 +123,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./src/marginalia/examples.html",
+      filename: "marginalia.html",
+      minify: isProduction ? htmlMinifyConfig : false,
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/wysiwyg/examples.html",
       filename: "wysiwyg.html",
       minify: isProduction ? htmlMinifyConfig : false,

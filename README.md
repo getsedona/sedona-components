@@ -55,6 +55,7 @@ import "sedona-components/src";
 
 ### Утилиты
 
+* [marginalia](https://github.com/getsedona/sedona-components/tree/master/src/marginalia) ([пример](https://getsedona.github.io/sedona-components/marginalia.html))
 * [wysiwyg](https://github.com/getsedona/sedona-components/tree/master/src/wysiwyg) ([пример](https://getsedona.github.io/sedona-components/wysiwyg.html))
 
 ### Шаблоны
