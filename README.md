@@ -7,7 +7,7 @@
 ### Установка
 
 ```
-npm i sedona-components --save-dev
+npm install sedona-components --save-dev
 ```
 
 ### Подключение

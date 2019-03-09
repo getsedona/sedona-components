@@ -10,9 +10,3 @@
 // main.less
 @import "~sedona-components/src/feature/index";
 ```
-
-## Модификаторы
-
-### `feature`
-
-* `feature--column` — выстраивает внутренности в две колонки
