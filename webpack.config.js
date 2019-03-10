@@ -57,7 +57,7 @@ module.exports = {
     port: process.env.PORT,
   },
   plugins: [
-    new CleanWebpackPlugin(["docs"]),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: "./dev/static/" }]),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
     new HtmlWebpackPlugin({
