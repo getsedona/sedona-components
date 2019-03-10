@@ -1,26 +1,22 @@
 #feature() {
-	.this() {
-		position: relative;
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		margin-bottom: -@indent-base;
-		margin-right: -@indent-base;
+  .this() {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -@indent-base;
+    margin-right: -@indent-base;
+  }
 
-		&--column {
-			flex-direction: row;
-		}
-	}
+  .accent() {
+    flex-shrink: 0;
+    margin-bottom: @indent-base;
+    margin-right: @indent-base;
+  }
 
-	.accent() {
-		flex-shrink: 0;
-		margin-bottom: @indent-base;
-		margin-right: @indent-base;
-	}
-
-	.content() {
-		margin-bottom: @indent-base;
-		margin-right: @indent-base;
-		align-self: center;
-	}
+  .content() {
+    margin-bottom: @indent-base;
+    margin-right: @indent-base;
+    align-self: center;
+  }
 }

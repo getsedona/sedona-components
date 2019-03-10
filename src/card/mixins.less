@@ -1,41 +1,51 @@
 #card() {
-	.this() {
-		display: flex;
-		flex-direction: column;
-		min-height: 100%;
-		border-radius: @box-radius-primary;
-		position: relative;
-		overflow: hidden;
-		background-color: if(luma(@color-tone-base) < 43%, @color-tone-dark, @color-tone-light);
-		padding: @indent-double;
-	}
+  .this() {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    border-radius: @box-radius-primary;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 0 1px if(luma(@color-tone-base) < 43%, @color-tone-dark, @color-tone-light);
+    padding: @indent-double;
 
-	.accent() {
-		margin-top: -@indent-double;
-		margin-right: -@indent-double;
-		margin-bottom: @indent-base;
-		margin-left: -@indent-double;
-	}
+    &--dark {
+      #common.box-dark();
+      box-shadow: none;
+    }
 
-	.media() {
-		position: relative;
-		padding-bottom: 9 * 100% / 16;
+    &--light {
+      #common.box-light();
+      box-shadow: none;
+    }
+  }
 
-		img,
-		video {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			border-radius: @box-radius-primary @box-radius-primary 0 0;
-		}
-	}
+  .accent() {
+    margin-top: -@indent-double;
+    margin-right: -@indent-double;
+    margin-bottom: @indent-base;
+    margin-left: -@indent-double;
+  }
 
-	.content() {
-		& + & {
-			margin-top: @indent-base;
-		}
-	}
+  .media() {
+    position: relative;
+    padding-bottom: 9 * 100% / 16;
+
+    img,
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: @box-radius-primary @box-radius-primary 0 0;
+    }
+  }
+
+  .content() {
+    & + & {
+      margin-top: @indent-base;
+    }
+  }
 }

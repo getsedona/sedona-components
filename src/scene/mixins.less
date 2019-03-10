@@ -1,48 +1,53 @@
 #scene() {
-	.this() {
-		#common.block-base();
+  .this() {
+    #common.block-base();
 
-		&:not(&--box):not(&--dark):not(&--light) + &:not(&--box):not(&--dark):not(&--light) {
-			padding-top: initial;
-		}
+    &:not(&--box):not(&--dark):not(&--light) + &:not(&--box):not(&--dark):not(&--light) {
+      padding-top: initial;
+    }
 
-		&--fill {
-			#common.block-base();
-		}
+    &--fill {
+      #common.block-base();
+    }
 
-		&--box {
-			#common.block-base();
-			border-radius: @box-radius-primary;
-			background-color: if(luma(@color-tone-base) < 43%, @color-tone-dark, @color-tone-light);
-			width: ~"calc(100vw - var(--gap-block-base) * 2)";
-			max-width: ~"calc(100vw - (100vw - @{breakpoint-xl}))";
+    &--box {
+      #common.block-base();
+      border-radius: @box-radius-primary;
+      box-shadow: inset 0 0 0 1px if(luma(@color-tone-base) < 43%, @color-tone-dark, @color-tone-light);
+      width: ~"calc(100vw - var(--gap-block-base) * 2)";
+      max-width: ~"calc(100vw - (100vw - @{breakpoint-xl}))";
 
-			@media (max-width: (@breakpoint-sm - 1px)) {
-				width: ~"calc(100vw - var(--gap-block-half) * 2)";
-			}
+      @media (max-width: (@breakpoint-sm - 1px)) {
+        width: ~"calc(100vw - var(--gap-block-half) * 2)";
+      }
 
-			&:first-child {
-				margin-top: $padding-top;
-			}
+      &:first-child {
+        margin-top: $padding-top;
+      }
 
-			&:last-child {
-				margin-bottom: $padding-bottom;
-			}
-		}
+      &:last-child {
+        margin-bottom: $padding-bottom;
+      }
+    }
 
-		&--dark {
-			#common.box-dark();
-		}
+    &--dark {
+      #common.box-dark();
+    }
 
-		&--light {
-			#common.box-light();
-		}
+    &--light {
+      #common.box-light();
+    }
 
-		&--box + &--dark,
-		&--box + &--light,
-		&--dark + &--box,
-		&--light + &--box {
-			margin-top: $padding-top;
-		}
-	}
+    &--box&--dark,
+    &--box&--light {
+      box-shadow: none;
+    }
+
+    &--box + &--dark,
+    &--box + &--light,
+    &--dark + &--box,
+    &--light + &--box {
+      margin-top: $padding-top;
+    }
+  }
 }

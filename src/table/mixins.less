@@ -1,198 +1,198 @@
 #table() {
-	.this() {
-		position: relative;
-		margin-right: ~"calc(var(--gap-block-half) * -1)";
-		margin-left: ~"calc(var(--gap-block-half) * -1)";
+  .this() {
+    position: relative;
+    margin-right: ~"calc(var(--gap-block-half) * -1)";
+    margin-left: ~"calc(var(--gap-block-half) * -1)";
 
-		@media (min-width: @breakpoint-sm) {
-			margin-right: auto;
-			margin-left: auto;
-		}
+    @media (min-width: @breakpoint-sm) {
+      margin-right: auto;
+      margin-left: auto;
+    }
 
-		& + & {
-			margin-top: var(--gap-element-base);
-		}
+    & + & {
+      margin-top: var(--gap-element-base);
+    }
 
-		&::before,
-		&::after {
-			content: "";
-			position: absolute;
-			top: 0;
-			bottom: 0;
-			z-index: 1;
-			width: 1rem;
-			background-repeat: no-repeat;
-			background-size: 1px 100%, 100% 100%;
-			opacity: 0;
-			transition-duration: @animation-duration / 2;
-			transition-timing-function: @animation-timing-function;
-			transition-property: opacity;
-			pointer-events: none;
-		}
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      width: 1rem;
+      background-repeat: no-repeat;
+      background-size: 1px 100%, 100% 100%;
+      opacity: 0;
+      transition-duration: @animation-duration / 2;
+      transition-timing-function: @animation-timing-function;
+      transition-property: opacity;
+      pointer-events: none;
+    }
 
-		&::before {
-			left: 0;
-			background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.15), transparent);
-			background-position: 0 0, 0 0;
-		}
+    &::before {
+      left: 0;
+      background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 0 50%, rgba(0, 0, 0, 0.15), transparent);
+      background-position: 0 0, 0 0;
+    }
 
-		&::after {
-			right: 0;
-			background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.15), transparent);
-			background-position: 100% 0, 100% 0;
-		}
+    &::after {
+      right: 0;
+      background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.05) 10%, rgba(0, 0, 0, 0.05) 90%, transparent), radial-gradient(farthest-side at 100% 50%, rgba(0, 0, 0, 0.15), transparent);
+      background-position: 100% 0, 100% 0;
+    }
 
-		&--shadow-left::before {
-			opacity: 1;
-		}
+    &--shadow-left::before {
+      opacity: 1;
+    }
 
-		&--shadow-right::after {
-			opacity: 1;
-		}
+    &--shadow-right::after {
+      opacity: 1;
+    }
 
-		&--responsive {
-			@media (max-width: (@breakpoint-sm - 1px)) {
-				white-space: normal !important;
+    &--responsive {
+      @media (max-width: (@breakpoint-sm - 1px)) {
+        white-space: normal !important;
 
-				&::before,
-				&::after {
-					display: none;
-				}
-			}
-		}
-	}
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
 
-	.wrap(@selector: table) {
-		overflow-x: auto;
-		-webkit-overflow-scrolling: touch;
+  .wrap(@selector: table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
 
-		.@{selector}--responsive & {
-			@media (max-width: (@breakpoint-sm - 1px)) {
-				overflow-x: visible;
-			}
-		}
+    .@{selector}--responsive & {
+      @media (max-width: (@breakpoint-sm - 1px)) {
+        overflow-x: visible;
+      }
+    }
 
-		table {
-			width: 100%;
-			border-collapse: collapse;
-			border-spacing: 0;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
 
-			.@{selector}--responsive & {
-				@media (max-width: (@breakpoint-sm - 1px)) {
-					display: block;
-				}
-			}
-		}
+      .@{selector}--responsive & {
+        @media (max-width: (@breakpoint-sm - 1px)) {
+          display: block;
+        }
+      }
+    }
 
-		th,
-		td {
-			padding: @indent-base;
-			overflow: hidden;
-			vertical-align: top;
-			border-bottom-width: 1px;
-			border-bottom-style: solid;
-			border-bottom-color: @color-base-divider;
-			text-align: left;
+    th,
+    td {
+      padding: @indent-base;
+      overflow: hidden;
+      vertical-align: top;
+      border-bottom-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: @color-base-divider;
+      text-align: left;
 
-			@media (max-width: (@breakpoint-sm - 1px)) {
-				&:first-child {
-					padding-left: var(--gap-block-half);
-				}
+      @media (max-width: (@breakpoint-sm - 1px)) {
+        &:first-child {
+          padding-left: var(--gap-block-half);
+        }
 
-				&:last-child {
-					padding-right: var(--gap-block-half);
-				}
-			}
+        &:last-child {
+          padding-right: var(--gap-block-half);
+        }
+      }
 
-			@media (min-width: @breakpoint-sm) {
-				.mobile & {
-					&:first-child {
-						padding-left: 0;
-					}
+      @media (min-width: @breakpoint-sm) {
+        .mobile & {
+          &:first-child {
+            padding-left: 0;
+          }
 
-					&:last-child {
-						padding-right: 0;
-					}
-				}
-			}
+          &:last-child {
+            padding-right: 0;
+          }
+        }
+      }
 
-			.@{selector}--responsive & {
-				@media (max-width: (@breakpoint-sm - 1px)) {
-					text-align: left !important;
-					white-space: normal !important;
-					display: block;
-					border-bottom-width: 0;
-					padding-top: @indent-half;
-					padding-bottom: @indent-half;
-					padding-left: var(--gap-block-half);
-					padding-right: var(--gap-block-half);
+      .@{selector}--responsive & {
+        @media (max-width: (@breakpoint-sm - 1px)) {
+          text-align: left !important;
+          white-space: normal !important;
+          display: block;
+          border-bottom-width: 0;
+          padding-top: @indent-half;
+          padding-bottom: @indent-half;
+          padding-left: var(--gap-block-half);
+          padding-right: var(--gap-block-half);
 
-					&:empty {
-						display: none;
-					}
+          &:empty {
+            display: none;
+          }
 
-					&::before {
-						#common.text-small();
-						display: block;
-						content: attr(data-title);
-						font-weight: normal;
-						color: @color-base-secondary;
-					}
-				}
-			}
-		}
+          &::before {
+            #common.text-small();
+            display: block;
+            content: attr(data-title);
+            font-weight: normal;
+            color: @color-base-secondary;
+          }
+        }
+      }
+    }
 
-		th {
-			#common.text-small();
-			padding-top: 0;
-			font-weight: normal;
-			vertical-align: bottom;
-			color: @color-base-secondary;
-			padding-bottom: @indent-half;
-		}
+    th {
+      #common.text-small();
+      padding-top: 0;
+      font-weight: normal;
+      vertical-align: bottom;
+      color: @color-base-secondary;
+      padding-bottom: @indent-half;
+    }
 
-		thead {
-			.@{selector}--responsive & {
-				@media (max-width: (@breakpoint-sm - 1px)) {
-					display: none;
-				}
-			}
-		}
+    thead {
+      .@{selector}--responsive & {
+        @media (max-width: (@breakpoint-sm - 1px)) {
+          display: none;
+        }
+      }
+    }
 
-		tbody {
-			.@{selector}--responsive & {
-				@media (max-width: (@breakpoint-sm - 1px)) {
-					display: block;
-				}
-			}
+    tbody {
+      .@{selector}--responsive & {
+        @media (max-width: (@breakpoint-sm - 1px)) {
+          display: block;
+        }
+      }
 
-			tr {
-				background-color: fadeout(@color-base-divider, 100%, relative);
-				transition-duration: @animation-duration;
-				transition-timing-function: @animation-timing-function;
-				transition-property: background-color;
+      tr {
+        background-color: fadeout(@color-base-divider, 100%, relative);
+        transition-duration: @animation-duration;
+        transition-timing-function: @animation-timing-function;
+        transition-property: background-color;
 
-				.@{selector}--responsive & {
-					@media (max-width: (@breakpoint-sm - 1px)) {
-						display: block;
-						border-bottom-width: 1px;
-						border-bottom-style: solid;
-						border-bottom-color: @color-base-divider;
-						padding-top: @indent-half;
-						padding-bottom: @indent-half;
+        .@{selector}--responsive & {
+          @media (max-width: (@breakpoint-sm - 1px)) {
+            display: block;
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: @color-base-divider;
+            padding-top: @indent-half;
+            padding-bottom: @indent-half;
 
-						&:first-child {
-							border-top-width: 1px;
-							border-top-style: solid;
-							border-top-color: @color-base-divider;
-						}
-					}
-				}
+            &:first-child {
+              border-top-width: 1px;
+              border-top-style: solid;
+              border-top-color: @color-base-divider;
+            }
+          }
+        }
 
-				body:not(.mobile) &:hover {
-					background-color: fadeout(@color-base-divider, 50%, relative);
-				}
-			}
-		}
-	}
+        body:not(.mobile) &:hover {
+          background-color: fadeout(@color-base-divider, 50%, relative);
+        }
+      }
+    }
+  }
 }
