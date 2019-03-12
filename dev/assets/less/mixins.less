@@ -14,4 +14,15 @@
       --gap-block-half: 2.5rem; // 40px
     }
   }
+
+  .box-dark() {
+    a,
+    .link {
+      #base.link(lighten(@color-accent-primary, 6%));
+    }
+
+    .btn {
+      #base.btn(lighten(@color-accent-primary, 6%));
+    }
+  }
 }
