@@ -57,7 +57,7 @@ module.exports = {
     port: process.env.PORT,
   },
   plugins: [
-    new CleanWebpackPlugin(["docs"]),
+    new CleanWebpackPlugin(),
     new CopyWebpackPlugin([{ from: "./dev/static/" }]),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
     new HtmlWebpackPlugin({
@@ -125,6 +125,12 @@ module.exports = {
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/table/examples.html",
       filename: "table.html",
+      minify: isProduction ? htmlMinifyConfig : false,
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./src/marginalia/examples.html",
+      filename: "marginalia.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({

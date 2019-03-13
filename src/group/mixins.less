@@ -1,15 +1,20 @@
-.group() {
-	display: flex;
-	flex-wrap: wrap;
-	margin-bottom: -@indent-base;
-	margin-right: -@indent-base;
+#group() {
+  .this() {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: -@indent-base;
+    margin-right: -@indent-base;
 
-	& + & {
-		margin-top: @indent-base;
-	}
-}
+    & + & {
+      margin-top: @indent-base;
+    }
+  }
 
-.group__item() {
-	margin-bottom: @indent-base;
-	margin-right: @indent-base;
+  .item() {
+    margin-bottom: @indent-base;
+    margin-right: @indent-base;
+  }
 }
