@@ -16,13 +16,28 @@
   }
 
   .box-dark() {
+    @new-color-accent-primary: lighten(@color-accent-primary, 6%);
+
     a,
     .link {
-      #base.link(lighten(@color-accent-primary, 6%));
+      #base.link(@new-color-accent-primary);
     }
 
     .btn {
-      #base.btn(lighten(@color-accent-primary, 6%));
+      #base.btn(@new-color-accent-primary);
     }
   }
+
+  // .box-light() {
+  //   @new-color-accent-primary: darken(@color-accent-primary, 11%);
+
+  //   a,
+  //   .link {
+  //     #base.link(@new-color-accent-primary);
+  //   }
+
+  //   .btn {
+  //     #base.btn(@new-color-accent-primary);
+  //   }
+  // }
 }
