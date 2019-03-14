@@ -1,4 +1,3 @@
-import { form, table } from "../../../src";
+import { table } from "../../../src";
 
-form();
 table();

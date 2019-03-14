@@ -6,13 +6,6 @@
 
 ## Подключение
 
-```js
-// main.js
-import { form } from "sedona-components/src/form";
-
-form();
-```
-
 ```less
 // main.less
 @import "~sedona-components/src/form/index";

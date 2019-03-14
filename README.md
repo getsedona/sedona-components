@@ -33,7 +33,7 @@ import "sedona-components/src";
 
 ### Лейауты
 
-* header
+* [header](https://github.com/getsedona/sedona-components/tree/master/src/header) ([пример](https://getsedona.github.io/sedona-components/header.html))
 * [scene](https://github.com/getsedona/sedona-components/tree/master/src/scene) ([пример](https://getsedona.github.io/sedona-components/scene.html))
 
 ### Модульные сетки
@@ -118,6 +118,32 @@ import "sedona-components/src";
 
       --gap-block-base: 5rem; // 80px
       --gap-block-half: 2.5rem; // 40px
+    }
+  }
+
+  .box-dark() {
+    @new-color-accent-primary: if(luma(@color-tone-base) < 43%, @color-accent-primary, lighten(@color-accent-primary, 6%));
+
+    a,
+    .link {
+      #base.link(@new-color-accent-primary);
+    }
+
+    .btn {
+      #base.btn(@new-color-accent-primary);
+    }
+  }
+
+  .box-light() {
+    @new-color-accent-primary: if(luma(@color-tone-base) < 43%, darken(@color-accent-primary, 11%), @color-accent-primary);
+
+    a,
+    .link {
+      #base.link(@new-color-accent-primary);
+    }
+
+    .btn {
+      #base.btn(@new-color-accent-primary);
     }
   }
 }
