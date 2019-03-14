@@ -16,7 +16,7 @@
   }
 
   .box-dark() {
-    @new-color-accent-primary: lighten(@color-accent-primary, 6%);
+    @new-color-accent-primary: if(luma(@color-tone-base) < 43%, @color-accent-primary, lighten(@color-accent-primary, 6%));
 
     a,
     .link {
@@ -28,16 +28,16 @@
     }
   }
 
-  // .box-light() {
-  //   @new-color-accent-primary: darken(@color-accent-primary, 11%);
+  .box-light() {
+    @new-color-accent-primary: if(luma(@color-tone-base) < 43%, darken(@color-accent-primary, 11%), @color-accent-primary);
 
-  //   a,
-  //   .link {
-  //     #base.link(@new-color-accent-primary);
-  //   }
+    a,
+    .link {
+      #base.link(@new-color-accent-primary);
+    }
 
-  //   .btn {
-  //     #base.btn(@new-color-accent-primary);
-  //   }
-  // }
+    .btn {
+      #base.btn(@new-color-accent-primary);
+    }
+  }
 }
