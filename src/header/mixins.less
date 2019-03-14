@@ -2,6 +2,8 @@
   .this() {
     #common.block-base();
     #common.element-base();
+    padding-top: var(--gap-block-half);
+    padding-bottom: var(--gap-block-half);
     position: relative;
     z-index: 100;
   }
@@ -14,6 +16,7 @@
     #common.element-list();
     margin-bottom: -@indent-base;
     justify-content: space-between;
+    align-items: center;
   }
 
   .fold() {
@@ -34,7 +37,8 @@
 
   .nav() {
     overflow: hidden;
-    height: @line-height-base;
+    clip-path: inset(0 0 10px 0);
+    margin-bottom: -10px;
     margin-right: ~"calc(var(--gap-block-half) * -1)";
     margin-left: ~"calc(var(--gap-block-half) * -1)";
 
