@@ -10,3 +10,10 @@
 // main.less
 @import "~sedona-components/src/header/index";
 ```
+
+## Модификаторы
+
+### `header`
+
+* `header--dark` – делает компонент в темных тонах
+* `header--light` – делает компонент в светлых тонах
