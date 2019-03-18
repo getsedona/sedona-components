@@ -81,9 +81,12 @@
   .hr() {
     border: 0;
     height: 1px;
-    background-color: @color-base-divider;
     margin-top: initial;
     margin-bottom: initial;
+  }
+
+  .hr(@color: var(--color-base-divider)) {
+    background-color: @color;
   }
 
   .link() {
