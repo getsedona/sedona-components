@@ -1,6 +1,6 @@
-[![NPM](https://img.shields.io/npm/v/sedona-components.svg?style=flat)](https://www.npmjs.com/package/sedona-components) [![Downloads](https://img.shields.io/npm/dt/sedona-components.svg?style=flat)](https://www.npmjs.com/package/sedona-components) [![License](https://img.shields.io/github/license/getsedona/sedona-components.svg?style=flat)](https://github.com/getsedona/sedona-components/blob/master/LICENSE.md)
-
 # Набор компонентов для [«Седоны»](http://sedona.constlab.ru)
+
+[![NPM](https://img.shields.io/npm/v/sedona-components.svg?style=flat)](https://www.npmjs.com/package/sedona-components) [![Downloads](https://img.shields.io/npm/dt/sedona-components.svg?style=flat)](https://www.npmjs.com/package/sedona-components) [![License](https://img.shields.io/github/license/getsedona/sedona-components.svg?style=flat)](https://github.com/getsedona/sedona-components/blob/master/LICENSE.md)
 
 ## Быстрый старт
 
@@ -98,55 +98,6 @@ import "sedona-components/src";
     </div>
   </body>
 </html>
-```
-
-### Пример преобразования дефолтных настроек
-
-```less
-// mixins.less
-#common() {
-  .root() {
-    @media (min-width: @breakpoint-md) {
-      --font-size-h1: 2.25rem; // 36px
-      --font-size-h2: 2.25rem; // 36px
-
-      --line-height-h1: 2.75rem; // 44px
-      --line-height-h2: 2.75rem; // 44px
-
-      --gap-element-base: 3rem; // 48px
-      --gap-element-half: 1.5rem; // 24px
-
-      --gap-block-base: 5rem; // 80px
-      --gap-block-half: 2.5rem; // 40px
-    }
-  }
-
-  .box-dark() {
-    @new-color-accent-primary: if(luma(@color-tone-base) < 43%, @color-accent-primary, lighten(@color-accent-primary, 6%));
-
-    a,
-    .link {
-      #base.link(@new-color-accent-primary);
-    }
-
-    .btn {
-      #base.btn(@new-color-accent-primary);
-    }
-  }
-
-  .box-light() {
-    @new-color-accent-primary: if(luma(@color-tone-base) < 43%, darken(@color-accent-primary, 11%), @color-accent-primary);
-
-    a,
-    .link {
-      #base.link(@new-color-accent-primary);
-    }
-
-    .btn {
-      #base.btn(@new-color-accent-primary);
-    }
-  }
-}
 ```
 
 ### Логика
