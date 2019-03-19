@@ -45,7 +45,6 @@ import "sedona-components/src";
 
 * [card](https://github.com/getsedona/sedona-components/tree/master/src/card) ([пример](https://getsedona.github.io/sedona-components/card.html))
 * carousel
-* collapse
 * [feature](https://github.com/getsedona/sedona-components/tree/master/src/feature) ([пример](https://getsedona.github.io/sedona-components/feature.html))
 * [form](https://github.com/getsedona/sedona-components/tree/master/src/form) ([пример](https://getsedona.github.io/sedona-components/form.html))
 * [icon](https://github.com/getsedona/sedona-components/tree/master/src/icon) ([пример](https://getsedona.github.io/sedona-components/icon.html))
@@ -55,6 +54,7 @@ import "sedona-components/src";
 
 ### Утилиты
 
+* [collapse](https://github.com/getsedona/sedona-components/tree/master/src/collapse) ([пример](https://getsedona.github.io/sedona-components/collapse.html))
 * [marginalia](https://github.com/getsedona/sedona-components/tree/master/src/marginalia) ([пример](https://getsedona.github.io/sedona-components/marginalia.html))
 * [wysiwyg](https://github.com/getsedona/sedona-components/tree/master/src/wysiwyg) ([пример](https://getsedona.github.io/sedona-components/wysiwyg.html))
 

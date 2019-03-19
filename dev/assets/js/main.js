@@ -1,3 +1,4 @@
-import { table } from "../../../src";
+import { collapse, table } from "../../../src";
 
+collapse();
 table();
