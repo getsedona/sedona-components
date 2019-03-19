@@ -5,16 +5,16 @@
     list-style-type: none;
     padding-left: 0;
     margin-top: 0;
-    margin-bottom: -@indent-base;
-    margin-right: -@indent-base;
+    margin-bottom: ~"calc(var(--indent-base) * -1)";
+    margin-right: ~"calc(var(--indent-base) * -1)";
 
     & + & {
-      margin-top: @indent-base;
+      margin-top: var(--indent-base);
     }
   }
 
   .item() {
-    margin-bottom: @indent-base;
-    margin-right: @indent-base;
+    margin-bottom: var(--indent-base);
+    margin-right: var(--indent-base);
   }
 }

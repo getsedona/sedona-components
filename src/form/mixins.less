@@ -4,18 +4,18 @@
     border-width: 1px;
     border-style: solid;
     border-color: @color-base-divider;
-    border-radius: @box-radius-primary;
+    border-radius: var(--box-radius-primary);
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
     color: @color-base-primary;
-    padding: ~"calc(@{indent-half} - 1px)" ~"calc(@{indent-base} - 1px)";
+    padding: ~"calc(var(--indent-half) - 1px)" ~"calc(var(--indent-base) - 1px)";
     width: 100%;
     appearance: none;
-    min-height: @line-height-base + @indent-base;
+    min-height: ~"calc(var(--line-height-base) + var(--indent-base))";
     background-color: @color-tone-base;
-    transition-duration: @animation-duration;
-    transition-timing-function: @animation-timing-function;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
     transition-property+: box-shadow, border-color;
     outline: none;
 
@@ -85,7 +85,7 @@
   }
 
   .this() {
-    // margin-bottom: -@indent-base;
+    // margin-bottom: ~"calc(var(--indent-base) * -1)";
   }
 
   .control() {

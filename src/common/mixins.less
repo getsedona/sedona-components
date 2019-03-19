@@ -1,33 +1,77 @@
 #common() {
   .root() {
+    --font-family-primary: @font-family-primary;
+
+    --font-size-base: @font-size-base;
+    --font-size-small: @font-size-small;
+    --font-size-large: @font-size-large;
     --font-size-h1: @font-size-h1;
     --font-size-h2: @font-size-h2;
     --font-size-h3: @font-size-h3;
 
+    --line-height-base: @line-height-base;
+    --line-height-small: @line-height-small;
+    --line-height-large: @line-height-large;
     --line-height-h1: @line-height-h1;
     --line-height-h2: @line-height-h2;
     --line-height-h3: @line-height-h3;
+
+    // --color-base-primary: @color-base-primary;
+    // --color-base-secondary: @color-base-secondary;
+    // --color-base-hint: @color-base-hint;
+    // --color-base-divider: @color-base-divider;
+
+    // --color-dark-primary: @color-dark-primary;
+    // --color-dark-secondary: @color-dark-secondary;
+    // --color-dark-hint: @color-dark-hint;
+    // --color-dark-divider: @color-dark-divider;
+
+    // --color-light-primary: @color-light-primary;
+    // --color-light-secondary: @color-light-secondary;
+    // --color-light-hint: @color-light-hint;
+    // --color-light-divider: @color-light-divider;
+
+    // --color-accent-primary: @color-accent-primary;
+
+    // --color-alert-success: @color-alert-success;
+    // --color-alert-warning: @color-alert-warning;
+    // --color-alert-danger: @color-alert-danger;
+
+    // --color-tone-base: @color-tone-base;
+    // --color-tone-dark: @color-tone-dark;
+    // --color-tone-light: @color-tone-light;
+
+    --box-shadow-primary: @box-shadow-primary;
+
+    --box-radius-primary: @box-radius-primary;
+
+    --indent-base: @indent-base;
+    --indent-half: @indent-half;
+    --indent-double: @indent-double;
 
     --gap-element-base: @gap-element-base;
     --gap-element-half: @gap-element-half;
 
     --gap-block-base: @gap-block-base;
     --gap-block-half: @gap-block-half;
+
+    --animation-duration: @animation-duration;
+    --animation-timing-function: @animation-timing-function;
   }
 
   .text-base() {
-    font-size: @font-size-base;
-    line-height: @line-height-base;
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
   }
 
   .text-small() {
-    font-size: @font-size-small;
-    line-height: @line-height-small;
+    font-size: var(--font-size-small);
+    line-height: var(--line-height-small);
   }
 
   .text-large() {
-    font-size: @font-size-large;
-    line-height: @line-height-large;
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-large);
   }
 
   .text-uppercase() {

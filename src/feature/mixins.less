@@ -4,19 +4,19 @@
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    margin-bottom: -@indent-base;
-    margin-right: -@indent-base;
+    margin-bottom: ~"calc(var(--indent-base) * -1)";
+    margin-right: ~"calc(var(--indent-base) * -1)";
   }
 
   .accent() {
     flex-shrink: 0;
-    margin-bottom: @indent-base;
-    margin-right: @indent-base;
+    margin-bottom: var(--indent-base);
+    margin-right: var(--indent-base);
   }
 
   .content() {
-    margin-bottom: @indent-base;
-    margin-right: @indent-base;
+    margin-bottom: var(--indent-base);
+    margin-right: var(--indent-base);
     align-self: center;
   }
 }

@@ -24,8 +24,8 @@
       background-repeat: no-repeat;
       background-size: 1px 100%, 100% 100%;
       opacity: 0;
-      transition-duration: @animation-duration / 2;
-      transition-timing-function: @animation-timing-function;
+      transition-duration: ~"calc(var(--animation-duration) / 2)";
+      transition-timing-function: var(--animation-timing-function);
       transition-property: opacity;
       pointer-events: none;
     }
@@ -86,7 +86,7 @@
 
     th,
     td {
-      padding: @indent-base;
+      padding: var(--indent-base);
       overflow: hidden;
       vertical-align: top;
       border-bottom-width: 1px;
@@ -122,8 +122,8 @@
           white-space: normal !important;
           display: block;
           border-bottom-width: 0;
-          padding-top: @indent-half;
-          padding-bottom: @indent-half;
+          padding-top: var(--indent-half);
+          padding-bottom: var(--indent-half);
           padding-left: var(--gap-block-half);
           padding-right: var(--gap-block-half);
 
@@ -148,7 +148,7 @@
       font-weight: normal;
       vertical-align: bottom;
       color: @color-base-secondary;
-      padding-bottom: @indent-half;
+      padding-bottom: var(--indent-half);
     }
 
     thead {
@@ -168,8 +168,8 @@
 
       tr {
         background-color: fadeout(@color-base-divider, 100%, relative);
-        transition-duration: @animation-duration;
-        transition-timing-function: @animation-timing-function;
+        transition-duration: var(--animation-duration);
+        transition-timing-function: var(--animation-timing-function);
         transition-property: background-color;
 
         .@{selector}--responsive & {
@@ -178,8 +178,8 @@
             border-bottom-width: 1px;
             border-bottom-style: solid;
             border-bottom-color: @color-base-divider;
-            padding-top: @indent-half;
-            padding-bottom: @indent-half;
+            padding-top: var(--indent-half);
+            padding-bottom: var(--indent-half);
 
             &:first-child {
               border-top-width: 1px;

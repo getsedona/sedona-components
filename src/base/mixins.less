@@ -10,7 +10,7 @@
   .body() {
     #common.text-base();
     #common.box-base();
-    font-family: @font-family-primary;
+    font-family: var(--font-family-primary);
     overflow-y: scroll;
     overflow-x: hidden;
     min-width: 320px;
@@ -85,14 +85,14 @@
     margin-bottom: initial;
   }
 
-  .hr(@color: var(--color-base-divider)) {
+  .hr(@color: @color-base-divider) {
     background-color: @color;
   }
 
   .link() {
     cursor: pointer;
-    transition-duration: @animation-duration;
-    transition-timing-function: @animation-timing-function;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
     transition-property+: color, fill;
   }
 
@@ -109,15 +109,15 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-    padding: ~"calc(@{indent-half} - 1px)" ~"calc(@{indent-base} * 1.5 - 1px)";
-    min-height: @line-height-base + @indent-base;
-    border-radius: $min-height / 2;
+    padding: ~"calc(var(--indent-half) - 1px)" ~"calc(var(--indent-base) * 1.5 - 1px)";
+    min-height: ~"calc(var(--line-height-base) + var(--indent-base))";
+    border-radius: ~"calc((var(--line-height-base) + var(--indent-base)) / 2)";
     justify-content: center;
     white-space: nowrap;
     border-width: 1px;
     border-style: solid;
-    transition-duration: @animation-duration;
-    transition-timing-function: @animation-timing-function;
+    transition-duration: var(--animation-duration);
+    transition-timing-function: var(--animation-timing-function);
     transition-property+: box-shadow, border-color, background-color;
 
     &:not([disabled]):focus {

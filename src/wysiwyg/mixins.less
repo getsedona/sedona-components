@@ -5,7 +5,7 @@
 
     h1 {
       margin-top: var(--gap-element-base);
-      margin-bottom: @indent-base;
+      margin-bottom: var(--indent-base);
 
       &:first-child {
         margin-top: 0;
@@ -14,7 +14,7 @@
 
     h2 {
       margin-top: var(--gap-element-base);
-      margin-bottom: @indent-base;
+      margin-bottom: var(--indent-base);
 
       &:first-child {
         margin-top: 0;
@@ -22,8 +22,8 @@
     }
 
     h3 {
-      margin-top: @indent-double;
-      margin-bottom: @indent-base;
+      margin-top: var(--indent-double);
+      margin-bottom: var(--indent-base);
 
       &:first-child {
         margin-top: 0;
@@ -32,7 +32,7 @@
 
     h1 + h3,
     h2 + h3 {
-      margin-top: @indent-base;
+      margin-top: var(--indent-base);
     }
 
     hr {
@@ -100,7 +100,7 @@
 
     img,
     video {
-      border-radius: @box-radius-primary;
+      border-radius: var(--box-radius-primary);
     }
 
     figure {

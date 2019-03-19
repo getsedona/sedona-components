@@ -22,19 +22,19 @@
 
   .list() {
     #common.element-list();
-    margin-bottom: -@indent-base;
+    margin-bottom: ~"calc(var(--indent-base) * -1)";
     justify-content: space-between;
     align-items: center;
   }
 
   .fold() {
     #common.element-item(auto);
-    margin-bottom: @indent-base;
+    margin-bottom: var(--indent-base);
   }
 
   .collapse() {
     #common.element-item(auto);
-    margin-bottom: @indent-base;
+    margin-bottom: var(--indent-base);
     display: flex;
     max-width: ~"calc(100vw - var(--gap-block-half) * 2)";
 
@@ -90,7 +90,7 @@
       white-space: nowrap;
 
       &:not(:last-child) {
-        margin-right: @indent-double;
+        margin-right: var(--indent-double);
       }
     }
   }
