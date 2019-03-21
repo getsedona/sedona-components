@@ -1,20 +1,22 @@
 #group() {
   .this() {
+    --group-gap: var(--indent-base);
+
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     padding-left: 0;
     margin-top: 0;
-    margin-bottom: ~"calc(var(--indent-base) * -1)";
-    margin-right: ~"calc(var(--indent-base) * -1)";
+    margin-bottom: ~"calc(var(--group-gap) * -1)";
+    margin-right: ~"calc(var(--group-gap) * -1)";
 
     & + & {
-      margin-top: var(--indent-base);
+      margin-top: var(--group-gap);
     }
   }
 
   .item() {
-    margin-bottom: var(--indent-base);
-    margin-right: var(--indent-base);
+    margin-bottom: var(--group-gap);
+    margin-right: var(--group-gap);
   }
 }
