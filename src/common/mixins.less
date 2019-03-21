@@ -130,7 +130,8 @@
   }
 
   .element-item(@width: 100%; @gap: var(--gap-element-base)) {
-    width: if(@width = auto, auto, ~"calc(@{width} - @{gap})");
+    flex-basis: if(@width = auto, auto, ~"calc(@{width} - @{gap})");
+    flex-shrink: 0;
     margin-right: @gap;
     margin-bottom: @gap;
   }
