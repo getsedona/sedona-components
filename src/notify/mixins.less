@@ -1,5 +1,65 @@
 #notify() {
   .this() {
+    border-width: 0;
+    border-style: solid;
+    border-color: transparent;
+    border-radius: var(--box-radius-primary);
+    position: fixed;
+    z-index: 10;
+    margin-right: var(--indent-base);
+    left: var(--indent-base);
+    bottom: var(--indent-base);
+    background: @color-base-divider;
+    color: inherit;
+    fill: inherit;
+    max-width: 500px;
+    animation-duration: ~"calc(var(--animation-duration) * 2)";
+    animation-name: notifyShow;
+    animation-timing-function: var(--animation-timing-function);
+    animation-fill-mode: forwards;
 
+    &--hide {
+      animation-duration: var(--animation-duration);
+      animation-name: notifyHide;
+    }
+
+    // a {
+    //   .link(@color-accent-primary);
+
+    //   &:hover {
+    //     .link-hover(@color-accent-primary);
+    //   }
+    // }
+  }
+
+  .close() {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    button {
+      border: 0;
+      padding: var(--indent-half);
+      background-color: transparent;
+      fill: inherit;
+      line-height: 0;
+      opacity: 0.7;
+      transition-property: opacity;
+      transition: var(--animation-duration) var(--animation-timing-function);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  .wrap() {
+    padding-top: var(--indent-base);
+    padding-bottom: var(--indent-base);
+  }
+
+  .content() {
+    padding-left: var(--indent-base);
+    padding-right: var(--indent-base);
   }
 }
