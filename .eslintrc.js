@@ -14,10 +14,17 @@ module.exports = {
     "eslint:recommended"
   ],
   "rules": {
+    "no-console": "off",
+    "no-debugger": "off",
+    "quotes": ["error", "double"],
     "indent": ["error", 2],
     "arrow-parens": ["error", "always"],
     "comma-dangle": ["error", "always-multiline"],
-    "quotes": ["error", "double"],
-    "semi": ["error", "always"]
+    "semi": ["error", "always"],
+    "space-before-function-paren": ["error", {
+      "anonymous": "never",
+      "named": "never",
+      "asyncArrow": "always",
+    }],
   }
 }

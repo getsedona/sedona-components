@@ -9,7 +9,9 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
-    "start": "cd docs && static-server"
+    "start": "cd docs && static-server",
+    "lint": "eslint '**/*.js' --ignore-pattern .gitignore --ignore-pattern docs/",
+    "lint:fix": "eslint --fix '**/*.js' --ignore-pattern .gitignore --ignore-pattern docs/"
   },
   "dependencies": {
     "mobile-detect": "^1.4.3"
