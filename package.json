@@ -10,8 +10,12 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack",
     "start": "cd docs && static-server",
-    "lint": "eslint '**/*.js' --ignore-pattern .gitignore --ignore-pattern docs/",
-    "lint:fix": "eslint --fix '**/*.js' --ignore-pattern .gitignore --ignore-pattern docs/"
+    "eslint": "eslint '**/*.js' --ignore-pattern .gitignore --ignore-pattern docs/",
+    "eslint:fix": "eslint --fix '**/*.js' --ignore-pattern .gitignore --ignore-pattern docs/",
+    "stylelint": "stylelint '**/*.less'",
+    "stylelint:fix": "stylelint --fix '**/*.less'",
+    "lint": "npm run eslint & npm run stylelint",
+    "lint:fix": "npm run eslint:fix & npm run stylelint:fix"
   },
   "dependencies": {
     "mobile-detect": "^1.4.3"
