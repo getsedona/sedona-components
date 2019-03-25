@@ -1,0 +1,14 @@
+#collapse() {
+  .this() {
+    max-height: 0;
+    overflow: hidden;
+    transition-duration: ~"calc(var(--animation-duration) * 2)";
+    transition-timing-function: cubic-bezier(0, 1, 0, 1);
+    transition-property: max-height;
+
+    &--show {
+      max-height: 99em;
+      transition-timing-function: ease-in-out;
+    }
+  }
+}

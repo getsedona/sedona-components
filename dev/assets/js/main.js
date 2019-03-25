@@ -1,4 +1,5 @@
-import { notify, table } from "../../../src";
+import { notify, table, collapse } from "../../../src";
 
 notify();
 table();
+collapse();
