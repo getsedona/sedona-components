@@ -49,7 +49,7 @@ import "sedona-components/src";
 * [form](https://github.com/getsedona/sedona-components/tree/master/src/form) ([пример](https://getsedona.github.io/sedona-components/form.html))
 * [icon](https://github.com/getsedona/sedona-components/tree/master/src/icon) ([пример](https://getsedona.github.io/sedona-components/icon.html))
 * modal
-* notify
+* [notify](https://github.com/getsedona/sedona-components/tree/master/src/notify) ([пример](https://getsedona.github.io/sedona-components/notify.html))
 * [table](https://github.com/getsedona/sedona-components/tree/master/src/table) ([пример](https://getsedona.github.io/sedona-components/table.html))
 
 ### Утилиты

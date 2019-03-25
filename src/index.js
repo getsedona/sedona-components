@@ -1,3 +1,4 @@
 export * from "./common";
-export * from "./collapse";
+export * from "./notify";
 export * from "./table";
+export * from "./collapse";
