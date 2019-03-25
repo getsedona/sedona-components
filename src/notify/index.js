@@ -1,13 +1,9 @@
-const defaultParams = {
-  selector: ".js-notify-close",
-  hideClass: "notify--hide"
-};
+export function notify() {
+  const el = document.querySelector(".js-notify-close");
 
-export function notify(params = defaultParams) {
-  const element = document.querySelector(params.selector);
-  if (element !== null) {
-    element.addEventListener("click", function() {
-      document.querySelector(".notify").classList.add(params.hideClass);
+  if (el) {
+    el.addEventListener("click", function() {
+      document.querySelector(".notify").classList.add("notify--hide");
     });
   }
 }
