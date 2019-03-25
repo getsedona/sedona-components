@@ -1,3 +1,4 @@
-import { table } from "../../../src";
+import { notify, table } from "../../../src";
 
+notify();
 table();

@@ -123,6 +123,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
+      template: "./src/notify/examples.html",
+      filename: "notify.html",
+      minify: isProduction ? htmlMinifyConfig : false,
+    }),
+    new HtmlWebpackPlugin({
+      layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/table/examples.html",
       filename: "table.html",
       minify: isProduction ? htmlMinifyConfig : false,
