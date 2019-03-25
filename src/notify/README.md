@@ -18,3 +18,9 @@ notify();
 @import "~sedona-components/src/notify/index";
 ```
 
+## Модификаторы
+
+### `notify`
+
+* `notify--dark` – делает компонент в темных тонах
+* `notify--light` – делает компонент в светлых тонах

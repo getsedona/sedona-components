@@ -1,6 +1,6 @@
 # collapse
 
-
+Раскрывающиеся блоки.
 
 [Разметка](https://github.com/getsedona/sedona-components/blob/master/src/collapse/examples.html) · [Пример](https://getsedona.github.io/sedona-components/collapse.html)
 
