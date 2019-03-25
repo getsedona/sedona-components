@@ -22,11 +22,11 @@ export function table() {
   }
 
   document.querySelectorAll(".table__wrap").forEach((el) => {
-    if (el.parentElement.classList.contains("table-js-init")) {
+    if (el.parentElement.classList.contains("js-table-init")) {
       return;
     }
 
-    el.parentElement.classList.add("table-js-init");
+    el.parentElement.classList.add("js-table-init");
 
     toggleShadow(el);
 
