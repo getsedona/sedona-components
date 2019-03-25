@@ -1,13 +1,14 @@
 #collapse() {
   .this() {
-    display: block;
-    max-height: 0px;
+    max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    transition-duration: ~"calc(var(--animation-duration) * 2)";
+    transition-timing-function: cubic-bezier(0, 1, 0, 1);
+    transition-property: max-height;
 
-    &.show {
+    &--show {
       max-height: 99em;
-      transition: max-height 0.5s ease-in-out;
+      transition-timing-function: ease-in-out;
     }
   }
 }
