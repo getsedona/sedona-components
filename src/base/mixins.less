@@ -1,3 +1,15 @@
+#common() {
+  .root() {
+    --link-color-base: @link-color-base;
+    --link-color-hover: @link-color-hover;
+
+    --btn-tone-base: @btn-tone-base;
+    --btn-color-base: @btn-color-base;
+    --btn-tone-hover: @btn-tone-hover;
+    --btn-color-hover: @btn-color-hover;
+  }
+}
+
 #base() {
   .html() {
     box-sizing: border-box;
@@ -103,29 +115,25 @@
     height: 1px;
     margin-top: initial;
     margin-bottom: initial;
-  }
-
-  .hr(@color: @color-base-divider) {
-    background-color: @color;
+    background-color: var(--color-base-divider);
   }
 
   .link() {
     cursor: pointer;
+    color: var(--link-color-base);
     transition-duration: var(--animation-duration);
     transition-timing-function: var(--animation-timing-function);
     transition-property+: color, fill;
-  }
 
-  .link(@color-base: @color-accent-primary; @color-hover: inherit) {
-    color: @color-base;
-
-    body:not(.mobile) &:hover {
-      color: if(@color-hover = inherit, #common.set-color-hover(@color-base)[], @color-hover);
+    &:hover {
+      --link-color-base: var(--link-color-hover);
     }
   }
 
   .btn() {
     #common.text-base();
+    background-color: var(--btn-tone-base);
+    color: var(--btn-color-base);
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -136,32 +144,23 @@
     white-space: nowrap;
     border-width: 1px;
     border-style: solid;
+    border-color: transparent;
     transition-duration: var(--animation-duration);
     transition-timing-function: var(--animation-timing-function);
     transition-property+: box-shadow, border-color, background-color;
 
     &:not([disabled]):focus {
       outline: none;
+      // box-shadow: 0 0 0 2px fadeout(@tone-base, 50%, relative);
+    }
+
+    body:not(.mobile) &:not([disabled]):hover {
+      --btn-tone-base: var(--btn-tone-hover);
+      --btn-color-base: var(--btn-color-hover);
     }
 
     &:active {
       top: 1px;
-    }
-  }
-
-  .btn(@tone-base: @color-accent-primary; @color-base: contrast; @border-base: transparent; @tone-hover: inherit; @color-hover: inherit; @border-hover: inherit) {
-    background-color: @tone-base;
-    color: if(@color-base = contrast, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-base);
-    border-color: if(@border-base = transparent, transparent, @border-base);
-
-    &:not([disabled]):focus {
-      box-shadow: 0 0 0 2px fadeout(@tone-base, 50%, relative);
-    }
-
-    body:not(.mobile) &:not([disabled]):hover {
-      background-color: if(@tone-hover = inherit, #common.set-color-hover(@tone-base)[], @tone-hover);
-      color: if(@color-hover = inherit, contrast(@tone-base, @color-dark-primary, @color-light-primary), @color-hover);
-      border-color: if(@border-hover = inherit, #common.set-color-hover(@border-base)[], @border-hover);
     }
   }
 }

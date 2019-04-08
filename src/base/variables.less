@@ -1,0 +1,9 @@
+// Оформление ссылки
+@link-color-base: @color-accent-primary;
+@link-color-hover: #common.set-color-hover(@link-color-base)[];
+
+// Оформление кнопки
+@btn-tone-base: @color-accent-primary;
+@btn-color-base: contrast(@btn-tone-base, @color-dark-primary, @color-light-primary);
+@btn-tone-hover: #common.set-color-hover(@btn-tone-base)[];
+@btn-color-hover: @btn-color-base;
