@@ -13,7 +13,7 @@
     &--box {
       #common.block-base();
       border-radius: var(--box-radius-primary);
-      box-shadow: inset 0 0 0 1px if(luma(@color-tone-base) < 43%, @color-tone-dark, @color-tone-light);
+      box-shadow: inset 0 0 0 1px var(--color-base-divider);
       width: ~"calc(100vw - var(--gap-block-base) * 2)";
       max-width: ~"calc(100vw - (100vw - @{breakpoint-xl}))";
 

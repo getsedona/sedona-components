@@ -1,15 +1,11 @@
 #card() {
   .this() {
-    --card-radius: var(--box-radius-primary);
-    --card-padding: var(--indent-double);
-    --card-media-ratio: 66.66%;
-
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    border-radius: var(--card-radius);
-    box-shadow: inset 0 0 0 1px if(luma(@color-tone-base) < 43%, @color-tone-dark, @color-tone-light);
-    padding: var(--card-padding);
+    border-radius: var(--box-radius-primary);
+    box-shadow: inset 0 0 0 1px var(--color-base-divider);
+    padding: var(--indent-double);
 
     &--dark {
       #common.box-dark();
@@ -23,15 +19,15 @@
   }
 
   .accent() {
-    margin-top: ~"calc(var(--card-padding) * -1)";
-    margin-right: ~"calc(var(--card-padding) * -1)";
+    margin-top: ~"calc(var(--indent-double) * -1)";
+    margin-right: ~"calc(var(--indent-double) * -1)";
     margin-bottom: var(--indent-base);
-    margin-left: ~"calc(var(--card-padding) * -1)";
+    margin-left: ~"calc(var(--indent-double) * -1)";
   }
 
   .media() {
     position: relative;
-    padding-bottom: var(--card-media-ratio);
+    padding-bottom: 66.66%;
 
     img,
     video {
@@ -41,7 +37,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: var(--card-radius) var(--card-radius) 0 0;
+      border-radius: var(--box-radius-primary) var(--box-radius-primary) 0 0;
     }
   }
 

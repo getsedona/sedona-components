@@ -16,30 +16,30 @@
     --line-height-h2: @line-height-h2;
     --line-height-h3: @line-height-h3;
 
-    // --color-base-primary: @color-base-primary;
-    // --color-base-secondary: @color-base-secondary;
-    // --color-base-hint: @color-base-hint;
-    // --color-base-divider: @color-base-divider;
+    --color-base-primary: @color-base-primary;
+    --color-base-secondary: @color-base-secondary;
+    --color-base-hint: @color-base-hint;
+    --color-base-divider: @color-base-divider;
 
-    // --color-dark-primary: @color-dark-primary;
-    // --color-dark-secondary: @color-dark-secondary;
-    // --color-dark-hint: @color-dark-hint;
-    // --color-dark-divider: @color-dark-divider;
+    --color-dark-primary: @color-dark-primary;
+    --color-dark-secondary: @color-dark-secondary;
+    --color-dark-hint: @color-dark-hint;
+    --color-dark-divider: @color-dark-divider;
 
-    // --color-light-primary: @color-light-primary;
-    // --color-light-secondary: @color-light-secondary;
-    // --color-light-hint: @color-light-hint;
-    // --color-light-divider: @color-light-divider;
+    --color-light-primary: @color-light-primary;
+    --color-light-secondary: @color-light-secondary;
+    --color-light-hint: @color-light-hint;
+    --color-light-divider: @color-light-divider;
 
-    // --color-accent-primary: @color-accent-primary;
+    --color-accent-primary: @color-accent-primary;
 
-    // --color-alert-success: @color-alert-success;
-    // --color-alert-warning: @color-alert-warning;
-    // --color-alert-danger: @color-alert-danger;
+    --color-alert-success: @color-alert-success;
+    --color-alert-warning: @color-alert-warning;
+    --color-alert-danger: @color-alert-danger;
 
-    // --color-tone-base: @color-tone-base;
-    // --color-tone-dark: @color-tone-dark;
-    // --color-tone-light: @color-tone-light;
+    --color-tone-base: @color-tone-base;
+    --color-tone-dark: @color-tone-dark;
+    --color-tone-light: @color-tone-light;
 
     --box-shadow-primary: @box-shadow-primary;
 
@@ -57,6 +57,8 @@
 
     --animation-duration: @animation-duration;
     --animation-timing-function: @animation-timing-function;
+
+    --element-item-width: 100%;
   }
 
   .text-base() {
@@ -80,18 +82,28 @@
   }
 
   .box-base() {
-    color: @color-base-primary;
-    background-color: @color-tone-base;
+    color: var(--color-base-primary);
+    background-color: var(--color-tone-base);
   }
 
   .box-dark() {
-    color: @color-light-primary;
-    background-color: @color-tone-dark;
+    --color-base-primary: @color-light-primary;
+    --color-base-secondary: @color-light-secondary;
+    --color-base-hint: @color-light-hint;
+    --color-base-divider: @color-light-divider;
+
+    color: var(--color-light-primary);
+    background-color: var(--color-tone-dark);
   }
 
   .box-light() {
-    color: @color-dark-primary;
-    background-color: @color-tone-light;
+    --color-base-primary: @color-dark-primary;
+    --color-base-secondary: @color-dark-secondary;
+    --color-base-hint: @color-dark-hint;
+    --color-base-divider: @color-dark-divider;
+
+    color: var(--color-dark-primary);
+    background-color: var(--color-tone-light);
   }
 
   .element-base() {
@@ -108,32 +120,25 @@
     }
   }
 
-  .element-wrap(@max-width: @breakpoint-xl) {
-    max-width: @max-width;
-  }
-
   .element-list() {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
     padding-left: 0;
     margin-top: 0;
+    margin-right: ~"calc(var(--gap-element-base) * -1)";
+    margin-bottom: ~"calc(var(--gap-element-base) * -1)";
 
     & + & {
       margin-top: var(--gap-element-base);
     }
   }
 
-  .element-list(@gap: var(--gap-element-base)) {
-    margin-right: ~"calc(@{gap} * -1)";
-    margin-bottom: ~"calc(@{gap} * -1)";
-  }
-
-  .element-item(@width: 100%; @gap: var(--gap-element-base)) {
-    flex-basis: if(@width = auto, auto, ~"calc(@{width} - @{gap})");
+  .element-item() {
+    flex-basis: ~"calc(var(--element-item-width) - var(--gap-element-base))";
     flex-shrink: 0;
-    margin-right: @gap;
-    margin-bottom: @gap;
+    margin-right: var(--gap-element-base);
+    margin-bottom: var(--gap-element-base);
   }
 
   .block-base() {
