@@ -16,59 +16,59 @@
 
     .@{selector}--sidar & {
       @media (min-width: @breakpoint-lg) {
-        #common.element-item(6 / 8 * 100%);
+        --element-item-width: 75%; // 6/8
       }
 
       @media (min-width: @breakpoint-xl) {
-        #common.element-item(8 / 12 * 100%);
+        --element-item-width: 66.66%; // 8/12
       }
     }
 
     .@{selector}--navahopi & {
       @media (min-width: @breakpoint-lg) {
-        #common.element-item(6 / 8 * 100%);
+        --element-item-width: 75%; // 6/8
       }
 
       @media (min-width: @breakpoint-xl) {
-        #common.element-item(10 / 12 * 100%);
+        --element-item-width: 83.33%; // 10/12
       }
     }
 
     .@{selector}--jordan & {
       @media (min-width: @breakpoint-lg) {
-        #common.element-item(4 / 8 * 100%);
+        --element-item-width: 50%; // 4/8
       }
 
       @media (min-width: @breakpoint-xl) {
-        #common.element-item(6 / 12 * 100%);
+        --element-item-width: 50%; // 6/12
       }
     }
 
     .@{selector}--meskit & {
       @media (min-width: @breakpoint-md) {
-        #common.element-item(4 / 8 * 100%);
+        --element-item-width: 50%; // 4/8
       }
 
       @media (min-width: @breakpoint-xl) {
-        #common.element-item(4 / 12 * 100%);
+        --element-item-width: 33.33%; // 4/12
       }
     }
 
     .@{selector}--amara & {
       @media (min-width: @breakpoint-sm) {
-        #common.element-item(2 / 4 * 100%);
+        --element-item-width: 50%; // 2/4
       }
 
       @media (min-width: @breakpoint-md) {
-        #common.element-item(3 / 6 * 100%);
+        --element-item-width: 50%; // 3/6
       }
 
       @media (min-width: @breakpoint-lg) {
-        #common.element-item(33.3333%);
+        --element-item-width: 33.33%; // ⅓/8
       }
 
       @media (min-width: @breakpoint-xl) {
-        #common.element-item(3 / 12 * 100%);
+        --element-item-width: 25%; // 3/12
       }
     }
   }
