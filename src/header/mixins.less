@@ -28,12 +28,14 @@
   }
 
   .fold() {
-    #common.element-item(auto);
+    #common.element-item();
+    flex-basis: auto;
     margin-bottom: var(--indent-base);
   }
 
   .collapse() {
-    #common.element-item(auto);
+    #common.element-item();
+    flex-basis: auto;
     margin-bottom: var(--indent-base);
     display: flex;
     max-width: ~"calc(100vw - var(--gap-block-half) * 2)";
