@@ -58,6 +58,7 @@
     --animation-duration: @animation-duration;
     --animation-timing-function: @animation-timing-function;
 
+    --element-wrap-maxWidth: @breakpoint-xl;
     --element-item-width: 100%;
   }
 
@@ -111,7 +112,7 @@
   }
 
   .element-wrap() {
-    max-width: @breakpoint-xl;
+    max-width: var(--element-wrap-maxWidth);
     margin-left: auto;
     margin-right: auto;
 
