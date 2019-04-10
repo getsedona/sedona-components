@@ -5,8 +5,11 @@
 
     --btn-tone-base: @btn-tone-base;
     --btn-color-base: @btn-color-base;
+    --btn-borderColor-base: @btn-borderColor-base;
     --btn-tone-hover: @btn-tone-hover;
     --btn-color-hover: @btn-color-hover;
+    --btn-borderColor-hover: @btn-borderColor-hover;
+    --btn-outlineColor-focus: @btn-outlineColor-focus;
   }
 
   .html() {
@@ -123,7 +126,7 @@
     transition-timing-function: var(--animation-timing-function);
     transition-property+: color, fill;
 
-    &:hover {
+    body:not(.mobile) &:hover {
       --link-color-base: var(--link-color-hover);
     }
   }
@@ -142,19 +145,20 @@
     white-space: nowrap;
     border-width: 1px;
     border-style: solid;
-    border-color: transparent;
+    border-color: var(--btn-borderColor-base);
     transition-duration: var(--animation-duration);
     transition-timing-function: var(--animation-timing-function);
-    transition-property+: box-shadow, border-color, background-color;
+    transition-property+: box-shadow, color, border-color, background-color;
 
     &:not([disabled]):focus {
       outline: none;
-      // box-shadow: 0 0 0 2px fadeout(@tone-base, 50%, relative);
+      box-shadow: 0 0 0 2px var(--btn-outlineColor-focus);
     }
 
     body:not(.mobile) &:not([disabled]):hover {
       --btn-tone-base: var(--btn-tone-hover);
       --btn-color-base: var(--btn-color-hover);
+      --btn-borderColor-base: var(--btn-borderColor-hover);
     }
 
     &:active {

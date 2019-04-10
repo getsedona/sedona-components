@@ -5,5 +5,8 @@
 // Оформление кнопки
 @btn-tone-base: @color-accent-primary;
 @btn-color-base: contrast(@btn-tone-base, @color-dark-primary, @color-light-primary);
+@btn-borderColor-base: transparent;
 @btn-tone-hover: #common.set-color-hover(@btn-tone-base)[];
 @btn-color-hover: @btn-color-base;
+@btn-borderColor-hover: @btn-borderColor-base;
+@btn-outlineColor-focus: fadeout(@btn-tone-base, 50%, relative);
