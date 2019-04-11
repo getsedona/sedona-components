@@ -42,10 +42,7 @@
       background-position: 100% 0, 100% 0;
     }
 
-    &--shadow-left::before {
-      opacity: 1;
-    }
-
+    &--shadow-left::before,
     &--shadow-right::after {
       opacity: 1;
     }
@@ -96,8 +93,8 @@
       vertical-align: top;
       border-bottom-width: 1px;
       border-bottom-style: solid;
-      border-bottom-color: @color-base-divider;
-      text-align: left;
+      border-bottom-color: var(--color-base-divider);
+      text-align: inherit;
 
       @media (max-width: (@breakpoint-sm - 1px)) {
         &:first-child {
@@ -141,7 +138,7 @@
             display: block;
             content: attr(data-title);
             font-weight: normal;
-            color: @color-base-secondary;
+            color: var(--color-base-secondary);
           }
         }
       }
@@ -152,7 +149,7 @@
       padding-top: 0;
       font-weight: normal;
       vertical-align: bottom;
-      color: @color-base-secondary;
+      color: var(--color-base-secondary);
       padding-bottom: var(--indent-half);
     }
 
@@ -172,7 +169,7 @@
       }
 
       tr {
-        background-color: fadeout(@color-base-divider, 100%, relative);
+        background-color: transparent;
         transition-duration: var(--animation-duration);
         transition-timing-function: var(--animation-timing-function);
         transition-property: background-color;
@@ -182,20 +179,20 @@
             display: block;
             border-bottom-width: 1px;
             border-bottom-style: solid;
-            border-bottom-color: @color-base-divider;
+            border-bottom-color: var(--color-base-divider);
             padding-top: var(--indent-half);
             padding-bottom: var(--indent-half);
 
             &:first-child {
               border-top-width: 1px;
               border-top-style: solid;
-              border-top-color: @color-base-divider;
+              border-top-color: var(--color-base-divider);
             }
           }
         }
 
         body:not(.mobile) &:hover {
-          background-color: fadeout(@color-base-divider, 50%, relative);
+          background-color: var(--color-base-divider);
         }
       }
     }
