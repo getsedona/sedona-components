@@ -50,16 +50,12 @@
 
     ul,
     ol {
-      margin-top: 0;
       margin-bottom: 1em;
       margin-left: 1.5em;
-      padding-left: 0;
-      list-style-type: none;
 
       ul,
       ol {
         margin-top: 0.5em;
-        margin-bottom: 0;
       }
 
       & > li {
@@ -73,7 +69,7 @@
           content: "\2014";
           position: absolute;
           margin-left: -1.5em;
-          color: @color-base-divider;
+          color: var(--color-base-divider);
         }
       }
     }
@@ -83,13 +79,12 @@
 
       & > li::before {
         content: counters(code, ".") ". ";
-        color: @color-base-hint;
+        color: var(--color-base-hint);
         counter-increment: code;
       }
     }
 
     p {
-      margin-top: 0;
       margin-bottom: 1em;
     }
 
@@ -117,7 +112,7 @@
 
     figcaption {
       #common.text-small();
-      color: @color-base-secondary;
+      color: var(--color-base-secondary);
       margin-top: 0.5em;
     }
 
