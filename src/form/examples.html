@@ -31,35 +31,45 @@
       <div class="grid__wrap">
         <div class="grid__list  grid__list--sidar">
           <div class="grid__item">
-            <div class="wysiwyg">
-              <h3>Input, select, textarea</h3>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid__list  grid__list--sidar">
-          <div class="grid__item">
             <form class="form" action="#" method="post">
-              <div class="form__control">
-                <input class="input" aria-label="Имя и фамилия" type="text" name="name" placeholder="Имя и фамилия" required>
+              <div class="form__item">
+                <div class="form__label" style="flex-basis: 30%;">
+                  <label for="name">Имя и фамилия</label>
+                </div>
+
+                <div class="form__control">
+                  <input class="input" id="name" type="text" name="name" placeholder="Иван Иванов" required autofocus>
+                </div>
               </div>
 
-              <br>
-              <br>
+              <div class="form__item">
+                <div class="form__label" style="flex-basis: 30%;">
+                  <label for="subject">Тема</label>
+                </div>
 
-              <div class="form__control">
-                <select class="select" aria-label="Тема" name="subject">
-                  <option value="1">Тех. поддержка</option>
-                  <option value="2" selected>Финансовая служба</option>
-                  <option value="3">Другое</option>
-                </select>
+                <div class="form__control">
+                  <select class="select" id="subject" name="subject">
+                    <option value="1">Тех. поддержка</option>
+                    <option value="2" selected>Финансовая служба</option>
+                    <option value="3">Другое</option>
+                  </select>
+                </div>
               </div>
 
-              <br>
-              <br>
+              <div class="form__item">
+                <div class="form__label" style="flex-basis: 30%;">
+                  <label for="message">Текст сообщения</label>
+                </div>
 
-              <div class="form__control">
-                <textarea class="textarea" aria-label="Текст сообщения" name="text" rows="5" placeholder="Текст сообщения"></textarea>
+                <div class="form__control">
+                  <textarea class="textarea" id="message" name="message" rows="5"></textarea>
+                </div>
+              </div>
+
+              <div class="form__item" style="padding-left: 30%;">
+                <div class="form__control" style="flex-basis: auto;">
+                  <button type="submit" class="btn">Отправить</button>
+                </div>
               </div>
             </form>
           </div>
