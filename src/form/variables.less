@@ -1,0 +1,11 @@
+@formControl-tone-base: @color-light-primary;
+@formControl-color-base: @color-dark-primary;
+@formControl-placeholderColor-base: @color-dark-hint;
+@formControl-borderColor-base: @color-dark-divider;
+
+@formControl-tone-hover: @formControl-tone-base;
+@formControl-color-hover: @formControl-color-base;
+@formControl-borderColor-hover: #common.set-color-hover(@formControl-borderColor-base)[];
+
+@formControl-borderColor-focus: @color-accent-primary;
+@formControl-outlineColor-focus: fadeout(@formControl-borderColor-focus, 50%, relative);

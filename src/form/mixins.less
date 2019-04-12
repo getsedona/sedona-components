@@ -1,47 +1,57 @@
 #form() {
+  .root() {
+    --formControl-tone-base: @formControl-tone-base;
+    --formControl-color-base: @formControl-color-base;
+    --formControl-placeholderColor-base: @formControl-placeholderColor-base;
+    --formControl-borderColor-base: @formControl-borderColor-base;
+
+    --formControl-tone-hover: @formControl-tone-hover;
+    --formControl-color-hover: @formControl-color-hover;
+    --formControl-borderColor-hover: @formControl-borderColor-hover;
+
+    --formControl-borderColor-focus: @formControl-borderColor-focus;
+    --formControl-outlineColor-focus: @formControl-outlineColor-focus;
+  }
+
   .el() {
     display: block;
     border-width: 1px;
     border-style: solid;
-    border-color: @color-base-divider;
+    border-color: var(--formControl-borderColor-base);
     border-radius: var(--box-radius-primary);
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color: @color-base-primary;
+    color: var(--formControl-color-base);
     padding: ~"calc(var(--indent-half) - 1px)" ~"calc(var(--indent-base) - 1px)";
     width: 100%;
     appearance: none;
     min-height: ~"calc(var(--line-height-base) + var(--indent-base))";
-    background-color: @color-tone-base;
+    background-color: var(--formControl-tone-base);
     transition-duration: var(--animation-duration);
     transition-timing-function: var(--animation-timing-function);
-    transition-property+: box-shadow, border-color;
-    outline: none;
+    transition-property+: box-shadow, color, border-color, background-color;
 
     &:not([disabled]):focus {
+      --formControl-borderColor-base: var(--formControl-borderColor-focus) !important;
+
       outline: none;
-      // box-shadow: 0 0 0 2px fadeout(@color-accent-primary, 50%, relative);
-      // border-color: @color-accent-primary !important;
+      box-shadow: 0 0 0 2px var(--formControl-outlineColor-focus);
     }
 
     body:not(.mobile) &:not([disabled]):hover {
-      border-color: #common.set-color-hover(@color-base-divider)[];
+      --formControl-tone-base: var(--formControl-tone-hover);
+      --formControl-color-base: var(--formControl-color-hover);
+      --formControl-borderColor-base: var(--formControl-borderColor-hover);
     }
 
-    // &:-webkit-autofill,
-    // &:-moz-autofill,
-    // &:autofill {
-    // 	background-color: #ffc !important;
-    // }
-
-    // &:not(:focus):invalid {
-    // 	box-shadow: none;
-    // 	outline: none;
-    // }
+    &:not(:focus):invalid {
+      box-shadow: none;
+      outline: none;
+    }
 
     &::placeholder {
-      color: @color-base-hint;
+      color: var(--formControl-placeholderColor-base);
     }
   }
 
@@ -85,14 +95,38 @@
   }
 
   .this() {
-    // margin-bottom: ~"calc(var(--indent-base) * -1)";
+    margin-bottom: ~"calc(var(--indent-base) * -1)";
+  }
+
+  .item() {
+    margin-bottom: var(--indent-base);
+
+    @media (max-width: (@breakpoint-md - 1px)) {
+      padding-left: 0 !important;
+    }
+
+    @media (min-width: @breakpoint-md) {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  .label() {
+    margin-bottom: var(--indent-half);
+
+    @media (min-width: @breakpoint-md) {
+      flex-shrink: 0;
+      margin-top: var(--indent-half);
+      padding-right: var(--indent-base);
+      margin-bottom: 0;
+    }
   }
 
   .control() {
-    width: 100%;
-    position: relative;
-    display: inline-flex;
-    align-items: center;
+    // width: 100%;
+    flex-basis: 100%;
+    // display: inline-flex;
+    // align-items: center;
 
     input {
       #form.input();
@@ -104,6 +138,10 @@
 
     textarea {
       #form.textarea();
+    }
+
+    [type="submit"] {
+      width: 100%;
     }
   }
 }
