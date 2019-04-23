@@ -13,6 +13,59 @@
     --formControl-outlineColor-focus: @formControl-outlineColor-focus;
   }
 
+  .this() {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: ~"calc(var(--indent-base) * -1)";
+  }
+
+  .item() {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--indent-base);
+
+    @media (min-width: @breakpoint-md) {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: flex-start;
+    }
+  }
+
+  .label() {
+    margin-bottom: var(--indent-half);
+
+    @media (min-width: @breakpoint-md) {
+      margin-top: var(--indent-half);
+      margin-right: var(--indent-base);
+      margin-bottom: 0;
+      flex-grow: 1;
+    }
+  }
+
+  .field() {
+    @media (min-width: @breakpoint-md) {
+      width: 66.66%;
+    }
+  }
+
+  .row() {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: ~"calc(var(--indent-half) * -1)";
+    margin-bottom: ~"calc(var(--indent-half) * -1)";
+
+    & + & {
+      margin-top: var(--indent-base);
+    }
+  }
+
+  .control() {
+    flex-grow: 1;
+    margin-right: var(--indent-half);
+    margin-bottom: var(--indent-half);
+  }
+
   .el() {
     display: block;
     border-width: 1px;
@@ -94,54 +147,11 @@
     resize: vertical;
   }
 
-  .this() {
-    margin-bottom: ~"calc(var(--indent-base) * -1)";
-  }
-
-  .item() {
-    margin-bottom: var(--indent-base);
-
-    @media (max-width: (@breakpoint-md - 1px)) {
-      padding-left: 0 !important;
-    }
+  .action() {
+    width: 100%;
 
     @media (min-width: @breakpoint-md) {
-      display: flex;
-      align-items: flex-start;
-    }
-  }
-
-  .label() {
-    margin-bottom: var(--indent-half);
-
-    @media (min-width: @breakpoint-md) {
-      flex-shrink: 0;
-      margin-top: var(--indent-half);
-      padding-right: var(--indent-base);
-      margin-bottom: 0;
-    }
-  }
-
-  .control() {
-    // width: 100%;
-    flex-basis: 100%;
-    // display: inline-flex;
-    // align-items: center;
-
-    input {
-      #form.input();
-    }
-
-    select {
-      #form.select();
-    }
-
-    textarea {
-      #form.textarea();
-    }
-
-    [type="submit"] {
-      width: 100%;
+      width: auto;
     }
   }
 }
