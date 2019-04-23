@@ -1,13 +1,15 @@
 #group() {
   .this() {
+    & + & {
+      margin-top: var(--indent-base);
+    }
+  }
+
+  .list() {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: ~"calc(var(--indent-base) * -1)";
     margin-right: ~"calc(var(--indent-base) * -1)";
-
-    & + & {
-      margin-top: var(--indent-base);
-    }
   }
 
   .item() {
