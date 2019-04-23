@@ -17,11 +17,11 @@ let toggleShadow = (el) => {
 };
 
 export function table() {
-  if (!document.querySelector(".table .table__wrap")) {
+  if (!document.querySelector(".table .table__content")) {
     return;
   }
 
-  document.querySelectorAll(".table__wrap").forEach((el) => {
+  document.querySelectorAll(".table__content").forEach((el) => {
     if (el.parentElement.classList.contains("js-table-init")) {
       return;
     }
