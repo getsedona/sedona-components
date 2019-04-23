@@ -33,42 +33,58 @@
           <div class="grid__item">
             <form class="form" action="#" method="post">
               <div class="form__item">
-                <div class="form__label" style="flex-basis: 30%;">
+                <div class="form__label">
                   <label for="name">Имя и фамилия</label>
                 </div>
 
-                <div class="form__control">
-                  <input id="name" class="input" type="text" name="name" placeholder="Иван Иванов" required autofocus>
+                <div class="form__field">
+                  <div class="form__row">
+                    <div class="form__control">
+                      <input id="name" class="form__input" type="text" name="name" placeholder="Иван Иванов" required autofocus>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="form__item">
-                <div class="form__label" style="flex-basis: 30%;">
+                <div class="form__label">
                   <label for="subject">Тема</label>
                 </div>
 
-                <div class="form__control">
-                  <select id="subject" class="select" name="subject">
-                    <option value="1">Тех. поддержка</option>
-                    <option value="2" selected>Финансовая служба</option>
-                    <option value="3">Другое</option>
-                  </select>
+                <div class="form__field">
+                  <div class="form__row">
+                    <div class="form__control">
+                      <select id="subject" class="form__select" name="subject">
+                        <option value="1">Тех. поддержка</option>
+                        <option value="2" selected>Финансовая служба</option>
+                        <option value="3">Другое</option>
+                      </select>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <div class="form__item">
-                <div class="form__label" style="flex-basis: 30%;">
+                <div class="form__label">
                   <label for="message">Текст сообщения</label>
                 </div>
 
-                <div class="form__control">
-                  <textarea id="message" class="textarea" name="message" rows="5"></textarea>
+                <div class="form__field">
+                  <div class="form__row">
+                    <div class="form__control">
+                      <textarea id="message" class="form__textarea" name="message" rows="5"></textarea>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="form__item" style="padding-left: 30%;">
-                <div class="form__control" style="flex-basis: auto;">
-                  <button type="submit" class="btn">Отправить</button>
+              <div class="form__item">
+                <div class="form__field">
+                  <div class="form__row">
+                    <div class="form__control">
+                      <button type="submit" class="btn  form__action">Отправить</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </form>
