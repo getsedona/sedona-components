@@ -86,6 +86,41 @@
       margin-bottom: 1em;
     }
 
+    thead {
+      .@{selector}--responsive & {
+        @media (max-width: (@breakpoint-sm - 1px)) {
+          display: none;
+        }
+      }
+    }
+
+    tbody {
+      .@{selector}--responsive & {
+        @media (max-width: (@breakpoint-sm - 1px)) {
+          display: block;
+        }
+      }
+    }
+
+    tr {
+      .@{selector}--responsive & {
+        @media (max-width: (@breakpoint-sm - 1px)) {
+          display: block;
+          border-bottom-width: 1px;
+          border-bottom-style: solid;
+          border-bottom-color: var(--color-base-divider);
+          padding-top: var(--indent-half);
+          padding-bottom: var(--indent-half);
+
+          &:first-child {
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: var(--color-base-divider);
+          }
+        }
+      }
+    }
+
     th,
     td {
       padding: var(--indent-base);
@@ -153,48 +188,15 @@
       padding-bottom: var(--indent-half);
     }
 
-    thead {
-      .@{selector}--responsive & {
-        @media (max-width: (@breakpoint-sm - 1px)) {
-          display: none;
-        }
-      }
+    td {
+      background-color: transparent;
+      transition-duration: var(--animation-duration);
+      transition-timing-function: var(--animation-timing-function);
+      transition-property: background-color;
     }
 
-    tbody {
-      .@{selector}--responsive & {
-        @media (max-width: (@breakpoint-sm - 1px)) {
-          display: block;
-        }
-      }
-
-      tr {
-        background-color: transparent;
-        transition-duration: var(--animation-duration);
-        transition-timing-function: var(--animation-timing-function);
-        transition-property: background-color;
-
-        .@{selector}--responsive & {
-          @media (max-width: (@breakpoint-sm - 1px)) {
-            display: block;
-            border-bottom-width: 1px;
-            border-bottom-style: solid;
-            border-bottom-color: var(--color-base-divider);
-            padding-top: var(--indent-half);
-            padding-bottom: var(--indent-half);
-
-            &:first-child {
-              border-top-width: 1px;
-              border-top-style: solid;
-              border-top-color: var(--color-base-divider);
-            }
-          }
-        }
-
-        body:not(.mobile) &:hover {
-          background-color: var(--color-base-divider);
-        }
-      }
+    body:not(.mobile) & tr:hover td {
+      background-color: var(--color-base-divider);
     }
   }
 }
