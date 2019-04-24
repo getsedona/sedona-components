@@ -2,6 +2,15 @@
 
 #base() {
   .root() {
+    --h1-fontSize: @h1-fontSize;
+    --h1-lineHeight: @h1-lineHeight;
+
+    --h2-fontSize: @h2-fontSize;
+    --h2-lineHeight: @h2-lineHeight;
+
+    --h3-fontSize: @h3-fontSize;
+    --h3-lineHeight: @h3-lineHeight;
+
     --link-color-base: @link-color-base;
     --link-color-hover: @link-color-hover;
 
@@ -34,24 +43,24 @@
   }
 
   .h1() {
-    font-size: var(--font-size-h1);
-    line-height: var(--line-height-h1);
+    font-size: var(--h1-fontSize);
+    line-height: var(--h1-lineHeight);
     font-weight: bold;
     margin-top: initial;
     margin-bottom: initial;
   }
 
   .h2() {
-    font-size: var(--font-size-h2);
-    line-height: var(--line-height-h2);
+    font-size: var(--h2-fontSize);
+    line-height: var(--h2-lineHeight);
     font-weight: bold;
     margin-top: initial;
     margin-bottom: initial;
   }
 
   .h3() {
-    font-size: var(--font-size-h3);
-    line-height: var(--line-height-h3);
+    font-size: var(--h3-fontSize);
+    line-height: var(--h3-lineHeight);
     font-weight: bold;
     margin-top: initial;
     margin-bottom: initial;
