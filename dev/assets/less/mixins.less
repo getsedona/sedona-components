@@ -1,19 +1,26 @@
 #common() {
   .root() {
     @media (min-width: @breakpoint-md) {
-      --font-size-h1: 3rem; // 48px
-      --font-size-h2: 2.5rem; // 40px
-      --font-size-h3: 1.75rem; // 28px
-
-      --line-height-h1: 3.5rem; // 56px
-      --line-height-h2: 3rem; // 48px
-      --line-height-h3: 2.25rem; // 36px
-
       --gap-element-base: 3rem; // 48px
       --gap-element-half: 1.5rem; // 24px
 
       --gap-block-base: 5rem; // 80px
       --gap-block-half: 2.5rem; // 40px
+    }
+  }
+}
+
+#base() {
+  .root() {
+    @media (min-width: @breakpoint-md) {
+      --h1-fontSize: 3rem; // 48px
+      --h1-lineHeight: 3.5rem; // 56px
+
+      --h2-fontSize: 2.5rem; // 40px
+      --h2-lineHeight: 3rem; // 48px
+
+      --h3-fontSize: 1.75rem; // 28px
+      --h3-lineHeight: 2.25rem; // 36px
     }
   }
 }
