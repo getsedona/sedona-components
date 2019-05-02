@@ -1,17 +1,17 @@
 #marginalia() {
   .this() {
     #common.text-small();
-    margin-top: var(--indent-double);
-    margin-bottom: var(--indent-double);
+    margin-top: var(--common-indent-double);
+    margin-bottom: var(--common-indent-double);
 
-    @media (min-width: @breakpoint-lg) {
+    @media (min-width: @common-breakpoint-lg) {
       margin-bottom: -1em;
       position: absolute;
       margin-top: 0.5em;
       top: 0;
-      width: ~"calc(100vw - var(--gap-block-base) * 2 - 100% - var(--gap-element-base))";
+      width: ~"calc(100vw - var(--common-blockGap-base) * 2 - 100% - var(--common-elementGap-base))";
       transform: translateX(100%);
-      right: ~"calc(var(--gap-element-base) * -1)";
+      right: ~"calc(var(--common-elementGap-base) * -1)";
       max-width: 370px;
     }
   }
