@@ -2,75 +2,76 @@
 
 #common() {
   .root() {
-    --font-family-primary: @font-family-primary;
+    --common-fontFamily-primary: @common-fontFamily-primary;
 
-    --font-size-base: @font-size-base;
-    --font-size-small: @font-size-small;
-    --font-size-large: @font-size-large;
+    --common-fontSize-base: @common-fontSize-base;
+    --common-lineHeight-base: @common-lineHeight-base;
 
-    --line-height-base: @line-height-base;
-    --line-height-small: @line-height-small;
-    --line-height-large: @line-height-large;
+    --common-fontSize-small: @common-fontSize-small;
+    --common-lineHeight-small: @common-lineHeight-small;
 
-    --color-base-primary: @color-base-primary;
-    --color-base-secondary: @color-base-secondary;
-    --color-base-hint: @color-base-hint;
-    --color-base-divider: @color-base-divider;
+    --common-fontSize-large: @common-fontSize-large;
+    --common-lineHeight-large: @common-lineHeight-large;
 
-    --color-dark-primary: @color-dark-primary;
-    --color-dark-secondary: @color-dark-secondary;
-    --color-dark-hint: @color-dark-hint;
-    --color-dark-divider: @color-dark-divider;
+    --common-baseColor-primary: @common-baseColor-primary;
+    --common-baseColor-secondary: @common-baseColor-secondary;
+    --common-baseColor-hint: @common-baseColor-hint;
+    --common-baseColor-divider: @common-baseColor-divider;
 
-    --color-light-primary: @color-light-primary;
-    --color-light-secondary: @color-light-secondary;
-    --color-light-hint: @color-light-hint;
-    --color-light-divider: @color-light-divider;
+    --common-darkColor-primary: @common-darkColor-primary;
+    --common-darkColor-secondary: @common-darkColor-secondary;
+    --common-darkColor-hint: @common-darkColor-hint;
+    --common-darkColor-divider: @common-darkColor-divider;
 
-    --color-accent-primary: @color-accent-primary;
+    --common-lightColor-primary: @common-lightColor-primary;
+    --common-lightColor-secondary: @common-lightColor-secondary;
+    --common-lightColor-hint: @common-lightColor-hint;
+    --common-lightColor-divider: @common-lightColor-divider;
 
-    --color-alert-success: @color-alert-success;
-    --color-alert-warning: @color-alert-warning;
-    --color-alert-danger: @color-alert-danger;
+    --common-accentColor-primary: @common-accentColor-primary;
 
-    --color-tone-base: @color-tone-base;
-    --color-tone-dark: @color-tone-dark;
-    --color-tone-light: @color-tone-light;
+    --common-successColor-primary: @common-successColor-primary;
+    --common-warningColor-primary: @common-warningColor-primary;
+    --common-dangerColor-primary: @common-dangerColor-primary;
 
-    --box-shadow-primary: @box-shadow-primary;
+    --common-backgroundColor-base: @common-backgroundColor-base;
+    --common-backgroundColor-dark: @common-backgroundColor-dark;
+    --common-backgroundColor-light: @common-backgroundColor-light;
 
-    --box-radius-primary: @box-radius-primary;
+    --common-boxShadow-primary: @common-boxShadow-primary;
 
-    --indent-base: @indent-base;
-    --indent-half: @indent-half;
-    --indent-double: @indent-double;
+    --common-boxRadius-primary: @common-boxRadius-primary;
 
-    --gap-element-base: @gap-element-base;
-    --gap-element-half: @gap-element-half;
+    --common-animationDuration-primary: @common-animationDuration-primary;
+    --common-animationTimingFunction-primary: @common-animationTimingFunction-primary;
 
-    --gap-block-base: @gap-block-base;
-    --gap-block-half: @gap-block-half;
+    --common-indent-base: @common-indent-base;
+    --common-indent-half: @common-indent-half;
+    --common-indent-double: @common-indent-double;
 
-    --animation-duration: @animation-duration;
-    --animation-timing-function: @animation-timing-function;
+    --common-elementGap-base: @common-elementGap-base;
+    --common-elementGap-half: @common-elementGap-half;
 
-    --element-wrap-maxWidth: @breakpoint-xl;
-    --element-item-width: 100%;
+    --common-blockGap-base: @common-blockGap-base;
+    --common-blockGap-half: @common-blockGap-half;
+
+    --common-elementWrap-maxWidth: @common-breakpoint-xl;
+    --common-elementItem-width: 100%;
   }
 
   .text-base() {
-    font-size: var(--font-size-base);
-    line-height: var(--line-height-base);
+    font-size: var(--common-fontSize-base);
+    line-height: var(--common-lineHeight-base);
   }
 
   .text-small() {
-    font-size: var(--font-size-small);
-    line-height: var(--line-height-small);
+    font-size: var(--common-fontSize-small);
+    line-height: var(--common-lineHeight-small);
   }
 
   .text-large() {
-    font-size: var(--font-size-large);
-    line-height: var(--line-height-large);
+    font-size: var(--common-fontSize-large);
+    line-height: var(--common-lineHeight-large);
   }
 
   .text-uppercase() {
@@ -79,28 +80,28 @@
   }
 
   .box-base() {
-    color: var(--color-base-primary);
-    background-color: var(--color-tone-base);
+    color: var(--common-baseColor-primary);
+    background-color: var(--common-backgroundColor-base);
   }
 
   .box-dark() {
-    --color-base-primary: @color-light-primary;
-    --color-base-secondary: @color-light-secondary;
-    --color-base-hint: @color-light-hint;
-    --color-base-divider: @color-light-divider;
+    --common-baseColor-primary: var(--common-lightColor-primary);
+    --common-baseColor-secondary: var(--common-lightColor-secondary);
+    --common-baseColor-hint: var(--common-lightColor-hint);
+    --common-baseColor-divider: var(--common-lightColor-divider);
 
-    color: var(--color-light-primary);
-    background-color: var(--color-tone-dark);
+    color: var(--common-lightColor-primary);
+    background-color: var(--common-backgroundColor-dark);
   }
 
   .box-light() {
-    --color-base-primary: @color-dark-primary;
-    --color-base-secondary: @color-dark-secondary;
-    --color-base-hint: @color-dark-hint;
-    --color-base-divider: @color-dark-divider;
+    --common-baseColor-primary: var(--common-darkColor-primary);
+    --common-baseColor-secondary: var(--common-darkColor-secondary);
+    --common-baseColor-hint: var(--common-darkColor-hint);
+    --common-baseColor-divider: var(--common-darkColor-divider);
 
-    color: var(--color-dark-primary);
-    background-color: var(--color-tone-light);
+    color: var(--common-darkColor-primary);
+    background-color: var(--common-backgroundColor-light);
   }
 
   .element-base() {
@@ -108,44 +109,44 @@
   }
 
   .element-wrap() {
-    max-width: var(--element-wrap-maxWidth);
+    max-width: var(--common-elementWrap-maxWidth);
     margin-left: auto;
     margin-right: auto;
 
     & + & {
-      margin-top: var(--gap-element-base);
+      margin-top: var(--common-elementGap-base);
     }
   }
 
   .element-list() {
     display: flex;
     flex-wrap: wrap;
-    margin-right: ~"calc(var(--gap-element-base) * -1)";
-    margin-bottom: ~"calc(var(--gap-element-base) * -1)";
+    margin-right: ~"calc(var(--common-elementGap-base) * -1)";
+    margin-bottom: ~"calc(var(--common-elementGap-base) * -1)";
 
     & + & {
-      margin-top: var(--gap-element-base);
+      margin-top: var(--common-elementGap-base);
     }
   }
 
   .element-item() {
-    width: ~"calc(var(--element-item-width) - var(--gap-element-base))";
-    margin-right: var(--gap-element-base);
-    margin-bottom: var(--gap-element-base);
+    width: ~"calc(var(--common-elementItem-width) - var(--common-elementGap-base))";
+    margin-right: var(--common-elementGap-base);
+    margin-bottom: var(--common-elementGap-base);
   }
 
   .block-base() {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: var(--gap-block-base);
-    padding-bottom: var(--gap-block-base);
-    padding-right: var(--gap-block-half);
-    padding-left: var(--gap-block-half);
+    padding-top: var(--common-blockGap-base);
+    padding-bottom: var(--common-blockGap-base);
+    padding-right: var(--common-blockGap-half);
+    padding-left: var(--common-blockGap-half);
 
-    @media (min-width: @breakpoint-sm) {
-      padding-right: var(--gap-block-base);
-      padding-left: var(--gap-block-base);
+    @media (min-width: @common-breakpoint-sm) {
+      padding-right: var(--common-blockGap-base);
+      padding-left: var(--common-blockGap-base);
     }
   }
 
