@@ -12,13 +12,13 @@
 
     &--box {
       #common.block-base();
-      border-radius: var(--box-radius-primary);
-      box-shadow: inset 0 0 0 1px var(--color-base-divider);
-      width: ~"calc(100vw - var(--gap-block-half) * 2)";
-      max-width: ~"calc(100vw - (100vw - @{breakpoint-xl}))";
+      border-radius: var(--common-boxRadius-primary);
+      box-shadow: inset 0 0 0 1px var(--common-baseColor-divider);
+      width: ~"calc(100vw - var(--common-blockGap-half) * 2)";
+      max-width: ~"calc(100vw - (100vw - @{common-breakpoint-xl}))";
 
-      @media (min-width: @breakpoint-sm) {
-        width: ~"calc(100vw - var(--gap-block-base) * 2)";
+      @media (min-width: @common-breakpoint-sm) {
+        width: ~"calc(100vw - var(--common-blockGap-base) * 2)";
       }
 
       &:first-child {
