@@ -1,3 +1,51 @@
 .scene {
-  #scene.this();
+  #common.block-base();
+
+  &:not(&--box):not(&--dark):not(&--light) + &:not(&--box):not(&--dark):not(&--light) {
+    padding-top: initial;
+  }
+
+  &--fill {
+    #common.block-base();
+  }
+
+  &--box {
+    #common.block-base();
+    border-radius: var(--common-boxRadius-primary);
+    box-shadow: inset 0 0 0 1px var(--common-baseColor-divider);
+    width: ~"calc(100vw - var(--common-blockGap-half) * 2)";
+    max-width: ~"calc(100vw - (100vw - @{common-breakpoint-xl}))";
+
+    @media (min-width: @common-breakpoint-sm) {
+      width: ~"calc(100vw - var(--common-blockGap-base) * 2)";
+    }
+
+    &:first-child {
+      margin-top: $padding-top;
+    }
+
+    &:last-child {
+      margin-bottom: $padding-bottom;
+    }
+  }
+
+  &--dark {
+    #common.box-dark();
+  }
+
+  &--light {
+    #common.box-light();
+  }
+
+  &--box&--dark,
+  &--box&--light {
+    box-shadow: none;
+  }
+
+  &--box + &--dark,
+  &--box + &--light,
+  &--dark + &--box,
+  &--light + &--box {
+    margin-top: $padding-top;
+  }
 }
