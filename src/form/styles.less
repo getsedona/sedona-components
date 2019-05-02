@@ -1,29 +1,75 @@
 :root {
-  #form.root();
+  --form-control-padding: @form-control-padding;
+  --form-control-placeholderColor: @form-control-placeholderColor;
+
+  --form-control-backgroundColor-base: @form-control-backgroundColor-base;
+  --form-control-color-base: @form-control-color-base;
+  --form-control-borderColor-base: @form-control-borderColor-base;
+
+  --form-control-backgroundColor-hover: @form-control-backgroundColor-hover;
+  --form-control-color-hover: @form-control-color-hover;
+  --form-control-borderColor-hover: @form-control-borderColor-hover;
+
+  --form-control-backgroundColor-focus: @form-control-backgroundColor-focus;
+  --form-control-borderColor-focus: @form-control-borderColor-focus;
+  --form-control-outlineColor-focus: @form-control-outlineColor-focus;
+
+  --form-control-backgroundColor-danger: @form-control-backgroundColor-danger;
+  --form-control-borderColor-danger: @form-control-borderColor-danger;
+  --form-control-outlineColor-danger: @form-control-outlineColor-danger;
 }
 
 .form {
-  #form.this();
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ~"calc(var(--common-indent-base) * -1)";
 }
 
 .form__item {
-  #form.item();
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--common-indent-base);
+
+  @media (min-width: @common-breakpoint-md) {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
 }
 
 .form__label {
-  #form.label();
+  margin-bottom: var(--common-indent-half);
+
+  @media (min-width: @common-breakpoint-md) {
+    margin-top: var(--common-indent-half);
+    margin-right: var(--common-indent-base);
+    margin-bottom: 0;
+    flex-grow: 1;
+  }
 }
 
 .form__field {
-  #form.field();
+  @media (min-width: @common-breakpoint-md) {
+    width: 66.66%;
+  }
 }
 
 .form__row {
-  #form.row();
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-right: ~"calc(var(--common-indent-half) * -1)";
+  margin-bottom: ~"calc(var(--common-indent-half) * -1)";
+
+  & + & {
+    margin-top: var(--common-indent-base);
+  }
 }
 
 .form__control {
-  #form.control();
+  flex-grow: 1;
+  margin-right: var(--common-indent-half);
+  margin-bottom: var(--common-indent-half);
 }
 
 .form__input {
@@ -39,9 +85,19 @@
 }
 
 .form__hint {
-  #form.hint();
+  #common.text-small();
+  margin-top: var(--common-indent-half);
+  color: var(--common-baseColor-hint);
+
+  & + & {
+    margin-top: 0;
+  }
 }
 
 .form__action {
-  #form.action();
+  width: 100%;
+
+  @media (min-width: @common-breakpoint-md) {
+    width: auto;
+  }
 }

@@ -1,77 +1,4 @@
 #form() {
-  .root() {
-    --form-control-placeholderColor: @form-control-placeholderColor;
-
-    --form-control-backgroundColor-base: @form-control-backgroundColor-base;
-    --form-control-color-base: @form-control-color-base;
-    --form-control-borderColor-base: @form-control-borderColor-base;
-
-    --form-control-backgroundColor-hover: @form-control-backgroundColor-hover;
-    --form-control-color-hover: @form-control-color-hover;
-    --form-control-borderColor-hover: @form-control-borderColor-hover;
-
-    --form-control-backgroundColor-focus: @form-control-backgroundColor-focus;
-    --form-control-borderColor-focus: @form-control-borderColor-focus;
-    --form-control-outlineColor-focus: @form-control-outlineColor-focus;
-
-    --form-control-backgroundColor-danger: @form-control-backgroundColor-danger;
-    --form-control-borderColor-danger: @form-control-borderColor-danger;
-    --form-control-outlineColor-danger: @form-control-outlineColor-danger;
-  }
-
-  .this() {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: ~"calc(var(--common-indent-base) * -1)";
-  }
-
-  .item() {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: var(--common-indent-base);
-
-    @media (min-width: @common-breakpoint-md) {
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: flex-start;
-    }
-  }
-
-  .label() {
-    margin-bottom: var(--common-indent-half);
-
-    @media (min-width: @common-breakpoint-md) {
-      margin-top: var(--common-indent-half);
-      margin-right: var(--common-indent-base);
-      margin-bottom: 0;
-      flex-grow: 1;
-    }
-  }
-
-  .field() {
-    @media (min-width: @common-breakpoint-md) {
-      width: 66.66%;
-    }
-  }
-
-  .row() {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-right: ~"calc(var(--common-indent-half) * -1)";
-    margin-bottom: ~"calc(var(--common-indent-half) * -1)";
-
-    & + & {
-      margin-top: var(--common-indent-base);
-    }
-  }
-
-  .control() {
-    flex-grow: 1;
-    margin-right: var(--common-indent-half);
-    margin-bottom: var(--common-indent-half);
-  }
-
   .el() {
     display: block;
     border-width: 1px;
@@ -82,10 +9,10 @@
     font-size: inherit;
     line-height: inherit;
     color: var(--form-control-color-base);
-    padding: ~"calc(var(--common-indent-half) - 1px)" ~"calc(var(--common-indent-base) - 1px)";
+    padding: ~"calc(var(--form-control-padding) / 2 - 1px)" ~"calc(var(--form-control-padding) - 1px)";
     width: 100%;
     appearance: none;
-    min-height: ~"calc(var(--common-lineHeight-base) + var(--common-indent-base))";
+    min-height: ~"calc(var(--common-lineHeight-base) + var(--form-control-padding))";
     background-color: var(--form-control-backgroundColor-base);
     transition-duration: var(--common-animationDuration-primary);
     transition-timing-function: var(--common-animationTimingFunction-primary);
@@ -110,10 +37,6 @@
       outline: none;
     }
 
-    &::placeholder {
-      color: var(--form-control-placeholderColor);
-    }
-
     &--danger {
       --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger);
       --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
@@ -128,6 +51,10 @@
 
   .input() {
     #form.el();
+
+    &::placeholder {
+      color: var(--form-control-placeholderColor);
+    }
 
     &::-ms-clear,
     &::-ms-reveal {
@@ -152,8 +79,15 @@
   }
 
   .select() {
+    @icon: escape('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="@{form-control-placeholderColor}"><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/></svg>');
+
     #form.el();
     cursor: pointer;
+    padding-right: ~"calc(var(--form-control-padding) - 1px + 24px)";
+    background-image: url("data:image/svg+xml, @{icon}");
+    background-repeat: no-repeat;
+    background-position: right ~"calc(var(--form-control-padding) - 1px)" top 55%;
+    background-size: 24px 24px;
 
     &::-ms-expand {
       display: none;
@@ -163,23 +97,9 @@
   .textarea() {
     #form.el();
     resize: vertical;
-  }
 
-  .hint {
-    #common.text-small();
-    margin-top: var(--common-indent-half);
-    color: var(--common-baseColor-hint);
-
-    & + & {
-      margin-top: 0;
-    }
-  }
-
-  .action() {
-    width: 100%;
-
-    @media (min-width: @common-breakpoint-md) {
-      width: auto;
+    &::placeholder {
+      color: var(--form-control-placeholderColor);
     }
   }
 }
