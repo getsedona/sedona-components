@@ -1,49 +1,4 @@
 #base() {
-  .root() {
-    --base-h1-fontSize: @base-h1-fontSize;
-    --base-h1-lineHeight: @base-h1-lineHeight;
-
-    --base-h2-fontSize: @base-h2-fontSize;
-    --base-h2-lineHeight: @base-h2-lineHeight;
-
-    --base-h3-fontSize: @base-h3-fontSize;
-    --base-h3-lineHeight: @base-h3-lineHeight;
-
-    --base-link-color-base: @base-link-color-base;
-    --base-link-color-hover: @base-link-color-hover;
-
-    --base-btn-padding: @base-btn-padding;
-
-    --base-btn-backgroundColor-base: @base-btn-backgroundColor-base;
-    --base-btn-color-base: @base-btn-color-base;
-    --base-btn-borderColor-base: @base-btn-borderColor-base;
-
-    --base-btn-backgroundColor-hover: @base-btn-backgroundColor-hover;
-    --base-btn-color-hover: @base-btn-color-hover;
-    --base-btn-borderColor-hover: @base-btn-borderColor-hover;
-
-    --base-btn-outlineColor-focus: @base-btn-outlineColor-focus;
-  }
-
-  .html() {
-    box-sizing: border-box;
-    cursor: default;
-    text-size-adjust: 100%;
-    -webkit-font-smoothing: antialiased;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  }
-
-  .body() {
-    #common.text-base();
-    #common.box-base();
-    font-family: var(--common-fontFamily-primary);
-    overflow-y: scroll;
-    overflow-x: hidden;
-    min-width: 320px;
-    font-display: swap;
-    margin: 0;
-  }
-
   .h1() {
     font-size: var(--base-h1-fontSize);
     line-height: var(--base-h1-lineHeight);
@@ -66,66 +21,6 @@
     font-weight: bold;
     margin-top: initial;
     margin-bottom: initial;
-  }
-
-  .list() {
-    margin-top: initial;
-    margin-bottom: initial;
-    padding-left: initial;
-    list-style-type: none;
-  }
-
-  .p() {
-    margin-top: initial;
-    margin-bottom: initial;
-  }
-
-  .a() {
-    text-decoration: none;
-
-    &:not([href]),
-    &[href^="tel"] {
-      color: inherit !important;
-      cursor: inherit;
-    }
-
-    &[href^="tel"] {
-      white-space: nowrap;
-    }
-  }
-
-  .button() {
-    cursor: pointer;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    font-weight: inherit;
-    color: inherit;
-    text-align: initial;
-    padding: initial;
-    border: initial;
-    background-color: initial;
-    vertical-align: middle;
-    margin: initial;
-  }
-
-  .media() {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .svg() {
-    transform: translateZ(0);
-    fill: currentColor;
-  }
-
-  .hr() {
-    border: 0;
-    height: 1px;
-    margin-top: initial;
-    margin-bottom: initial;
-    background-color: var(--common-baseColor-divider);
   }
 
   .link() {
