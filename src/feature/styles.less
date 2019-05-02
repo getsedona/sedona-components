@@ -1,11 +1,18 @@
 .feature {
-  #feature.this();
+  display: flex;
+  flex-direction: column;
+  margin-bottom: ~"calc(var(--common-indent-base) * -1)";
+  margin-right: ~"calc(var(--common-indent-base) * -1)";
 }
 
 .feature__accent {
-  #feature.accent();
+  flex-shrink: 0;
+  margin-bottom: var(--common-indent-base);
+  margin-right: var(--common-indent-base);
 }
 
 .feature__content {
-  #feature.content();
+  margin-bottom: var(--common-indent-base);
+  margin-right: var(--common-indent-base);
+  align-self: center;
 }
