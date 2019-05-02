@@ -1,24 +1,28 @@
-// Размеры H1
-@h1-fontSize: 2.5rem; // 40px
-@h1-lineHeight: 3rem; // 48px
+// Параметры H1
+@base-h1-fontSize: 2.5rem; // 40px
+@base-h1-lineHeight: 3rem; // 48px
 
-// Размеры H2
-@h2-fontSize: 2rem; // 32px
-@h2-lineHeight: 2.5rem; // 40px
+// Параметры H2
+@base-h2-fontSize: 2rem; // 32px
+@base-h2-lineHeight: 2.5rem; // 40px
 
-// Размеры H3
-@h3-fontSize: 1.5rem; // 24px
-@h3-lineHeight: 2rem; // 32px
+// Параметры H3
+@base-h3-fontSize: 1.5rem; // 24px
+@base-h3-lineHeight: 2rem; // 32px
 
-// Оформление ссылки
-@link-color-base: @color-accent-primary;
-@link-color-hover: #common.set-color-hover(@link-color-base)[];
+// Параметры ссылки
+@base-link-color-base: @common-accentColor-primary;
+@base-link-color-hover: #common.set-color-hover(@base-link-color-base)[];
 
-// Оформление кнопки
-@btn-tone-base: @color-accent-primary;
-@btn-color-base: contrast(@btn-tone-base, @color-dark-primary, @color-light-primary);
-@btn-borderColor-base: transparent;
-@btn-tone-hover: #common.set-color-hover(@btn-tone-base)[];
-@btn-color-hover: @btn-color-base;
-@btn-borderColor-hover: @btn-borderColor-base;
-@btn-outlineColor-focus: fadeout(@btn-tone-base, 50%, relative);
+// Параметры кнопки
+@base-btn-padding: @common-indent-base;
+
+@base-btn-backgroundColor-base: @common-accentColor-primary;
+@base-btn-color-base: contrast(@base-btn-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
+@base-btn-borderColor-base: transparent;
+
+@base-btn-backgroundColor-hover: #common.set-color-hover(@base-btn-backgroundColor-base)[];
+@base-btn-color-hover: @base-btn-color-base;
+@base-btn-borderColor-hover: @base-btn-borderColor-base;
+
+@base-btn-outlineColor-focus: fadeout(@base-btn-backgroundColor-base, 50%, relative);

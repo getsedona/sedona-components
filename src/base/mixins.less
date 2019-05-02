@@ -2,25 +2,29 @@
 
 #base() {
   .root() {
-    --h1-fontSize: @h1-fontSize;
-    --h1-lineHeight: @h1-lineHeight;
+    --base-h1-fontSize: @base-h1-fontSize;
+    --base-h1-lineHeight: @base-h1-lineHeight;
 
-    --h2-fontSize: @h2-fontSize;
-    --h2-lineHeight: @h2-lineHeight;
+    --base-h2-fontSize: @base-h2-fontSize;
+    --base-h2-lineHeight: @base-h2-lineHeight;
 
-    --h3-fontSize: @h3-fontSize;
-    --h3-lineHeight: @h3-lineHeight;
+    --base-h3-fontSize: @base-h3-fontSize;
+    --base-h3-lineHeight: @base-h3-lineHeight;
 
-    --link-color-base: @link-color-base;
-    --link-color-hover: @link-color-hover;
+    --base-link-color-base: @base-link-color-base;
+    --base-link-color-hover: @base-link-color-hover;
 
-    --btn-tone-base: @btn-tone-base;
-    --btn-color-base: @btn-color-base;
-    --btn-borderColor-base: @btn-borderColor-base;
-    --btn-tone-hover: @btn-tone-hover;
-    --btn-color-hover: @btn-color-hover;
-    --btn-borderColor-hover: @btn-borderColor-hover;
-    --btn-outlineColor-focus: @btn-outlineColor-focus;
+    --base-btn-padding: @base-btn-padding;
+
+    --base-btn-backgroundColor-base: @base-btn-backgroundColor-base;
+    --base-btn-color-base: @base-btn-color-base;
+    --base-btn-borderColor-base: @base-btn-borderColor-base;
+
+    --base-btn-backgroundColor-hover: @base-btn-backgroundColor-hover;
+    --base-btn-color-hover: @base-btn-color-hover;
+    --base-btn-borderColor-hover: @base-btn-borderColor-hover;
+
+    --base-btn-outlineColor-focus: @base-btn-outlineColor-focus;
   }
 
   .html() {
@@ -34,7 +38,7 @@
   .body() {
     #common.text-base();
     #common.box-base();
-    font-family: var(--font-family-primary);
+    font-family: var(--common-fontFamily-primary);
     overflow-y: scroll;
     overflow-x: hidden;
     min-width: 320px;
@@ -43,24 +47,24 @@
   }
 
   .h1() {
-    font-size: var(--h1-fontSize);
-    line-height: var(--h1-lineHeight);
+    font-size: var(--base-h1-fontSize);
+    line-height: var(--base-h1-lineHeight);
     font-weight: bold;
     margin-top: initial;
     margin-bottom: initial;
   }
 
   .h2() {
-    font-size: var(--h2-fontSize);
-    line-height: var(--h2-lineHeight);
+    font-size: var(--base-h2-fontSize);
+    line-height: var(--base-h2-lineHeight);
     font-weight: bold;
     margin-top: initial;
     margin-bottom: initial;
   }
 
   .h3() {
-    font-size: var(--h3-fontSize);
-    line-height: var(--h3-lineHeight);
+    font-size: var(--base-h3-fontSize);
+    line-height: var(--base-h3-lineHeight);
     font-weight: bold;
     margin-top: initial;
     margin-bottom: initial;
@@ -123,49 +127,49 @@
     height: 1px;
     margin-top: initial;
     margin-bottom: initial;
-    background-color: var(--color-base-divider);
+    background-color: var(--common-baseColor-divider);
   }
 
   .link() {
     cursor: pointer;
-    color: var(--link-color-base);
-    transition-duration: var(--animation-duration);
-    transition-timing-function: var(--animation-timing-function);
+    color: var(--base-link-color-base);
+    transition-duration: var(--common-animationDuration-primary);
+    transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: color, fill;
 
     body:not(.mobile) &:hover {
-      --link-color-base: var(--link-color-hover);
+      --base-link-color-base: var(--base-link-color-hover);
     }
   }
 
   .btn() {
     #common.text-base();
-    background-color: var(--btn-tone-base);
-    color: var(--btn-color-base);
+    background-color: var(--base-btn-backgroundColor-base);
+    color: var(--base-btn-color-base);
     position: relative;
     display: inline-flex;
     align-items: center;
-    padding: ~"calc(var(--indent-half) - 1px)" ~"calc(var(--indent-base) * 1.5 - 1px)";
-    min-height: ~"calc(var(--line-height-base) + var(--indent-base))";
-    border-radius: ~"calc((var(--line-height-base) + var(--indent-base)) / 2)";
+    padding: ~"calc(var(--base-btn-padding) / 2 - 1px)" ~"calc(var(--base-btn-padding) * 1.5 - 1px)";
+    min-height: ~"calc(var(--common-lineHeight-base) + var(--base-btn-padding))";
+    border-radius: ~"calc((var(--common-lineHeight-base) + var(--base-btn-padding)) / 2)";
     justify-content: center;
     white-space: nowrap;
     border-width: 1px;
     border-style: solid;
-    border-color: var(--btn-borderColor-base);
-    transition-duration: var(--animation-duration);
-    transition-timing-function: var(--animation-timing-function);
+    border-color: var(--base-btn-borderColor-base);
+    transition-duration: var(--common-animationDuration-primary);
+    transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: box-shadow, color, border-color, background-color;
 
     &:not([disabled]):focus {
       outline: none;
-      box-shadow: 0 0 0 2px var(--btn-outlineColor-focus);
+      box-shadow: 0 0 0 2px var(--base-btn-outlineColor-focus);
     }
 
     body:not(.mobile) &:not([disabled]):hover {
-      --btn-tone-base: var(--btn-tone-hover);
-      --btn-color-base: var(--btn-color-hover);
-      --btn-borderColor-base: var(--btn-borderColor-hover);
+      --base-btn-backgroundColor-base: var(--base-btn-backgroundColor-hover);
+      --base-btn-color-base: var(--base-btn-color-hover);
+      --base-btn-borderColor-base: var(--base-btn-borderColor-hover);
     }
 
     &:active {
