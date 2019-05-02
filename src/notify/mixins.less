@@ -1,18 +1,18 @@
 #notify() {
   .this() {
     #common.box-base();
-    box-shadow: inset 0 0 0 1px var(--color-base-divider);
-    border-radius: var(--box-radius-primary);
+    box-shadow: inset 0 0 0 1px var(--common-baseColor-divider);
+    border-radius: var(--common-boxRadius-primary);
     position: fixed;
     z-index: 10;
-    padding: var(--indent-double);
-    margin-right: var(--indent-base);
-    left: var(--indent-base);
-    bottom: var(--indent-base);
+    padding: var(--common-indent-double);
+    margin-right: var(--common-indent-base);
+    left: var(--common-indent-base);
+    bottom: var(--common-indent-base);
     max-width: 500px;
     animation-name: notifyShow;
-    animation-duration: ~"calc(var(--animation-duration) * 2)";
-    animation-timing-function: var(--animation-timing-function);
+    animation-duration: ~"calc(var(--common-animationDuration-primary) * 2)";
+    animation-timing-function: var(--common-animationTimingFunction-primary);
     animation-fill-mode: forwards;
 
     &--dark {
@@ -26,13 +26,13 @@
     }
 
     &--hide {
-      animation-duration: var(--animation-duration);
+      animation-duration: var(--common-animationDuration-primary);
       animation-name: notifyHide;
     }
 
     @keyframes notifyShow {
       0% {
-        transform: translate3d(~"calc((500px + var(--indent-base)) * -1)", 0, 0);
+        transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
       }
 
       60% {
@@ -54,7 +54,7 @@
       }
 
       100% {
-        transform: translate3d(~"calc((500px + var(--indent-base)) * -1)", 0, 0);
+        transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
       }
     }
   }
@@ -65,11 +65,11 @@
     right: 0;
 
     button {
-      padding: var(--indent-half);
+      padding: var(--common-indent-half);
       line-height: 0;
       opacity: 0.7;
-      transition-duration: var(--animation-duration);
-      transition-timing-function: var(--animation-timing-function);
+      transition-duration: var(--common-animationDuration-primary);
+      transition-timing-function: var(--common-animationTimingFunction-primary);
       transition-property: opacity;
 
       &:hover {
