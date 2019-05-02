@@ -1,15 +1,73 @@
 .grid {
-  #grid.this();
+  #common.element-base();
 }
 
 .grid__wrap {
-  #grid.wrap();
+  #common.element-wrap();
 }
 
 .grid__list {
-  #grid.list();
+  #common.element-list();
 }
 
 .grid__item {
-  #grid.item();
+  #common.element-item();
+
+  .grid__list--sidar & {
+    @media (min-width: @common-breakpoint-lg) {
+      --common-elementItem-width: 75%; // 6/8
+    }
+
+    @media (min-width: @common-breakpoint-xl) {
+      --common-elementItem-width: 66.66%; // 8/12
+    }
+  }
+
+  .grid__list--navahopi & {
+    @media (min-width: @common-breakpoint-lg) {
+      --common-elementItem-width: 75%; // 6/8
+    }
+
+    @media (min-width: @common-breakpoint-xl) {
+      --common-elementItem-width: 83.33%; // 10/12
+    }
+  }
+
+  .grid__list--jordan & {
+    @media (min-width: @common-breakpoint-lg) {
+      --common-elementItem-width: 50%; // 4/8
+    }
+
+    @media (min-width: @common-breakpoint-xl) {
+      --common-elementItem-width: 50%; // 6/12
+    }
+  }
+
+  .grid__list--meskit & {
+    @media (min-width: @common-breakpoint-md) {
+      --common-elementItem-width: 50%; // 4/8
+    }
+
+    @media (min-width: @common-breakpoint-xl) {
+      --common-elementItem-width: 33.33%; // 4/12
+    }
+  }
+
+  .grid__list--amara & {
+    @media (min-width: @common-breakpoint-sm) {
+      --common-elementItem-width: 50%; // 2/4
+    }
+
+    @media (min-width: @common-breakpoint-md) {
+      --common-elementItem-width: 50%; // 3/6
+    }
+
+    @media (min-width: @common-breakpoint-lg) {
+      --common-elementItem-width: 33.33%; // ⅓/8
+    }
+
+    @media (min-width: @common-breakpoint-xl) {
+      --common-elementItem-width: 25%; // 3/12
+    }
+  }
 }
