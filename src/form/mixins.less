@@ -2,31 +2,37 @@
 
 #form() {
   .root() {
-    --formControl-tone-base: @formControl-tone-base;
-    --formControl-color-base: @formControl-color-base;
-    --formControl-placeholderColor-base: @formControl-placeholderColor-base;
-    --formControl-borderColor-base: @formControl-borderColor-base;
+    --form-control-placeholderColor: @form-control-placeholderColor;
 
-    --formControl-tone-hover: @formControl-tone-hover;
-    --formControl-color-hover: @formControl-color-hover;
-    --formControl-borderColor-hover: @formControl-borderColor-hover;
+    --form-control-backgroundColor-base: @form-control-backgroundColor-base;
+    --form-control-color-base: @form-control-color-base;
+    --form-control-borderColor-base: @form-control-borderColor-base;
 
-    --formControl-borderColor-focus: @formControl-borderColor-focus;
-    --formControl-outlineColor-focus: @formControl-outlineColor-focus;
+    --form-control-backgroundColor-hover: @form-control-backgroundColor-hover;
+    --form-control-color-hover: @form-control-color-hover;
+    --form-control-borderColor-hover: @form-control-borderColor-hover;
+
+    --form-control-backgroundColor-focus: @form-control-backgroundColor-focus;
+    --form-control-borderColor-focus: @form-control-borderColor-focus;
+    --form-control-outlineColor-focus: @form-control-outlineColor-focus;
+
+    --form-control-backgroundColor-danger: @form-control-backgroundColor-danger;
+    --form-control-borderColor-danger: @form-control-borderColor-danger;
+    --form-control-outlineColor-danger: @form-control-outlineColor-danger;
   }
 
   .this() {
     display: flex;
     flex-direction: column;
-    margin-bottom: ~"calc(var(--indent-base) * -1)";
+    margin-bottom: ~"calc(var(--common-indent-base) * -1)";
   }
 
   .item() {
     display: flex;
     flex-direction: column;
-    margin-bottom: var(--indent-base);
+    margin-bottom: var(--common-indent-base);
 
-    @media (min-width: @breakpoint-md) {
+    @media (min-width: @common-breakpoint-md) {
       flex-direction: row;
       justify-content: flex-end;
       align-items: flex-start;
@@ -34,18 +40,18 @@
   }
 
   .label() {
-    margin-bottom: var(--indent-half);
+    margin-bottom: var(--common-indent-half);
 
-    @media (min-width: @breakpoint-md) {
-      margin-top: var(--indent-half);
-      margin-right: var(--indent-base);
+    @media (min-width: @common-breakpoint-md) {
+      margin-top: var(--common-indent-half);
+      margin-right: var(--common-indent-base);
       margin-bottom: 0;
       flex-grow: 1;
     }
   }
 
   .field() {
-    @media (min-width: @breakpoint-md) {
+    @media (min-width: @common-breakpoint-md) {
       width: 66.66%;
     }
   }
@@ -54,50 +60,51 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-right: ~"calc(var(--indent-half) * -1)";
-    margin-bottom: ~"calc(var(--indent-half) * -1)";
+    margin-right: ~"calc(var(--common-indent-half) * -1)";
+    margin-bottom: ~"calc(var(--common-indent-half) * -1)";
 
     & + & {
-      margin-top: var(--indent-base);
+      margin-top: var(--common-indent-base);
     }
   }
 
   .control() {
     flex-grow: 1;
-    margin-right: var(--indent-half);
-    margin-bottom: var(--indent-half);
+    margin-right: var(--common-indent-half);
+    margin-bottom: var(--common-indent-half);
   }
 
   .el() {
     display: block;
     border-width: 1px;
     border-style: solid;
-    border-color: var(--formControl-borderColor-base);
-    border-radius: var(--box-radius-primary);
+    border-color: var(--form-control-borderColor-base);
+    border-radius: var(--common-boxRadius-primary);
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
-    color: var(--formControl-color-base);
-    padding: ~"calc(var(--indent-half) - 1px)" ~"calc(var(--indent-base) - 1px)";
+    color: var(--form-control-color-base);
+    padding: ~"calc(var(--common-indent-half) - 1px)" ~"calc(var(--common-indent-base) - 1px)";
     width: 100%;
     appearance: none;
-    min-height: ~"calc(var(--line-height-base) + var(--indent-base))";
-    background-color: var(--formControl-tone-base);
-    transition-duration: var(--animation-duration);
-    transition-timing-function: var(--animation-timing-function);
+    min-height: ~"calc(var(--common-lineHeight-base) + var(--common-indent-base))";
+    background-color: var(--form-control-backgroundColor-base);
+    transition-duration: var(--common-animationDuration-primary);
+    transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: box-shadow, color, border-color, background-color;
 
     &:not([disabled]):focus {
-      --formControl-borderColor-base: var(--formControl-borderColor-focus) !important;
+      --form-control-backgroundColor-base: var(--form-control-backgroundColor-focus);
+      --form-control-borderColor-base: var(--form-control-borderColor-focus) !important;
 
       outline: none;
-      box-shadow: 0 0 0 2px var(--formControl-outlineColor-focus);
+      box-shadow: 0 0 0 2px var(--form-control-outlineColor-focus);
     }
 
     body:not(.mobile) &:not([disabled]):hover {
-      --formControl-tone-base: var(--formControl-tone-hover);
-      --formControl-color-base: var(--formControl-color-hover);
-      --formControl-borderColor-base: var(--formControl-borderColor-hover);
+      --form-control-backgroundColor-base: var(--form-control-backgroundColor-hover);
+      --form-control-color-base: var(--form-control-color-hover);
+      --form-control-borderColor-base: var(--form-control-borderColor-hover);
     }
 
     &:not(:focus):invalid {
@@ -106,7 +113,18 @@
     }
 
     &::placeholder {
-      color: var(--formControl-placeholderColor-base);
+      color: var(--form-control-placeholderColor);
+    }
+
+    &--danger {
+      --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger);
+      --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
+
+      &:not([disabled]):focus {
+        --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
+
+        box-shadow: 0 0 0 2px var(--form-control-outlineColor-danger) !important;
+      }
     }
   }
 
@@ -149,10 +167,20 @@
     resize: vertical;
   }
 
+  .hint {
+    #common.text-small();
+    margin-top: var(--common-indent-half);
+    color: var(--common-baseColor-hint);
+
+    & + & {
+      margin-top: 0;
+    }
+  }
+
   .action() {
     width: 100%;
 
-    @media (min-width: @breakpoint-md) {
+    @media (min-width: @common-breakpoint-md) {
       width: auto;
     }
   }

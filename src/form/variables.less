@@ -1,10 +1,18 @@
-// Оформление поля
-@formControl-tone-base: @color-light-primary;
-@formControl-color-base: @color-dark-primary;
-@formControl-placeholderColor-base: @color-dark-hint;
-@formControl-borderColor-base: @color-dark-divider;
-@formControl-tone-hover: @formControl-tone-base;
-@formControl-color-hover: @formControl-color-base;
-@formControl-borderColor-hover: #common.set-color-hover(@formControl-borderColor-base)[];
-@formControl-borderColor-focus: @color-accent-primary;
-@formControl-outlineColor-focus: fadeout(@formControl-borderColor-focus, 50%, relative);
+// Оформление контрола
+@form-control-placeholderColor: @common-darkColor-hint;
+
+@form-control-backgroundColor-base: @common-lightColor-primary;
+@form-control-color-base: @common-darkColor-primary;
+@form-control-borderColor-base: @common-darkColor-divider;
+
+@form-control-backgroundColor-hover: @form-control-backgroundColor-base;
+@form-control-color-hover: @form-control-color-base;
+@form-control-borderColor-hover: #common.set-color-hover(@form-control-borderColor-base)[];
+
+@form-control-backgroundColor-focus: @form-control-backgroundColor-hover;
+@form-control-borderColor-focus: @common-accentColor-primary;
+@form-control-outlineColor-focus: fadeout(@form-control-borderColor-focus, 50%, relative);
+
+@form-control-backgroundColor-danger: @form-control-backgroundColor-base;
+@form-control-borderColor-danger: @common-dangerColor-primary;
+@form-control-outlineColor-danger: fadeout(@form-control-borderColor-danger, 50%, relative);
