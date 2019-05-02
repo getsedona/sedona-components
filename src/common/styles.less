@@ -1,5 +1,59 @@
 :root {
-  #common.root();
+  --common-fontFamily-primary: @common-fontFamily-primary;
+
+  --common-fontSize-base: @common-fontSize-base;
+  --common-lineHeight-base: @common-lineHeight-base;
+
+  --common-fontSize-small: @common-fontSize-small;
+  --common-lineHeight-small: @common-lineHeight-small;
+
+  --common-fontSize-large: @common-fontSize-large;
+  --common-lineHeight-large: @common-lineHeight-large;
+
+  --common-baseColor-primary: @common-baseColor-primary;
+  --common-baseColor-secondary: @common-baseColor-secondary;
+  --common-baseColor-hint: @common-baseColor-hint;
+  --common-baseColor-divider: @common-baseColor-divider;
+
+  --common-darkColor-primary: @common-darkColor-primary;
+  --common-darkColor-secondary: @common-darkColor-secondary;
+  --common-darkColor-hint: @common-darkColor-hint;
+  --common-darkColor-divider: @common-darkColor-divider;
+
+  --common-lightColor-primary: @common-lightColor-primary;
+  --common-lightColor-secondary: @common-lightColor-secondary;
+  --common-lightColor-hint: @common-lightColor-hint;
+  --common-lightColor-divider: @common-lightColor-divider;
+
+  --common-accentColor-primary: @common-accentColor-primary;
+
+  --common-successColor-primary: @common-successColor-primary;
+  --common-warningColor-primary: @common-warningColor-primary;
+  --common-dangerColor-primary: @common-dangerColor-primary;
+
+  --common-backgroundColor-base: @common-backgroundColor-base;
+  --common-backgroundColor-dark: @common-backgroundColor-dark;
+  --common-backgroundColor-light: @common-backgroundColor-light;
+
+  --common-boxShadow-primary: @common-boxShadow-primary;
+
+  --common-boxRadius-primary: @common-boxRadius-primary;
+
+  --common-animationDuration-primary: @common-animationDuration-primary;
+  --common-animationTimingFunction-primary: @common-animationTimingFunction-primary;
+
+  --common-indent-base: @common-indent-base;
+  --common-indent-half: @common-indent-half;
+  --common-indent-double: @common-indent-double;
+
+  --common-elementGap-base: @common-elementGap-base;
+  --common-elementGap-half: @common-elementGap-half;
+
+  --common-blockGap-base: @common-blockGap-base;
+  --common-blockGap-half: @common-blockGap-half;
+
+  --common-elementWrap-maxWidth: @common-breakpoint-xl;
+  --common-elementItem-width: 100%;
 }
 
 .common-text-base {
@@ -16,6 +70,38 @@
 
 .common-text-uppercase {
   #common.text-uppercase();
+}
+
+.common-box-base {
+  #common.box-base();
+}
+
+.common-box-dark {
+  #common.box-dark();
+}
+
+.common-box-light {
+  #common.box-light();
+}
+
+.common-element-base {
+  #common.element-base();
+}
+
+.common-element-wrap {
+  #common.element-wrap();
+}
+
+.common-element-list {
+  #common.element-list();
+}
+
+.common-element-item {
+  #common.element-item();
+}
+
+.common-block-base {
+  #common.block-base();
 }
 
 .common-base-color-primary {
@@ -82,46 +168,10 @@
   color: var(--common-dangerColor-primary);
 }
 
-.common-box-base {
-  #common.box-base();
-}
-
-.common-box-dark {
-  #common.box-dark();
-}
-
-.common-box-light {
-  #common.box-light();
-}
-
 .common-box-shadow-primary {
   box-shadow: var(--common-boxShadow-primary);
 }
 
 .common-box-radius-primary {
   border-radius: var(--common-boxRadius-primary);
-}
-
-.common-element-base {
-  #common.element-base();
-}
-
-.common-element-wrap {
-  #common.element-wrap();
-}
-
-.common-element-list {
-  #common.element-list();
-}
-
-.common-element-item {
-  #common.element-item();
-}
-
-.common-block-base {
-  #common.block-base();
-}
-
-.visually-hidden {
-  #common.visually-hidden();
 }

@@ -1,62 +1,4 @@
 #common() {
-  .root() {
-    --common-fontFamily-primary: @common-fontFamily-primary;
-
-    --common-fontSize-base: @common-fontSize-base;
-    --common-lineHeight-base: @common-lineHeight-base;
-
-    --common-fontSize-small: @common-fontSize-small;
-    --common-lineHeight-small: @common-lineHeight-small;
-
-    --common-fontSize-large: @common-fontSize-large;
-    --common-lineHeight-large: @common-lineHeight-large;
-
-    --common-baseColor-primary: @common-baseColor-primary;
-    --common-baseColor-secondary: @common-baseColor-secondary;
-    --common-baseColor-hint: @common-baseColor-hint;
-    --common-baseColor-divider: @common-baseColor-divider;
-
-    --common-darkColor-primary: @common-darkColor-primary;
-    --common-darkColor-secondary: @common-darkColor-secondary;
-    --common-darkColor-hint: @common-darkColor-hint;
-    --common-darkColor-divider: @common-darkColor-divider;
-
-    --common-lightColor-primary: @common-lightColor-primary;
-    --common-lightColor-secondary: @common-lightColor-secondary;
-    --common-lightColor-hint: @common-lightColor-hint;
-    --common-lightColor-divider: @common-lightColor-divider;
-
-    --common-accentColor-primary: @common-accentColor-primary;
-
-    --common-successColor-primary: @common-successColor-primary;
-    --common-warningColor-primary: @common-warningColor-primary;
-    --common-dangerColor-primary: @common-dangerColor-primary;
-
-    --common-backgroundColor-base: @common-backgroundColor-base;
-    --common-backgroundColor-dark: @common-backgroundColor-dark;
-    --common-backgroundColor-light: @common-backgroundColor-light;
-
-    --common-boxShadow-primary: @common-boxShadow-primary;
-
-    --common-boxRadius-primary: @common-boxRadius-primary;
-
-    --common-animationDuration-primary: @common-animationDuration-primary;
-    --common-animationTimingFunction-primary: @common-animationTimingFunction-primary;
-
-    --common-indent-base: @common-indent-base;
-    --common-indent-half: @common-indent-half;
-    --common-indent-double: @common-indent-double;
-
-    --common-elementGap-base: @common-elementGap-base;
-    --common-elementGap-half: @common-elementGap-half;
-
-    --common-blockGap-base: @common-blockGap-base;
-    --common-blockGap-half: @common-blockGap-half;
-
-    --common-elementWrap-maxWidth: @common-breakpoint-xl;
-    --common-elementItem-width: 100%;
-  }
-
   .text-base() {
     font-size: var(--common-fontSize-base);
     line-height: var(--common-lineHeight-base);
@@ -146,16 +88,5 @@
       padding-right: var(--common-blockGap-base);
       padding-left: var(--common-blockGap-base);
     }
-  }
-
-  .visually-hidden() {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    overflow: hidden;
   }
 }
