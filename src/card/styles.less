@@ -1,15 +1,47 @@
 .card {
-  #card.this();
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border-radius: var(--common-boxRadius-primary);
+  box-shadow: inset 0 0 0 1px var(--common-baseColor-divider);
+  padding: var(--common-indent-double);
+
+  &--dark {
+    #common.box-dark();
+    box-shadow: none;
+  }
+
+  &--light {
+    #common.box-light();
+    box-shadow: none;
+  }
 }
 
 .card__accent {
-  #card.accent();
+  margin-top: ~"calc(var(--common-indent-double) * -1)";
+  margin-right: ~"calc(var(--common-indent-double) * -1)";
+  margin-bottom: var(--common-indent-base);
+  margin-left: ~"calc(var(--common-indent-double) * -1)";
 }
 
 .card__media {
-  #card.media();
+  position: relative;
+  padding-bottom: 66.66%;
+
+  img,
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--common-boxRadius-primary) var(--common-boxRadius-primary) 0 0;
+  }
 }
 
 .card__content {
-  #card.content();
+  & + & {
+    margin-top: var(--common-indent-base);
+  }
 }
