@@ -3,9 +3,9 @@
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    border-radius: var(--box-radius-primary);
-    box-shadow: inset 0 0 0 1px var(--color-base-divider);
-    padding: var(--indent-double);
+    border-radius: var(--common-boxRadius-primary);
+    box-shadow: inset 0 0 0 1px var(--common-baseColor-divider);
+    padding: var(--common-indent-double);
 
     &--dark {
       #common.box-dark();
@@ -19,10 +19,10 @@
   }
 
   .accent() {
-    margin-top: ~"calc(var(--indent-double) * -1)";
-    margin-right: ~"calc(var(--indent-double) * -1)";
-    margin-bottom: var(--indent-base);
-    margin-left: ~"calc(var(--indent-double) * -1)";
+    margin-top: ~"calc(var(--common-indent-double) * -1)";
+    margin-right: ~"calc(var(--common-indent-double) * -1)";
+    margin-bottom: var(--common-indent-base);
+    margin-left: ~"calc(var(--common-indent-double) * -1)";
   }
 
   .media() {
@@ -37,13 +37,13 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: var(--box-radius-primary) var(--box-radius-primary) 0 0;
+      border-radius: var(--common-boxRadius-primary) var(--common-boxRadius-primary) 0 0;
     }
   }
 
   .content() {
     & + & {
-      margin-top: var(--indent-base);
+      margin-top: var(--common-indent-base);
     }
   }
 }
