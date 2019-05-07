@@ -39,7 +39,6 @@
     #common.text-base();
     background-color: var(--base-btn-backgroundColor-base);
     color: var(--base-btn-color-base);
-    position: relative;
     display: inline-flex;
     align-items: center;
     padding: ~"calc(var(--base-btn-padding) / 2 - 1px)" ~"calc(var(--base-btn-padding) * 1.5 - 1px)";
@@ -66,7 +65,7 @@
     }
 
     &:active {
-      top: 1px;
+      transform: translateY(1px);
     }
   }
 }
