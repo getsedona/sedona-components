@@ -22,12 +22,14 @@
 .form {
   display: flex;
   flex-direction: column;
+  margin-right: ~"calc(var(--common-indent-base) * -1)";
   margin-bottom: ~"calc(var(--common-indent-base) * -1)";
 }
 
 .form__item {
   display: flex;
   flex-direction: column;
+  margin-right: var(--common-indent-base);
   margin-bottom: var(--common-indent-base);
 
   @media (min-width: @common-breakpoint-md) {
@@ -92,6 +94,10 @@
 
   & + & {
     margin-top: 0;
+  }
+
+  &--danger {
+    --common-baseColor-hint: var(--common-dangerColor-primary);
   }
 }
 
