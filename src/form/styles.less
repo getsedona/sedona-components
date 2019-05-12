@@ -51,6 +51,10 @@
 }
 
 .form__field {
+  @media (max-width: (@common-breakpoint-md - 1px)) {
+    width: 100% !important;
+  }
+
   @media (min-width: @common-breakpoint-md) {
     width: 66.66%;
     flex-shrink: 0;

@@ -18,7 +18,8 @@
     transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: box-shadow, color, border-color, background-color;
 
-    &:not([disabled]):focus {
+    &:not([disabled]):focus,
+    &:focus-within {
       --form-control-backgroundColor-base: var(--form-control-backgroundColor-focus);
       --form-control-borderColor-base: var(--form-control-borderColor-focus) !important;
 
@@ -37,6 +38,10 @@
       outline: none;
     }
 
+    &::placeholder {
+      color: var(--form-control-placeholderColor);
+    }
+
     &--danger {
       --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger);
       --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
@@ -51,10 +56,6 @@
 
   .input() {
     #form.el();
-
-    &::placeholder {
-      color: var(--form-control-placeholderColor);
-    }
 
     &::-ms-clear,
     &::-ms-reveal {
@@ -97,9 +98,5 @@
   .textarea() {
     #form.el();
     resize: vertical;
-
-    &::placeholder {
-      color: var(--form-control-placeholderColor);
-    }
   }
 }
