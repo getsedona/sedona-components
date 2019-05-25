@@ -14,5 +14,5 @@
 ## Дополнительно
 
 * Слайдер: [noUiSlider](https://github.com/leongersen/noUiSlider)
-* Маски: [Inputmask](https://github.com/RobinHerbots/Inputmask)
+* Маски: [imaskjs](https://github.com/uNmAnNeR/imaskjs)
 * Автовысота текстареи: [autosize](https://github.com/jackmoore/autosize)
