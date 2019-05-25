@@ -71,6 +71,26 @@
         color: var(--common-baseColor-divider);
       }
     }
+
+    ol {
+      margin-left: 2.3em;
+
+      & > li {
+        &::before {
+          margin-left: -2.3em;
+        }
+      }
+
+      ol {
+        margin-left: 3.1em;
+
+        & > li {
+          &::before {
+            margin-left: -3.1em;
+          }
+        }
+      }
+    }
   }
 
   ol {
