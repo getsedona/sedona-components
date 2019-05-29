@@ -159,8 +159,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./dev/pages/tests.html",
-      filename: "tests.html",
+      template: "./dev/pages/test.html",
+      filename: "test.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlLayoutPlugin(),
