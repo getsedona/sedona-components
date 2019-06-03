@@ -18,7 +18,7 @@
     transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: box-shadow, color, border-color, background-color;
 
-    &:not([disabled]):focus,
+    &:focus,
     &:focus-within {
       --form-control-backgroundColor-base: var(--form-control-backgroundColor-focus);
       --form-control-borderColor-base: var(--form-control-borderColor-focus) !important;
@@ -46,7 +46,7 @@
       --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger);
       --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
 
-      &:not([disabled]):focus {
+      &:focus {
         --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
 
         box-shadow: 0 0 0 2px var(--form-control-outlineColor-danger) !important;
