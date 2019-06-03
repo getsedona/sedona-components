@@ -53,7 +53,7 @@
     transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: box-shadow, color, border-color, background-color;
 
-    &:not([disabled]):focus {
+    &:focus {
       outline: none;
       box-shadow: 0 0 0 2px var(--base-btn-outlineColor-focus);
     }
@@ -64,7 +64,7 @@
       --base-btn-borderColor-base: var(--base-btn-borderColor-hover);
     }
 
-    &:active {
+    &:not([disabled]):active {
       transform: translateY(1px);
     }
   }
