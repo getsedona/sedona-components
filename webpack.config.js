@@ -4,7 +4,7 @@ const pkg = require("./package.json");
 const path = require("path");
 const isProduction = process.env.NODE_ENV === "production" ? true : false;
 
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
