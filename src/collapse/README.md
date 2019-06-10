@@ -17,3 +17,9 @@ collapse();
 // main.less
 @import "~sedona-components/src/collapse/index";
 ```
+
+## Модификаторы
+
+### `collapse`
+
+* `collapse--show` – раскрывает компонент
