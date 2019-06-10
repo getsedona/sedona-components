@@ -1,3 +1,4 @@
+import "focus-visible";
 import MobileDetect from "mobile-detect";
 
 const md = new MobileDetect(window.navigator.userAgent);
