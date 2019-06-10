@@ -28,34 +28,6 @@
     animation-duration: var(--common-animationDuration-primary);
     animation-name: notifyHide;
   }
-
-  @keyframes notifyShow {
-    0% {
-      transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
-    }
-
-    60% {
-      transform: translate3d(10px, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @keyframes notifyHide {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    60% {
-      transform: translate3d(10px, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
-    }
-  }
 }
 
 .notify__close {
@@ -74,5 +46,33 @@
     &:hover {
       opacity: 1;
     }
+  }
+}
+
+@keyframes notifyShow {
+  0% {
+    transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
+  }
+
+  60% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes notifyHide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  60% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
   }
 }
