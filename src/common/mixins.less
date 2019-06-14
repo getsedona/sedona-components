@@ -46,6 +46,10 @@
 
   .element-base() {
     width: 100%;
+
+    & + & {
+      margin-top: var(--common-elementGap-base);
+    }
   }
 
   .element-wrap() {
