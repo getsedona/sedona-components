@@ -20,7 +20,7 @@
 
     &:focus,
     &:focus-within {
-      --form-control-backgroundColor-base: var(--form-control-backgroundColor-focus);
+      --form-control-backgroundColor-base: var(--form-control-backgroundColor-focus) !important;
       --form-control-borderColor-base: var(--form-control-borderColor-focus) !important;
 
       outline: none;
@@ -29,7 +29,6 @@
 
     body:not(.mobile) &:not([disabled]):hover {
       --form-control-backgroundColor-base: var(--form-control-backgroundColor-hover);
-      --form-control-color-base: var(--form-control-color-hover);
       --form-control-borderColor-base: var(--form-control-borderColor-hover);
     }
 
@@ -43,10 +42,11 @@
     }
 
     &--danger {
-      --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger);
+      --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger) !important;
       --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
 
       &:focus {
+        --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger) !important;
         --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
 
         box-shadow: 0 0 0 2px var(--form-control-outlineColor-danger) !important;

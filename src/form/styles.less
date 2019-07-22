@@ -7,7 +7,6 @@
   --form-control-borderColor-base: @form-control-borderColor-base;
 
   --form-control-backgroundColor-hover: @form-control-backgroundColor-hover;
-  --form-control-color-hover: @form-control-color-hover;
   --form-control-borderColor-hover: @form-control-borderColor-hover;
 
   --form-control-backgroundColor-focus: @form-control-backgroundColor-focus;
@@ -43,7 +42,7 @@
   margin-bottom: var(--common-indent-half);
 
   @media (min-width: @common-breakpoint-md) {
-    margin-top: var(--common-indent-half);
+    margin-top: ~"calc(var(--form-control-padding) / 2)";
     margin-right: var(--common-indent-base);
     margin-bottom: 0;
     flex-grow: 1;
@@ -89,6 +88,112 @@
 
 .form__textarea {
   #form.textarea();
+}
+
+.form__checkbox {
+  display: inline-block;
+  padding-left: ~"calc(var(--common-lineHeight-base) + 0.5em)";
+
+  input {
+    position: absolute;
+    appearance: none;
+  }
+
+  input + span {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    padding-left: ~"calc(var(--common-lineHeight-base) + 0.5em)";
+    margin-left: ~"calc(var(--common-lineHeight-base) * -1 - 0.5em)";
+
+    &::before {
+      position: absolute;
+      width: ~"calc(var(--common-lineHeight-base))";
+      height: $width;
+      top: 0;
+      left: 0;
+      content: "";
+      border-width: 1px;
+      border-style: solid;
+      border-color: var(--form-control-borderColor-base);
+      border-radius: ~"calc(var(--common-borderRadius-primary) / 2)";
+      background-color: var(--form-control-backgroundColor-base);
+      transition-duration: var(--common-animationDuration-primary);
+      transition-timing-function: var(--common-animationTimingFunction-primary);
+      transition-property: box-shadow, border-color, background-color;
+    }
+
+    &::after {
+      @icon: escape('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="@{common-lightColor-primary}"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+
+      position: absolute;
+      width: ~"calc(var(--common-lineHeight-base))";
+      height: $width;
+      top: 0;
+      left: 0;
+      content: "";
+      background-image: url("data:image/svg+xml, @{icon}");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: 24px 24px;
+      transform: scale(0);
+      transition-duration: var(--common-animationDuration-primary);
+      transition-timing-function: var(--common-animationTimingFunction-primary);
+      transition-property: transform;
+    }
+  }
+
+  input:focus + span {
+    &::before {
+      --form-control-backgroundColor-base: var(--form-control-backgroundColor-focus) !important;
+      --form-control-borderColor-base: var(--form-control-borderColor-focus) !important;
+
+      box-shadow: 0 0 0 2px var(--form-control-outlineColor-focus);
+    }
+  }
+
+  body:not(.mobile) &:hover input:not([disabled]):not(:checked) + span {
+    &::before {
+      --form-control-backgroundColor-base: var(--form-control-backgroundColor-hover);
+      --form-control-borderColor-base: var(--form-control-borderColor-hover);
+    }
+  }
+
+  input:checked + span {
+    &::before {
+      --form-control-backgroundColor-base: var(--form-control-borderColor-focus) !important;
+      --form-control-borderColor-base: var(--form-control-borderColor-focus) !important;
+    }
+
+    &::after {
+      transform: scale(1);
+    }
+  }
+
+  &--danger input {
+    & + span {
+      &::before {
+        --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger) !important;
+        --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
+      }
+    }
+
+    &:focus + span {
+      &::before {
+        --form-control-backgroundColor-base: var(--form-control-backgroundColor-danger) !important;
+        --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
+
+        box-shadow: 0 0 0 2px var(--form-control-outlineColor-danger) !important;
+      }
+    }
+
+    &:checked + span {
+      &::before {
+        --form-control-backgroundColor-base: var(--form-control-borderColor-focus) !important;
+        --form-control-borderColor-base: var(--form-control-borderColor-danger) !important;
+      }
+    }
+  }
 }
 
 .form__hint {
