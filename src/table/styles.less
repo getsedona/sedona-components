@@ -47,7 +47,7 @@
   }
 
   &--responsive {
-    @media (max-width: (@common-breakpoint-sm - 1px)) {
+    @media (max-width: @common-breakpoint-sm - 1px) {
       white-space: normal !important;
 
       &::before,
@@ -63,7 +63,7 @@
   -webkit-overflow-scrolling: touch;
 
   .table--responsive & {
-    @media (max-width: (@common-breakpoint-sm - 1px)) {
+    @media (max-width: @common-breakpoint-sm - 1px) {
       overflow-x: visible;
     }
   }
@@ -74,7 +74,7 @@
     border-spacing: 0;
 
     .table--responsive & {
-      @media (max-width: (@common-breakpoint-sm - 1px)) {
+      @media (max-width: @common-breakpoint-sm - 1px) {
         display: block;
       }
     }
@@ -87,7 +87,7 @@
 
   thead {
     .table--responsive & {
-      @media (max-width: (@common-breakpoint-sm - 1px)) {
+      @media (max-width: @common-breakpoint-sm - 1px) {
         display: none;
       }
     }
@@ -95,7 +95,7 @@
 
   tbody {
     .table--responsive & {
-      @media (max-width: (@common-breakpoint-sm - 1px)) {
+      @media (max-width: @common-breakpoint-sm - 1px) {
         display: block;
       }
     }
@@ -103,7 +103,7 @@
 
   tr {
     .table--responsive & {
-      @media (max-width: (@common-breakpoint-sm - 1px)) {
+      @media (max-width: @common-breakpoint-sm - 1px) {
         display: block;
         border-bottom-width: 1px;
         border-bottom-style: solid;
@@ -130,7 +130,7 @@
     border-bottom-color: var(--common-baseColor-divider);
     text-align: inherit;
 
-    @media (max-width: (@common-breakpoint-sm - 1px)) {
+    @media (max-width: @common-breakpoint-sm - 1px) {
       &:first-child {
         padding-left: var(--common-blockGap-half);
       }
@@ -153,7 +153,7 @@
     }
 
     .table--responsive & {
-      @media (max-width: (@common-breakpoint-sm - 1px)) {
+      @media (max-width: @common-breakpoint-sm - 1px) {
         text-align: left !important;
         white-space: normal !important;
         display: block;
