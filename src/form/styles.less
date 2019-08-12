@@ -1,5 +1,8 @@
 :root {
+  --form-itemGap-base: @form-itemGap-base;
+
   --form-control-padding: @form-control-padding;
+  --form-control-borderRadius: @form-control-borderRadius;
   --form-control-placeholderColor: @form-control-placeholderColor;
 
   --form-control-backgroundColor-base: @form-control-backgroundColor-base;
@@ -21,15 +24,15 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-right: ~"calc(var(--common-indent-base) * -1)";
-  margin-bottom: ~"calc(var(--common-indent-base) * -1)";
+  margin-right: ~"calc(var(--form-itemGap-base) * -1)";
+  margin-bottom: ~"calc(var(--form-itemGap-base) * -1)";
 }
 
 .form__item {
   display: flex;
   flex-direction: column;
-  margin-right: var(--common-indent-base);
-  margin-bottom: var(--common-indent-base);
+  margin-right: var(--form-itemGap-base);
+  margin-bottom: var(--form-itemGap-base);
 
   @media (min-width: @common-breakpoint-md) {
     flex-direction: row;
@@ -43,14 +46,14 @@
 
   @media (min-width: @common-breakpoint-md) {
     margin-top: ~"calc(var(--form-control-padding) / 2)";
-    margin-right: var(--common-indent-base);
+    margin-right: var(--form-control-padding);
     margin-bottom: 0;
     flex-grow: 1;
   }
 }
 
 .form__field {
-  @media (max-width: (@common-breakpoint-md - 1px)) {
+  @media (max-width: @common-breakpoint-md - 1px) {
     width: 100% !important;
   }
 
@@ -122,7 +125,7 @@
       border-width: 1px;
       border-style: solid;
       border-color: var(--form-control-borderColor-base);
-      border-radius: ~"calc(var(--common-borderRadius-primary) / 2)";
+      border-radius: ~"calc(var(--form-control-borderRadius) / 2)";
       background-color: var(--form-control-backgroundColor-base);
       transition-duration: var(--common-animationDuration-primary);
       transition-timing-function: var(--common-animationTimingFunction-primary);
