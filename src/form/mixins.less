@@ -8,6 +8,7 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    margin: 0;
     color: var(--form-control-color-base);
     padding: ~"calc(var(--form-control-padding) / 2 - 1px)" ~"calc(var(--form-control-padding) - 1px)";
     width: 100%;
@@ -17,6 +18,11 @@
     transition-duration: var(--common-animationDuration-primary);
     transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: box-shadow, color, border-color, background-color;
+
+    .form--slip & {
+      padding-top: ~"calc(var(--form-control-padding) / 2 - 1px + var(--common-lineHeight-small))";
+      min-height: ~"calc(var(--common-lineHeight-base) + var(--form-control-padding) + var(--common-lineHeight-small))";
+    }
 
     &:focus,
     &:focus-within {
@@ -39,6 +45,20 @@
 
     &::placeholder {
       color: var(--form-control-placeholderColor);
+      opacity: 1;
+    }
+
+    .form--slip & {
+      &::placeholder {
+        opacity: 0;
+        transition-timing-function: var(--common-animationTimingFunction-primary);
+        transition-duration: var(--common-animationDuration-primary);
+        transition-property: opacity;
+      }
+
+      &:focus::placeholder {
+        opacity: 1;
+      }
     }
 
     &--danger {
@@ -89,6 +109,11 @@
     background-repeat: no-repeat;
     background-position: right ~"calc(var(--form-control-padding) - 1px)" top 55%;
     background-size: 24px 24px;
+
+    &:-moz-focusring {
+      color: transparent;
+      text-shadow: 0 0 0 #000;
+    }
 
     &::-ms-expand {
       display: none;

@@ -29,6 +29,7 @@
 }
 
 .form__item {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin-right: var(--form-itemGap-base);
@@ -38,6 +39,10 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-start;
+  }
+
+  .form--slip & {
+    justify-content: initial;
   }
 }
 
@@ -50,6 +55,28 @@
     margin-bottom: 0;
     flex-grow: 1;
   }
+
+  .form--slip & {
+    position: absolute;
+    margin-top: ~"calc(var(--form-control-padding) / 2 + var(--common-lineHeight-small) / 2)";
+    margin-left: var(--form-control-padding);
+    margin-bottom: 0;
+    pointer-events: none;
+    color: var(--common-baseColor-secondary);
+    white-space: nowrap;
+    max-width: ~"calc(100% - var(--form-control-padding) * 2)";
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transform-origin: 0 0;
+    transition-timing-function: var(--common-animationTimingFunction-primary);
+    transition-duration: var(--common-animationDuration-primary);
+    transition-property: transform;
+  }
+
+  .form--slip .form__item--slip &,
+  .form--slip .form__item:focus-within & {
+    transform: translate3d(0, ~"calc(var(--common-lineHeight-small) / -2.25)", 0) scale(0.75);
+  }
 }
 
 .form__field {
@@ -60,6 +87,10 @@
   @media (min-width: @common-breakpoint-md) {
     width: 66.66%;
     flex-shrink: 0;
+  }
+
+  .form--slip & {
+    width: 100%;
   }
 }
 

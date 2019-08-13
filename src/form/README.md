@@ -6,6 +6,13 @@
 
 ## Подключение
 
+```js
+// main.js
+import { form } from "sedona-components/src/form";
+
+form();
+```
+
 ```less
 // main.less
 @import "~sedona-components/src/form/index";
@@ -13,17 +20,25 @@
 
 ## Модификаторы
 
+### `form`
+
+* `form--slip` – преобразует элементы формы с плавающими лейблами
+
+### `form__item`
+
+* `form__item--slip` – фиксирает плавающий лейбл. Имеет смысл когда форма `form--slip`
+
 ### `form__input`
 
-* `form__input--danger` – оформляет ошибочный ввод
+* `form__input--danger` – оформляет ошибочный ввод инпута
 
 ### `form__select`
 
-* `form__select--danger` – оформляет ошибочный ввод
+* `form__select--danger` – оформляет ошибочный ввод селекта
 
 ### `form__textarea`
 
-* `form__textarea--danger` – оформляет ошибочный ввод
+* `form__textarea--danger` – оформляет ошибочный ввод текстареи
 
 ### `form__hint`
 
