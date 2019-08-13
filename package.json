@@ -1,6 +1,6 @@
 {
   "name": "sedona-components",
-  "version": "4.9.5",
+  "version": "4.9.6",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -43,8 +43,8 @@
     "style-loader": "^1.0.0",
     "stylelint": "^10.1.0",
     "stylelint-config-sedona": "^1.0.2",
-    "webpack": "^4.39.1",
+    "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.8.0"
   }
 }
