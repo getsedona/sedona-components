@@ -1,5 +1,5 @@
 :root {
-  --form-itemGap-base: @form-itemGap-base;
+  --form-itemGap: @form-itemGap;
 
   --form-control-padding: @form-control-padding;
   --form-control-borderRadius: @form-control-borderRadius;
@@ -24,16 +24,16 @@
 .form {
   display: flex;
   flex-direction: column;
-  margin-right: ~"calc(var(--form-itemGap-base) * -1)";
-  margin-bottom: ~"calc(var(--form-itemGap-base) * -1)";
+  margin-right: ~"calc(var(--form-itemGap) * -1)";
+  margin-bottom: ~"calc(var(--form-itemGap) * -1)";
 }
 
 .form__item {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-right: var(--form-itemGap-base);
-  margin-bottom: var(--form-itemGap-base);
+  margin-right: var(--form-itemGap);
+  margin-bottom: var(--form-itemGap);
 
   @media (min-width: @common-breakpoint-md) {
     flex-direction: row;
