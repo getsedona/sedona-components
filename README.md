@@ -26,12 +26,12 @@ import "sedona-components/src";
 
 [Примеры работы и внешнего вида](https://getsedona.github.io/sedona-components/)
 
-### Основы
+### Основа
 
 * [common](https://github.com/getsedona/sedona-components/tree/master/src/common)
 * [base](https://github.com/getsedona/sedona-components/tree/master/src/base) ([пример](https://getsedona.github.io/sedona-components/base.html))
 
-### Лейауты
+### Лейаут
 
 * [header](https://github.com/getsedona/sedona-components/tree/master/src/header) ([пример](https://getsedona.github.io/sedona-components/header.html))
 * [scene](https://github.com/getsedona/sedona-components/tree/master/src/scene) ([пример](https://getsedona.github.io/sedona-components/scene.html))
