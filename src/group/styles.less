@@ -1,17 +1,24 @@
+:root {
+  --group-gap: @group-gap;
+
+  --group-itemGap-horizontal: @group-itemGap-horizontal;
+  --group-itemGap-vertical: @group-itemGap-vertical;
+}
+
 .group {
   & + & {
-    margin-top: var(--common-indent-base);
+    margin-top: var(--group-gap);
   }
 }
 
 .group__list {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: ~"calc(var(--common-indent-base) * -1)";
-  margin-right: ~"calc(var(--common-indent-base) * -1)";
+  margin-right: ~"calc(var(--group-itemGap-horizontal) * -1)";
+  margin-bottom: ~"calc(var(--group-itemGap-vertical) * -1)";
 }
 
 .group__item {
-  margin-bottom: var(--common-indent-base);
-  margin-right: var(--common-indent-base);
+  margin-right: var(--group-itemGap-horizontal);
+  margin-bottom: var(--group-itemGap-vertical);
 }
