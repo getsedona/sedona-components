@@ -19,11 +19,6 @@
     transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: box-shadow, color, border-color, background-color;
 
-    .form--slip & {
-      padding-top: ~"calc(var(--form-control-padding) / 2 - 1px + var(--common-lineHeight-small))";
-      min-height: ~"calc(var(--common-lineHeight-base) + var(--form-control-padding) + var(--common-lineHeight-small))";
-    }
-
     &:focus,
     &:focus-within {
       --form-control-backgroundColor-base: var(--form-control-backgroundColor-focus) !important;
@@ -49,6 +44,9 @@
     }
 
     .form--slip & {
+      padding-top: ~"calc(var(--form-control-padding) / 2 - 1px + var(--common-lineHeight-small))";
+      min-height: ~"calc(var(--common-lineHeight-base) + var(--form-control-padding) + var(--common-lineHeight-small))";
+
       &::placeholder {
         opacity: 0;
         transition-timing-function: var(--common-animationTimingFunction-primary);
