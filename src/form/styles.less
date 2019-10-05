@@ -35,26 +35,27 @@
   margin-right: var(--form-itemGap);
   margin-bottom: var(--form-itemGap);
 
-  @media (min-width: @common-breakpoint-md) {
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: flex-start;
-  }
+  // @media (min-width: @common-breakpoint-md) {
+  //   flex-direction: row;
+  //   justify-content: flex-end;
+  //   align-items: flex-start;
+  // }
 
   .form--slip & {
     justify-content: initial;
+    flex-direction: column;
   }
 }
 
 .form__label {
-  margin-bottom: var(--common-indent-half);
+  margin-bottom: var(--common-indent-small);
 
-  @media (min-width: @common-breakpoint-md) {
-    margin-top: ~"calc(var(--form-control-padding) / 2)";
-    margin-right: var(--form-control-padding);
-    margin-bottom: 0;
-    flex-grow: 1;
-  }
+  // @media (min-width: @common-breakpoint-md) {
+  //   margin-top: ~"calc(var(--form-control-padding) / 2)";
+  //   margin-right: var(--form-control-padding);
+  //   margin-bottom: 0;
+  //   flex-grow: 1;
+  // }
 
   .form--slip & {
     position: absolute;
@@ -84,10 +85,10 @@
     width: 100% !important;
   }
 
-  @media (min-width: @common-breakpoint-md) {
-    width: 66.66%;
-    flex-shrink: 0;
-  }
+  // @media (min-width: @common-breakpoint-md) {
+  //   width: 66.66%;
+  //   flex-shrink: 0;
+  // }
 
   .form--slip & {
     width: 100%;
@@ -98,8 +99,8 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-right: ~"calc(var(--common-indent-half) * -1)";
-  margin-bottom: ~"calc(var(--common-indent-half) * -1)";
+  margin-right: ~"calc(var(--common-indent-small) * -1)";
+  margin-bottom: ~"calc(var(--common-indent-small) * -1)";
 
   & + & {
     margin-top: var(--common-indent-base);
@@ -108,8 +109,8 @@
 
 .form__control {
   flex-grow: 1;
-  margin-right: var(--common-indent-half);
-  margin-bottom: var(--common-indent-half);
+  margin-right: var(--common-indent-small);
+  margin-bottom: var(--common-indent-small);
 }
 
 .form__input {
@@ -124,19 +125,13 @@
   #form.textarea();
 }
 
-.form__checkbox {
+.form__checkbox,
+.form__radio {
   display: inline-block;
   padding-left: ~"calc(var(--common-lineHeight-base) + 0.5em)";
 
   input {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    overflow: hidden;
+    .visually-hidden;
   }
 
   input + span {
@@ -156,7 +151,6 @@
       border-width: 1px;
       border-style: solid;
       border-color: var(--form-control-borderColor-base);
-      border-radius: ~"calc(var(--form-control-borderRadius) / 2)";
       background-color: var(--form-control-backgroundColor-base);
       transition-duration: var(--common-animationDuration-primary);
       transition-timing-function: var(--common-animationTimingFunction-primary);
@@ -164,22 +158,44 @@
     }
 
     &::after {
-      @icon: escape('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="@{common-lightColor-primary}"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
-
       position: absolute;
       width: ~"calc(var(--common-lineHeight-base))";
       height: $width;
       top: 0;
       left: 0;
       content: "";
-      background-image: url("data:image/svg+xml, @{icon}");
       background-repeat: no-repeat;
       background-position: 50% 50%;
-      background-size: 24px 24px;
       transform: scale(0);
       transition-duration: var(--common-animationDuration-primary);
       transition-timing-function: var(--common-animationTimingFunction-primary);
       transition-property: transform;
+    }
+  }
+
+  input[type="checkbox"] + span {
+    &::before {
+      border-radius: ~"calc(var(--form-control-borderRadius) / 2)";
+    }
+
+    &::after {
+      @icon: escape('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="@{common-lightColor-primary}"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+
+      background-image: url("data:image/svg+xml, @{icon}");
+      background-size: 24px 24px;
+    }
+  }
+
+  input[type="radio"] + span {
+    &::before {
+      border-radius: 50%;
+    }
+
+    &::after {
+      @icon: escape('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="@{common-lightColor-primary}"><circle cx="12" cy="12" r="4"/></svg>');
+
+      background-image: url("data:image/svg+xml, @{icon}");
+      background-size: 24px 24px;
     }
   }
 
@@ -238,7 +254,7 @@
 
 .form__hint {
   #common.text-small();
-  margin-top: var(--common-indent-half);
+  margin-top: var(--common-indent-small);
   color: var(--common-baseColor-hint);
 
   & + & {
@@ -257,7 +273,7 @@
 .form__action {
   width: 100%;
 
-  @media (min-width: @common-breakpoint-md) {
+  @media (min-width: @common-breakpoint-sm) {
     width: auto;
   }
 }

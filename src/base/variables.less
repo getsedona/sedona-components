@@ -1,20 +1,20 @@
 // H1
-@base-h1-fontSize: 2.5rem; // 40px
-@base-h1-lineHeight: 3rem; // 48px
+@base-h1-fontSize: 2.5rem;
+@base-h1-lineHeight: 3rem;
 
 // H2
-@base-h2-fontSize: 2rem; // 32px
-@base-h2-lineHeight: 2.5rem; // 40px
+@base-h2-fontSize: 2rem;
+@base-h2-lineHeight: 2.5rem;
 
 // H3
-@base-h3-fontSize: 1.5rem; // 24px
-@base-h3-lineHeight: 2rem; // 32px
+@base-h3-fontSize: 1.5rem;
+@base-h3-lineHeight: 2rem;
 
-// Ссылки
+// Ссылка
 @base-link-color-base: @common-accentColor-primary;
-@base-link-color-hover: #common.set-color-hover(@base-link-color-base)[];
+@base-link-color-hover: #common.set-color-interaction(@base-link-color-base)[];
 
-// Кнопки
+// Кнопка
 @base-btn-padding: @common-indent-base;
 @base-btn-borderRadius: @common-lineHeight-base + @base-btn-padding / 2;
 
@@ -22,8 +22,8 @@
 @base-btn-color-base: contrast(@base-btn-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
 @base-btn-borderColor-base: transparent;
 
-@base-btn-backgroundColor-hover: #common.set-color-hover(@base-btn-backgroundColor-base)[];
+@base-btn-backgroundColor-hover: #common.set-color-interaction(@base-btn-backgroundColor-base)[];
 @base-btn-color-hover: @base-btn-color-base;
-@base-btn-borderColor-hover: @base-btn-borderColor-base;
+@base-btn-borderColor-hover: #common.set-color-interaction(@base-btn-borderColor-base)[];
 
 @base-btn-outlineColor-focus: fadeout(@base-btn-backgroundColor-base, 50%, relative);

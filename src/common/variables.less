@@ -1,72 +1,78 @@
 // Семейство шрифтов
-@common-fontFamily-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol"; // базовое
+@common-fontFamily-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-// Параметры шрифтов
-@common-fontSize-base: 1rem; // (16px) базовый кегль для основного текста
-@common-lineHeight-base: 1.75rem; // (28px) базовый интерлиньяж
+// Размеры шрифтов
+@common-fontSize-base: 1rem;
+@common-lineHeight-base: 1.75rem;
 
-@common-fontSize-small: 0.75rem; // (12px) уменьшенный кегль для подписей и сносок
-@common-lineHeight-small: 1.25rem; // (20px) уменьшенный интерлиньяж
+@common-fontSize-small: 0.75rem;
+@common-lineHeight-small: 1.25rem;
 
-@common-fontSize-large: 1.25rem; // (20px) увеличенный кегль для лидов и крупнных текстов
-@common-lineHeight-large: 2rem; // (32px) увеличенный интерлиньяж
+@common-fontSize-large: 1.25rem;
+@common-lineHeight-large: 2rem;
 
 // Базовые цвета для всего сайта
-@common-baseColor-primary: contrast(@common-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary); // основной
-@common-baseColor-secondary: contrast(@common-backgroundColor-base, @common-darkColor-secondary, @common-lightColor-secondary); // вторичный
-@common-baseColor-hint: contrast(@common-backgroundColor-base, @common-darkColor-hint, @common-lightColor-hint); // для подсказок
-@common-baseColor-divider: contrast(@common-backgroundColor-base, @common-darkColor-divider, @common-lightColor-divider); // для разделителей
+@common-baseColor-primary: contrast(@common-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
+@common-baseColor-secondary: contrast(@common-backgroundColor-base, @common-darkColor-secondary, @common-lightColor-secondary);
+@common-baseColor-hint: contrast(@common-backgroundColor-base, @common-darkColor-hint, @common-lightColor-hint);
+@common-baseColor-divider: contrast(@common-backgroundColor-base, @common-darkColor-divider, @common-lightColor-divider);
 
 // Цвета для светлых компонентов
-@common-darkColor-primary: #222; // основной
-@common-darkColor-secondary: fade(@common-darkColor-primary, 70%); // вторичный
-@common-darkColor-hint: fade(@common-darkColor-primary, 45%); // для подсказок
-@common-darkColor-divider: fade(@common-darkColor-primary, 10%); // для разделителей
+@common-darkColor-primary: #222;
+@common-darkColor-secondary: fade(@common-darkColor-primary, 70%);
+@common-darkColor-hint: fade(@common-darkColor-primary, 45%);
+@common-darkColor-divider: fade(@common-darkColor-primary, 10%);
 
 // Цвета для темных компонентов
-@common-lightColor-primary: #fff; // основной
-@common-lightColor-secondary: fade(@common-lightColor-primary, 55%); // вторичный
-@common-lightColor-hint: fade(@common-lightColor-primary, 30%); // для подсказок
-@common-lightColor-divider: fade(@common-lightColor-primary, 7%); // для разделителей
+@common-lightColor-primary: #fff;
+@common-lightColor-secondary: fade(@common-lightColor-primary, 55%);
+@common-lightColor-hint: fade(@common-lightColor-primary, 30%);
+@common-lightColor-divider: fade(@common-lightColor-primary, 7%);
 
 // Акцентный (брендовый) цвет
-@common-accentColor-primary: #0884ff; // для ссылок, кнопок и т. п.
+@common-accentColor-primary: #0884ff;
 
 // Цвета оповещений
-@common-successColor-primary: #1dc337; // для успеха
-@common-warningColor-primary: #f6c101; // для предупреждения
-@common-dangerColor-primary: #ff4e45; // для ошибки
+@common-successColor-primary: #1dc337;
+@common-warningColor-primary: #f6c101;
+@common-dangerColor-primary: #ff4e45;
 
 // Фоновые цвета компонентов
-@common-backgroundColor-base: #fff; // базовый для всего сайта
-@common-backgroundColor-dark: contrast(@common-backgroundColor-base, #1f2022, lighten(@common-backgroundColor-base, 7%)); // для темного компонента
-@common-backgroundColor-light: contrast(@common-backgroundColor-base, #fff, darken(@common-backgroundColor-base, 10%)); // для светлого компонента
+@common-backgroundColor-base: #fff;
+@common-backgroundColor-dark: contrast(@common-backgroundColor-base, #1f2022, lighten(@common-backgroundColor-base, 7%));
+@common-backgroundColor-light: contrast(@common-backgroundColor-base, #fff, darken(@common-backgroundColor-base, 10%));
 
 // Тень
-@common-boxShadow-primary: #common.set-shadow()[]; // базовая
+@common-boxShadow-primary: #common.set-shadow()[];
 
 // Радиус
-@common-borderRadius-primary: 0.5rem; // (8px) базовый
+@common-borderRadius-primary: 8px;
 
 // Анимация
-@common-animationDuration-primary: 0.2s; // продолжительность
-@common-animationTimingFunction-primary: ease-out; // формула кривой
+@common-animationDuration-primary: 0.2s;
+@common-animationTimingFunction-primary: ease-out;
 
 // Отступы внутри элемента
-@common-indent-base: 1rem; // (16px) базовый (между параграфами)
-@common-indent-half: 0.5rem; // (8px) половинный
-@common-indent-double: 2rem; // (32px) двойной
+@common-indent-base: 16px;
+@common-indent-small: 8px;
+@common-indent-large: 32px;
 
-// Отступы между элементами
-@common-elementGap-base: 2.5rem; // (40px) базовый
-@common-elementGap-half: 1.25rem; // (20px) половинный
+// Отступ между элементами
+@common-elementGap-vertical: 40px;
+@common-elementGap-horizontal: 40px;
 
-// Отступы между блоками
-@common-blockGap-base: 3rem; // (48px) базовый
-@common-blockGap-half: 1.5rem; // (24px) половинный
+// Максимальная ширина элемента
+@common-elementBase-maxWidth: 1200px;
+
+// Ширина элемента
+@common-elementItem-width: 100%;
+
+// Отступ между блоками
+@common-blockGap-vertical: 48px;
+@common-blockGap-horizontal: 24px;
 
 // Контрольные точки
-@common-breakpoint-sm: 576px; // для горизонтальной мобилки
-@common-breakpoint-md: 768px; // для планшета
-@common-breakpoint-lg: 992px; // для горизонтального планшета
-@common-breakpoint-xl: 1200px; // для десктопа
+@common-breakpoint-sm: 576px;
+@common-breakpoint-md: 768px;
+@common-breakpoint-lg: 992px;
+@common-breakpoint-xl: 1200px;

@@ -1,24 +1,20 @@
 :root {
-  --group-gap: @group-gap;
-
-  --group-itemGap-horizontal: @group-itemGap-horizontal;
-  --group-itemGap-vertical: @group-itemGap-vertical;
+  --group-elementGap-horizontal: @group-elementGap-horizontal;
+  --group-elementGap-vertical: @group-elementGap-vertical;
 }
 
 .group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: ~"calc(var(--group-elementGap-horizontal) * -1)";
+  margin-bottom: ~"calc(var(--group-elementGap-vertical) * -1)";
+
   & + & {
-    margin-top: var(--group-gap);
+    margin-top: var(--group-elementGap-vertical);
   }
 }
 
-.group__list {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: ~"calc(var(--group-itemGap-horizontal) * -1)";
-  margin-bottom: ~"calc(var(--group-itemGap-vertical) * -1)";
-}
-
 .group__item {
-  margin-right: var(--group-itemGap-horizontal);
-  margin-bottom: var(--group-itemGap-vertical);
+  margin-right: var(--group-elementGap-horizontal);
+  margin-bottom: var(--group-elementGap-vertical);
 }

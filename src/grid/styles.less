@@ -1,19 +1,7 @@
 .grid {
   #common.element-base();
-}
 
-.grid__wrap {
-  #common.element-wrap();
-}
-
-.grid__list {
-  #common.element-list();
-}
-
-.grid__item {
-  #common.element-item();
-
-  .grid__list--sidar & {
+  &--sidar {
     @media (min-width: @common-breakpoint-lg) {
       --common-elementItem-width: 75%; // 6/8
     }
@@ -23,7 +11,7 @@
     }
   }
 
-  .grid__list--navahopi & {
+  &--navahopi {
     @media (min-width: @common-breakpoint-lg) {
       --common-elementItem-width: 75%; // 6/8
     }
@@ -33,7 +21,7 @@
     }
   }
 
-  .grid__list--jordan & {
+  &--jordan {
     @media (min-width: @common-breakpoint-lg) {
       --common-elementItem-width: 50%; // 4/8
     }
@@ -43,7 +31,7 @@
     }
   }
 
-  .grid__list--meskit & {
+  &--meskit {
     @media (min-width: @common-breakpoint-md) {
       --common-elementItem-width: 50%; // 4/8
     }
@@ -53,7 +41,7 @@
     }
   }
 
-  .grid__list--amara & {
+  &--amara {
     @media (min-width: @common-breakpoint-sm) {
       --common-elementItem-width: 50%; // 2/4
     }
@@ -70,4 +58,8 @@
       --common-elementItem-width: 25%; // 3/12
     }
   }
+}
+
+.grid__item {
+  #common.element-item();
 }

@@ -25,9 +25,9 @@ const htmlMinifyConfig = {
 module.exports = {
   mode: process.env.NODE_ENV,
   entry: {
-    main: [
-      "./dev/assets/js/main.js",
-      "./dev/assets/less/main.less",
+    index: [
+      "./dev/assets/js/index.js",
+      "./dev/assets/less/index.less",
     ],
   },
   output: {
@@ -155,12 +155,6 @@ module.exports = {
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/404.html",
       filename: "404.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./dev/pages/test.html",
-      filename: "test.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlLayoutPlugin(),

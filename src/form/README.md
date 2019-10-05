@@ -7,14 +7,14 @@
 ## Подключение
 
 ```js
-// main.js
+// index.js
 import { form } from "sedona-components/src/form";
 
 form();
 ```
 
 ```less
-// main.less
+// index.less
 @import "~sedona-components/src/form/index";
 ```
 

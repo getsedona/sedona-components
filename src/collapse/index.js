@@ -1,9 +1,9 @@
 export function collapse() {
-  if (!document.querySelector("[data-toggle='collapse']")) {
+  if (!document.querySelector(".js-collapse-toggle")) {
     return;
   }
 
-  document.querySelectorAll("[data-toggle='collapse']").forEach((el) => {
+  document.querySelectorAll(".js-collapse-toggle").forEach((el) => {
     el.addEventListener("click", () => {
       const selector = el.getAttribute("data-target");
 

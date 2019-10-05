@@ -43,17 +43,18 @@
   --common-animationTimingFunction-primary: @common-animationTimingFunction-primary;
 
   --common-indent-base: @common-indent-base;
-  --common-indent-half: @common-indent-half;
-  --common-indent-double: @common-indent-double;
+  --common-indent-small: @common-indent-small;
+  --common-indent-large: @common-indent-large;
 
-  --common-elementGap-base: @common-elementGap-base;
-  --common-elementGap-half: @common-elementGap-half;
+  --common-elementGap-vertical: @common-elementGap-vertical;
+  --common-elementGap-horizontal: @common-elementGap-horizontal;
 
-  --common-blockGap-base: @common-blockGap-base;
-  --common-blockGap-half: @common-blockGap-half;
+  --common-elementBase-maxWidth: @common-elementBase-maxWidth;
 
-  --common-elementWrap-maxWidth: @common-breakpoint-xl;
-  --common-elementItem-width: 100%;
+  --common-elementItem-width: @common-elementItem-width;
+
+  --common-blockGap-vertical: @common-blockGap-vertical;
+  --common-blockGap-horizontal: @common-blockGap-horizontal;
 }
 
 .common-text-base {
@@ -86,14 +87,6 @@
 
 .common-element-base {
   #common.element-base();
-}
-
-.common-element-wrap {
-  #common.element-wrap();
-}
-
-.common-element-list {
-  #common.element-list();
 }
 
 .common-element-item {

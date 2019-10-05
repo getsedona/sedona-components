@@ -7,11 +7,11 @@
 ## Подключение
 
 ```js
-// main.js
+// index.js
 import "sedona-components/src/base";
 ```
 
 ```less
-// main.less
+// index.less
 @import "~sedona-components/src/base/index";
 ```

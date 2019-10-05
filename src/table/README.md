@@ -7,14 +7,14 @@
 ## Подключение
 
 ```js
-// main.js
+// index.js
 import { table } from "sedona-components/src/table";
 
 table();
 ```
 
 ```less
-// main.less
+// index.less
 @import "~sedona-components/src/table/index";
 ```
 

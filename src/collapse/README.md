@@ -7,14 +7,14 @@
 ## Подключение
 
 ```js
-// main.js
+// index.js
 import { collapse } from "sedona-components/src/collapse";
 
 collapse();
 ```
 
 ```less
-// main.less
+// index.less
 @import "~sedona-components/src/collapse/index";
 ```
 

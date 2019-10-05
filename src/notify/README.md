@@ -7,14 +7,14 @@
 ## Подключение
 
 ```js
-// main.js
+// index.js
 import { notify } from "sedona-components/src/notify";
 
 notify();
 ```
 
 ```less
-// main.less
+// index.less
 @import "~sedona-components/src/notify/index";
 ```
 

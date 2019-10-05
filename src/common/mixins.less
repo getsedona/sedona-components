@@ -45,52 +45,32 @@
   }
 
   .element-base() {
-    width: 100%;
-
-    & + & {
-      margin-top: var(--common-elementGap-base);
-    }
-  }
-
-  .element-wrap() {
-    max-width: var(--common-elementWrap-maxWidth);
-    margin-left: auto;
-    margin-right: auto;
-
-    & + & {
-      margin-top: var(--common-elementGap-base);
-    }
-  }
-
-  .element-list() {
     display: flex;
     flex-wrap: wrap;
-    margin-right: ~"calc(var(--common-elementGap-base) * -1)";
-    margin-bottom: ~"calc(var(--common-elementGap-base) * -1)";
+    width: ~"calc(100% + var(--common-elementGap-horizontal))";
+    max-width: ~"calc(var(--common-elementBase-maxWidth) + var(--common-elementGap-horizontal))";
+    margin-right: ~"calc(var(--common-elementGap-horizontal) * -1)";
+    margin-bottom: ~"calc(var(--common-elementGap-vertical) * -1)";
 
     & + & {
-      margin-top: var(--common-elementGap-base);
+      margin-top: var(--common-elementGap-vertical);
     }
   }
 
   .element-item() {
-    width: ~"calc(var(--common-elementItem-width) - var(--common-elementGap-base))";
-    margin-right: var(--common-elementGap-base);
-    margin-bottom: var(--common-elementGap-base);
+    width: ~"calc(var(--common-elementItem-width) - var(--common-elementGap-horizontal))";
+    margin-right: var(--common-elementGap-horizontal);
+    margin-bottom: var(--common-elementGap-vertical);
   }
 
   .block-base() {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: var(--common-blockGap-base);
-    padding-bottom: var(--common-blockGap-base);
-    padding-right: var(--common-blockGap-half);
-    padding-left: var(--common-blockGap-half);
-
-    @media (min-width: @common-breakpoint-sm) {
-      padding-right: var(--common-blockGap-base);
-      padding-left: var(--common-blockGap-base);
-    }
+    padding-top: var(--common-blockGap-vertical);
+    padding-right: var(--common-blockGap-horizontal);
+    padding-bottom: var(--common-blockGap-vertical);
+    padding-left: var(--common-blockGap-horizontal);
   }
 }

@@ -1,18 +1,24 @@
+@media (min-width: @common-breakpoint-sm) {
+  :root {
+    --common-blockGap-horizontal: @common-blockGap-vertical;
+  }
+}
+
 @media (min-width: @common-breakpoint-md) {
   :root {
-    --common-elementGap-base: 3rem; // 48px
-    --common-elementGap-half: 1.5rem; // 24px
+    --common-elementGap-vertical: 48px;
+    --common-elementGap-horizontal: 48px;
 
-    --common-blockGap-base: 5rem; // 80px
-    --common-blockGap-half: 2.5rem; // 40px
+    --common-blockGap-vertical: 80px;
+    --common-blockGap-horizontal: 80px;
 
-    --base-h1-fontSize: 3rem; // 48px
-    --base-h1-lineHeight: 3.5rem; // 56px
+    --base-h1-fontSize: 3rem;
+    --base-h1-lineHeight: 3.5rem;
 
-    --base-h2-fontSize: 2.5rem; // 40px
-    --base-h2-lineHeight: 3rem; // 48px
+    --base-h2-fontSize: 2.5rem;
+    --base-h2-lineHeight: 3rem;
 
-    --base-h3-fontSize: 1.75rem; // 28px
-    --base-h3-lineHeight: 2.25rem; // 36px
+    --base-h3-fontSize: 1.75rem;
+    --base-h3-lineHeight: 2.25rem;
   }
 }

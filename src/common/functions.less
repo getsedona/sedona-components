@@ -1,5 +1,5 @@
 #common() {
-  .set-color-hover(@color) {
+  .set-color-interaction(@color) {
     @result: if(luma(@color) < 43%, darken(@color, 10%), lighten(@color, 10%));
   }
 

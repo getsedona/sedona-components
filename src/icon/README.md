@@ -7,7 +7,7 @@
 ## Подключение
 
 ```less
-// main.less
+// index.less
 @import "~sedona-components/src/icon/index";
 ```
 

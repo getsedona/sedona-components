@@ -6,16 +6,18 @@
 
 На мобильных устройствах устанавливает тегу `body` класс `.mobile`.
 
+Создает css-переменную высоты вьюпорта `--vh`. `--vh`≈`1vh`.
+
 [Настройка](https://github.com/getsedona/sedona-components/blob/master/src/common/variables.less)
 
 ## Подключение
 
 ```js
-// main.js
+// index.js
 import "sedona-components/src/common";
 ```
 
 ```less
-// main.less
+// index.less
 @import "~sedona-components/src/common/index";
 ```
