@@ -4,7 +4,6 @@
 
 .header__grid {
   #common.element-base();
-  margin-bottom: ~"calc(var(--common-indent-base) * -1)";
   justify-content: space-between;
   align-items: center;
 }
@@ -12,13 +11,11 @@
 .header__fold {
   #common.element-item();
   width: auto;
-  margin-bottom: var(--common-indent-base);
 }
 
 .header__collapse {
   #common.element-item();
   width: auto;
-  margin-bottom: var(--common-indent-base);
   display: flex;
   max-width: ~"calc(100vw - var(--common-blockGap-horizontal) * 2)";
 }

@@ -15,8 +15,12 @@
 @base-link-color-hover: #common.set-color-interaction(@base-link-color-base)[];
 
 // Кнопка
-@base-btn-padding: @common-indent-base;
-@base-btn-borderRadius: @common-lineHeight-base + @base-btn-padding / 2;
+@base-btn-padding-vertical: @common-indent-small;
+@base-btn-padding-horizontal: @common-indent-base + @base-btn-padding-vertical;
+
+@base-btn-borderWidth: 1px;
+
+@base-btn-borderRadius: @common-lineHeight-base + @base-btn-padding-vertical;
 
 @base-btn-backgroundColor-base: @common-accentColor-primary;
 @base-btn-color-base: contrast(@base-btn-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
