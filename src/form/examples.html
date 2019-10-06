@@ -25,7 +25,7 @@
   <section class="scene">
     <div class="grid  grid--sidar">
       <div class="grid__item">
-        <form class="form" action="#" method="post">
+        <form class="form">
           <div class="form__item">
             <div class="form__label">
               <label for="name">Имя и фамилия</label>
@@ -34,7 +34,21 @@
             <div class="form__field">
               <div class="form__row">
                 <div class="form__control">
-                  <input id="name" class="form__input" type="text" name="name" placeholder="Иван Иванов" required autofocus>
+                  <input id="name" class="form__input" type="text" placeholder="Иван Иванов" required autofocus>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__item  form__item--slip">
+            <div class="form__label">
+              <label for="name2">Имя и фамилия</label>
+            </div>
+
+            <div class="form__field">
+              <div class="form__row">
+                <div class="form__control">
+                  <input id="name2" class="form__input" type="text" placeholder="Иван Иванов">
                 </div>
               </div>
             </div>
@@ -48,7 +62,7 @@
             <div class="form__field">
               <div class="form__row">
                 <div class="form__control">
-                  <input id="email" class="form__input" type="email" name="email" placeholder="example@gmail.com" aria-describedby="email-hint" required>
+                  <input id="email" class="form__input" type="email" placeholder="example@gmail.com" aria-describedby="email-hint" required>
 
                   <div id="email-hint" class="form__hint">
                     Адрес не будет опубликован
@@ -66,7 +80,7 @@
             <div class="form__field">
               <div class="form__row">
                 <div class="form__control">
-                  <input id="tel" class="form__input  form__input--danger" type="tel" name="tel" placeholder="8 999 123-45-67" value="203-958" aria-describedby="tel-hint">
+                  <input id="tel" class="form__input  form__input--danger" type="tel" placeholder="8 999 123-45-67" value="203-958" aria-describedby="tel-hint">
 
                   <div id="tel-hint" class="form__hint  form__hint--danger">
                     Номер телефона введен некорректно
@@ -84,7 +98,25 @@
             <div class="form__field">
               <div class="form__row">
                 <div class="form__control">
-                  <select id="subject" class="form__select" name="subject">
+                  <select id="subject" class="form__select">
+                    <option value="1">Тех. поддержка</option>
+                    <option value="2" selected>Финансовая служба</option>
+                    <option value="3">Другое</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__item  form__item--slip  form__item--slippery">
+            <div class="form__label">
+              <label for="subject2">Тема</label>
+            </div>
+
+            <div class="form__field">
+              <div class="form__row">
+                <div class="form__control">
+                  <select id="subject2" class="form__select">
                     <option value="1">Тех. поддержка</option>
                     <option value="2" selected>Финансовая служба</option>
                     <option value="3">Другое</option>
@@ -102,7 +134,21 @@
             <div class="form__field">
               <div class="form__row">
                 <div class="form__control">
-                  <textarea id="message" class="form__textarea" name="message" rows="5"></textarea>
+                  <textarea id="message" class="form__textarea" rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form__item  form__item--slip">
+            <div class="form__label">
+              <label for="message2">Текст сообщения</label>
+            </div>
+
+            <div class="form__field">
+              <div class="form__row">
+                <div class="form__control">
+                  <textarea id="message2" class="form__textarea" rows="5"></textarea>
                 </div>
               </div>
             </div>
@@ -183,89 +229,6 @@
               <div class="form__row">
                 <div class="form__control">
                   <button type="submit" class="btn  form__action">Отправить</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <section class="scene">
-    <div class="grid  grid--sidar">
-      <div class="grid__item">
-        <div class="wysiwyg">
-          <h3>Slip</h3>
-        </div>
-      </div>
-
-      <div class="grid__item">
-        <form class="form  form--slip" action="#" method="post">
-          <div class="form__item">
-            <div class="form__label">
-              <label for="body">Тип кузова</label>
-            </div>
-
-            <div class="form__field">
-              <div class="form__row">
-                <div class="form__control">
-                  <input id="body" class="form__input" type="text" name="body" placeholder="Седан">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form__item">
-            <div class="form__label">
-              <label for="model">Марка</label>
-            </div>
-
-            <div class="form__field">
-              <div class="form__row">
-                <div class="form__control">
-                  <input id="model" class="form__input" type="text" name="model">
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form__item  form__item--slip">
-            <div class="form__label">
-              <label for="transmission">Коробка передач</label>
-            </div>
-
-            <div class="form__field">
-              <div class="form__row">
-                <div class="form__control">
-                  <select id="transmission" class="form__select" name="transmission">
-                    <option value="1" selected>Механика</option>
-                    <option value="2">Автомат</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form__item">
-            <div class="form__label">
-              <label for="note">Примечание</label>
-            </div>
-
-            <div class="form__field">
-              <div class="form__row">
-                <div class="form__control">
-                  <textarea id="note" class="form__textarea" name="note" rows="5"></textarea>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="form__item">
-            <div class="form__field">
-              <div class="form__row">
-                <div class="form__control">
-                  <button type="submit" class="btn  form__action">Продолжить</button>
                 </div>
               </div>
             </div>

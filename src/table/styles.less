@@ -1,7 +1,7 @@
 .table {
   position: relative;
-  margin-right: ~"calc(var(--common-blockGap-half) * -1)";
-  margin-left: ~"calc(var(--common-blockGap-half) * -1)";
+  margin-right: ~"calc(var(--common-blockGap-horizontal) * -1)";
+  margin-left: ~"calc(var(--common-blockGap-horizontal) * -1)";
 
   @media (min-width: @common-breakpoint-sm) {
     margin-right: auto;
@@ -19,11 +19,11 @@
     top: 0;
     bottom: 0;
     z-index: 1;
-    width: 1rem;
+    width: 16px;
     background-repeat: no-repeat;
     background-size: 1px 100%, 100% 100%;
     opacity: 0;
-    transition-duration: ~"calc(var(--common-animationDuration-primary) / 2)";
+    transition-duration: var(--common-animationDuration-primary);
     transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property: opacity;
     pointer-events: none;
@@ -132,11 +132,11 @@
 
     @media (max-width: @common-breakpoint-sm - 1px) {
       &:first-child {
-        padding-left: var(--common-blockGap-half);
+        padding-left: var(--common-blockGap-horizontal);
       }
 
       &:last-child {
-        padding-right: var(--common-blockGap-half);
+        padding-right: var(--common-blockGap-horizontal);
       }
     }
 
@@ -160,8 +160,8 @@
         border-bottom-width: 0;
         padding-top: var(--common-indent-small);
         padding-bottom: var(--common-indent-small);
-        padding-left: var(--common-blockGap-half);
-        padding-right: var(--common-blockGap-half);
+        padding-left: var(--common-blockGap-horizontal);
+        padding-right: var(--common-blockGap-horizontal);
 
         &:empty {
           display: none;
