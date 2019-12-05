@@ -55,10 +55,8 @@
 
   --common-blockGap-vertical: @common-blockGap-vertical;
   --common-blockGap-horizontal: @common-blockGap-horizontal;
-}
 
-@media (max-width: @common-breakpoint-sm - 1px) {
-  :root {
+  @media (max-width: @common-breakpoint-sm - 1px) {
     --common-blockGap-horizontal: ~"calc(@{common-blockGap-horizontal} / 2)";
   }
 }

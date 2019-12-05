@@ -47,7 +47,6 @@ body {
   #common.box-base();
   font-family: var(--common-fontFamily-primary);
   overflow-y: scroll;
-  overflow-x: hidden;
   min-width: 320px;
   font-display: swap;
   margin: 0;
@@ -70,15 +69,15 @@ h3,
 
 ul,
 ol {
-  margin-top: initial;
-  margin-bottom: initial;
-  padding-left: initial;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style-type: none;
 }
 
 p {
-  margin-top: initial;
-  margin-bottom: initial;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 figure {
@@ -112,11 +111,11 @@ button,
   font-weight: inherit;
   text-transform: inherit;
   color: inherit;
-  text-align: initial;
-  padding: initial;
-  border: initial;
-  background-color: initial;
-  margin: initial;
+  text-align: start;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  margin: 0;
 
   &[disabled] {
     cursor: initial;
@@ -141,8 +140,8 @@ use {
 hr {
   border: 0;
   height: 1px;
-  margin-top: initial;
-  margin-bottom: initial;
+  margin-top: 0;
+  margin-bottom: 0;
   background-color: var(--common-baseColor-divider);
 }
 
