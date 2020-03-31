@@ -53,6 +53,13 @@ body {
 }
 
 h1,
+h2,
+h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1,
 .h1 {
   #base.h1();
 }
@@ -90,7 +97,9 @@ a {
 
   &:not([href]),
   &[href^="tel"] {
-    color: inherit;
+    --base-link-color-base: var(--common-baseColor-primary);
+    --base-link-color-hover: var(--common-baseColor-primary);
+
     cursor: default;
   }
 
@@ -111,7 +120,7 @@ button,
   font-weight: inherit;
   text-transform: inherit;
   color: inherit;
-  text-align: start;
+  text-align: left;
   padding: 0;
   border: none;
   background-color: transparent;
