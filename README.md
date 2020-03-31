@@ -89,10 +89,6 @@ import "sedona-components/src";
         <!-- Контент -->
       </main>
 
-      <aside class="aside">
-        <!-- Боковая панель -->
-      </aside>
-
       <footer class="footer">
         <!-- Подвал -->
       </footer>
