@@ -141,14 +141,12 @@
     }
 
     @media (min-width: @common-breakpoint-sm) {
-      .mobile & {
-        &:first-child {
-          padding-left: 0;
-        }
+      &:first-child {
+        padding-left: 0;
+      }
 
-        &:last-child {
-          padding-right: 0;
-        }
+      &:last-child {
+        padding-right: 0;
       }
     }
 
@@ -194,7 +192,7 @@
     transition-property: background-color;
   }
 
-  body:not(.mobile) & tr:hover td {
+  & tr:hover td {
     background-color: var(--common-baseColor-divider);
   }
 }

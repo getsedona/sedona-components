@@ -19,8 +19,7 @@
     "lint:fix": "npm run eslint:fix & npm run stylelint:fix"
   },
   "dependencies": {
-    "focus-visible": "^5.1.0",
-    "mobile-detect": "^1.4.4"
+    "focus-visible": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

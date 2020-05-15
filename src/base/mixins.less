@@ -24,7 +24,7 @@
     transition-timing-function: var(--common-animationTimingFunction-primary);
     transition-property+: color, fill;
 
-    body:not(.mobile) &:hover {
+    &:hover {
       --base-link-color-base: var(--base-link-color-hover);
     }
   }
@@ -56,7 +56,7 @@
       box-shadow: 0 0 0 2px var(--base-btn-outlineColor-focus);
     }
 
-    body:not(.mobile) &:not([disabled]):hover {
+    &:not([disabled]):hover {
       --base-btn-backgroundColor-base: var(--base-btn-backgroundColor-hover);
       --base-btn-color-base: var(--base-btn-color-hover);
       --base-btn-borderColor-base: var(--base-btn-borderColor-hover);
