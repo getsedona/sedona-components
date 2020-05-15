@@ -75,12 +75,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/header/examples.html",
-      filename: "header.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/scene/examples.html",
       filename: "scene.html",
       minify: isProduction ? htmlMinifyConfig : false,

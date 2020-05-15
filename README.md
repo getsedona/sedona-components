@@ -33,7 +33,6 @@ import "sedona-components/src";
 
 ### Лейаут
 
-* [header](https://github.com/getsedona/sedona-components/tree/master/src/header) ([пример](https://getsedona.github.io/sedona-components/header.html))
 * [scene](https://github.com/getsedona/sedona-components/tree/master/src/scene) ([пример](https://getsedona.github.io/sedona-components/scene.html))
 
 ### Модульная сетка
