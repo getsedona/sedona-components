@@ -2,15 +2,4 @@
   .set-color-interaction(@color) {
     @result: if(luma(@color) < 43%, darken(@color, 10%), lighten(@color, 10%));
   }
-
-  .set-shadow(@color: #000; @opacity: 5%; @size: 1rem) {
-    @result:
-      0 -@size / 10 @size / 10 fade(@color, @opacity),
-      0 @size / 8 @size / 8 fade(@color, @opacity),
-      0 @size / 6 @size / 6 fade(@color, @opacity),
-      0 @size / 4 @size / 4 fade(@color, @opacity),
-      0 @size / 2 @size / 2 fade(@color, @opacity),
-      0 @size @size fade(@color, @opacity),
-      0 @size * 2 @size * 2 fade(@color, @opacity);
-  }
 }
