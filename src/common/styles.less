@@ -48,16 +48,33 @@
 
   --common-elementBase-maxWidth: @common-elementBase-maxWidth;
 
-  --common-elementGap-vertical: @common-elementGap-vertical;
   --common-elementGap-horizontal: @common-elementGap-horizontal;
+  --common-elementGap-vertical: @common-elementGap-vertical;
 
   --common-elementItem-width: @common-elementItem-width;
 
-  --common-blockGap-vertical: @common-blockGap-vertical;
   --common-blockGap-horizontal: @common-blockGap-horizontal;
+  --common-blockGap-vertical: @common-blockGap-vertical;
 
-  @media (max-width: @common-breakpoint-sm - 1px) {
-    --common-blockGap-horizontal: ~"calc(@{common-blockGap-horizontal} / 2)";
+  @media (min-width: @common-breakpoint-sm) {
+    --common-blockGap-horizontal: 48px;
+  }
+
+  @media (min-width: @common-breakpoint-md) {
+    --common-elementGap-horizontal: 48px;
+    --common-elementGap-vertical: 48px;
+
+    --common-blockGap-horizontal: 80px;
+    --common-blockGap-vertical: 80px;
+
+    --base-h1-fontSize: 3rem;
+    --base-h1-lineHeight: 3.5rem;
+
+    --base-h2-fontSize: 2.5rem;
+    --base-h2-lineHeight: 3rem;
+
+    --base-h3-fontSize: 1.75rem;
+    --base-h3-lineHeight: 2.25rem;
   }
 }
 
