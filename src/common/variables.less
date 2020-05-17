@@ -3,7 +3,7 @@
 
 // Размеры шрифтов
 @common-fontSize-base: 1rem;
-@common-lineHeight-base: 1.75rem;
+@common-lineHeight-base: 1.5rem;
 
 @common-fontSize-small: 0.75rem;
 @common-lineHeight-small: 1.25rem;
@@ -18,9 +18,9 @@
 @common-baseColor-divider: contrast(@common-backgroundColor-base, @common-darkColor-divider, @common-lightColor-divider);
 
 // Цвета для светлых компонентов
-@common-darkColor-primary: #222;
-@common-darkColor-secondary: fade(@common-darkColor-primary, 70%);
-@common-darkColor-hint: fade(@common-darkColor-primary, 45%);
+@common-darkColor-primary: fade(#000, 85%);
+@common-darkColor-secondary: fade(@common-darkColor-primary, 65%);
+@common-darkColor-hint: fade(@common-darkColor-primary, 40%);
 @common-darkColor-divider: fade(@common-darkColor-primary, 10%);
 
 // Цвета для темных компонентов
@@ -28,6 +28,11 @@
 @common-lightColor-secondary: fade(@common-lightColor-primary, 55%);
 @common-lightColor-hint: fade(@common-lightColor-primary, 30%);
 @common-lightColor-divider: fade(@common-lightColor-primary, 7%);
+
+// Фоновые цвета компонентов
+@common-backgroundColor-base: #fff;
+@common-backgroundColor-dark: contrast(@common-backgroundColor-base, #1f2022, lighten(@common-backgroundColor-base, 7%));
+@common-backgroundColor-light: contrast(@common-backgroundColor-base, #fff, darken(@common-backgroundColor-base, 10%));
 
 // Акцентный (брендовый) цвет
 @common-accentColor-primary: #0884ff;
@@ -37,13 +42,8 @@
 @common-warningColor-primary: #f6c101;
 @common-dangerColor-primary: #ff4e45;
 
-// Фоновые цвета компонентов
-@common-backgroundColor-base: #fff;
-@common-backgroundColor-dark: contrast(@common-backgroundColor-base, #1f2022, lighten(@common-backgroundColor-base, 7%));
-@common-backgroundColor-light: contrast(@common-backgroundColor-base, #fff, darken(@common-backgroundColor-base, 10%));
-
 // Тень
-@common-boxShadow-primary: 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.05), 0 0.125rem 0.125rem rgba(0, 0, 0, 0.05), 0 0.16666667rem 0.16666667rem rgba(0, 0, 0, 0.05), 0 0.25rem 0.25rem rgba(0, 0, 0, 0.05), 0 0.5rem 0.5rem rgba(0, 0, 0, 0.05), 0 1rem 1rem rgba(0, 0, 0, 0.05), 0 2rem 2rem rgba(0, 0, 0, 0.05);
+@common-boxShadow-primary: 0 -1px 1px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 16px 16px rgba(0, 0, 0, 0.05), 0 32px 32px rgba(0, 0, 0, 0.05);
 
 // Радиус
 @common-borderRadius-primary: 8px;
