@@ -142,6 +142,36 @@ button,
   }
 }
 
+input {
+  &[type="text"],
+  &[type="email"],
+  &[type="password"],
+  &[type="tel"],
+  &[type="search"] {
+    display: block;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin: 0;
+  }
+}
+
+textarea {
+  display: block;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  resize: vertical;
+}
+
 img,
 video {
   max-width: 100%;
