@@ -55,24 +55,12 @@
   }
 
   .element-base() {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: var(--common-elementGap-horizontal);
-    grid-row-gap: var(--common-elementGap-vertical);
-    width: 100%;
-    max-width: var(--common-elementBase-maxWidth);
-
-    @media (min-width: @common-breakpoint-sm) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media (min-width: @common-breakpoint-md) {
-      grid-template-columns: repeat(6, 1fr);
-    }
-
-    @media (min-width: @common-breakpoint-lg) {
-      grid-template-columns: repeat(12, 1fr);
-    }
+    display: flex;
+    flex-wrap: wrap;
+    width: ~"calc(100% + var(--common-elementGap-horizontal))";
+    max-width: ~"calc(var(--common-elementBase-maxWidth) + var(--common-elementGap-horizontal))";
+    margin-right: ~"calc(var(--common-elementGap-horizontal) * -1)";
+    margin-bottom: ~"calc(var(--common-elementGap-vertical) * -1)";
 
     & + & {
       margin-top: var(--common-elementGap-vertical);
@@ -80,7 +68,10 @@
   }
 
   .element-item() {
-    grid-column: var(--common-elementItem-width);
+    width: var(--common-elementItem-width);
+    border: 0 solid transparent;
+    border-right-width: var(--common-elementGap-horizontal);
+    border-bottom-width: var(--common-elementGap-vertical);
   }
 
   .block-base() {
