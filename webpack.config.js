@@ -58,7 +58,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: isProduction ? ["**/*"] : [] }),
-    new CopyWebpackPlugin([{ from: "./dev/static/" }]),
+    new CopyWebpackPlugin({patterns: [{ from: "./dev/static/" }]}),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
