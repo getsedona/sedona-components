@@ -1,86 +1,43 @@
 #common() {
   .text-base() {
-    font-size: var(--common-fontSize-base);
-    line-height: var(--common-lineHeight-base);
+    font-family: var(--common-text-base-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol");
+    font-weight: var(--common-text-base-font-weight, normal);
+    font-size: var(--common-text-base-font-size, 1rem);
+    line-height: var(--common-text-base-line-height, 1.5rem);
   }
 
   .text-small() {
-    font-size: var(--common-fontSize-small);
-    line-height: var(--common-lineHeight-small);
+    font-family: var(--common-text-small-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol");
+    font-weight: var(--common-text-small-font-weight, normal);
+    font-size: var(--common-text-small-font-size, 0.75rem);
+    line-height: var(--common-text-small-line-height, 1.25rem);
   }
 
   .text-large() {
-    font-size: var(--common-fontSize-large);
-    line-height: var(--common-lineHeight-large);
+    font-family: var(--common-text-large-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol");
+    font-weight: var(--common-text-large-font-weight, normal);
+    font-size: var(--common-text-large-font-size, 1.25rem);
+    line-height: var(--common-text-large-line-height, 1.75rem);
   }
 
   .text-remark() {
-    font-size: var(--common-fontSize-remark);
-    line-height: var(--common-lineHeight-remark);
+    font-family: var(--common-text-remark-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol");
+    font-weight: var(--common-text-remark-font-weight, normal);
+    font-size: var(--common-text-remark-font-size, 0.625rem);
+    line-height: var(--common-text-remark-line-height, 1rem);
   }
 
-  .box-base() {
-    color: var(--common-baseColor-primary);
-    background-color: var(--common-backgroundColor-base);
+  .text-label() {
+    font-family: var(--common-text-label-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol");
+    font-weight: var(--common-text-label-font-weight, normal);
+    font-size: var(--common-text-label-font-size, 1rem);
+    line-height: var(--common-text-label-line-height, 1.5rem);
   }
 
-  .box-dark() {
-    --common-baseColor-primary: var(--common-lightColor-primary);
-    --common-baseColor-secondary: var(--common-lightColor-secondary);
-    --common-baseColor-hint: var(--common-lightColor-hint);
-    --common-baseColor-divider: var(--common-lightColor-divider);
-
-    color: var(--common-lightColor-primary);
-    background-color: var(--common-backgroundColor-dark);
-  }
-
-  .box-light() {
-    --common-baseColor-primary: var(--common-darkColor-primary);
-    --common-baseColor-secondary: var(--common-darkColor-secondary);
-    --common-baseColor-hint: var(--common-darkColor-hint);
-    --common-baseColor-divider: var(--common-darkColor-divider);
-
-    color: var(--common-darkColor-primary);
-    background-color: var(--common-backgroundColor-light);
-  }
-
-  .element-base() {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: var(--common-elementGap-horizontal);
-    grid-row-gap: var(--common-elementGap-vertical);
-    width: 100%;
-    max-width: var(--common-elementBase-maxWidth);
-
-    @media (min-width: @common-breakpoint-sm) {
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    @media (min-width: @common-breakpoint-md) {
-      grid-template-columns: repeat(6, 1fr);
-    }
-
-    @media (min-width: @common-breakpoint-lg) {
-      grid-template-columns: repeat(12, 1fr);
-    }
-
-    & + & {
-      margin-top: var(--common-elementGap-vertical);
-    }
-  }
-
-  .element-item() {
-    grid-column: var(--common-elementItem-width);
-  }
-
-  .block-base() {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding-top: var(--common-blockGap-vertical);
-    padding-right: var(--common-blockGap-horizontal);
-    padding-bottom: var(--common-blockGap-vertical);
-    padding-left: var(--common-blockGap-horizontal);
+  .text-decor() {
+    font-family: var(--common-text-decor-font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol");
+    font-weight: var(--common-text-decor-font-weight, normal);
+    font-size: var(--common-text-decor-font-size, 1.75rem);
+    line-height: var(--common-text-decor-line-height, 2.5rem);
   }
 }
