@@ -1,7 +1,4 @@
 :root {
-  --base-link-color-base: @base-link-color-base;
-  --base-link-color-hover: @base-link-color-hover;
-
   --base-btn-padding-horizontal: @base-btn-padding-horizontal;
   --base-btn-padding-vertical: @base-btn-padding-vertical;
 
@@ -89,8 +86,8 @@ a {
 
   &:not([href]),
   &[href^="tel"] {
-    --base-link-color-base: var(--common-baseColor-primary);
-    --base-link-color-hover: var(--common-baseColor-primary);
+    --base-link-color-base: currentColor;
+    --base-link-color-hover: currentColor;
 
     cursor: default;
   }

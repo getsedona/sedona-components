@@ -22,13 +22,13 @@
 
   .link() {
     cursor: pointer;
-    color: var(--base-link-color-base);
+    color: @base-link-color-base;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
     transition-property+: color, fill;
 
     &:hover {
-      --base-link-color-base: var(--base-link-color-hover);
+      --base-link-color-base: @base-link-color-hover;
     }
   }
 
