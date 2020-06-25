@@ -1,7 +1,7 @@
 .table {
   position: relative;
-  margin-right: ~"calc(var(--common-blockGap-horizontal) * -1)";
-  margin-left: ~"calc(var(--common-blockGap-horizontal) * -1)";
+  margin-right: ~"calc(@{common-block-gap-horizontal} * -1)";
+  margin-left: ~"calc(@{common-block-gap-horizontal} * -1)";
 
   @media (min-width: @common-breakpoint-sm) {
     margin-right: auto;
@@ -132,11 +132,11 @@
 
     @media (max-width: @common-breakpoint-sm - 1px) {
       &:first-child {
-        padding-left: var(--common-blockGap-horizontal);
+        padding-left: @common-block-gap-horizontal;
       }
 
       &:last-child {
-        padding-right: var(--common-blockGap-horizontal);
+        padding-right: @common-block-gap-horizontal;
       }
     }
 
@@ -158,8 +158,8 @@
         border-bottom-width: 0;
         padding-top: var(--common-indent-small);
         padding-bottom: var(--common-indent-small);
-        padding-left: var(--common-blockGap-horizontal);
-        padding-right: var(--common-blockGap-horizontal);
+        padding-left: @common-block-gap-horizontal;
+        padding-right: @common-block-gap-horizontal;
 
         &:empty {
           display: none;
