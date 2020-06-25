@@ -1,12 +1,12 @@
 :root {
-  --base-h1-fontSize: @base-h1-fontSize;
-  --base-h1-lineHeight: @base-h1-lineHeight;
+  --base-h1-font-size: @base-h1-font-size;
+  --base-h1-line-height: @base-h1-line-height;
 
-  --base-h2-fontSize: @base-h2-fontSize;
-  --base-h2-lineHeight: @base-h2-lineHeight;
+  --base-h2-font-size: @base-h2-font-size;
+  --base-h2-line-height: @base-h2-line-height;
 
-  --base-h3-fontSize: @base-h3-fontSize;
-  --base-h3-lineHeight: @base-h3-lineHeight;
+  --base-h3-font-size: @base-h3-font-size;
+  --base-h3-line-height: @base-h3-line-height;
 
   --base-link-color-base: @base-link-color-base;
   --base-link-color-hover: @base-link-color-hover;
@@ -28,14 +28,14 @@
   --base-btn-outlineColor-focus: @base-btn-outlineColor-focus;
 
   @media (min-width: @common-breakpoint-md) {
-    --base-h1-fontSize: 3rem;
-    --base-h1-lineHeight: 3.5rem;
+    --base-h1-font-size: 3rem;
+    --base-h1-line-height: 3.5rem;
 
-    --base-h2-fontSize: 2.5rem;
-    --base-h2-lineHeight: 3rem;
+    --base-h2-font-size: 2.5rem;
+    --base-h2-line-height: 3rem;
 
-    --base-h3-fontSize: 1.75rem;
-    --base-h3-lineHeight: 2.25rem;
+    --base-h3-font-size: 1.75rem;
+    --base-h3-line-height: 2.25rem;
   }
 }
 
@@ -56,7 +56,7 @@ html {
 body {
   #common.text-base();
   #common.box-base();
-  font-family: var(--common-fontFamily-primary);
+  font-family: var(--common-font-family-primary);
   overflow-y: scroll;
   min-width: 320px;
   font-display: swap;
