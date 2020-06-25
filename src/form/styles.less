@@ -42,7 +42,7 @@
 }
 
 .form__label {
-  margin-bottom: var(--common-indent-small);
+  margin-bottom: 8px;
 
   .form__item--slip & {
     position: absolute;
@@ -71,18 +71,18 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  margin-right: ~"calc(var(--common-indent-small) * -1)";
-  margin-bottom: ~"calc(var(--common-indent-small) * -1)";
+  margin-right: -8px;
+  margin-bottom: -8px;
 
   & + & {
-    margin-top: var(--common-indent-base);
+    margin-top: 16px;
   }
 }
 
 .form__control {
   flex-grow: 1;
-  margin-right: var(--common-indent-small);
-  margin-bottom: var(--common-indent-small);
+  margin-right: 8px;
+  margin-bottom: 8px;
 }
 
 .form__input {
@@ -226,7 +226,7 @@
 
 .form__hint {
   #common.text-small();
-  margin-top: var(--common-indent-small);
+  margin-top: 8px;
   color: var(--common-baseColor-hint);
 
   & + & {

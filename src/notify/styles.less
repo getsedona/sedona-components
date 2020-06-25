@@ -4,10 +4,10 @@
   border-radius: var(--common-borderRadius-primary);
   position: fixed;
   z-index: 100;
-  padding: var(--common-indent-large);
-  margin-right: var(--common-indent-base);
-  left: var(--common-indent-base);
-  bottom: var(--common-indent-base);
+  padding: 32px;
+  margin-right: 16px;
+  left: 16px;
+  bottom: 16px;
   max-width: 500px;
   animation-name: notifyShow;
   animation-duration: ~"calc(var(--common-animationDuration-primary) * 2)";
@@ -36,7 +36,7 @@
   right: 0;
 
   button {
-    padding: var(--common-indent-small);
+    padding: 8px;
     line-height: 0;
     opacity: 0.7;
     transition-duration: var(--common-animationDuration-primary);
@@ -51,7 +51,7 @@
 
 @keyframes notifyShow {
   0% {
-    transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
+    transform: translate3d(~"calc((500px + 16px) * -1)", 0, 0);
   }
 
   60% {
@@ -73,6 +73,6 @@
   }
 
   100% {
-    transform: translate3d(~"calc((500px + var(--common-indent-base)) * -1)", 0, 0);
+    transform: translate3d(~"calc((500px + 16px) * -1)", 0, 0);
   }
 }
