@@ -52,14 +52,10 @@
 @common-dangerColor-primary: #ff4e45;
 
 // Тень
-//
-// ТО ЖЕ САМОЕ КАК И С РАДИУСОМ
-@common-boxShadow-primary: 0 -1px 1px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 16px 16px rgba(0, 0, 0, 0.05), 0 32px 32px rgba(0, 0, 0, 0.05);
+@common-box-shadow: var(--common-box-shadow, 0 -1px 1px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 16px 16px rgba(0, 0, 0, 0.05), 0 32px 32px rgba(0, 0, 0, 0.05));
 
 // Радиус
-//
-// УБИРАЕМ PRIMARY И ПИШЕМ ПРОСТО РАДИУС
-@common-border-radius-primary: var(--common-border-radius-primary, 8px);
+@common-border-radius: var(--common-border-radius, 8px);
 
 // Размер элемента
 @common-element-width: var(--common-element-width, 100%);

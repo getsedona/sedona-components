@@ -37,8 +37,6 @@
   --common-successColor-primary: @common-successColor-primary;
   --common-warningColor-primary: @common-warningColor-primary;
   --common-dangerColor-primary: @common-dangerColor-primary;
-
-  --common-boxShadow-primary: @common-boxShadow-primary;
 }
 
 .common-text-base {
@@ -145,10 +143,10 @@
   color: var(--common-dangerColor-primary);
 }
 
-.common-box-shadow-primary {
-  box-shadow: var(--common-boxShadow-primary);
+.common-box-shadow {
+  box-shadow: @common-box-shadow;
 }
 
-.common-border-radius-primary {
-  border-radius: @common-border-radius-primary;
+.common-border-radius {
+  border-radius: @common-border-radius;
 }
