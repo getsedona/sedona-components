@@ -18,8 +18,8 @@
     appearance: none;
     min-height: ~"calc(var(--common-lineHeight-base) + var(--form-control-padding-vertical) * 2)";
     background-color: var(--form-control-backgroundColor-base);
-    transition-duration: @common-animation-duration-primary;
-    transition-timing-function: @common-animation-timing-function-primary;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
     transition-property+: box-shadow, color, border-color, background-color;
 
     &:focus,
@@ -52,8 +52,8 @@
 
       &::placeholder {
         opacity: 0;
-        transition-duration: @common-animation-duration-primary;
-        transition-timing-function: @common-animation-timing-function-primary;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
         transition-property: opacity;
       }
 

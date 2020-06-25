@@ -10,8 +10,8 @@
   bottom: 16px;
   max-width: 500px;
   animation-name: notifyShow;
-  animation-duration: ~"calc(@{common-animation-duration-primary} * 2)";
-  animation-timing-function: @common-animation-timing-function-primary;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-out;
   animation-fill-mode: forwards;
 
   &--dark {
@@ -25,7 +25,7 @@
   }
 
   &--hide {
-    animation-duration: @common-animation-duration-primary;
+    animation-duration: 0.2s;
     animation-name: notifyHide;
   }
 }
@@ -39,8 +39,8 @@
     padding: 8px;
     line-height: 0;
     opacity: 0.7;
-    transition-duration: @common-animation-duration-primary;
-    transition-timing-function: @common-animation-timing-function-primary;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
     transition-property: opacity;
 
     &:hover {
