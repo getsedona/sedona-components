@@ -18,8 +18,8 @@
     appearance: none;
     min-height: ~"calc(var(--common-lineHeight-base) + var(--form-control-padding-vertical) * 2)";
     background-color: var(--form-control-backgroundColor-base);
-    transition-duration: var(--common-animationDuration-primary);
-    transition-timing-function: var(--common-animationTimingFunction-primary);
+    transition-duration: @common-animation-duration-primary;
+    transition-timing-function: @common-animation-timing-function-primary;
     transition-property+: box-shadow, color, border-color, background-color;
 
     &:focus,
@@ -52,8 +52,8 @@
 
       &::placeholder {
         opacity: 0;
-        transition-timing-function: var(--common-animationTimingFunction-primary);
-        transition-duration: var(--common-animationDuration-primary);
+        transition-duration: @common-animation-duration-primary;
+        transition-timing-function: @common-animation-timing-function-primary;
         transition-property: opacity;
       }
 

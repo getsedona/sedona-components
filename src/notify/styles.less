@@ -10,8 +10,8 @@
   bottom: 16px;
   max-width: 500px;
   animation-name: notifyShow;
-  animation-duration: ~"calc(var(--common-animationDuration-primary) * 2)";
-  animation-timing-function: var(--common-animationTimingFunction-primary);
+  animation-duration: ~"calc(@{common-animation-duration-primary} * 2)";
+  animation-timing-function: @common-animation-timing-function-primary;
   animation-fill-mode: forwards;
 
   &--dark {
@@ -25,7 +25,7 @@
   }
 
   &--hide {
-    animation-duration: var(--common-animationDuration-primary);
+    animation-duration: @common-animation-duration-primary;
     animation-name: notifyHide;
   }
 }
@@ -39,8 +39,8 @@
     padding: 8px;
     line-height: 0;
     opacity: 0.7;
-    transition-duration: var(--common-animationDuration-primary);
-    transition-timing-function: var(--common-animationTimingFunction-primary);
+    transition-duration: @common-animation-duration-primary;
+    transition-timing-function: @common-animation-timing-function-primary;
     transition-property: opacity;
 
     &:hover {
