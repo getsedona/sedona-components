@@ -48,18 +48,6 @@
   --common-indent-base: @common-indent-base;
   --common-indent-small: @common-indent-small;
   --common-indent-large: @common-indent-large;
-
-  --common-elementBase-maxWidth: @common-elementBase-maxWidth;
-
-  --common-elementGap-horizontal: @common-elementGap-horizontal;
-  --common-elementGap-vertical: @common-elementGap-vertical;
-
-  --common-elementItem-width: @common-elementItem-width;
-
-  @media (min-width: @common-breakpoint-md) {
-    --common-elementGap-horizontal: 48px;
-    --common-elementGap-vertical: 48px;
-  }
 }
 
 .common-text-base {
@@ -91,7 +79,7 @@
 }
 
 .common-element-base {
-  #common.element-base();
+  #common.element-list();
 }
 
 .common-element-item {

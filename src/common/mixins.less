@@ -54,24 +54,24 @@
     background-color: var(--common-backgroundColor-light);
   }
 
-  .element-base() {
+  .element-list() {
     display: flex;
     flex-wrap: wrap;
-    width: ~"calc(100% + var(--common-elementGap-horizontal))";
-    max-width: ~"calc(var(--common-elementBase-maxWidth) + var(--common-elementGap-horizontal))";
-    margin-right: ~"calc(var(--common-elementGap-horizontal) * -1)";
-    margin-bottom: ~"calc(var(--common-elementGap-vertical) * -1)";
+    width: ~"calc(100% + @{common-element-gap-horizontal})";
+    max-width: ~"calc(@{common-element-max-width} + @{common-element-gap-horizontal})";
+    margin-right: ~"calc(@{common-element-gap-horizontal} * -1)";
+    margin-bottom: ~"calc(@{common-element-gap-vertical} * -1)";
 
     & + & {
-      margin-top: var(--common-elementGap-vertical);
+      margin-top: @common-element-gap-vertical;
     }
   }
 
   .element-item() {
-    width: var(--common-elementItem-width);
+    width: @common-element-width;
     border: 0 solid transparent;
-    border-right-width: var(--common-elementGap-horizontal);
-    border-bottom-width: var(--common-elementGap-vertical);
+    border-right-width: @common-element-gap-horizontal;
+    border-bottom-width: @common-element-gap-vertical;
   }
 
   .block-base() {

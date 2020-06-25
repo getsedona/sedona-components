@@ -16,7 +16,7 @@
     border-radius: var(--common-borderRadius-primary);
     box-shadow: inset 0 0 0 1px var(--common-baseColor-divider);
     width: ~"calc(100vw - @{common-block-gap-horizontal} * 2)";
-    max-width: ~"calc(100vw - (100vw - var(--common-elementBase-maxWidth)))";
+    max-width: ~"calc(100vw - (100vw - @{common-element-max-width}))";
 
     &:first-child {
       margin-top: $padding-top;

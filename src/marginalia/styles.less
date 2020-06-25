@@ -8,9 +8,9 @@
     position: absolute;
     margin-top: 0.5em;
     top: 0;
-    width: ~"calc(100vw - @{common-block-gap-horizontal} * 2 - 100% - var(--common-elementGap-horizontal))";
+    width: ~"calc(100vw - @{common-block-gap-horizontal} * 2 - 100% - @{common-element-gap-horizontal})";
     transform: translateX(100%);
-    right: ~"calc(var(--common-elementGap-horizontal) * -1)";
+    right: ~"calc(@{common-element-gap-horizontal} * -1)";
     max-width: 370px;
   }
 }

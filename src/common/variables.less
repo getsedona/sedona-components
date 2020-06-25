@@ -66,15 +66,13 @@
 @common-indent-small: 8px;
 @common-indent-large: 32px;
 
-// Максимальная ширина элемента
-@common-elementBase-maxWidth: 1280px;
+// Размер элемента
+@common-element-width: var(--common-element-width, 100%);
+@common-element-max-width: var(--common-element-max-width, 1280px);
 
 // Отступ между элементами
-@common-elementGap-horizontal: 24px;
-@common-elementGap-vertical: 40px;
-
-// Ширина элемента
-@common-elementItem-width: 100%;
+@common-element-gap-horizontal: var(--common-element-gap-horizontal, 24px);
+@common-element-gap-vertical: var(--common-element-gap-vertical, 40px);
 
 // Отступ между блоками
 @common-block-gap-horizontal: var(--common-block-gap-horizontal, 24px);
