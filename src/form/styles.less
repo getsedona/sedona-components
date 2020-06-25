@@ -46,7 +46,7 @@
 
   .form__item--slip & {
     position: absolute;
-    margin-top: ~"calc(var(--form-control-padding-vertical) + var(--common-line-height-small) / 2)";
+    margin-top: ~"calc(var(--form-control-padding-vertical) + @{common-text-small-line-height} / 2)";
     margin-left: var(--form-control-padding-horizontal);
     margin-bottom: 0;
     pointer-events: none;
@@ -63,7 +63,7 @@
 
   .form__item--slippery &,
   .form__item--slip:focus-within & {
-    transform: translate3d(0, ~"calc(var(--common-line-height-small) / -2.25)", 0) scale(0.75);
+    transform: translate3d(0, ~"calc(@{common-text-small-line-height} / -2.25)", 0) scale(0.75);
   }
 }
 
@@ -100,7 +100,7 @@
 .form__checkbox,
 .form__radio {
   display: inline-block;
-  padding-left: ~"calc(var(--common-line-height-base) + 0.5em)";
+  padding-left: ~"calc(@{common-text-base-line-height} + 0.5em)";
 
   input {
     .visually-hidden;
@@ -110,12 +110,12 @@
     display: block;
     cursor: pointer;
     position: relative;
-    padding-left: ~"calc(var(--common-line-height-base) + 0.5em)";
-    margin-left: ~"calc(var(--common-line-height-base) * -1 - 0.5em)";
+    padding-left: ~"calc(@{common-text-base-line-height} + 0.5em)";
+    margin-left: ~"calc(@{common-text-base-line-height} * -1 - 0.5em)";
 
     &::before {
       position: absolute;
-      width: ~"calc(var(--common-line-height-base))";
+      width: @common-text-base-line-height;
       height: $width;
       top: 0;
       left: 0;
@@ -131,7 +131,7 @@
 
     &::after {
       position: absolute;
-      width: ~"calc(var(--common-line-height-base))";
+      width: @common-text-base-line-height;
       height: $width;
       top: 0;
       left: 0;

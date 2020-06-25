@@ -16,7 +16,7 @@
     padding-left: ~"calc(var(--form-control-padding-horizontal) - var(--form-control-borderWidth))";
     width: 100%;
     appearance: none;
-    min-height: ~"calc(var(--common-line-height-base) + var(--form-control-padding-vertical) * 2)";
+    min-height: ~"calc(@{common-text-base-line-height} + var(--form-control-padding-vertical) * 2)";
     background-color: var(--form-control-backgroundColor-base);
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
@@ -47,8 +47,8 @@
     }
 
     .form__item--slip & {
-      padding-top: ~"calc(var(--form-control-padding-vertical) - var(--form-control-borderWidth) + var(--common-line-height-small))";
-      min-height: ~"calc(var(--common-line-height-base) + var(--form-control-padding-vertical) * 2 + var(--common-line-height-small))";
+      padding-top: ~"calc(var(--form-control-padding-vertical) - var(--form-control-borderWidth) + @{common-text-small-line-height})";
+      min-height: ~"calc(@{common-text-base-line-height} + var(--form-control-padding-vertical) * 2 + @{common-text-small-line-height})";
 
       &::placeholder {
         opacity: 0;
