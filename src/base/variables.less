@@ -1,6 +1,6 @@
 // Body
-@base-body-color: @common-baseColor-primary;
-@base-body-background-color: @common-backgroundColor-base;
+@base-body-color: @common-text-base-strong;
+@base-body-background-color: @common-root-base-weak;
 
 // H1
 @base-h1-font-family: @common-font-family;
@@ -21,8 +21,8 @@
 @base-h3-font-weight: bold;
 
 // Ссылка
-@base-link-color: var(--base-link-color, @common-accentColor-primary);
-@base-link-color-hover: var(--base-link-color-hover, multiply(@common-accentColor-primary, #999));
+@base-link-color: var(--base-link-color, @common-text-accent-strong);
+@base-link-color-hover: var(--base-link-color-hover, multiply(@common-text-accent-strong, #999));
 
 // Кнопка
 @base-btn-padding-horizontal: var(--base-btn-padding-horizontal, 28px);
@@ -31,12 +31,12 @@
 @base-btn-border-width: var(--base-btn-border-width, 0px);
 @base-btn-border-radius: var(--base-btn-border-radius, 8px);
 
-@base-btn-color: var(--base-btn-color, @common-lightColor-primary);
-@base-btn-background-color: var(--base-btn-background-color, @common-accentColor-primary);
+@base-btn-color: var(--base-btn-color, @common-text-base-weak);
+@base-btn-background-color: var(--base-btn-background-color, @common-root-accent-strong);
 @base-btn-border-color: var(--base-btn-border-color, transparent);
 
-@base-btn-color-hover: var(--base-btn-color-hover, @common-lightColor-primary);
-@base-btn-background-color-hover: var(--base-btn-background-color-hover, multiply(@common-accentColor-primary, #999));
+@base-btn-color-hover: var(--base-btn-color-hover, @common-text-base-weak);
+@base-btn-background-color-hover: var(--base-btn-background-color-hover, multiply(@common-root-accent-strong, #999));
 @base-btn-border-color-hover: var(--base-btn-border-color-hover, transparent);
 
-@base-btn-outline-color-focus: var(--base-btn-outline-color-focus, fadeout(@common-accentColor-primary, 50%, relative));
+@base-btn-outline-color-focus: var(--base-btn-outline-color-focus, fadeout(@common-root-accent-strong, 50%, relative));
