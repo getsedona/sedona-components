@@ -1,16 +1,16 @@
 .scene {
-  #common.block-base();
+  #common.block();
 
   &:not(&--fill):not(&--box):not(&--dark):not(&--light) + &:not(&--fill):not(&--box):not(&--dark):not(&--light) {
     padding-top: 0;
   }
 
   &--fill {
-    #common.block-base();
+    #common.block();
   }
 
   &--box {
-    #common.block-base();
+    #common.block();
     margin-right: @common-block-gap-horizontal;
     margin-left: @common-block-gap-horizontal;
     border-radius: @common-border-radius;
