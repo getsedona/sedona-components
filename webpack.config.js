@@ -93,12 +93,6 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/collapse/examples.html",
-      filename: "collapse.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/form/examples.html",
       filename: "form.html",
       minify: isProduction ? htmlMinifyConfig : false,

@@ -1,6 +1,5 @@
-import { form, notify, table, collapse } from "../../../src";
+import { form, notify, table } from "../../../src";
 
 form();
 notify();
 table();
-collapse();
