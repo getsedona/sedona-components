@@ -42,7 +42,6 @@ import "sedona-components/src";
 ### Сущности
 
 * [card](https://github.com/getsedona/sedona-components/tree/master/src/card) ([пример](https://getsedona.github.io/sedona-components/card.html))
-* [feature](https://github.com/getsedona/sedona-components/tree/master/src/feature) ([пример](https://getsedona.github.io/sedona-components/feature.html))
 * [group](https://github.com/getsedona/sedona-components/tree/master/src/group) ([пример](https://getsedona.github.io/sedona-components/group.html))
 * [icon](https://github.com/getsedona/sedona-components/tree/master/src/icon) ([пример](https://getsedona.github.io/sedona-components/icon.html))
 
