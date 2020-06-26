@@ -33,36 +33,36 @@
   }
 
   .btn() {
-    #common.text-base();
-    background-color: var(--base-btn-backgroundColor-base);
-    color: var(--base-btn-color-base);
+    #common.text-label();
+    color: @base-btn-color;
+    background-color: @base-btn-background-color;
     display: inline-flex;
     align-items: center;
-    padding-top: ~"calc(var(--base-btn-padding-vertical) - var(--base-btn-borderWidth))";
-    padding-right: ~"calc(var(--base-btn-padding-horizontal) - var(--base-btn-borderWidth))";
-    padding-bottom: ~"calc(var(--base-btn-padding-vertical) - var(--base-btn-borderWidth))";
-    padding-left: ~"calc(var(--base-btn-padding-horizontal) - var(--base-btn-borderWidth))";
-    min-height: ~"calc(@{common-text-base-line-height} + var(--base-btn-padding-vertical) * 2)";
+    padding-top: ~"calc(@{base-btn-padding-vertical} - @{base-btn-border-width})";
+    padding-right: ~"calc(@{base-btn-padding-horizontal} - @{base-btn-border-width})";
+    padding-bottom: ~"calc(@{base-btn-padding-vertical} - @{base-btn-border-width})";
+    padding-left: ~"calc(@{base-btn-padding-horizontal} - @{base-btn-border-width})";
+    min-height: ~"calc(@{common-text-label-line-height} + @{base-btn-padding-vertical} * 2)";
     min-width: $min-height;
-    border-radius: var(--base-btn-borderRadius);
+    border-radius: @base-btn-border-radius;
     justify-content: center;
     white-space: nowrap;
-    border-width: var(--base-btn-borderWidth);
+    border-width: @base-btn-border-width;
     border-style: solid;
-    border-color: var(--base-btn-borderColor-base);
+    border-color: @base-btn-border-color;
     transition-duration: 0.2s;
     transition-timing-function: ease-out;
     transition-property+: box-shadow, color, border-color, background-color;
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 2px var(--base-btn-outlineColor-focus);
+      box-shadow: 0 0 0 4px @base-btn-outline-color-focus;
     }
 
     &:not([disabled]):hover {
-      --base-btn-backgroundColor-base: var(--base-btn-backgroundColor-hover);
-      --base-btn-color-base: var(--base-btn-color-hover);
-      --base-btn-borderColor-base: var(--base-btn-borderColor-hover);
+      color: @base-btn-color-hover;
+      background-color: @base-btn-background-color-hover;
+      border-color: @base-btn-border-color-hover;
     }
 
     &:not([disabled]):active {

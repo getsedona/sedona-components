@@ -25,18 +25,18 @@
 @base-link-color-hover: var(--base-link-color-hover, multiply(@common-accentColor-primary, #999));
 
 // Кнопка
-@base-btn-padding-vertical: 8px;
-@base-btn-padding-horizontal: 16px;
+@base-btn-padding-horizontal: var(--base-btn-padding-horizontal, 28px);
+@base-btn-padding-vertical: var(--base-btn-padding-vertical, 16px);
 
-@base-btn-borderWidth: 1px;
-@base-btn-borderRadius: @base-btn-padding-vertical;
+@base-btn-border-width: var(--base-btn-border-width, 0px);
+@base-btn-border-radius: var(--base-btn-border-radius, 8px);
 
-@base-btn-backgroundColor-base: @common-accentColor-primary;
-@base-btn-color-base: contrast(@base-btn-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
-@base-btn-borderColor-base: transparent;
+@base-btn-color: var(--base-btn-color, @common-lightColor-primary);
+@base-btn-background-color: var(--base-btn-background-color, @common-accentColor-primary);
+@base-btn-border-color: transparent;
 
-@base-btn-backgroundColor-hover: multiply(@base-btn-backgroundColor-base, #999);
-@base-btn-color-hover: @base-btn-color-base;
-@base-btn-borderColor-hover: multiply(@base-btn-borderColor-base, #999);
+@base-btn-color-hover: var(--base-btn-color-hover, @common-lightColor-primary);
+@base-btn-background-color-hover: var(--base-btn-background-color-hover, multiply(@common-accentColor-primary, #999));
+@base-btn-border-color-hover: var(--base-btn-border-color-hover, transparent);
 
-@base-btn-outlineColor-focus: fadeout(@base-btn-backgroundColor-base, 50%, relative);
+@base-btn-outline-color-focus: var(--base-btn-outline-color-focus, fadeout(@common-accentColor-primary, 50%, relative));
