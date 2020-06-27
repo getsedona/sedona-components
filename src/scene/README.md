@@ -10,10 +10,3 @@
 // index.less
 @import "~sedona-components/src/scene/index";
 ```
-
-## Модификаторы
-
-### `scene`
-
-* `scene--fill` – добавляет отступ сверху
-* `scene--box` – делает компонент ограниченным по ширине
