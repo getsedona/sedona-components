@@ -1,7 +1,7 @@
 .scene {
   #common.block();
 
-  &:not(&--fill):not(&--box):not(&--dark):not(&--light) + &:not(&--fill):not(&--box):not(&--dark):not(&--light) {
+  &:not(&--fill):not(&--box) + &:not(&--fill):not(&--box) {
     padding-top: 0;
   }
 
@@ -27,24 +27,4 @@
     }
   }
 
-  &--dark {
-    #common.box-dark();
-  }
-
-  &--light {
-    #common.box-light();
-  }
-
-  &--box&--dark,
-  &--box&--light {
-    box-shadow: none;
-  }
-
-  &--box + &--box,
-  &--box + &--dark,
-  &--box + &--light,
-  &--dark + &--box,
-  &--light + &--box {
-    margin-top: $padding-top;
-  }
 }
