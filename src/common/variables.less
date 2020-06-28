@@ -34,6 +34,54 @@
 @common-text-line-height-decor: var(--common-text-line-height-decor, 2rem);
 @common-text-font-weight-decor: normal;
 
+// Тень
+@common-box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 16px 16px rgba(0, 0, 0, 0.05), 0 32px 32px rgba(0, 0, 0, 0.05);
+
+// Радиус
+@common-border-radius: 8px;
+
+// Размер элемента
+@common-element-width: var(--common-element-width, 100%);
+@common-element-max-width: var(--common-element-max-width, 1280px);
+
+// Отступ между элементами
+@common-element-gap-horizontal: var(--common-element-gap-horizontal, 24px);
+@common-element-gap-vertical: var(--common-element-gap-vertical, 40px);
+
+// Отступ между блоками
+@common-block-gap-horizontal: var(--common-block-gap-horizontal, 24px);
+@common-block-gap-vertical: var(--common-block-gap-vertical, 48px);
+
+// Контрольные точки
+@common-breakpoint-sm: 576px;
+@common-breakpoint-md: 768px;
+@common-breakpoint-lg: 992px;
+@common-breakpoint-xl: 1194px;
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
+//
+
 // Базовые цвета для всего сайта
 @common-baseColor-primary: contrast(@common-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
 @common-baseColor-secondary: contrast(@common-backgroundColor-base, @common-darkColor-secondary, @common-lightColor-secondary);
@@ -64,27 +112,3 @@
 @common-successColor-primary: #1dc337;
 @common-warningColor-primary: #f6c101;
 @common-dangerColor-primary: #ff4e45;
-
-// Тень
-@common-box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 16px 16px rgba(0, 0, 0, 0.05), 0 32px 32px rgba(0, 0, 0, 0.05);
-
-// Радиус
-@common-border-radius: 8px;
-
-// Размер элемента
-@common-element-width: var(--common-element-width, 100%);
-@common-element-max-width: var(--common-element-max-width, 1280px);
-
-// Отступ между элементами
-@common-element-gap-horizontal: var(--common-element-gap-horizontal, 24px);
-@common-element-gap-vertical: var(--common-element-gap-vertical, 40px);
-
-// Отступ между блоками
-@common-block-gap-horizontal: var(--common-block-gap-horizontal, 24px);
-@common-block-gap-vertical: var(--common-block-gap-vertical, 48px);
-
-// Контрольные точки
-@common-breakpoint-sm: 576px;
-@common-breakpoint-md: 768px;
-@common-breakpoint-lg: 992px;
-@common-breakpoint-xl: 1194px;
