@@ -66,15 +66,16 @@ module.exports = {
     new CopyWebpackPlugin({ patterns: [{ from: "./dev/static/" }] }),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
     new HtmlWebpackPlugin({
-      template: "./dev/pages/test.pug",
-      filename: "test.html",
-    }),
-    new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/index.html",
       filename: "index.html",
       minify: isProduction ? htmlMinifyConfig : false,
       version: pkg.version,
+    }),
+    new HtmlWebpackPlugin({
+      template: "./dev/pages/buttons.pug",
+      filename: "buttons.html",
+      minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
@@ -131,8 +132,7 @@ module.exports = {
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./dev/pages/404.html",
+      template: "./dev/pages/404.pug",
       filename: "404.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
