@@ -31,43 +31,4 @@
       color: @base-link-color-hover;
     }
   }
-
-  .btn() {
-    #common.text-label();
-    color: @base-btn-color;
-    background-color: @base-btn-background-color;
-    display: inline-flex;
-    align-items: center;
-    vertical-align: middle;
-    padding-top: ~"calc(@{base-btn-padding-vertical} - @{base-btn-border-width})";
-    padding-right: ~"calc(@{base-btn-padding-horizontal} - @{base-btn-border-width})";
-    padding-bottom: ~"calc(@{base-btn-padding-vertical} - @{base-btn-border-width})";
-    padding-left: ~"calc(@{base-btn-padding-horizontal} - @{base-btn-border-width})";
-    min-height: ~"calc(@{common-text-line-height-label} + @{base-btn-padding-vertical} * 2)";
-    min-width: $min-height;
-    border-radius: @base-btn-border-radius;
-    justify-content: center;
-    white-space: nowrap;
-    border-width: @base-btn-border-width;
-    border-style: solid;
-    border-color: @base-btn-border-color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-out;
-    transition-property: box-shadow, color, border-color, background-color;
-
-    &:focus {
-      outline: none;
-      box-shadow: 0 0 0 4px @base-btn-outline-color-focus;
-    }
-
-    &:not([disabled]):hover {
-      color: @base-btn-color-hover;
-      background-color: @base-btn-background-color-hover;
-      border-color: @base-btn-border-color-hover;
-    }
-
-    &:not([disabled]):active {
-      transform: translateY(1px);
-    }
-  }
 }

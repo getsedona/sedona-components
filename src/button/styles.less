@@ -1,0 +1,108 @@
+.button,
+.btn {
+  #common.text-label();
+  color: @button-color;
+  background-color: @button-background-color;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  padding-top: ~"calc(@{button-padding-vertical} - @{button-border-width})";
+  padding-right: ~"calc(@{button-padding-horizontal} - @{button-border-width})";
+  padding-bottom: ~"calc(@{button-padding-vertical} - @{button-border-width})";
+  padding-left: ~"calc(@{button-padding-horizontal} - @{button-border-width})";
+  min-height: ~"calc(@{common-text-line-height-label} + @{button-padding-vertical} * 2)";
+  min-width: $min-height;
+  border-radius: @button-border-radius;
+  justify-content: center;
+  white-space: nowrap;
+  border-width: @button-border-width;
+  border-style: solid;
+  border-color: @button-border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  transition-property: box-shadow, color, border-color, background-color;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px @button-outline-color-focus;
+  }
+
+  &:not([disabled]):hover {
+    color: @button-color-hover;
+    background-color: @button-background-color-hover;
+    border-color: @button-border-color-hover;
+  }
+
+  &:not([disabled]):active {
+    transform: translateY(1px);
+  }
+
+  .inverse &,
+  &.inverse {
+    color: @button-inverse-color;
+    background-color: @button-inverse-background-color;
+    border-color: @button-inverse-border-color;
+
+    &:focus {
+      box-shadow: 0 0 0 4px @button-inverse-outline-color-focus;
+    }
+
+    &:not([disabled]):hover {
+      color: @button-inverse-color-hover;
+      background-color: @button-inverse-background-color-hover;
+      border-color: @button-inverse-border-color-hover;
+    }
+  }
+
+  &--outline {
+    --button-border-width: 1px;
+
+    --button-color: @common-text-accent-strong;
+    --button-background-color: transparent;
+    --button-border-color: @common-line-accent-strong;
+
+    --button-color-hover: multiply(@common-text-accent-strong, #ccc);
+    --button-background-color-hover: transparent;
+    --button-border-color-hover: multiply(@common-line-accent-strong, #ccc);
+
+    .inverse &,
+    &.inverse {
+      --button-inverse-color: @common-text-base-weak;
+      --button-inverse-background-color: transparent;
+      --button-inverse-border-color: @common-line-faint-weak;
+
+      --button-inverse-color-hover: @common-text-base-weak;
+      --button-inverse-background-color-hover: transparent;
+      --button-inverse-border-color-hover: fadeout(@common-line-base-weak, 60%, relative);
+
+      --button-inverse-outline-color-focus: fadeout(@common-line-base-weak, 80%, relative);
+    }
+  }
+
+  &--link {
+    --button-padding-horizontal: 0;
+    --button-padding-vertical: 0;
+
+    --button-border-radius: 0;
+
+    --button-color: @common-text-accent-strong;
+    --button-background-color: transparent;
+
+    --button-color-hover: multiply(@common-text-accent-strong, #ccc);
+    --button-background-color-hover: transparent;
+
+    .inverse &,
+    &.inverse {
+      --button-inverse-color: @common-text-accent-weak;
+      --button-inverse-background-color: transparent;
+
+      --button-inverse-color-hover: multiply(@common-text-accent-weak, #ccc);
+      --button-inverse-background-color-hover: transparent;
+    }
+  }
+
+  &--small {
+    --button-padding-horizontal: 16px;
+    --button-padding-vertical: 8px;
+  }
+}
