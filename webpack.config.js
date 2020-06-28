@@ -39,7 +39,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: "babel-loader",
-      }, {
+      },
+      {
         test: /\.(le|c)ss$/,
         use: [
           isProduction ? MiniCssExtractPlugin.loader : "style-loader",
@@ -47,6 +48,10 @@ module.exports = {
           "postcss-loader",
           "less-loader",
         ],
+      },
+      {
+        test: /\.pug$/,
+        loader: "pug-loader",
       },
     ],
   },
@@ -58,8 +63,12 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: isProduction ? ["**/*"] : [] }),
-    new CopyWebpackPlugin({patterns: [{ from: "./dev/static/" }]}),
+    new CopyWebpackPlugin({ patterns: [{ from: "./dev/static/" }] }),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
+    new HtmlWebpackPlugin({
+      template: "./dev/pages/test.pug",
+      filename: "test.html",
+    }),
     new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./dev/pages/index.html",
