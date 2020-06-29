@@ -36,39 +36,39 @@
 
   .text-decor() {
     font-family: @common-text-font-family-decor;
-    font-size: @common-text-font-size-decor;
-    line-height: @common-text-line-height-decor;
+    font-size: var(--common-text-font-size-decor, @common-text-font-size-decor);
+    line-height: var(--common-text-line-height-decor, @common-text-line-height-decor);
     font-weight: @common-text-font-weight-decor;
   }
 
   .element-list() {
     display: flex;
     flex-wrap: wrap;
-    width: ~"calc(100% + @{common-element-gap-horizontal})";
-    max-width: ~"calc(@{common-element-max-width} + @{common-element-gap-horizontal})";
-    margin-right: ~"calc(@{common-element-gap-horizontal} * -1)";
-    margin-bottom: ~"calc(@{common-element-gap-vertical} * -1)";
+    width: ~"calc(100% + var(--common-element-gap-horizontal, @{common-element-gap-horizontal}))";
+    max-width: ~"calc(var(--common-element-max-width, @{common-element-max-width}) + var(--common-element-gap-horizontal, @{common-element-gap-horizontal}))";
+    margin-right: ~"calc(var(--common-element-gap-horizontal, @{common-element-gap-horizontal}) * -1)";
+    margin-bottom: ~"calc(var(--common-element-gap-vertical, @{common-element-gap-vertical}) * -1)";
 
     & + & {
-      margin-top: @common-element-gap-vertical;
+      margin-top: var(--common-element-gap-vertical, @common-element-gap-vertical);
     }
   }
 
   .element-item() {
-    width: @common-element-width;
+    width: var(--common-element-width, @common-element-width);
     border: 0 solid transparent;
-    border-right-width: @common-element-gap-horizontal;
-    border-bottom-width: @common-element-gap-vertical;
+    border-right-width: var(--common-element-gap-horizontal, @common-element-gap-horizontal);
+    border-bottom-width: var(--common-element-gap-vertical, @common-element-gap-vertical);
   }
 
   .block() {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: @common-block-gap-vertical;
-    padding-right: @common-block-gap-horizontal;
-    padding-bottom: @common-block-gap-vertical;
-    padding-left: @common-block-gap-horizontal;
+    padding-top: var(--common-block-gap-vertical, @common-block-gap-vertical);
+    padding-right: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
+    padding-bottom: var(--common-block-gap-vertical, @common-block-gap-vertical);
+    padding-left: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
 
     & + & {
       padding-top: 0;
