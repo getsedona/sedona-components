@@ -1,36 +1,36 @@
 .button,
 .btn {
   #common.text-label();
-  color: @button-color;
-  background-color: @button-background-color;
+  color: var(--button-color, @button-color);
+  background-color: var(--button-background-color, @button-background-color);
   display: inline-flex;
   align-items: center;
   vertical-align: middle;
-  padding-top: ~"calc(@{button-padding-vertical} - @{button-border-width})";
-  padding-right: ~"calc(@{button-padding-horizontal} - @{button-border-width})";
-  padding-bottom: ~"calc(@{button-padding-vertical} - @{button-border-width})";
-  padding-left: ~"calc(@{button-padding-horizontal} - @{button-border-width})";
-  min-height: ~"calc(@{common-text-line-height-label} + @{button-padding-vertical} * 2)";
+  padding-top: ~"calc(var(--button-padding-vertical, @{button-padding-vertical}) - var(--button-border-width, @{button-border-width}))";
+  padding-right: ~"calc(var(--button-padding-horizontal, @{button-padding-horizontal}) - var(--button-border-width, @{button-border-width}))";
+  padding-bottom: ~"calc(var(--button-padding-vertical, @{button-padding-vertical}) - var(--button-border-width, @{button-border-width}))";
+  padding-left: ~"calc(var(--button-padding-horizontal, @{button-padding-horizontal}) - var(--button-border-width, @{button-border-width}))";
+  min-height: ~"calc(@{common-text-line-height-label} + var(--button-padding-vertical, @{button-padding-vertical}) * 2)";
   min-width: $min-height;
-  border-radius: @button-border-radius;
+  border-radius: var(--button-border-radius, @button-border-radius);
   justify-content: center;
   white-space: nowrap;
-  border-width: @button-border-width;
+  border-width: var(--button-border-width, @button-border-width);
   border-style: solid;
-  border-color: @button-border-color;
+  border-color: var(--button-border-color, @button-border-color);
   transition-duration: 0.2s;
   transition-timing-function: ease-out;
   transition-property: box-shadow, color, border-color, background-color;
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 4px @button-outline-color-focus;
+    box-shadow: 0 0 0 4px var(--button-outline-color-focus, @button-outline-color-focus);
   }
 
   &:not([disabled]):hover {
-    color: @button-color-hover;
-    background-color: @button-background-color-hover;
-    border-color: @button-border-color-hover;
+    color: var(--button-color-hover, @button-color-hover);
+    background-color: var(--button-background-color-hover, @button-background-color-hover);
+    border-color: var(--button-border-color-hover, @button-border-color-hover);
   }
 
   &:not([disabled]):active {
@@ -39,18 +39,18 @@
 
   .inverse &,
   &.inverse {
-    color: @button-inverse-color;
-    background-color: @button-inverse-background-color;
-    border-color: @button-inverse-border-color;
+    color: var(--button-inverse-color, @button-inverse-color);
+    background-color: var(--button-inverse-background-color, @button-inverse-background-color);
+    border-color: var(--button-inverse-border-color, @button-inverse-border-color);
 
     &:focus {
-      box-shadow: 0 0 0 4px @button-inverse-outline-color-focus;
+      box-shadow: 0 0 0 4px var(--button-inverse-outline-color-focus, @button-inverse-outline-color-focus);
     }
 
     &:not([disabled]):hover {
-      color: @button-inverse-color-hover;
-      background-color: @button-inverse-background-color-hover;
-      border-color: @button-inverse-border-color-hover;
+      color: var(--button-inverse-color-hover, @button-inverse-color-hover);
+      background-color: var(--button-inverse-background-color-hover, @button-inverse-background-color-hover);
+      border-color: var(--button-inverse-border-color-hover, @button-inverse-border-color-hover);
     }
   }
 
