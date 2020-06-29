@@ -1,5 +1,13 @@
 .scene {
   #common.block();
-  color: @scene-color;
-  background-color: @scene-background-color;
+  color: var(--scene-color, @scene-color);
+  background-color: var(--scene-background-color, @scene-background-color);
+
+  .inverse &,
+  &.inverse {
+    color: var(--scene-inverse-color, @scene-inverse-color);
+    background-color: var(--scene-inverse-background-color, @scene-inverse-background-color);
+
+    padding-top: var(--common-block-gap-vertical, @common-block-gap-vertical);
+  }
 }
