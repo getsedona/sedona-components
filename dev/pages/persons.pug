@@ -1,0 +1,50 @@
+extends ./../layouts/default
+include ./../../src/person/mixins
+
+block variables
+  - var title = "Личности"
+
+block content
+  section.scene
+    div.grid(style="--common-element-width: auto; align-items: center;")
+      div.grid__item
+        +person({
+          name: "Максик",
+          note: "Путешественник"
+        })
+
+      div.grid__item
+        +person({
+          avatar: "https://images.unsplash.com/photo-1586297098710-0382a496c814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+          name: "Максик",
+          note: "Путешественник"
+        })
+
+      div.grid__item
+        +person({
+          avatar: "https://images.unsplash.com/photo-1586297098710-0382a496c814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+          name: "Максик",
+          note: "Путешественник"
+        }).person--large
+
+  section.scene.inverse
+    div.grid(style="--common-element-width: auto; align-items: center;")
+      div.grid__item
+        +person({
+          name: "Максик",
+          note: "Путешественник"
+        })
+
+      div.grid__item
+        +person({
+          avatar: "https://images.unsplash.com/photo-1586297098710-0382a496c814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+          name: "Максик",
+          note: "Путешественник"
+        })
+
+      div.grid__item
+        +person({
+          avatar: "https://images.unsplash.com/photo-1586297098710-0382a496c814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+          name: "Максик",
+          note: "Путешественник"
+        }).person--large

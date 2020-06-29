@@ -1,0 +1,17 @@
+mixin person(data)
+  div.person&attributes(attributes)
+    if data && data.avatar
+      div.person__avatar
+        img.person__image(
+          src=data.avatar
+          width="80"
+          height="80"
+          alt=data.name)
+
+    div.person__content
+      div.person__name
+        | #{data.name}
+
+      if data && data.note
+        div.person__note
+          | #{data.note}
