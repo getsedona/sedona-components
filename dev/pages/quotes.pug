@@ -1,0 +1,25 @@
+extends ./../layouts/default
+
+mixin quote
+  blockquote.quote(
+    lang=""
+    cite="")
+    div.quote__main
+      p Дизайн — это больше, чем просто упорядочивание и компоновка визуального материала. Дизайн — это привнесение ценностей и смыслов, просвещение, упрощение, разъяснение, преобразование, облагораживание, преувеличение, убеждение, и возможно даже развлечение.
+
+    //- footer.quote__footer
+    //-   | Aldous Huxley, #[cite Brave New World]
+
+block variables
+  - var title = "Цитаты"
+
+block content
+  section.scene
+    div.grid.grid--navahopi(style="justify-content: center;")
+      div.grid__item
+        +quote
+
+  section.scene.inverse
+    div.grid.grid--navahopi(style="justify-content: center;")
+      div.grid__item
+        +quote

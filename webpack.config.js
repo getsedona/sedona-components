@@ -78,6 +78,11 @@ module.exports = {
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
+      template: "./dev/pages/quotes.pug",
+      filename: "quotes.html",
+      minify: isProduction ? htmlMinifyConfig : false,
+    }),
+    new HtmlWebpackPlugin({
       layout: path.join(__dirname, "dev/layouts/default.html"),
       template: "./src/base/examples.html",
       filename: "base.html",
