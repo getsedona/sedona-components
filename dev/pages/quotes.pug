@@ -7,8 +7,21 @@ mixin quote
     div.quote__main
       p Дизайн — это больше, чем просто упорядочивание и компоновка визуального материала. Дизайн — это привнесение ценностей и смыслов, просвещение, упрощение, разъяснение, преобразование, облагораживание, преувеличение, убеждение, и возможно даже развлечение.
 
-    //- footer.quote__footer
-    //-   | Aldous Huxley, #[cite Brave New World]
+    footer.quote__footer
+      div.quote__author
+        div.quote__divider
+
+        div.quote__avatar
+          img.quote__image(
+            src="https://images.unsplash.com/photo-1586297098710-0382a496c814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+            alt=""
+            )
+
+        div.quote__name
+          | Константин Константиннопольский
+
+        div.quote__post
+          | Изобретатель
 
 block variables
   - var title = "Цитаты"

@@ -125,3 +125,52 @@
     }
   }
 }
+
+.quote__footer {
+  margin-top: 16px;
+}
+
+.quote__author {
+  position: relative;
+  padding-left: 56px;
+}
+
+.quote__divider {
+  width: 100px;
+  height: 1px;
+  background-color: #ccc;
+  margin-bottom: 16px;
+}
+
+.quote__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: absolute;
+  top: 2px;
+  left: 0;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: "";
+    border-radius: 50%;
+    border: 1px solid fade(#000, 10%);
+  }
+}
+
+.quote__image {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.quote__post {
+  #common.text-small();
+}
