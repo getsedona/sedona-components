@@ -8,9 +8,9 @@
   vertical-align: middle;
   padding-top: ~"calc(var(--button-padding-vertical, @{button-padding-vertical}) - var(--button-border-width, @{button-border-width}))";
   padding-right: ~"calc(var(--button-padding-horizontal, @{button-padding-horizontal}) - var(--button-border-width, @{button-border-width}))";
-  padding-bottom: ~"calc(var(--button-padding-vertical, @{button-padding-vertical}) - var(--button-border-width, @{button-border-width}))";
-  padding-left: ~"calc(var(--button-padding-horizontal, @{button-padding-horizontal}) - var(--button-border-width, @{button-border-width}))";
-  min-height: ~"calc(@{common-text-line-height-label} + var(--button-padding-vertical, @{button-padding-vertical}) * 2)";
+  padding-bottom: $padding-top;
+  padding-left: $padding-right;
+  min-height: ~"calc(var(--common-text-line-height-label, @{common-text-line-height-label}) + var(--button-padding-vertical, @{button-padding-vertical}) * 2)";
   min-width: $min-height;
   border-radius: var(--button-border-radius, @button-border-radius);
   justify-content: center;
