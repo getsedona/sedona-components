@@ -5,20 +5,13 @@ mixin header(data)
         .header__logo
           a(href="#") !{data.logo}
 
-      .grid__item
-        +nav(data.nav)
+      nav.grid__item
+        ul.header__nav
+          each item in data.nav
+            li.header__item
+              a(href=item.href) !{item.name}
 
       .grid__item
-        +extra(data.extra)
-
-mixin nav(data)
-  nav.header__nav
-    ul.header__menu
-      each item in data
-        li.header__item
-          a(href=item.href) !{item.name}
-
-mixin extra(data)
-  ul.header__extra
-    each item in data
-      li.header__item !{item}
+        ul.header__nav
+          each item in data.extra
+            li.header__item !{item}
