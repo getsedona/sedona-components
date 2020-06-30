@@ -1,5 +1,5 @@
 mixin person(data)
-  div.person(class=data && data.isGravity ? "person--gravity" : null)
+  .person(class=data && data.isGravity ? "person--gravity" : null)
     if data && data.avatar
       .person__avatar(style=`width: ${data.avatar.size}px; height: ${data.avatar.size}px;`)
         img.person__image(
@@ -15,5 +15,5 @@ mixin person(data)
             | #{data.name}
 
         if data.note
-          div.person__note
+          .person__note
             | #{data.note}
