@@ -6,7 +6,7 @@ block variables
 
 block content
   section.scene
-    .grid(style="--common-element-width: auto;")
+    .grid(style="--common-element-width: auto; align-items: baseline;")
       .grid__item
         +price({
           value: 1800000,
@@ -19,10 +19,17 @@ block content
           value: 1800000,
           currency: "₽",
           after: "за штуку"
+        })
+
+      .grid__item
+        +price({
+          isOld: true,
+          value: 2400000,
+          currency: "₽"
         })
 
   section.scene.inverse
-    .grid(style="--common-element-width: auto;")
+    .grid(style="--common-element-width: auto; align-items: baseline;")
       .grid__item
         +price({
           value: 1800000,
@@ -35,4 +42,11 @@ block content
           value: 1800000,
           currency: "₽",
           after: "за штуку"
+        })
+
+      .grid__item
+        +price({
+          isOld: true,
+          value: 2400000,
+          currency: "₽"
         })
