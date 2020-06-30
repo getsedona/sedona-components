@@ -3,16 +3,30 @@
   position: relative;
   z-index: 1;
 
-  &--large {
+  &--gravity {
     flex-direction: column;
   }
 }
 
 .person__avatar {
+  position: relative;
   flex-shrink: 0;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: inset 0 0 0 1px fade(#000, 10%);
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: @common-root-accent-strong;
+
+    .inverse & {
+      background-color: @common-back-accent-weak;
+    }
+  }
 }
 
 .person__image {
@@ -26,11 +40,11 @@
 }
 
 .person__content {
-  .person:not(.person--large) .person__avatar + & {
+  .person:not(.person--gravity) .person__avatar + & {
     margin-left: 12px;
   }
 
-  .person--large .person__avatar + & {
+  .person--gravity .person__avatar + & {
     margin-top: 8px;
   }
 }
