@@ -1,0 +1,39 @@
+extends ./../layouts/default
+include ./../../src/header/mixins
+
+block variables
+  - var title = "Шапки"
+
+block header
+  +header({
+    logo: "ЛОГО",
+    nav: [
+      {
+        name: "Компания",
+        href: "#"
+      },
+      {
+        name: "Продукция"
+      },
+      {
+        name: "Услуги и цены",
+        href: "#"
+      },
+      {
+        name: "Контакты",
+        href: "#"
+      }
+    ],
+    extra: [
+      `
+        <a href="tel:+74957893580">
+          +7 495 789-35-80
+        </a>
+      `,
+      `
+        <button class="btn  btn--small" type="button">
+          Кнопка
+        </button>
+      `
+    ]
+  })
