@@ -16,13 +16,13 @@
   box-shadow: inset 0 0 0 1px fade(#000, 10%);
 
   .person:not(.person--large) & {
-    margin-right: 16px;
+    margin-right: 12px;
   }
 
   .person--large & {
     width: 80px;
     height: 80px;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
   }
 }
 
@@ -38,9 +38,9 @@
 
 .person__note {
   #common.text-small();
-  color: @person-note-color;
+  color: @common-text-faint-strong;
 
   .inverse & {
-    color: @person-inverse-note-color;
+    color: @common-text-faint-weak;
   }
 }
