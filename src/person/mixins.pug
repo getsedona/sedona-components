@@ -1,17 +1,19 @@
 mixin person(data)
   div.person(class=data && data.isLarge ? "person--large" : null)
     if data && data.avatar
-      .person__avatar
+      .person__avatar(style=`width: ${data.avatar.size}px; height: ${data.avatar.size}px;`)
         img.person__image(
-          src=data.avatar
-          width="128"
-          height="128"
+          src=data.avatar.src
+          width=data.avatar.size
+          height=data.avatar.size
           alt=data.name)
 
-    .person__content
-      .person__name
-        | #{data.name}
+    if data && (data.name || data.note)
+      .person__content
+        if data.name
+          .person__name
+            | #{data.name}
 
-      if data && data.note
-        div.person__note
-          | #{data.note}
+        if data.note
+          div.person__note
+            | #{data.note}
