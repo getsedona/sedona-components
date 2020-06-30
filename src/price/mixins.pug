@@ -1,15 +1,10 @@
 mixin price(data)
   .price(class=data && data.isOld ? "price--old" : null)
     if data && data.before
-      .price__before
-        | #{data.before}
+      .price__before !{data.before}
 
-    .price__value
-      | #{data.value}
-
-    .price__currency
-      | #{data.currency}
+    .price__value !{data.value}
+    .price__currency !{data.currency}
 
     if data && data.after
-      .price__after
-        | #{data.after}
+      .price__after !{data.after}

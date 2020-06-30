@@ -6,14 +6,12 @@ mixin person(data)
           src=data.avatar.src
           width=data.avatar.size
           height=data.avatar.size
-          alt=data.name)
+          alt="")
 
     if data && (data.name || data.note)
       .person__content
         if data.name
-          .person__name
-            | #{data.name}
+          .person__name !{data.name}
 
         if data.note
-          .person__note
-            | #{data.note}
+          .person__note !{data.note}

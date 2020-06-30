@@ -4,8 +4,7 @@ mixin quote(data)
   blockquote.quote(
     lang=data && data.lang
     cite=data && data.cite)
-    .quote__main
-      | #{data.content}
+    .quote__main !{data.content}
 
     if data && data.person
       footer.quote__footer
