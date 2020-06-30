@@ -1,0 +1,13 @@
+include ./../person/mixins
+
+mixin quote(data)
+  blockquote.quote(
+    lang=data && data.lang
+    cite=data && data.cite)
+    .quote__main
+      | #{data.content}
+
+    if data && data.person
+      footer.quote__footer
+        .quote__divider
+        +person(data.person)
