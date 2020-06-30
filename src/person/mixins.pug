@@ -1,15 +1,15 @@
 mixin person(data)
-  div.person&attributes(attributes)
+  div.person(class=data && data.isLarge ? "person--large" : null)
     if data && data.avatar
-      div.person__avatar
+      .person__avatar
         img.person__image(
           src=data.avatar
           width="128"
           height="128"
           alt=data.name)
 
-    div.person__content
-      div.person__name
+    .person__content
+      .person__name
         | #{data.name}
 
       if data && data.note
