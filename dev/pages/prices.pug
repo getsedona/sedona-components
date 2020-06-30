@@ -4,26 +4,26 @@ block variables
   - var title = "Ценники"
 
 mixin price
-  div.price
-    div.price__before
+  .price
+    .price__before
       | от
 
-    div.price__value
+    .price__value
       | 1&thinsp;800&thinsp;000
 
-    div.price__currency
+    .price__currency
       | ₽
 
-    div.price__after
+    .price__after
       | за штуку
 
 block content
   section.scene
-    div.grid
-      div.grid__item
+    .grid
+      .grid__item
         +price
 
   section.scene.inverse
-    div.grid
-      div.grid__item
+    .grid
+      .grid__item
         +price
