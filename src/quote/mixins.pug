@@ -1,12 +1,12 @@
 include ./../person/mixins
 
 mixin quote(data)
-  blockquote.quote(
-    lang=data && data.lang
-    cite=data && data.cite)
+  blockquote.quote&attributes(attributes)(
+    lang=data.lang
+    cite=data.cite)
     .quote__main !{data.content}
 
-    if data && data.person
+    if data.person
       footer.quote__footer
         .quote__divider
         +person(data.person)

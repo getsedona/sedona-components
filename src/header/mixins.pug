@@ -1,17 +1,23 @@
 mixin header(data)
-  header.header.scene
+  header.header.scene&attributes(attributes)
     .grid
       .grid__item
         .header__logo
           a(href="#") !{data.logo}
 
       nav.grid__item
-        ul.header__nav
-          each item in data.nav
-            li.header__item
-              a(href=item.href) !{item.name}
+        +nav(data.nav)
 
       .grid__item
-        ul.header__nav
-          each item in data.extra
-            li.header__item !{item}
+        +extra(data.extra)
+
+mixin nav(data)
+  ul.header__nav
+    each item in data
+      li.header__item
+        a(href=item.href) !{item.name}
+
+mixin extra(data)
+  ul.header__nav
+    each item in data
+      li.header__item !{item}
