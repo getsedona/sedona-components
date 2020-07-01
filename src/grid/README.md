@@ -10,7 +10,7 @@
 | Точка   | 320   | 576     | 768    | 992      | 1200    |
 | Метка   | —     | sm      | md     | lg       | xl      |
 
-[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/grid/examples.html) · [Пример](https://getsedona.github.io/sedona-components/grid.html)
+[Пример](https://getsedona.github.io/sedona-components/grid.html)
 
 ## Подключение
 

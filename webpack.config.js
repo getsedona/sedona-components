@@ -1,6 +1,5 @@
 require("dotenv").config();
 
-const pkg = require("./package.json");
 const path = require("path");
 const isProduction = process.env.NODE_ENV === "production" ? true : false;
 
@@ -8,7 +7,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const HtmlLayoutPlugin = require("html-layout-plugin");
 
 const htmlMinifyConfig = {
   collapseInlineTagWhitespace: true,
@@ -66,89 +64,53 @@ module.exports = {
     new CopyWebpackPlugin({ patterns: [{ from: "./dev/static/" }] }),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
     new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./dev/pages/index.html",
+      template: "./dev/pages/index.pug",
       filename: "index.html",
       minify: isProduction ? htmlMinifyConfig : false,
-      version: pkg.version,
     }),
     new HtmlWebpackPlugin({
-      template: "./dev/pages/buttons.pug",
-      filename: "buttons.html",
+      template: "./dev/pages/common.pug",
+      filename: "common.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      template: "./dev/pages/quotes.pug",
-      filename: "quotes.html",
+      template: "./dev/pages/button.pug",
+      filename: "button.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      template: "./dev/pages/prices.pug",
-      filename: "prices.html",
+      template: "./dev/pages/quote.pug",
+      filename: "quote.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      template: "./dev/pages/persons.pug",
-      filename: "persons.html",
+      template: "./dev/pages/price.pug",
+      filename: "price.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      template: "./dev/pages/headers.pug",
-      filename: "headers.html",
+      template: "./dev/pages/person.pug",
+      filename: "person.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/base/examples.html",
+      template: "./dev/pages/header.pug",
+      filename: "header.html",
+      minify: isProduction ? htmlMinifyConfig : false,
+    }),
+    new HtmlWebpackPlugin({
+      template: "./dev/pages/base.pug",
       filename: "base.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/scene/examples.html",
+      template: "./dev/pages/scene.pug",
       filename: "scene.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/grid/examples.html",
+      template: "./dev/pages/grid.pug",
       filename: "grid.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/form/examples.html",
-      filename: "form.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/icon/examples.html",
-      filename: "icon.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/notify/examples.html",
-      filename: "notify.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/table/examples.html",
-      filename: "table.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/marginalia/examples.html",
-      filename: "marginalia.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      layout: path.join(__dirname, "dev/layouts/default.html"),
-      template: "./src/wysiwyg/examples.html",
-      filename: "wysiwyg.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
     new HtmlWebpackPlugin({
@@ -156,6 +118,5 @@ module.exports = {
       filename: "404.html",
       minify: isProduction ? htmlMinifyConfig : false,
     }),
-    new HtmlLayoutPlugin(),
   ],
 };
