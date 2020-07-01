@@ -1,23 +1,27 @@
 mixin header(data)
-  header.header.scene&attributes(attributes)
-    .grid
-      .grid__item
+  header.header&attributes(attributes)
+    .header__grid
+      .header__bar
         .header__logo
           a(href="#") !{data.logo}
 
-      nav.grid__item
-        +nav(data.nav)
+        ul.header__control
+          if data.control
+            each item in data.control
+              li.header__icon !{item}
 
-      .grid__item
-        +extra(data.extra)
+          li.header__icon
+            button.header__toggle(type="button") Меню
 
-mixin nav(data)
-  ul.header__nav
-    each item in data
-      li.header__item
-        a(href=item.href) !{item.name}
+      .header__menu
+        nav.header__nav
+          ul.header__list
+            each item in data.nav
+              li.header__point
+                a(href=item.href) !{item.name}
 
-mixin extra(data)
-  ul.header__nav
-    each item in data
-      li.header__item !{item}
+        if data.extra
+          .header__nav
+            ul.header__list
+              each item in data.extra
+                li.header__point !{item}
