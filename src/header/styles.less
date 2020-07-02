@@ -86,6 +86,13 @@
     padding-right: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
     padding-bottom: var(--common-block-gap-vertical, @common-block-gap-vertical);
     padding-left: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
+    opacity: 0;
+    visibility: hidden;
+
+    &--open {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   @media (min-width: @common-breakpoint-lg) {

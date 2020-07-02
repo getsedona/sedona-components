@@ -11,9 +11,15 @@ mixin header(data)
               li.header__icon !{item}
 
           li.header__icon
-            button.header__toggle(type="button") Меню
+            button.header__toggle.js-header-toggle(
+              type="button"
+              aria-expanded="false"
+              aria-controls="menu")
+              | Меню
 
-      .header__menu
+      .header__menu(
+        id="menu"
+        data-scroll-lock-scrollable)
         nav.header__nav
           ul.header__list
             each item in data.nav
