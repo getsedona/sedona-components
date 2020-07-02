@@ -1,6 +1,7 @@
 require("dotenv").config();
 
 const path = require("path");
+const fs = require("fs");
 const isProduction = process.env.NODE_ENV === "production" ? true : false;
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -19,6 +20,9 @@ const htmlMinifyConfig = {
   removeStyleLinkTypeAttributes: true,
   useShortDoctype: true,
 };
+
+const PAGES_DIR = path.resolve(__dirname, "dev/pages");
+const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith(".pug"));
 
 module.exports = {
   mode: process.env.NODE_ENV,
@@ -63,60 +67,10 @@ module.exports = {
     new CleanWebpackPlugin({ cleanOnceBeforeBuildPatterns: isProduction ? ["**/*"] : [] }),
     new CopyWebpackPlugin({ patterns: [{ from: "./dev/static/" }] }),
     new MiniCssExtractPlugin({ filename: isProduction ? "assets/[name].[contenthash].css": "[name].css" }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/index.pug",
-      filename: "index.html",
+    ...PAGES.map((page) => new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/${page}`,
+      filename: `./${page.replace(/\.pug/,".html")}`,
       minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/common.pug",
-      filename: "common.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/button.pug",
-      filename: "button.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/quote.pug",
-      filename: "quote.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/price.pug",
-      filename: "price.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/person.pug",
-      filename: "person.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/header.pug",
-      filename: "header.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/base.pug",
-      filename: "base.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/scene.pug",
-      filename: "scene.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/grid.pug",
-      filename: "grid.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
-    new HtmlWebpackPlugin({
-      template: "./dev/pages/404.pug",
-      filename: "404.html",
-      minify: isProduction ? htmlMinifyConfig : false,
-    }),
+    })),
   ],
 };
