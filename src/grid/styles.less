@@ -1,6 +1,10 @@
 .grid {
   #common.element-list();
 
+  & + & {
+    margin-top: var(--common-element-gap-vertical, @common-element-gap-vertical);
+  }
+
   &--sidar {
     @media (min-width: @common-breakpoint-lg) {
       --common-element-width: 75%;

@@ -48,10 +48,6 @@
     max-width: ~"calc(var(--common-element-max-width, @{common-element-max-width}) + var(--common-element-gap-horizontal, @{common-element-gap-horizontal}))";
     margin-right: ~"calc(var(--common-element-gap-horizontal, @{common-element-gap-horizontal}) * -1)";
     margin-bottom: ~"calc(var(--common-element-gap-vertical, @{common-element-gap-vertical}) * -1)";
-
-    & + & {
-      margin-top: var(--common-element-gap-vertical, @common-element-gap-vertical);
-    }
   }
 
   .element-item() {
@@ -69,9 +65,5 @@
     padding-right: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
     padding-bottom: var(--common-block-gap-vertical, @common-block-gap-vertical);
     padding-left: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
-
-    & + & {
-      padding-top: 0;
-    }
   }
 }
