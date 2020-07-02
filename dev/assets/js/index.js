@@ -1,1 +1,3 @@
-import {} from "../../../src";
+import { header } from "../../../src";
+
+header();
