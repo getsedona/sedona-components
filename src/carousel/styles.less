@@ -1,0 +1,34 @@
+.carousel {
+  overflow: visible;
+}
+
+.carousel__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel__bullets {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: ~"calc(50% - 20px)";
+  transition-duration: 0.5s;
+  transition-timing-function: var(--common-animationTimingFunction-primary);
+  transition-property: transform;
+}
+
+.carousel__item {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: @common-line-faint-strong;
+  transition-duration: 0.5s;
+  transition-timing-function: var(--common-animationTimingFunction-primary);
+  transition-property: width, height, opacity, background-color;
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}

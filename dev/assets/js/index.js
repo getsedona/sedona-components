@@ -1,3 +1,4 @@
-import { header } from "../../../src";
+import { header, carousel } from "../../../src";
 
 header();
+carousel();
