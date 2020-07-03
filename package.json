@@ -20,7 +20,8 @@
   },
   "dependencies": {
     "focus-visible": "^5.1.0",
-    "scroll-lock": "^2.1.4"
+    "scroll-lock": "^2.1.4",
+    "swiper": "^5.4.5"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
