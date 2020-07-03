@@ -13,6 +13,11 @@
   }
 }
 
+.price__before {
+  margin-right: 0.4em;
+  order: 1;
+}
+
 .price__value,
 .price__currency {
   .price:not(.price--old) & {
@@ -21,6 +26,13 @@
 }
 
 .price__value {
+  order: 2;
+
+  [lang="en"] & {
+    order: 3;
+    margin-left: 0.2em;
+  }
+
   .price--old & {
     position: relative;
 
@@ -42,13 +54,18 @@
 }
 
 .price__currency {
-  margin-left: 0.2em;
-}
+  order: 3;
 
-.price__before {
-  margin-right: 0.4em;
+  [lang="ru"] & {
+    margin-left: 0.2em;
+  }
+
+  [lang="en"] & {
+    order: 2;
+  }
 }
 
 .price__after {
   margin-left: 0.4em;
+  order: 4;
 }
