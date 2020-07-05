@@ -39,7 +39,7 @@
     }
   }
 
-  [lang="ru"] & {
+  [lang^="ru"] & {
     &::before,
     &::after {
       width: 56px;
@@ -64,7 +64,7 @@
     }
   }
 
-  [lang="en"] & {
+  [lang^="en"] & {
     &::before,
     &::after {
       width: 58px;
@@ -89,8 +89,8 @@
     }
   }
 
-  .inverse [lang="ru"] &,
-  [lang="ru"] .inverse & {
+  .inverse [lang^="ru"] &,
+  [lang^="ru"] .inverse & {
     &::before {
       @hook: escape('<svg viewBox="0 0 56 54" xmlns="http://www.w3.org/2000/svg" fill="@{common-icon-faint-weak}" stroke-width="0" aria-hidden="true"><path d="M0 27.4v-2l6.8-6A560.6 560.6 0 0028.3 0L31 2.4 11.2 26.7l14 25.4-3 1.9a796 796 0 00-9.6-12.2L0 27.4zm26.3.1v-2.3A782 782 0 0053.3 0L56 2.4 37 26.6l13.1 25.5-2.9 1.8-11-14.5a178.1 178.1 0 00-10-11.9z"/></svg>');
 
@@ -104,8 +104,8 @@
     }
   }
 
-  .inverse [lang="en"] &,
-  [lang="en"] .inverse & {
+  .inverse [lang^="en"] &,
+  [lang^="en"] .inverse & {
     &::before {
       @hook: escape('<svg viewBox="0 0 58 44" xmlns="http://www.w3.org/2000/svg" fill="@{common-icon-faint-weak}" stroke-width="0" aria-hidden="true"><path d="M25.8 3.8a58.4 58.4 0 00-6.1 9.3c-.9 1.7-1.5 3.4-2 5.2-.5 1.7-.8 3.3-.8 5 0 1.2.2 2.3.7 3.2a6.5 6.5 0 004.6 3.6c1 .2 2.1.3 3.3.3l.6 6A73.2 73.2 0 015.2 44l-1.8-1.6a14.1 14.1 0 01-3-5.7A24.3 24.3 0 012 23.1 55.5 55.5 0 0121.3 0l4.5 3.8zm32 0a58.4 58.4 0 00-6.2 9.3c-.9 1.7-1.5 3.4-2 5.2-.6 1.7-.8 3.3-.8 5 0 1.2.2 2.3.7 3.2a6.5 6.5 0 004.6 3.6c1 .2 2.1.3 3.3.3l.6 6A73.2 73.2 0 0137.1 44l-1.8-1.6a14.1 14.1 0 01-3-5.7 24.3 24.3 0 011.5-13.6A55.5 55.5 0 0153.2 0l4.5 3.8z"/></svg>');
 
