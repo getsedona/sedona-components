@@ -2,7 +2,7 @@
   blockquote.quote(
     :lang="quote.lang"
     :cite="quote.cite")
-    .quote__main {{ quote.content }}
+    .quote__main(v-html="quote.content")
 
     footer.quote__footer(v-if="person")
       .quote__divider
