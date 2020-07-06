@@ -10,8 +10,12 @@
         alt="")
 
     .person__content(v-if="person.name || person.note")
-      .person__name(v-if="person.name") {{ person.name }}
-      .person__note(v-if="person.note") {{ person.note }}
+      .person__name(
+        v-if="person.name"
+        v-html="person.name")
+      .person__note(
+        v-if="person.note"
+        v-html="person.note")
 </template>
 
 <script>
