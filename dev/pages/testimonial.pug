@@ -1,0 +1,23 @@
+extends ./../layouts/default
+include ./../../src/testimonial/mixins
+
+block variables
+  - var title = "testimonial"
+
+block main
+  section.scene.scene--light
+    .grid.grid--meskit
+      .grid__item
+        +testimonial({
+          person: {
+            isGravity: true,
+            avatar: {
+              src: "https://images.unsplash.com/photo-1586297098710-0382a496c814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80",
+              size: 80
+            },
+            name: "Артем Фомичев",
+            note: "Тревел-блоггер, фотограф"
+          },
+          content: "Удобное расположение, окружен озерами и прудом, созданы все возможности для активного отдыха, живописная природа, подобающая инфраструктура.",
+          source: "https://vk.com/artfomich"
+        })

@@ -1,0 +1,16 @@
+include ./../person/mixins
+
+mixin testimonial(data)
+  .testimonial&attributes(attributes)
+    .testimonial__person
+      +person(data.person)
+      .testimonial__divider
+
+    .testimonial__main !{data.content}
+
+    if data.source
+      .testimonial__source
+        a(
+          href=data.source
+          target="_blank")
+          | Смотреть отзыв
