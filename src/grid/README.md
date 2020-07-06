@@ -7,7 +7,7 @@
 |         | Phone | Phone ↔ | Tablet | Tablet ↔ | Desktop |
 | ------- | ----- | ------- | ------ | -------- | ------- |
 | Колонки | 2     | 4       | 6      | 12       | 12      |
-| Точка   | 320   | 576     | 768    | 992      | 1200    |
+| Точка   | 320   | 576     | 768    | 992      | 1194    |
 | Метка   | —     | sm      | md     | lg       | xl      |
 
 [Пример](https://getsedona.github.io/sedona-components/grid.html)
