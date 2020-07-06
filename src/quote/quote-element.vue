@@ -4,7 +4,7 @@
     :cite="quote.cite")
     .quote__main(v-html="quote.content")
 
-    footer.quote__footer(v-if="person")
+    footer.quote__person(v-if="person")
       .quote__divider
       person-element(:person="person")
 </template>
