@@ -1,6 +1,6 @@
 .header {
-  --base-link-color: @header-link-color;
-  --base-link-color-hover: @header-link-color-hover;
+  // --base-link-color: @header-link-color;
+  // --base-link-color-hover: @header-link-color-hover;
 
   position: relative;
   z-index: 100;
@@ -19,7 +19,7 @@
   @media (min-width: @common-breakpoint-lg) {
     display: flex;
     align-items: center;
-    height: var(--header-height, @header-height);
+    height: 44px;
   }
 }
 
@@ -27,11 +27,16 @@
   display: flex;
 
   @media (max-width: @common-breakpoint-lg - 1px) {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
-    height: var(--header-height, @header-height);
+    height: 44px;
     padding-right: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
     padding-left: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
+    // background-color: fade(0, 0, 0, 80%);
+    // backdrop-filter: saturate(180%) blur(20px);
   }
 
   @media (min-width: @common-breakpoint-lg) {
@@ -55,6 +60,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-right: 16px;
   }
 
   @media (min-width: @common-breakpoint-lg) {
@@ -66,7 +72,18 @@
   display: flex;
 
   & + & {
-    margin-left: 24px;
+    margin-left: 16px;
+  }
+}
+
+.header__burger {
+  @media (max-width: @common-breakpoint-lg - 1px) {
+    display: flex;
+    align-items: center;
+  }
+
+  @media (min-width: @common-breakpoint-lg) {
+    display: none;
   }
 }
 
@@ -82,7 +99,7 @@
     right: 0;
     overflow: auto;
     background-color: @common-root-base-weak;
-    padding-top: ~"calc(var(--common-block-gap-vertical, @{common-block-gap-vertical}) + var(--header-height, @{header-height}))";
+    padding-top: ~"calc(var(--common-block-gap-vertical, @{common-block-gap-vertical}) + 44px)";
     padding-right: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
     padding-bottom: var(--common-block-gap-vertical, @common-block-gap-vertical);
     padding-left: var(--common-block-gap-horizontal, @common-block-gap-horizontal);

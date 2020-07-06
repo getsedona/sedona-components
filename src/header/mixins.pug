@@ -2,32 +2,43 @@ mixin header(data)
   header.header&attributes(attributes)
     .header__grid
       .header__bar
-        .header__logo
-          a(href="#") !{data.logo}
+        +logo(data.logo)
 
-        ul.header__tool
-          if data.control
-            each item in data.control
-              li.header__icon !{item}
+        if data.tool
+          +tool(data.tool)
 
-          li.header__icon
-            button.header__toggle.js-header-toggle(
-              type="button"
-              aria-expanded="false"
-              aria-controls="menu")
-              | Меню
+        .header__burger
+          button.header__toggle.js-header-toggle(
+            type="button"
+            aria-label="Меню"
+            aria-expanded="false"
+            aria-controls="menu")
+            | Меню
 
       .header__menu(
         id="menu"
         data-scroll-lock-scrollable)
         nav.header__nav
-          ul.header__control
-            each item in data.nav
-              li.header__point
-                a(href=item.href) !{item.name}
+          +nav(data.nav)
 
         if data.extra
           .header__nav
-            ul.header__control
-              each item in data.extra
-                li.header__point !{item}
+            +extra(data.extra)
+
+mixin logo(data)
+  .header__logo !{data}
+
+mixin tool(data)
+  ul.header__tool
+    each item in data
+      li.header__icon !{item}
+
+mixin nav(data)
+  ul.header__control
+    each item in data
+      li.header__point !{item}
+
+mixin extra(data)
+  ul.header__control
+    each item in data
+      li.header__point !{item}

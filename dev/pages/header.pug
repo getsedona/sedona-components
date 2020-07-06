@@ -6,8 +6,12 @@ block variables
 
 block header
   +header({
-    logo: "ЛОГО",
-    control: [
+    logo: `
+      <a href="#">
+        ЛОГО
+      </a>
+    `,
+    tool: [
       `
         <a href="#">
           <svg
@@ -32,21 +36,26 @@ block header
       `
     ],
     nav: [
-      {
-        name: "Компания",
-        href: "#"
-      },
-      {
-        name: "Продукция"
-      },
-      {
-        name: "Услуги и цены",
-        href: "#"
-      },
-      {
-        name: "Контакты",
-        href: "#"
-      }
+      `
+        <a href="#">
+          Компания
+        </a>
+      `,
+      `
+        <a href="#">
+          Продукция
+        </a>
+      `,
+      `
+        <a href="#">
+          Услуги и цены
+        </a>
+      `,
+      `
+        <a href="#">
+          Контакты
+        </a>
+      `
     ],
     extra: [
       `
@@ -85,3 +94,14 @@ block header
       `
     ]
   })
+
+block main
+  style(type='text/css').
+    body {
+      background-color: #F5E3D3;
+    }
+
+  section.scene(style="height: 200vh; padding-top: 0;")
+    img(
+      src="https://www.apple.com/v/home/j/images/heroes/iphone-11-spring/hero__dvsxv8smkkgi_small_2x.jpg"
+      style="max-width: none; width: 800px;")
