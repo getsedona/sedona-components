@@ -7,13 +7,13 @@ mixin header(data)
         if data.tool
           +tool(data.tool)
 
-        .header__burger
+        .header__mmm
           button.header__toggle.js-header-toggle(
             type="button"
             aria-label="Меню"
             aria-expanded="false"
             aria-controls="menu")
-            | Меню
+            .header__burger
 
       .header__menu(
         id="menu"
