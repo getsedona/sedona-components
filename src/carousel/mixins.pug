@@ -1,0 +1,7 @@
+mixin carousel(data)
+  .carousel.swiper-container&attributes(attributes)(data-options=data)
+    .carousel__list.swiper-wrapper
+      block
+
+    if data.pagination
+      .carousel__pagination(class=`carousel__pagination--${data.pagination}`)

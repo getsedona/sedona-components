@@ -1,58 +1,33 @@
 extends ./../layouts/default
+include ./../../src/carousel/mixins
 
 block variables
   - var title = "carousel"
+  -
+    var carousel = {
+      grid: "meskit",
+      pagination: "brand"
+    }
 
 block main
-  section.scene
+  section.scene(style="overflow: hidden;")
     .grid
       .grid__item
-        -
-          var slider1 = {
-            loop: false,
-            pagination: {
-              el: '.carousel__bullets',
-              type: 'custom',
-              dynamicBullets: true,
-              renderCustom: function(swiper, current, total) {
-                return current + ' of ' + total;
-              }
-            }
-          }
+        +carousel(carousel)
+          .carousel__item.swiper-slide
+            div(style="background-color: #fe9891; height: 100px;")
 
-        .carousel.swiper-container(data-parameters=slider1)
-          .swiper-wrapper
-            .swiper-slide
-              div(style="background-color: #fe9891; height: 100px;")
+          .carousel__item.swiper-slide
+            div(style="background-color: #fed891; height: 100px;")
 
-            .swiper-slide
-              div(style="background-color: #fed891; height: 100px;")
+          .carousel__item.swiper-slide
+            div(style="background-color: #8ed891; height: 100px;")
 
-            .swiper-slide
-              div(style="background-color: #8ed891; height: 100px;")
+          .carousel__item.swiper-slide
+            div(style="background-color: #fe9891; height: 100px;")
 
-      .grid__item
-        .carousel__pagination
-          ul.carousel__bullets
-            each item in [1, 2, 3, 4, 5, 6, 7]
-              li.carousel__item
-                span.carousel__span
+          .carousel__item.swiper-slide
+            div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
-    .grid
-      .grid__item
-        -
-          var slider2 = {
-            loop: true
-          }
-
-        .carousel.swiper-container(data-parameters=slider2)
-          .swiper-wrapper
-            .swiper-slide
-              div(style="background-color: #f00; height: 100px;")
-
-            .swiper-slide
-              div(style="background-color: #0f0; height: 100px;")
-
-            .swiper-slide
-              div(style="background-color: #00f; height: 100px;")
+          .carousel__item.swiper-slide
+            div(style="background-color: #8ed891; height: 100px;")
