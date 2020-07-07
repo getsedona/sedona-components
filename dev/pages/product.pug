@@ -1,0 +1,11 @@
+extends ./../layouts/default
+include ./../../src/product/mixins
+
+block variables
+  - var title = "product"
+
+block main
+  section.scene
+    .grid.grid--amara
+      .grid__item
+        +product

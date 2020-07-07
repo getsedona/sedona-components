@@ -1,0 +1,21 @@
+include ./../price/mixins
+
+mixin product(data)
+  .product&attributes(attributes)
+    .product__content
+      .product__category Кольца
+      .product__code SKU999999
+
+      .product__name
+        a(href="#") Кольцо с сапфирами и изумрудами
+
+      .product__price
+        +price({
+          value: 1800000,
+          currency: "₽"
+        })
+        +price({
+          isOld: true,
+          value: 2300000,
+          currency: "₽"
+        })
