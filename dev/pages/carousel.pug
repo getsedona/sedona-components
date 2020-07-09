@@ -5,29 +5,28 @@ block variables
   - var title = "carousel"
   -
     var carousel = {
-      grid: "meskit",
-      pagination: "brand"
+      grid: "meskit"
     }
 
 block main
   section.scene(style="overflow: hidden;")
     .grid
       .grid__item
-        +carousel(carousel)
+        +carousel(carousel)(style="overflow: visible;")
           .carousel__item.swiper-slide
-            div(style="background-color: #fe9891; height: 100px;")
+            div(style="background-color: #fe9891; height: 300px;")
 
           .carousel__item.swiper-slide
-            div(style="background-color: #fed891; height: 100px;")
+            div(style="background-color: #fed891; height: 300px;")
 
           .carousel__item.swiper-slide
-            div(style="background-color: #8ed891; height: 100px;")
+            div(style="background-color: #8ed891; height: 300px;")
 
           .carousel__item.swiper-slide
-            div(style="background-color: #fe9891; height: 100px;")
+            div(style="background-color: #fe9891; height: 300px;")
 
           .carousel__item.swiper-slide
-            div(style="background-color: #fed891; height: 100px;")
+            div(style="background-color: #fed891; height: 300px;")
 
           .carousel__item.swiper-slide
-            div(style="background-color: #8ed891; height: 100px;")
+            div(style="background-color: #8ed891; height: 300px;")
