@@ -1,5 +1,4 @@
 import { Swiper, Mousewheel, Pagination, A11y } from "swiper";
-import "./../../node_modules/swiper/swiper-bundle.css";
 
 Swiper.use([Mousewheel, Pagination, A11y]);
 
