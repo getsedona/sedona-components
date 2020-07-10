@@ -1,4 +1,4 @@
-mixin price(data)
+mixin price(data={})
   .price&attributes(attributes)(
     class=data.isOld ? "price--old" : null
     lang=data.lang)

@@ -1,4 +1,4 @@
-mixin person(data)
+mixin person(data={})
   .person&attributes(attributes)(class=data.isGravity ? "person--gravity" : null)
     if data.avatar
       .person__avatar(style=`width: ${data.avatar.size}px; height: ${data.avatar.size}px;`)

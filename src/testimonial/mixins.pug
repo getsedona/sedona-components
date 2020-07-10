@@ -1,6 +1,6 @@
 include ./../person/mixins
 
-mixin testimonial(data)
+mixin testimonial(data={})
   .testimonial&attributes(attributes)
     .testimonial__person
       +person(data.person)

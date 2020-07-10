@@ -1,25 +1,28 @@
-mixin header(data)
+mixin header(data={})
   header.header&attributes(attributes)
     .header__grid
       .header__bar
-        +logo(data.logo)
+        if data.logo
+          +logo(data.logo)
 
         if data.tool
           +tool(data.tool)
 
-        .header__mmm
-          button.header__toggle.js-header-toggle(
-            type="button"
-            aria-label="Меню"
-            aria-expanded="false"
-            aria-controls="menu")
-            .header__burger
+        if !data.hideToggle
+          .header__mmm
+            button.header__toggle.js-header-toggle(
+              type="button"
+              aria-label="Меню"
+              aria-expanded="false"
+              aria-controls="menu")
+              .header__burger
 
       .header__menu(
         id="menu"
         data-scroll-lock-scrollable)
-        nav.header__nav
-          +nav(data.nav)
+        if data.nav
+          nav.header__nav
+            +nav(data.nav)
 
         if data.extra
           .header__nav

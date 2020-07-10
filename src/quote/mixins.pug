@@ -1,6 +1,6 @@
 include ./../person/mixins
 
-mixin quote(data)
+mixin quote(data={})
   blockquote.quote&attributes(attributes)(
     lang=data.lang
     cite=data.cite)
