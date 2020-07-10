@@ -2,12 +2,12 @@ extends ./../layouts/default
 include ./../../src/header/mixins
 
 block variables
-  - var title = "header"
+  - var pageTitle = "header"
 
 block header
   +header({
     logo: `
-      <a href="#">
+      <a href="/">
         ЛОГО
       </a>
     `,

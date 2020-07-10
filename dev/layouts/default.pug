@@ -1,12 +1,14 @@
+include ./../../src/header/mixins
+
 block variables
-  - var title = "Sedona"
+  - var pageTitle = "Sedona"
 
 doctype html
 
 html(lang="ru")
   head
     meta(charset="utf-8")
-    title #{title}
+    title #{pageTitle}
 
     meta(
       name="viewport"
