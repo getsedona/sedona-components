@@ -1,0 +1,45 @@
+.carousel__pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  pointer-events: none;
+
+  @media (min-width: @common-breakpoint-md) {
+    margin-top: 24px;
+  }
+
+  &--lock {
+    display: none;
+  }
+
+  &--inside {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+
+    @media (min-width: @common-breakpoint-md) {
+      bottom: 24px;
+    }
+  }
+}
+
+.carousel__dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 2px;
+  background-color: @common-line-faint-strong;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+  transition-property: width, background-color;
+
+  & + & {
+    margin-left: 8px;
+  }
+
+  &--active {
+    width: 36px;
+    background-color: @common-root-accent-strong;
+  }
+}

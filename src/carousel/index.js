@@ -1,20 +1,31 @@
-import { Swiper, Mousewheel, Pagination, A11y } from "swiper";
-
-Swiper.use([Mousewheel, Pagination, A11y]);
+import { Swiper, Mousewheel, Navigation, Pagination, A11y } from "swiper";
 
 export function carousel() {
-  if (!document.querySelector(".swiper-container")) {
+  if (!document.querySelector(".carousel")) {
     return;
   }
 
-  document.querySelectorAll(".swiper-container").forEach((el) => {
-    const options = JSON.parse(el.dataset.options || "{}");
-    const grid = options.grid;
+  Swiper.use([Mousewheel, Navigation, Pagination, A11y]);
 
-    let ggg = {};
+  document.querySelectorAll(".carousel").forEach((el) => {
+    const options = JSON.parse(el.dataset.options);
+    let grid = {};
+    let pagination = {};
 
-    if (grid === "jordan") {
-      ggg = {
+    if (options.grid === true) {
+      grid = {
+        spaceBetween: 12,
+        breakpoints: {
+          576: {
+            spaceBetween: 24,
+          },
+          768: {
+            spaceBetween: 48,
+          },
+        },
+      };
+    } else if (options.grid === "jordan") {
+      grid = {
         slidesPerView: 1,
         spaceBetween: 12,
         breakpoints: {
@@ -32,8 +43,8 @@ export function carousel() {
           },
         },
       };
-    } else if (grid === "meskit") {
-      ggg = {
+    } else if (options.grid === "meskit") {
+      grid = {
         slidesPerView: 1,
         spaceBetween: 12,
         breakpoints: {
@@ -51,8 +62,8 @@ export function carousel() {
           },
         },
       };
-    } else if (grid === "amara") {
-      ggg = {
+    } else if (options.grid === "amara") {
+      grid = {
         slidesPerView: 1,
         spaceBetween: 12,
         breakpoints: {
@@ -76,22 +87,30 @@ export function carousel() {
       };
     }
 
-    // parameters.pagination = {
-    //   el: ".carousel__pagination",
-    //   type: "custom",
-    //   bulletClass: "carousel__dot",
-    //   bulletActiveClass: "carousel__dot--active",
-    //   modifierClass: "carousel__pagination--",
-    //   renderCustom: function(swiper, current, total) {
-    //     return current + " of " + total;
-    //   },
-    // };
+    if (options.pagination) {
+      pagination = {
+        pagination: {
+          el: ".carousel__pagination",
+          type: options.pagination,
+          bulletClass: "carousel__dot",
+          bulletActiveClass: "carousel__dot--active",
+          modifierClass: "carousel__pagination--",
+          lockClass: "carousel__pagination--lock",
+        },
+      };
+    }
 
     const parameters = {
       init: false,
+      watchOverflow: true,
       grabCursor: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
+      a11y: true,
+      ...grid,
+      ...pagination,
       ...options.parameters || {},
-      ...ggg,
     };
 
     const swiper = new Swiper(el, parameters);
