@@ -1,0 +1,50 @@
+.ribbon {
+  position: absolute;
+  z-index: 1;
+  top: -2px;
+  right: -2px;
+  width: 96px;
+  height: 96px;
+  pointer-events: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &::before,
+  &::after {
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    z-index: -1;
+    content: "";
+    background-color: multiply(@common-root-complement-strong, #999);
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+.ribbon__box {
+  background-color: @common-root-complement-strong;
+  transform: translate3d(0%, -50%, 0) rotate(45deg);
+  transform-origin: 50% 100%;
+  width: 300%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ribbon__value {
+  #common.text-label();
+  text-align: center;
+  color: @common-text-base-weak;
+}
