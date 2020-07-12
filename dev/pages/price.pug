@@ -1,11 +1,12 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 include ./../../src/price/mixins
 
 block variables
   - var pageTitle = "price"
 
 block main
-  section.scene
+  +scene
     .grid(style="--common-element-width: auto; align-items: baseline;")
       .grid__item
         +price({
@@ -28,7 +29,7 @@ block main
           currency: "₽"
         })
 
-  section.scene.inverse
+  +scene({ isInverse: true })
     .grid(style="--common-element-width: auto; align-items: baseline;")
       .grid__item
         +price({

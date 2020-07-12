@@ -1,5 +1,6 @@
 extends ./../layouts/default
 include ./../../src/header/mixins
+include ./../../src/scene/mixins
 
 block variables
   - var pageTitle = "header"
@@ -85,7 +86,7 @@ block main
       background-color: #F5E3D3;
     }
 
-  section.scene(style="height: 200vh; padding-top: 0; padding-left: 0; padding-right: 0; overflow: hidden;")
+  +scene(style="height: 200vh; padding-top: 0; padding-left: 0; padding-right: 0; overflow: hidden;")
     //- img(
     //-   src="https://www.apple.com/v/home/j/images/heroes/iphone-11-spring/hero__dvsxv8smkkgi_small_2x.jpg"
     //-   style="max-width: none; min-width: 800px; width: 100%;")

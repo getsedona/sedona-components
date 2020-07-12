@@ -1,11 +1,12 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 include ./../../src/ribbon/mixins
 
 block variables
   - var pageTitle = "ribbon"
 
 block main
-  section.scene
+  +scene
     .grid.grid--meskit
       .grid__item
         div(style="background-color: #FFCCBC; height: 200px; position: relative; border-radius: 8px;")

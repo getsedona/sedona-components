@@ -1,11 +1,12 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 include ./../../src/person/mixins
 
 block variables
   - var pageTitle = "person"
 
 block main
-  section.scene
+  +scene
     .grid(style="--common-element-width: auto; align-items: center;")
       .grid__item
         +person({
@@ -50,7 +51,7 @@ block main
           note: "Тревел-блоггер, фотограф"
         })
 
-  section.scene.inverse
+  +scene({ isInverse: true })
     .grid(style="--common-element-width: auto; align-items: center;")
       .grid__item
         +person({

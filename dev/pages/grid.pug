@@ -1,25 +1,26 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 
 block variables
   - var pageTitle = "grid"
 
 block main
-  section.scene
+  +scene
     .grid
       .grid__item
         div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
+  +scene
     .grid.grid--sidar
       .grid__item
         div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
+  +scene
     .grid.grid--navahopi
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
+  +scene
     .grid.grid--jordan
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
@@ -27,7 +28,7 @@ block main
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
+  +scene
     .grid.grid--meskit
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
@@ -38,7 +39,7 @@ block main
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
+  +scene
     .grid.grid--amara
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
@@ -52,7 +53,7 @@ block main
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
+  +scene
     .grid.grid--orchard
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
@@ -60,7 +61,7 @@ block main
       .grid__item
           div(style="background-color: #fed891; height: 100px;")
 
-  section.scene
+  +scene
     .grid.grid--ridge
       .grid__item
           div(style="background-color: #fed891; height: 100px;")

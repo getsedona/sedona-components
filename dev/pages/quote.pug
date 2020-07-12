@@ -1,11 +1,12 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 include ./../../src/quote/mixins
 
 block variables
   - var pageTitle = "quote"
 
 block main
-  section.scene
+  +scene
     .grid.grid--navahopi(style="justify-content: center;")
       .grid__item
         +quote({
@@ -20,7 +21,7 @@ block main
           }
         })
 
-  section.scene
+  +scene
     .grid.grid--navahopi(style="justify-content: center;")
       .grid__item
         +quote({
@@ -36,7 +37,7 @@ block main
           }
         })
 
-  section.scene.inverse
+  +scene({ isInverse: true })
     .grid.grid--navahopi(style="justify-content: center;")
       .grid__item
         +quote({
@@ -51,7 +52,7 @@ block main
           }
         })
 
-  section.scene.inverse(style="padding-top: 0;")
+  +scene({ isInverse: true })(style="padding-top: 0;")
     .grid.grid--navahopi(style="justify-content: center;")
       .grid__item
         +quote({

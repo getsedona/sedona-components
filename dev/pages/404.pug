@@ -1,10 +1,11 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 
 block variables
   - var pageTitle = "Страница не найдена"
 
 block main
-  section.scene
+  +scene
     .grid
       .grid__item
         h1 Страница не найдена

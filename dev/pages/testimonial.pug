@@ -1,11 +1,12 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 include ./../../src/testimonial/mixins
 
 block variables
   - var pageTitle = "testimonial"
 
 block main
-  section.scene.scene--light
+  +scene.scene--light
     .grid.grid--meskit
       .grid__item
         +testimonial({

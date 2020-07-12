@@ -1,4 +1,5 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 include ./../../src/carousel/mixins
 
 block variables
@@ -35,7 +36,7 @@ block variables
     }
 
 block main
-  section.scene(style="overflow: hidden;")
+  +scene(style="overflow: hidden;")
     .grid
       .grid__item
         +carousel(carousel1)(style="overflow: visible;")
@@ -57,7 +58,7 @@ block main
           .carousel__item.swiper-slide
             div(style="background-color: #8ed891; height: 300px;")
 
-  section.scene(style="overflow: hidden;")
+  +scene(style="overflow: hidden;")
     .grid
       .grid__item
         +carousel(carousel2)(style="overflow: visible;")
@@ -79,7 +80,7 @@ block main
           .carousel__item.swiper-slide
             div(style="background-color: #8ed891; height: 300px;")
 
-  section.scene(style="overflow: hidden;")
+  +scene(style="overflow: hidden;")
     .grid
       .grid__item
         +carousel(carousel3)(style="overflow: visible;")
@@ -101,7 +102,7 @@ block main
           .carousel__item.swiper-slide
             div(style="background-color: #8ed891; height: 300px;")
 
-  section.scene(style="overflow: hidden;")
+  +scene(style="overflow: hidden;")
     .grid
       .grid__item
         +carousel(carousel4)(style="overflow: visible;")
@@ -143,7 +144,7 @@ block main
       .carousel__item.swiper-slide
         div(style="background-color: #8ed891; height: 300px;")
 
-  section.scene(style="overflow: hidden;")
+  +scene(style="overflow: hidden;")
     .grid.grid--amara
       .grid__item
         +carousel(carousel6)

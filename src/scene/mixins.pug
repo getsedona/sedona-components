@@ -1,0 +1,3 @@
+mixin scene(data={ isInverse: false })
+  section.scene&attributes(attributes)(class=data.isInverse ? "inverse" : null)
+    block

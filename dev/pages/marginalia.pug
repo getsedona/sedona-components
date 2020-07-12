@@ -1,10 +1,11 @@
 extends ./../layouts/default
+include ./../../src/scene/mixins
 
 block variables
   - var pageTitle = "marginalia"
 
 block main
-  section.scene
+  +scene
     .grid.grid--sidar
       .grid__item
         h3 Международная политика
