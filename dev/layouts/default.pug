@@ -1,3 +1,6 @@
+include ./../components/page/mixins
+include ./../components/main/mixins
+
 block variables
   - var pageTitle = "Sedona"
 
@@ -21,10 +24,10 @@ html(lang="ru")
       content="address=no")
 
   body
-    .page
+    +page
       block header
 
-      main.main
+      +main
         block main
 
       block footer
