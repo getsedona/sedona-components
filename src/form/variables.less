@@ -1,0 +1,26 @@
+@form-itemGap-vertical: @common-indent-base;
+@form-itemGap-horizontal: @common-indent-base;
+
+@form-control-padding-vertical: @common-indent-small;
+@form-control-padding-horizontal: @common-indent-base;
+
+@form-control-borderWidth: 1px;
+@form-control-borderRadius: @form-control-padding-vertical;
+
+@form-control-placeholderColor: @common-darkColor-hint;
+
+@form-control-backgroundColor-base: @common-lightColor-primary;
+@form-control-color-base: @common-darkColor-primary;
+@form-control-borderColor-base: @common-darkColor-divider;
+
+@form-control-backgroundColor-hover: @form-control-backgroundColor-base;
+@form-control-color-hover: @form-control-color-base;
+@form-control-borderColor-hover: #common.set-color-interaction(@form-control-borderColor-base)[];
+
+@form-control-backgroundColor-focus: @form-control-backgroundColor-hover;
+@form-control-borderColor-focus: @common-accentColor-primary;
+@form-control-outlineColor-focus: fadeout(@form-control-borderColor-focus, 50%, relative);
+
+@form-control-backgroundColor-danger: @form-control-backgroundColor-base;
+@form-control-borderColor-danger: @common-dangerColor-primary;
+@form-control-outlineColor-danger: fadeout(@form-control-borderColor-danger, 50%, relative);

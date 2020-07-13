@@ -1,59 +1,78 @@
-@import "./colors";
+// Семейство шрифтов
+@common-fontFamily-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
-// Шрифт
-@common-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
+// Размеры шрифтов
+@common-fontSize-base: 1rem;
+@common-lineHeight-base: 1.75rem;
 
-// Текст
-@common-text-font-family: @common-font-family;
-@common-text-font-size: 1rem;
-@common-text-line-height: 1.5rem;
-@common-text-font-weight: normal;
+@common-fontSize-small: 0.75rem;
+@common-lineHeight-small: 1.25rem;
 
-@common-text-font-family-small: @common-font-family;
-@common-text-font-size-small: 0.75rem;
-@common-text-line-height-small: 1.25rem;
-@common-text-font-weight-small: normal;
+@common-fontSize-large: 1.25rem;
+@common-lineHeight-large: 2rem;
 
-@common-text-font-family-large: @common-font-family;
-@common-text-font-size-large: 1.25rem;
-@common-text-line-height-large: 1.75rem;
-@common-text-font-weight-large: normal;
+// Базовые цвета для всего сайта
+@common-baseColor-primary: contrast(@common-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
+@common-baseColor-secondary: contrast(@common-backgroundColor-base, @common-darkColor-secondary, @common-lightColor-secondary);
+@common-baseColor-hint: contrast(@common-backgroundColor-base, @common-darkColor-hint, @common-lightColor-hint);
+@common-baseColor-divider: contrast(@common-backgroundColor-base, @common-darkColor-divider, @common-lightColor-divider);
 
-@common-text-font-family-remark: @common-font-family;
-@common-text-font-size-remark: 0.75rem;
-@common-text-line-height-remark: 1.25rem;
-@common-text-font-weight-remark: normal;
+// Цвета для светлых компонентов
+@common-darkColor-primary: #222;
+@common-darkColor-secondary: fade(@common-darkColor-primary, 70%);
+@common-darkColor-hint: fade(@common-darkColor-primary, 45%);
+@common-darkColor-divider: fade(@common-darkColor-primary, 10%);
 
-@common-text-font-family-label: @common-font-family;
-@common-text-font-size-label: 1rem;
-@common-text-line-height-label: 1.5rem;
-@common-text-font-weight-label: normal;
+// Цвета для темных компонентов
+@common-lightColor-primary: #fff;
+@common-lightColor-secondary: fade(@common-lightColor-primary, 55%);
+@common-lightColor-hint: fade(@common-lightColor-primary, 30%);
+@common-lightColor-divider: fade(@common-lightColor-primary, 7%);
 
-@common-text-font-family-decor: @common-font-family;
-@common-text-font-size-decor: 1.5rem;
-@common-text-line-height-decor: 2rem;
-@common-text-font-weight-decor: normal;
+// Акцентный (брендовый) цвет
+@common-accentColor-primary: #0884ff;
+
+// Цвета оповещений
+@common-successColor-primary: #1dc337;
+@common-warningColor-primary: #f6c101;
+@common-dangerColor-primary: #ff4e45;
+
+// Фоновые цвета компонентов
+@common-backgroundColor-base: #fff;
+@common-backgroundColor-dark: contrast(@common-backgroundColor-base, #1f2022, lighten(@common-backgroundColor-base, 7%));
+@common-backgroundColor-light: contrast(@common-backgroundColor-base, #fff, darken(@common-backgroundColor-base, 10%));
 
 // Тень
-@common-box-shadow: 0 -1px 1px rgba(0, 0, 0, 0.05), 0 2px 2px rgba(0, 0, 0, 0.05), 0 4px 4px rgba(0, 0, 0, 0.05), 0 8px 8px rgba(0, 0, 0, 0.05), 0 16px 16px rgba(0, 0, 0, 0.05), 0 32px 32px rgba(0, 0, 0, 0.05);
+@common-boxShadow-primary: #common.set-shadow()[];
 
 // Радиус
-@common-border-radius: 8px;
+@common-borderRadius-primary: 8px;
 
-// Размер элемента
-@common-element-width: 100%;
-@common-element-max-width: 1280px;
+// Анимация
+@common-animationDuration-primary: 0.2s;
+@common-animationTimingFunction-primary: ease-out;
+
+// Отступы внутри элемента
+@common-indent-base: 16px;
+@common-indent-small: 8px;
+@common-indent-large: 32px;
+
+// Максимальная ширина элемента
+@common-elementBase-maxWidth: 1200px;
 
 // Отступ между элементами
-@common-element-gap-horizontal: 24px;
-@common-element-gap-vertical: 40px;
+@common-elementGap-vertical: 40px;
+@common-elementGap-horizontal: 40px;
+
+// Ширина элемента
+@common-elementItem-width: 100%;
 
 // Отступ между блоками
-@common-block-gap-horizontal: 24px;
-@common-block-gap-vertical: 48px;
+@common-blockGap-vertical: 48px;
+@common-blockGap-horizontal: 48px;
 
 // Контрольные точки
 @common-breakpoint-sm: 576px;
 @common-breakpoint-md: 768px;
 @common-breakpoint-lg: 992px;
-@common-breakpoint-xl: 1194px;
+@common-breakpoint-xl: 1200px;

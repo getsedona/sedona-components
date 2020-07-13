@@ -1,4 +1,6 @@
-import { header, carousel } from "../../../src";
+import { form, notify, table, collapse } from "../../../src";
 
-header();
-carousel();
+form();
+notify();
+table();
+collapse();

@@ -1,3 +1,33 @@
+:root {
+  --base-h1-fontSize: @base-h1-fontSize;
+  --base-h1-lineHeight: @base-h1-lineHeight;
+
+  --base-h2-fontSize: @base-h2-fontSize;
+  --base-h2-lineHeight: @base-h2-lineHeight;
+
+  --base-h3-fontSize: @base-h3-fontSize;
+  --base-h3-lineHeight: @base-h3-lineHeight;
+
+  --base-link-color-base: @base-link-color-base;
+  --base-link-color-hover: @base-link-color-hover;
+
+  --base-btn-padding-vertical: @base-btn-padding-vertical;
+  --base-btn-padding-horizontal: @base-btn-padding-horizontal;
+
+  --base-btn-borderWidth: @base-btn-borderWidth;
+  --base-btn-borderRadius: @base-btn-borderRadius;
+
+  --base-btn-backgroundColor-base: @base-btn-backgroundColor-base;
+  --base-btn-color-base: @base-btn-color-base;
+  --base-btn-borderColor-base: @base-btn-borderColor-base;
+
+  --base-btn-backgroundColor-hover: @base-btn-backgroundColor-hover;
+  --base-btn-color-hover: @base-btn-color-hover;
+  --base-btn-borderColor-hover: @base-btn-borderColor-hover;
+
+  --base-btn-outlineColor-focus: @base-btn-outlineColor-focus;
+}
+
 html {
   box-sizing: border-box;
   cursor: default;
@@ -13,12 +43,11 @@ html {
 }
 
 body {
-  #common.text();
-  color: @base-body-color;
-  background-color: @base-body-background-color;
-  min-width: 320px;
+  #common.text-base();
+  #common.box-base();
+  font-family: var(--common-fontFamily-primary);
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  min-width: 320px;
   font-display: swap;
   margin: 0;
 }
@@ -62,18 +91,14 @@ figure {
   margin: 0;
 }
 
-blockquote {
-  margin: 0;
-}
-
 a {
   #base.link();
   text-decoration: none;
 
   &:not([href]),
   &[href^="tel"] {
-    --base-link-color: currentColor;
-    --base-link-color-hover: currentColor;
+    --base-link-color-base: var(--common-baseColor-primary);
+    --base-link-color-hover: var(--common-baseColor-primary);
 
     cursor: default;
   }
@@ -106,36 +131,6 @@ button,
   }
 }
 
-input {
-  &[type="text"],
-  &[type="email"],
-  &[type="password"],
-  &[type="tel"],
-  &[type="search"] {
-    display: block;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    color: inherit;
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    margin: 0;
-  }
-}
-
-textarea {
-  display: block;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-  color: inherit;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  resize: vertical;
-}
-
 img,
 video {
   max-width: 100%;
@@ -161,4 +156,8 @@ hr {
 
 .link {
   #base.link();
+}
+
+.btn {
+  #base.btn();
 }

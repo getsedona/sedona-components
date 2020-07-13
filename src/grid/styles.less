@@ -1,85 +1,65 @@
 .grid {
-  #common.element-list();
-
-  & + & {
-    margin-top: var(--common-element-gap-vertical, @common-element-gap-vertical);
-  }
+  #common.element-base();
 
   &--sidar {
     @media (min-width: @common-breakpoint-lg) {
-      --common-element-width: 75%;
+      --common-elementItem-width: 75%; // 6/8
     }
 
     @media (min-width: @common-breakpoint-xl) {
-      --common-element-width: 66.66%;
+      --common-elementItem-width: 66.66%; // 8/12
     }
   }
 
   &--navahopi {
+    @media (min-width: @common-breakpoint-lg) {
+      --common-elementItem-width: 75%; // 6/8
+    }
+
     @media (min-width: @common-breakpoint-xl) {
-      --common-element-width: 83.33%;
+      --common-elementItem-width: 83.33%; // 10/12
     }
   }
 
   &--jordan {
     @media (min-width: @common-breakpoint-lg) {
-      --common-element-width: 50%;
+      --common-elementItem-width: 50%; // 4/8
+    }
+
+    @media (min-width: @common-breakpoint-xl) {
+      --common-elementItem-width: 50%; // 6/12
     }
   }
 
   &--meskit {
     @media (min-width: @common-breakpoint-md) {
-      --common-element-width: 50%;
+      --common-elementItem-width: 50%; // 4/8
     }
 
-    @media (min-width: @common-breakpoint-lg) {
-      --common-element-width: 33.33%;
+    @media (min-width: @common-breakpoint-xl) {
+      --common-elementItem-width: 33.33%; // 4/12
     }
   }
 
   &--amara {
     @media (min-width: @common-breakpoint-sm) {
-      --common-element-width: 50%;
+      --common-elementItem-width: 50%; // 2/4
+    }
+
+    @media (min-width: @common-breakpoint-md) {
+      --common-elementItem-width: 50%; // 3/6
     }
 
     @media (min-width: @common-breakpoint-lg) {
-      --common-element-width: 33.33%;
+      --common-elementItem-width: 33.33%; // ⅓/8
     }
 
     @media (min-width: @common-breakpoint-xl) {
-      --common-element-width: 25%;
+      --common-elementItem-width: 25%; // 3/12
     }
   }
 }
 
 .grid__item {
   #common.element-item();
-
-  .grid--orchard & {
-    &:nth-child(odd) {
-      @media (min-width: @common-breakpoint-lg) {
-        --common-element-width: 58.33%;
-      }
-    }
-
-    &:nth-child(even) {
-      @media (min-width: @common-breakpoint-lg) {
-        --common-element-width: 41.66%;
-      }
-    }
-  }
-
-  .grid--ridge & {
-    &:nth-child(odd) {
-      @media (min-width: @common-breakpoint-lg) {
-        --common-element-width: 41.66%;
-      }
-    }
-
-    &:nth-child(even) {
-      @media (min-width: @common-breakpoint-lg) {
-        --common-element-width: 58.33%;
-      }
-    }
-  }
 }

@@ -1,28 +1,32 @@
-// Body
-@base-body-color: @common-text-base-strong;
-@base-body-background-color: @common-root-base-weak;
-
 // H1
-@base-h1-font-family: @common-font-family;
-@base-h1-font-size: var(--base-h1-font-size, 2.5rem);
-@base-h1-line-height: var(--base-h1-line-height, 3rem);
-@base-h1-font-weight: bold;
+@base-h1-fontSize: 2.5rem;
+@base-h1-lineHeight: 3rem;
 
 // H2
-@base-h2-font-family: @common-font-family;
-@base-h2-font-size: var(--base-h2-font-size, 2rem);
-@base-h2-line-height: var(--base-h2-line-height, 2.5rem);
-@base-h2-font-weight: bold;
+@base-h2-fontSize: 2rem;
+@base-h2-lineHeight: 2.5rem;
 
 // H3
-@base-h3-font-family: @common-font-family;
-@base-h3-font-size: var(--base-h3-font-size, 1.5rem);
-@base-h3-line-height: var(--base-h3-line-height, 2rem);
-@base-h3-font-weight: bold;
+@base-h3-fontSize: 1.5rem;
+@base-h3-lineHeight: 2rem;
 
 // Ссылка
-@base-link-color: var(--base-link-color, @common-text-accent-strong);
-@base-link-color-hover: var(--base-link-color-hover, multiply(@common-text-accent-strong, #ccc));
+@base-link-color-base: @common-accentColor-primary;
+@base-link-color-hover: #common.set-color-interaction(@base-link-color-base)[];
 
-@base-inverse-link-color: var(--base-inverse-link-color, @common-text-accent-weak);
-@base-inverse-link-color-hover: var(--base-inverse-link-color-hover, multiply(@common-text-accent-weak, #ccc));
+// Кнопка
+@base-btn-padding-vertical: @common-indent-small;
+@base-btn-padding-horizontal: @common-indent-base;
+
+@base-btn-borderWidth: 1px;
+@base-btn-borderRadius: @base-btn-padding-vertical;
+
+@base-btn-backgroundColor-base: @common-accentColor-primary;
+@base-btn-color-base: contrast(@base-btn-backgroundColor-base, @common-darkColor-primary, @common-lightColor-primary);
+@base-btn-borderColor-base: transparent;
+
+@base-btn-backgroundColor-hover: #common.set-color-interaction(@base-btn-backgroundColor-base)[];
+@base-btn-color-hover: @base-btn-color-base;
+@base-btn-borderColor-hover: #common.set-color-interaction(@base-btn-borderColor-base)[];
+
+@base-btn-outlineColor-focus: fadeout(@base-btn-backgroundColor-base, 50%, relative);

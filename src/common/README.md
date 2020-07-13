@@ -4,6 +4,8 @@
 
 Все компоненты ссылаются на этот главный файл и напрямую зависят от него.
 
+На мобильных устройствах устанавливает тегу `body` класс `.mobile`.
+
 Создает css-переменную высоты вьюпорта `--vh`. `--vh`≈`1vh`.
 
 [Настройка](https://github.com/getsedona/sedona-components/blob/master/src/common/variables.less)

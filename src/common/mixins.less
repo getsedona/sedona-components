@@ -1,69 +1,76 @@
 #common() {
-  .text() {
-    font-family: @common-text-font-family;
-    font-size: @common-text-font-size;
-    line-height: @common-text-line-height;
-    font-weight: @common-text-font-weight;
+  .text-base() {
+    font-size: var(--common-fontSize-base);
+    line-height: var(--common-lineHeight-base);
   }
 
   .text-small() {
-    font-family: @common-text-font-family-small;
-    font-size: @common-text-font-size-small;
-    line-height: @common-text-line-height-small;
-    font-weight: @common-text-font-weight-small;
+    font-size: var(--common-fontSize-small);
+    line-height: var(--common-lineHeight-small);
   }
 
   .text-large() {
-    font-family: @common-text-font-family-large;
-    font-size: @common-text-font-size-large;
-    line-height: @common-text-line-height-large;
-    font-weight: @common-text-font-weight-large;
+    font-size: var(--common-fontSize-large);
+    line-height: var(--common-lineHeight-large);
   }
 
-  .text-remark() {
-    font-family: @common-text-font-family-remark;
-    font-size: @common-text-font-size-remark;
-    line-height: @common-text-line-height-remark;
-    font-weight: @common-text-font-weight-remark;
+  .text-uppercase() {
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
   }
 
-  .text-label() {
-    font-family: @common-text-font-family-label;
-    font-size: @common-text-font-size-label;
-    line-height: @common-text-line-height-label;
-    font-weight: @common-text-font-weight-label;
+  .box-base() {
+    color: var(--common-baseColor-primary);
+    background-color: var(--common-backgroundColor-base);
   }
 
-  .text-decor() {
-    font-family: @common-text-font-family-decor;
-    font-size: var(--common-text-font-size-decor, @common-text-font-size-decor);
-    line-height: var(--common-text-line-height-decor, @common-text-line-height-decor);
-    font-weight: @common-text-font-weight-decor;
+  .box-dark() {
+    --common-baseColor-primary: var(--common-lightColor-primary);
+    --common-baseColor-secondary: var(--common-lightColor-secondary);
+    --common-baseColor-hint: var(--common-lightColor-hint);
+    --common-baseColor-divider: var(--common-lightColor-divider);
+
+    color: var(--common-lightColor-primary);
+    background-color: var(--common-backgroundColor-dark);
   }
 
-  .element-list() {
+  .box-light() {
+    --common-baseColor-primary: var(--common-darkColor-primary);
+    --common-baseColor-secondary: var(--common-darkColor-secondary);
+    --common-baseColor-hint: var(--common-darkColor-hint);
+    --common-baseColor-divider: var(--common-darkColor-divider);
+
+    color: var(--common-darkColor-primary);
+    background-color: var(--common-backgroundColor-light);
+  }
+
+  .element-base() {
     display: flex;
     flex-wrap: wrap;
-    width: ~"calc(100% + var(--common-element-gap-horizontal, @{common-element-gap-horizontal}))";
-    max-width: ~"calc(var(--common-element-max-width, @{common-element-max-width}) + var(--common-element-gap-horizontal, @{common-element-gap-horizontal}))";
-    margin-right: ~"calc(var(--common-element-gap-horizontal, @{common-element-gap-horizontal}) * -1)";
-    margin-bottom: ~"calc(var(--common-element-gap-vertical, @{common-element-gap-vertical}) * -1)";
+    width: ~"calc(100% + var(--common-elementGap-horizontal))";
+    max-width: ~"calc(var(--common-elementBase-maxWidth) + var(--common-elementGap-horizontal))";
+    margin-right: ~"calc(var(--common-elementGap-horizontal) * -1)";
+    margin-bottom: ~"calc(var(--common-elementGap-vertical) * -1)";
+
+    & + & {
+      margin-top: var(--common-elementGap-vertical);
+    }
   }
 
   .element-item() {
-    width: var(--common-element-width, @common-element-width);
-    border: 0 solid transparent;
-    border-right-width: var(--common-element-gap-horizontal, @common-element-gap-horizontal);
-    border-bottom-width: var(--common-element-gap-vertical, @common-element-gap-vertical);
+    width: ~"calc(var(--common-elementItem-width) - var(--common-elementGap-horizontal))";
+    margin-right: var(--common-elementGap-horizontal);
+    margin-bottom: var(--common-elementGap-vertical);
   }
 
-  .block() {
+  .block-base() {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: var(--common-block-gap-vertical, @common-block-gap-vertical);
-    padding-right: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
-    padding-bottom: var(--common-block-gap-vertical, @common-block-gap-vertical);
-    padding-left: var(--common-block-gap-horizontal, @common-block-gap-horizontal);
+    width: 100%;
+    padding-top: var(--common-blockGap-vertical);
+    padding-right: var(--common-blockGap-horizontal);
+    padding-bottom: var(--common-blockGap-vertical);
+    padding-left: var(--common-blockGap-horizontal);
   }
 }

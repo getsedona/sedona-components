@@ -2,7 +2,7 @@
 
 Служит для разбиения контента страницы по смыслу на секции.
 
-[Пример](https://getsedona.github.io/sedona-components/scene.html)
+[Разметка](https://github.com/getsedona/sedona-components/blob/master/src/scene/examples.html) · [Пример](https://getsedona.github.io/sedona-components/scene.html)
 
 ## Подключение
 
@@ -10,3 +10,12 @@
 // index.less
 @import "~sedona-components/src/scene/index";
 ```
+
+## Модификаторы
+
+### `scene`
+
+* `scene--fill` – добавляет отступ сверху
+* `scene--box` – делает компонент ограниченным по ширине
+* `scene--dark` – делает компонент в темных тонах
+* `scene--light` – делает компонент в светлых тонах

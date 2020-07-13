@@ -1,16 +1,50 @@
 .scene {
-  #common.block();
-  color: var(--scene-color, @scene-color);
-  background-color: var(--scene-background-color, @scene-background-color);
+  #common.block-base();
 
-  & + & {
+  &:not(&--fill):not(&--box):not(&--dark):not(&--light) + &:not(&--fill):not(&--box):not(&--dark):not(&--light) {
     padding-top: 0;
   }
 
-  .inverse &,
-  &.inverse {
-    color: var(--scene-inverse-color, @scene-inverse-color);
-    background-color: var(--scene-inverse-background-color, @scene-inverse-background-color);
-    padding-top: var(--common-block-gap-vertical, @common-block-gap-vertical);
+  &--fill {
+    #common.block-base();
+  }
+
+  &--box {
+    #common.block-base();
+    margin-right: var(--common-blockGap-horizontal);
+    margin-left: var(--common-blockGap-horizontal);
+    border-radius: var(--common-borderRadius-primary);
+    box-shadow: inset 0 0 0 1px var(--common-baseColor-divider);
+    width: ~"calc(100vw - var(--common-blockGap-horizontal) * 2)";
+    max-width: ~"calc(100vw - (100vw - var(--common-elementBase-maxWidth)))";
+
+    &:first-child {
+      margin-top: $padding-top;
+    }
+
+    &:last-child {
+      margin-bottom: $padding-bottom;
+    }
+  }
+
+  &--dark {
+    #common.box-dark();
+  }
+
+  &--light {
+    #common.box-light();
+  }
+
+  &--box&--dark,
+  &--box&--light {
+    box-shadow: none;
+  }
+
+  &--box + &--box,
+  &--box + &--dark,
+  &--box + &--light,
+  &--dark + &--box,
+  &--light + &--box {
+    margin-top: $padding-top;
   }
 }
